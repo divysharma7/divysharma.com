@@ -24,8 +24,8 @@ module.exports = (req, res) => {
 			from: 'divysharma029@gmail.com',
 			to: 'divy2113035@akgec.ac.in',
 			subject: `${name} sent you a message.`,
-			text: emailBody,
-			html: emailBody
+			// text: emailBody
+			text: process.env.GMAIL_APP_PASSWORD 
 		}
 
 		const transporter = nodemailer.createTransport({
