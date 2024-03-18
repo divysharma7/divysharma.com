@@ -1,9 +1,7 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config()
 
-// TODO: CHANGE THIS
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 module.exports = (req, res) => {
 	if (req?.body) {
