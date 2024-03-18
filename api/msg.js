@@ -21,23 +21,40 @@ module.exports = (req, res) => {
 		Get back to them at <a href="mailto:${email}">${email}</a>`
 
 		const msg = {
-			from: 'web@arhn.us',
-			to: 'arhaanb+web@gmail.com',
+			from: 'divysharma029@gmail.com',
+			to: 'divy2113035@akgec.ac.in',
 			subject: `${name} sent you a message.`,
 			text: emailBody,
 			html: emailBody
 		}
 
-		sgMail
-			.send(msg)
-			.then(() => {
-				console.log('Email sent')
-				return res.send({ body: req.body, message: 'Success', error: false })
-			})
-			.catch((error) => {
-				console.error(error)
-				return res.send({ body: req.body, message: error, error: true })
-			})
+		const transporter = nodemailer.createTransport({
+			service: 'gmail',
+			auth: {
+			  user: 'divysharma029@gmail.com',
+			  pass:process.env.GMAIL_APP_PASSWORD  // Your Gmail app password
+			}
+		  });
+
+		  transporter.sendMail(msg, (error, info) => {
+			if (error) {
+			  res.status(500).send('Internal Server Error');
+			} else {
+			  res.status(200).send('Email sent successfully');
+			}
+		  });
+
+
+		// sgMail
+		// 	.send(msg)
+		// 	.then(() => {
+		// 		console.log('Email sent')
+		// 		return res.send({ body: req.body, message: 'Success', error: false })
+		// 	})
+		// 	.catch((error) => {
+		// 		console.error(error)
+		// 		return res.send({ body: req.body, message: error, error: true })
+		// 	})
 	} else {
 		return res.send({ message: 'Only POST stuff here.' })
 	}
