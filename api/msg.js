@@ -1,4 +1,4 @@
-const sgMail = require('@sendgrid/mail')
+const nodemailer = require('nodemailer');
 require('dotenv').config()
 
 // TODO: CHANGE THIS
@@ -24,8 +24,7 @@ module.exports = (req, res) => {
 			from: 'divysharma029@gmail.com',
 			to: 'divy2113035@akgec.ac.in',
 			subject: `${name} sent you a message.`,
-			// text: emailBody
-			text: process.env.GMAIL_APP_PASSWORD 
+			text: emailBody
 		}
 
 		const transporter = nodemailer.createTransport({
@@ -36,9 +35,12 @@ module.exports = (req, res) => {
 			}
 		  });
 
+console.log(process.env.GMAIL_APP_PASSWORD)
+		  
 		  transporter.sendMail(msg, (error, info) => {
 			if (error) {
 			  res.status(500).send('Internal Server Error');
+			  console.log("ERROR")
 			} else {
 			  res.status(200).send('Email sent successfully');
 			}
