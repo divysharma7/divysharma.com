@@ -36,12 +36,14 @@ module.exports = (req, res) => {
 		  
 		  transporter.sendMail(msg, (error, info) => {
 			if (error) {
-			  res.status(500).send('Internal Server Error');
-			  console.log("ERROR")
+				return res.send({ body: req.body, message: error, error: true })
 			} else {
-			  res.status(200).send('Email sent successfully');
+				return res.send({ body: req.body, message: 'Success', error: false })
 			}
 		  });
+
+
+		
 	} else {
 		return res.send({ message: 'Only POST stuff here.' })
 	}
