@@ -22,7 +22,7 @@ module.exports = (req, res) => {
 			from: 'divysharma029@gmail.com',
 			to: 'divy2113035@akgec.ac.in',
 			subject: `${name} sent you a message.`,
-			text: emailBody
+			html: emailBody
 		}
 
 		const transporter = nodemailer.createTransport({
@@ -33,7 +33,6 @@ module.exports = (req, res) => {
 			}
 		  });
 
-console.log(process.env.GMAIL_APP_PASSWORD)
 		  
 		  transporter.sendMail(msg, (error, info) => {
 			if (error) {
@@ -43,18 +42,6 @@ console.log(process.env.GMAIL_APP_PASSWORD)
 			  res.status(200).send('Email sent successfully');
 			}
 		  });
-
-
-		// sgMail
-		// 	.send(msg)
-		// 	.then(() => {
-		// 		console.log('Email sent')
-		// 		return res.send({ body: req.body, message: 'Success', error: false })
-		// 	})
-		// 	.catch((error) => {
-		// 		console.error(error)
-		// 		return res.send({ body: req.body, message: error, error: true })
-		// 	})
 	} else {
 		return res.send({ message: 'Only POST stuff here.' })
 	}
