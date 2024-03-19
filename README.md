@@ -1,6 +1,6 @@
-# [Divy Sharma](https://arhaanb.com)
+# [Divy Sharma]
 
-> My portfolio website. Live at [arhaanb.com](https://arhaanb.com).
+> My portfolio website. Live at 
 
 ## Overview
 
