@@ -5,7 +5,7 @@
 		<a
 			target="_blank"
 			class="logo"
-			href="https://open.spotify.com/user/arhaanb"
+			href="https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji"
 			title="Now listening"
 			rel="noopener noreferrer"
 		>
