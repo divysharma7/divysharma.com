@@ -25,7 +25,7 @@
 				// TODO: CHANGE THIS
 
 				<a
-					href="https://twitter.com/arhaanbahadur"
+					href="https://twitter.com/Divy_Sharma6"
 					rel="noopener noreferrer"
 					target="_blank"
 				>
@@ -39,14 +39,14 @@
 					<carbon-logo-instagram />
 				</a>
 				<a
-					href="https://github.com/arhaanb"
+					href="https://github.com/divysharma7"
 					rel="noopener noreferrer"
 					target="_blank"
 				>
 					<carbon-logo-github />
 				</a>
 				<a
-					href="https://open.spotify.com/user/arhaanb"
+					href="https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji"
 					rel="noopener noreferrer"
 					target="_blank"
 				>

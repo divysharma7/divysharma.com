@@ -7,32 +7,31 @@
 		<div class="col icon">
 			<div class="flex-right">
 				<div class="socials">
-agsfaf
 
 					<a
 					
-						href="https://twitter.com/arhaanbahadur"
+						href="https://twitter.com/Divy_Sharma6"
 						rel="noopener noreferrer"
 						target="_blank"
 					>
 						<bx-bxl-twitter />
 					</a>
 					<a
-						href="https://instagram.com/arhaan_bahadur"
+						href="https://www.instagram.com/divy.sharma9/"
 						rel="noopener noreferrer"
 						target="_blank"
 					>
 						<carbon-logo-instagram />
 					</a>
 					<a
-						href="https://github.com/arhaanb"
+						href="https://github.com/divysharma7"
 						rel="noopener noreferrer"
 						target="_blank"
 					>
 						<carbon-logo-github />
 					</a>
 					<a
-						href="https://open.spotify.com/user/arhaanb"
+						href="https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji"
 						rel="noopener noreferrer"
 						target="_blank"
 					>
@@ -40,7 +39,7 @@ agsfaf
 					</a>
 
 					<a
-						href="//linkedin.com/in/arhaanb"
+						href="https://www.linkedin.com/in/divy-sharma-243748216/"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
@@ -48,7 +47,7 @@ agsfaf
 					</a>
 
 					<a
-						href="//behance.net/arhaanbahadur"
+						href="https://www.behance.net/divysharma3"
 						target="_blank"
 						rel="noopener noreferrer"
 					>

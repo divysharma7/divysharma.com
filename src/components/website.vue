@@ -3,7 +3,7 @@
 		<h5 class="smltitle">
 			<a
 				rel="noopener noreferrer"
-				href="https://github.com/arhaanb/arhaanb.com#readme"
+				href="https://github.com/divysharma7"
 				target="_blank"
 				>About this website</a
 			>
@@ -21,15 +21,7 @@
 				>Vercel</a
 			>
 			and it takes advantage of its serverless functions for features like the
-			realtime Spotify currently playing indicator and contact form. It's Open
-			Sourced at
-			<a
-				rel="noopener noreferrer"
-				href="//github.com/arhaanb/arhaanb.com"
-				target="_blank"
-			>
-				github.com/<wbr />arhaanb/<wbr />arhaanb.com</a
-			>. Leave a star!
+			realtime Spotify currently playing indicator and contact form. 
 		</p>
 	</div>
 </template>

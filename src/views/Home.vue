@@ -155,26 +155,7 @@ export default {
 			age: 18,
 			prefix: 'an',
 			links: [
-				// TODO: CHANGE THIS
-				'https://res.cloudinary.com/arhaanb/image/upload/v1643443900/website%20main%20page/img1.png',
-				'https://res.cloudinary.com/arhaanb/image/upload/v1643443898/website%20main%20page/h_2_xubwje.png',
-				'https://res.cloudinary.com/arhaanb/image/upload/v1643443897/website%20main%20page/h_3_xumzkh.png',
-				'https://res.cloudinary.com/arhaanb/image/upload/v1643443897/website%20main%20page/h_4_mnae7p.png',
-				'https://res.cloudinary.com/arhaanb/image/upload/v1643443901/website%20main%20page/h_5_pmkwmj.png',
-				'https://res.cloudinary.com/arhaanb/image/upload/v1643443897/website%20main%20page/h_6_wzchp9.png'
-
-				// 'https://www.zhayitong.com/assets/img/Frame%201.jpg',
-				// 'https://www.zhayitong.com/assets/img/Frame%202.jpg',
-				// 'https://www.zhayitong.com/assets/img/Frame%203.jpg',
-				// 'https://www.zhayitong.com/assets/img/Frame%204.jpg',
-				// 'https://www.zhayitong.com/assets/img/Frame%205.jpg',
-				// 'https://www.zhayitong.com/assets/img/Frame%206.jpg'
-
-				// ---
-
-				// 'https://www.zhayitong.com/assets/img/Frame%207.jpg',
-				// 'https://www.zhayitong.com/assets/img/Frame%208.jpg',
-				// 'https://www.zhayitong.com/assets/img/Frame%209.jpg'
+				
 			]
 		}
 	},
@@ -206,7 +187,7 @@ export default {
 
 				// TODO: CHANGE THIS
 							
-							window.open('https://arhaanb.com/new_me.jpeg')
+							window.open('https://res.cloudinary.com/dgglltv04/image/upload/v1710277532/new_me_zrnsck.jpg')
 						}
 					},
 					// {
@@ -214,7 +195,7 @@ export default {
 					// 	onClick: () => {
 					// 		navigator.clipboard.write([
 					// 			new ClipboardItem({
-					// 				'image/png': 'https://arhaanb.com/new_me.jpeg'
+					// 				'image/png': 'https://res.cloudinary.com/dgglltv04/image/upload/v1710277532/new_me_zrnsck.jpg'
 					// 			})
 					// 		])
 					// 	}
@@ -224,20 +205,20 @@ export default {
 						onClick: () => {
 				// TODO: CHANGE THIS
 
-							navigator.clipboard.writeText('https://arhaanb.com/new_me.jpeg')
+							navigator.clipboard.writeText('https://res.cloudinary.com/dgglltv04/image/upload/v1710277532/new_me_zrnsck.jpg')
 						}
 					},
 					{
 						label: 'Download polaroid',
 						onClick: () => {
-							window.open('https://arhaanb.com/new_me.jpeg')
+							window.open('https://res.cloudinary.com/dgglltv04/image/upload/v1710277532/new_me_zrnsck.jpg"')
 						}
 					},
 					{
 						label: 'Copy polaroid address',
 						onClick: () => {
 					// TODO: CHANGE THIS
-							navigator.clipboard.writeText('https://arhaanb.com/new_me.jpeg')
+							navigator.clipboard.writeText('https://res.cloudinary.com/dgglltv04/image/upload/v1710277532/new_me_zrnsck.jpg')
 						}
 					}
 				],

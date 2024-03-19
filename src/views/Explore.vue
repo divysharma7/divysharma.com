@@ -4,7 +4,7 @@
 		<p class="sub">Miscellaneous stuff about me.</p>
 
 		<div aos-animate data-aos="fade-up">
-			<a rel="noopener noreferrer" href="//arhn.us/design" target="_blank">
+			<a rel="noopener noreferrer" href="https://www.behance.net/divysharma3" target="_blank">
 				<div id="design" class="coolbox">
 					<div class="flexbox">
 						<h6>Design</h6>
@@ -14,15 +14,14 @@
 					</div>
 					<p>
 						(WIP) I'm mostly interested in Interface and Product Design but I
-						enjoy making illustrations and I've also tried out some 3D
-						modelling.
+						enjoy doing B-plans too.
 					</p>
 				</div>
 			</a>
 		</div>
 
 		<div aos-animate data-aos="fade-up" data-aos-delay="100">
-			<a rel="noopener noreferrer" href="//arhn.us/awards" target="_blank">
+			<a rel="noopener noreferrer" href="https://www.linkedin.com/posts/divy-sharma-243748216_startupjourney-gratitude-bitsabrpilani-activity-7168917217009496064-UFhB?utm_source=share&utm_medium=member_desktop" target="_blank">
 				<div id="events" class="coolbox">
 					<div class="flexbox">
 						<h6>Achievements</h6>
@@ -31,7 +30,7 @@
 						</span>
 					</div>
 					<p>
-						I've participated in over 30 Hackathons, Designathons, Quizzes, etc.
+						I've participated in Hackathons, Ideathons, Designathons, B-plans, etc.
 						Check out some of my wins.
 					</p>
 				</div>
@@ -60,7 +59,7 @@
 
 	
 		<div data-aos="fade-up" data-aos-delay="200">
-			<a rel="noopener noreferrer" href="//arhn.us/events" target="_blank">
+			<a rel="noopener noreferrer" href="https://teamconatus.com/" target="_blank">
 				<div id="conatus" class="coolbox">
 					<div class="flexbox">
 						<h6>Events</h6>
@@ -91,7 +90,7 @@
 					<p>
 						<span class="bold">Buy me a coffee</span> to support my journey in
 						building delightful product experience.
-						<a href="//spotivity.me" target="_blank">Spotivity</a>.
+						<a href="https://www.linkedin.com/posts/divy-sharma-243748216_designathon-teamwork-hardworkpaysoff-activity-7105298291315085312-tPdb?utm_source=share&utm_medium=member_desktop" target="_blank">IIIT Delhi</a>.
 					</p>
 				</div>
 			</a>
