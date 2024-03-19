@@ -10,7 +10,7 @@
 
 <!-- The website is Statically Generated and uses Client-Side Routing to give the website a smooth experience. -->
 
-The website also has a realtime indicator of what song I'm currently playing on Spotify, and my top 5 songs of the month. This was possible using [Vercel](https://vercel.com)'s Serverless Functions and the Spotify API. Learn more about this website at [arhaanb.com/explore](https://arhaanb.com/explore).
+The website also has a realtime indicator of what song I'm currently playing on Spotify, and my top 5 songs of the month. This was possible using [Vercel](https://vercel.com)'s Serverless Functions and the Spotify API. Learn more about this website at.
 
 ## Built using
 
