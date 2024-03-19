@@ -88,7 +88,7 @@ export default {
 		submitForm() {
 			this.loading = true
 			if (process.env.NODE_ENV == 'development') {
-				url = 'https://arhaanbahadur.co/api/msg'
+				url = '/api/msg'
 			} else {
 				url = '/api/msg'
 			}

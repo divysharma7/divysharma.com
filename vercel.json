@@ -10,16 +10,16 @@
 
 
 		
-		{ "source": "/resume", "destination": "https://arhn.us/resume" },
+		
 		{
 			"source": "/spotify",
 			"destination": "https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji"
 		},
 		{
 			"source": "/twitter",
-			"destination": "https://twitter.com/arhaanbahadur"
+			"destination": "https://twitter.com/Divy_Sharma6"
 		},
-		{ "source": "/twt", "destination": "https://twitter.com/arhaanbahadur" },
+		{ "source": "/twt", "destination": "https://twitter.com/Divy_Sharma6" },
 		{ "source": "/ig", "destination": "https://www.instagram.com/divy.sharma9/" },
 		{
 			"source": "/instagram",

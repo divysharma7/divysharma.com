@@ -76,21 +76,7 @@
 				ext
 			/>
 
-			<!-- <Page
-				data-aos="fade-up"
-				data-aos-delay="200"
-				title="Resume"
-				to="https://arhaanb.com/resume"
-				desc="What I've been up to"
-				ext
-			/> -->
-			<!-- <Page
-				data-aos="fade-up"
-				data-aos-delay="200"
-				title="Posts"
-				to="/posts"
-				desc="Quick project reports"
-			/> -->
+			
 		</div>
 
 		<div class="cont">

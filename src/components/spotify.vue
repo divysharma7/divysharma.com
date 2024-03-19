@@ -25,7 +25,7 @@
 				</a>
 			</h5>
 			<h5 class="title not" v-else>
-				<a href="//open.spotify.com/user/arhaanb" target="_blank"
+				<a href="//open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji" target="_blank"
 					>Spotify &mdash; Not playing</a
 				>
 			</h5>
