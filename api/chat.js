@@ -11,9 +11,8 @@ const config = new Configuration({
 const openai = new OpenAIApi(config)
 
 // Vercel Edge Runtime (optional, but faster)
-export const config = {
-    runtime: 'edge'
-}
+// Vercel Serverless Function (Node.js)
+// Removing edge runtime to support local file imports and standard modules
 
 function generateSystemPrompt() {
     const skillNames = about.skills.map((skill) => skill.name).join(', ')
