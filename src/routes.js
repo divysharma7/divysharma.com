@@ -1,37 +1,33 @@
 import Home from './views/Home.vue'
-import Projects from './views/Projects.vue'
-import Explore from './views/Explore.vue'
-import NotFound from './views/NotFound.vue'
-import Page from './views/projects/project.vue'
-import WorkExperience from './components/workexperience.vue' // Added this line
-
-// const Home = () => import('./views/Home.vue')
-// const Projects = () => import('./views/Projects.vue')
-// const Explore = () => import('./views/Explore.vue')
-// const Page = () => import('./views/projects/project.vue')
-// const NotFound = () => import('./views/NotFound.vue')
-
-// Projects
-// import LinkPlus from './views/projects/linkplus.vue'
-// import Notion from './views/projects/notion.vue'
 
 export const routes = [
 	{ path: '/', component: Home, meta: { title: 'Home' } },
 	{
 		path: '/projects',
 		meta: { title: 'Projects' },
-		component: Projects
+		component: () => import('./views/Projects.vue')
 	},
 	{
 		path: '/explore',
 		meta: { title: 'Explore' },
-		component: Explore
+		component: () => import('./views/Explore.vue')
 	},
-	// {
-	// 	path: '/notion',
-	// 	meta: { title: 'Notion' },
-	// 	component: Notion
-	// },
+	{
+		path: '/books',
+		meta: { title: 'Books' },
+		component: () => import('./views/Books.vue')
+	},
+	{
+		path: '/blog',
+		meta: { title: 'Blog' },
+		component: () => import('./views/Blog.vue')
+	},
+	{
+		path: '/blog/:slug',
+		name: 'BlogDetail',
+		component: () => import('./views/BlogDetail.vue'),
+		meta: { title: 'Blog' }
+	},
 	{
 		path: '/projects/:proj',
 		redirect: (to) => {
@@ -40,10 +36,10 @@ export const routes = [
 			}
 		}
 	},
-	{ // Added this route for WorkExperience
-		path: '/workexperience', // Choose a suitable path for this component
+	{
+		path: '/workexperience',
 		meta: { title: 'work experience' },
-		component: WorkExperience 
+		component: () => import('./components/workexperience.vue')
 	},
 	{
 		path: '/project/:proj',
@@ -65,6 +61,21 @@ export const routes = [
 			return { path: `/projects` }
 		}
 	},
-	{ path: '/p/:id', name: 'Page', component: Page },
-	{ path: '/:pathMatch(.*)', component: NotFound, meta: { title: 'notfound' } }
+	{ path: '/p/:id', name: 'Page', component: () => import('./views/projects/project.vue') },
+	{
+		path: '/gears',
+		meta: { title: 'Gears' },
+		component: () => import('./views/Gears.vue')
+	},
+	{
+		path: '/journey',
+		meta: { title: 'Journey' },
+		component: () => import('./views/Journey.vue')
+	},
+	{
+		path: '/journey/certificates',
+		meta: { title: 'Certificates' },
+		component: () => import('./views/Certificates.vue')
+	},
+	{ path: '/:pathMatch(.*)', component: () => import('./views/NotFound.vue'), meta: { title: 'notfound' } }
 ]

@@ -1,12 +1,7 @@
 <template>
-	<div>
+	<div class="website-section">
 		<h5 class="smltitle">
-			<a
-				rel="noopener noreferrer"
-				href="https://github.com/divysharma7"
-				target="_blank"
-				>About this website</a
-			>
+			<span class="dotted-underline">About this website</span>
 		</h5>
 
 		<p>
@@ -27,7 +22,32 @@
 </template>
 
 <style scoped>
-h5 a {
-	border-bottom: 1px rgba(34, 34, 34, 0.342) dashed;
+.website-section {
+	margin-bottom: 4em;
+}
+
+.smltitle {
+	font-size: 1.5em;
+	margin-bottom: 1em;
+	font-weight: 500;
+	color: #222;
+}
+
+.dotted-underline {
+	border-bottom: 1px dashed rgba(34, 34, 34, 0.4);
+	padding-bottom: 2px;
+}
+
+p {
+	margin-bottom: 1em;
+	line-height: 1.6;
+	color: #444;
+}
+
+a {
+	color: #222;
+	text-decoration: underline;
+	text-decoration-color: rgba(34, 34, 34, 0.4);
+	text-underline-offset: 2px;
 }
 </style>

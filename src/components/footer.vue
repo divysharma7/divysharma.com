@@ -7,9 +7,7 @@
 		<div class="col icon">
 			<div class="flex-right">
 				<div class="socials">
-
 					<a
-					
 						href="https://twitter.com/Divy_Sharma6"
 						rel="noopener noreferrer"
 						target="_blank"
@@ -62,90 +60,73 @@
 						<bx-bx-mail-send />
 					</a>
 				</div>
-				<p class="zero arhn">Divy Sharma</p>
 			</div>
 		</div>
 	</div>
 </template>
 
 <style scoped>
-.arhn {
-	margin-top: 0.35em;
-	display: none;
+.flexfoot {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-top: 4em;
+	padding-bottom: 2em;
+}
+
+.col {
+	flex: 1;
+}
+
+.col.left {
+	display: flex;
+	align-items: flex-end;
+}
+
+.col.icon {
+	display: flex;
+	justify-content: flex-end;
 }
 
 .spotify-component {
-	margin-top: 2em;
+	margin-top: 0;
 }
 
 .socials {
 	display: flex;
-	justify-content: space-between;
+	gap: 1.5em; /* Increased gap for better spacing */
 	align-items: center;
-	margin-bottom: -2.3em;
-}
-
-.flex-right {
-	display: flex;
-	justify-content: center;
-	align-items: flex-end;
-	flex-direction: column;
 }
 
 .socials a {
-	/* color: #69e; */
-	color: var(--red-text);
+	color: #666; /* Muted grey color for icons */
 	transition: 0.3s;
-	font-size: 1.1em;
-	margin: 0;
-	padding: 0.5em;
-	margin-left: 0.35em;
-}
-
-@media (max-width: 750px) {
-	.flex-right {
-		align-items: flex-start;
-	}
-	.socials a {
-		margin-left: 0;
-		padding: 0;
-		margin-right: 1em;
-		padding: 0.25em 0.25em 0.25em 0;
-	}
-	.socials {
-		margin-top: 1em;
-	}
-	.arhn {
-		display: none;
-	}
+	font-size: 1.25em; /* Slightly larger icons */
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .socials a:hover {
-	opacity: 0.6;
-}
-
-.flexfoot {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-.col {
-	flex: 1 1 0px;
+	color: #222; /* Darker on hover */
+	opacity: 1;
 }
 
 @media (max-width: 750px) {
 	.flexfoot {
 		flex-direction: column;
 		align-items: flex-start;
+		gap: 2em;
 	}
-	.col {
-		width: 100%;
-	}
+	
 	.col.icon {
-		width: 65%;
+		width: 100%;
+		justify-content: flex-start;
 	}
-	.flexfoot {
-		margin-bottom: 4em;
+	
+	.socials {
+		gap: 1em;
+		flex-wrap: wrap;
 	}
 }
 </style>

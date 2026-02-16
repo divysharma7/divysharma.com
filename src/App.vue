@@ -10,14 +10,16 @@
 					<span>Divy Sharma</span>
 				</div>
 				<!-- <router-link v-else to="/"> -->
-				<img draggable="false" class="logo" src="/fav.png" alt="logo" v-else />
+				<img draggable="false" class="logo" src="/bot-avatar.jpg" alt="logo" v-else />
 				<!-- </router-link> -->
 
 				<div class="links">
 					<router-link to="/">Home</router-link>
 					<router-link to="/projects">Projects</router-link>
 					<router-link to="/WorkExperience">Work Experience</router-link>
+					<router-link to="/books">Books</router-link>
 					<router-link to="/explore">Explore</router-link>
+					<router-link to="/blog">Blog</router-link>
 				</div>
 
 				<div class="ham" @click="nav = !nav">
@@ -43,8 +45,17 @@
 							<router-link to="/projects" @click="nav = !nav"
 								>Projects</router-link
 							>
+							<router-link to="/WorkExperience" @click="nav = !nav"
+								>Work Experience</router-link
+							>
+							<router-link to="/books" @click="nav = !nav"
+								>Books</router-link
+							>
 							<router-link to="/explore" @click="nav = !nav"
 								>Explore</router-link
+							>
+							<router-link to="/blog" @click="nav = !nav"
+								>Blog</router-link
 							>
 						</div>
 
@@ -61,14 +72,30 @@
 		</main>
 
 		<div v-if="$route.meta.title !== 'notfound'" class="cont">
+			<div class="global-quote-wrap">
+				<Quote />
+			</div>
 			<!-- <Footer :class="`footer footer-${$route.meta.title}`" /> -->
 			<Footer class="footer" />
 		</div>
+		<ChatWidget />
+		<Oneko />
 	</main>
 </template>
 
 <script>
+import Footer from './components/footer.vue'
+import ChatWidget from './components/ChatWidget.vue'
+import Oneko from './components/Oneko.vue'
+import Quote from './components/Quote.vue'
+
 export default {
+	components: {
+		Footer,
+		ChatWidget,
+		Oneko,
+		Quote
+	},
 	data() {
 		return {
 			nav: false
@@ -82,6 +109,31 @@ export default {
 		}
 	}
 }
+</script>
+
+<script setup>
+import { useHead } from '@vueuse/head'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+useHead({
+  title: 'Divy Sharma',
+  titleTemplate: (title) => title === 'Divy Sharma' ? title : `${title} | Divy Sharma`,
+  meta: [
+    { name: 'description', content: 'Divy Sharma — Product Manager & Developer. Building delightful products and experiences.' },
+    { name: 'author', content: 'Divy Sharma' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:site_name', content: 'Divy Sharma' },
+    { property: 'og:image', content: 'https://divysharma.com/og-image.png' }, // Needs a real OG image
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:site', content: '@divysharma' },
+    { name: 'twitter:creator', content: '@divysharma' }
+  ],
+  link: [
+    { rel: 'canonical', href: () => `https://divysharma.com${route.path}` }
+  ]
+})
 </script>
 
 <style lang="scss">
@@ -193,7 +245,11 @@ export default {
 }
 
 .logo {
-	width: 1.5em;
+	width: 2.5em; /* Slightly larger for avatar */
+	height: 2.5em;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 1px solid rgba(0,0,0,0.1);
 }
 
 .footer-Home {
@@ -205,7 +261,7 @@ export default {
 	margin-top: -3em;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 768px) {
 	.footer-Home {
 		margin-top: 1.5em;
 	}
@@ -227,6 +283,12 @@ export default {
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+}
+
+.global-quote-wrap {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
 }
 
 .flexbruh .back {

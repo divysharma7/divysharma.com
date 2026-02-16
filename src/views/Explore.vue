@@ -1,7 +1,10 @@
 <template>
 	<div class="cont">
-		<h2 class="title fancy">Explore</h2>
-		<p class="sub">Miscellaneous stuff about me.</p>
+		<div class="page-header">
+			<h2 class="page-title">explore</h2>
+			<p class="page-subtitle">Miscellaneous stuff about me.</p>
+		</div>
+
 
 		<div aos-animate data-aos="fade-up">
 			<a rel="noopener noreferrer" href="https://www.behance.net/divysharma3" target="_blank">
@@ -108,9 +111,47 @@
 	</div>
 </template>
 
+<script setup>
+import { useHead } from '@vueuse/head'
+import Top from '../components/top.vue'
+import Website from "../components/website.vue"
+import Contact from "../components/ContactForm.vue"
+
+useHead({
+  title: 'Explore',
+  meta: [
+    { name: 'description', content: 'Miscellaneous collection of my designs, achievements, events, and other interests.' },
+    { property: 'og:title', content: 'Explore | Divy Sharma' },
+    { property: 'og:description', content: 'Achievements, designs, and miscellanea.' }
+  ]
+})
+</script>
+
 <style scoped lang="scss">
 .bold {
 	font-weight: 600;
+}
+
+/* ── Page Title ── */
+.page-header {
+	text-align: left;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 37.5px;
+	font-weight: 400;
+	color: rgb(106, 120, 140);
+	margin: 0;
+}
+
+.page-subtitle {
+	font-size: 15px;
+	color: rgb(34, 34, 34);
+	margin: 0 0 25px;
+	max-width: 500px;
+	line-height: 1.6;
+	text-align: left;
 }
 
 .socials {

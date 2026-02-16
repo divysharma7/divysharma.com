@@ -1,339 +1,366 @@
 <template>
-	<main>
-		<div class="cont">
-			<!-- <img
-			data-aos="fade-in"
-			class="topimg"
-			src="/me.jpeg"
-			alt="Divy Sharma"
-			draggable="false"
-		/>
-			<br />-->
+	<div class="home-container">
+		<div class="hero-section">
+			<h1 class="headline fancy">
+				divy sharma
+			</h1>
+			<h2 class="sub-headline">
+				product manager • entrepreneur
+			</h2>
 
-			<div data-aos="fade-in">
-				<h4 class="name fancy">Divy Sharma</h4>
-
-				<div class="yo zero" style="margin-bottom: 0.55em">
-					<h6 class="zero">product manager &middot; entrepreneur </h6>
-				</div>
-
-				<p class="zero" style="margin-bottom: 1em">
-					{{ `${age}` }} years old Associate Product Manager at
-					<a href="https://asbl.in/" target="_blank">ASBL Hyderabad</a>
+			<div class="bio-text">
+				<p>
+					Hi, I'm Divy. I'm an Associate Product Manager in real estate tech, working closely with the Marketing team.
 				</p>
-				<p class="zero" style="margin-bottom: 1em">
-					During my six-month internship at ASBL, I collaborated closely with data analysts, sales teams, and senior PMs—reporting directly to the Growth Head.
+				<p>
+					I use
+					<span class="tool-badge">
+						<img src="https://cdn.simpleicons.org/metabase" alt="Metabase" />
+						Metabase
+					</span>,
+					<span class="tool-badge">
+						<img src="https://cdn.simpleicons.org/posthog" alt="PostHog" />
+						PostHog
+					</span>,
+					<span class="tool-badge">
+						<img src="https://cdn.simpleicons.org/googleanalytics" alt="GA4" />
+						GA4
+					</span>,
+					<span class="tool-badge">
+						<img src="https://cdn.simpleicons.org/googleads" alt="Google Ads" />
+						Google Ads
+					</span>,
+					<span class="tool-badge">
+						<img src="https://cdn.simpleicons.org/meta" alt="Meta Ads" />
+						Meta Ads
+					</span>,
+					<span class="tool-badge">
+						<img src="https://cdn.simpleicons.org/semrush" alt="Semrush" />
+						Semrush
+					</span>,
+					and
+					<span class="tool-badge">
+						<img src="https://cdn.simpleicons.org/googlesheets" alt="Sheets" />
+						Sheets
+					</span>
+					to understand what users are doing and where we’re losing them. Then I turn those insights into execution using
+					<span class="tool-badge">
+						<img src="https://cdn.simpleicons.org/figma" alt="Figma" />
+						Figma
+					</span>
+					and
+					<span class="tool-badge">
+						<img src="https://cdn.simpleicons.org/jira" alt="Jira" />
+						Jira
+					</span>.
 				</p>
-				<p class="zero" style="margin-bottom: 1em">
-					Now, as a core member of the Growth team, I am building products and shipping high-impact features that drive significant revenue growth.
+				<p>
+					My work starts with <span class="text-bold">Asking Right Questions</span>. The ones that make us stop and rethink what we think we know. I spend a lot of time <span class="text-bold">unblocking my team</span> from dependencies so they can focus on building, not waiting. I try to <span class="text-bold">lead with empathy</span> because behind every metric and every deadline, there are people doing their best.
 				</p>
-				<p class="zero" style="margin-bottom: 1em">
-					I have a background in Engineering which I leverage in my role as a Product Manager. This website showcases some of my past work as a Designer and entrepreneur.
+				<p>
+					I obsess over the funnel not as a chart, but as a <span class="text-bold">story</span>. Where do users hesitate? Where do they get confused? Where do we lose their trust?
 				</p>
-				<p class="zero" style="margin-bottom: 1em">	I’m always excited to discuss ideas, brainstorm potential collaborations, or simply connect. Feel free to <router-link to="/explore#contact">reach out</router-link>! </p>
+				<p>
+					I track retention and conversion closely, dig deep into drop-offs, and use <span class="text-bold">Opportunity Solution Trees</span> to separate noise from real insights. My goal is simple <span class="text-bold">to learn from the best people and do what best teams do to bring revenue impact to the organisation.</span>
+				</p>
 			</div>
 
-			 
+			<div class="action-buttons">
+				<a
+					href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="btn btn-outline"
+				>
+					<i class="ph-bold ph-file-text"></i>
+					Resume / CV
+				</a>
+				<a href="mailto:divysharma029@gmail.com" class="btn btn-solid">
+					<i class="ph-bold ph-paper-plane-tilt"></i>
+					Get in touch
+				</a>
+			</div>
+
+			<div class="social-links">
+				<a href="https://twitter.com/Divy_Sharma6" target="_blank" aria-label="Twitter">
+					<i class="ph-bold ph-x-logo"></i>
+				</a>
+				<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" aria-label="LinkedIn">
+					<i class="ph-bold ph-linkedin-logo"></i>
+				</a>
+				<a href="https://github.com/divysharma7" target="_blank" aria-label="GitHub">
+					<i class="ph-bold ph-github-logo"></i>
+				</a>
+				<a href="mailto:divysharma029@gmail.com" aria-label="Email">
+					<i class="ph-bold ph-envelope-simple"></i>
+				</a>
+			</div>
 		</div>
 
-		<div class="cont" style="max-width: 43em">
-			<br />
-			<Page
-				data-aos="fade-up"
-				title="Portfolio"
-				data-aos-once="true"
-				to="/projects"
-				desc="I build experience"
-			/>
-			<Page
-				data-aos="fade-up"
-				data-aos-delay="100"
-				data-aos-once="true"
-				title="Explore"
-				to="/explore"
-				desc="More of me"
-			/>
-			<Page
-				data-aos="fade-up"
-				data-aos-delay="150"
-				data-aos-once="true"
-				title="Contact"
-				to="/explore#contact"
-				desc="Let's talk"
-			/>
-			<Page
-				data-aos="fade-up"
-				data-aos-delay="200"
-				data-aos-once="true"
-				title="Resume"
-				to="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing"
-				desc="Stuff I do"
-				ext
-			/>
-			<Page
-				data-aos="fade-up"
-				data-aos-delay="250"
-				data-aos-once="true"
-				title="Support"
-				to="https://www.buymeacoffee.com/divy.sharma6"
-				desc="Buy me a coffee"
-				ext
-			/>
-
+		<!-- Work Experience Section -->
+		<div class="experience-section">
+			<SectionHeading heading="Experience" subHeading="Featured" />
 			
-		</div>
+			<div class="experience-list">
+				<ExperienceCard 
+					v-for="experience in experiences" 
+					:key="experience.company" 
+					:experience="experience" 
+				/>
+			</div>
 
-		<div class="cont">
-			<div class="flex-center">
-				<div class="six columns">
-					<div class="flex-center">
-						<img
-							@contextmenu="onContextMenu($event)"
-							draggable="false"
-							loading="lazy"
-							src="/DIVY3.png"
-							alt="me irl (fr)"
-							class="topimg"
-							style="margin-top: 3em; border-radius: 0.5em"
-						/>
-					</div>
-					<!-- <h6 class="center" style="opacity: 0.7; margin-top: -0.5em">
-						me irl
-					</h6> -->
-				</div>
-				<div class="u-cf"></div>
+			<div class="show-all-btn-wrapper">
+				<router-link to="/workexperience" class="btn btn-outline show-all-btn">
+					Show all work experiences
+				</router-link>
 			</div>
 		</div>
 
-		<!-- <div class="navcont">
-			<div class="pics">
-				<div class="picsgrid">
-					<div v-for="img in links" :key="img">
-						<img
-							data-aos="fade-up"
-							:src="img"
-							alt="img"
-							draggable="false"
-							loading="lazy"
-						/>
-					</div>
-				</div>
-				<h6 class="center zero meirl">me &#38; my friends irl</h6>
-				<h6 class="center" style="opacity: 0.7">me irl</h6>
-			</div>
-		</div>-->
+		<!-- Setup Section -->
+		<SetupSection />
 
-		<!-- <div class="cont socialstuff">
-			<h4>My socials</h4>
-			<div class="socialgrid">
-				<Page icon="ig" title="Instagram" />
-				<Page title="Twitter" />
-				<Page title="GitHub" />
-				<Page title="Behance" />
-				<Page title="Spotify" />
-				<Page title="LinkedIn" />
-				<Page title="Email" />
-			</div>
-		</div>-->
-	</main>
+		<!-- Journey Section -->
+		<JourneySection />
+
+		<div class="cta-wrapper">
+			<CTA />
+		</div>
+
+	</div>
 </template>
 
-<script>
-export default {
-	data() {
-		return {
-			age: 18,
-			prefix: 'an',
-			links: [
-				
-			]
-		}
-	},
-	mounted() {
-		const age = this.getAge('3/23/04')
-		this.age = age
-		this.prefix = [8, 11, 18].includes(age) ? 'an' : 'a'
-	},
-	methods: {
-		getAge(DOB) {
-			var today = new Date()
-			var birthDate = new Date(DOB)
-			var age = today.getFullYear() - birthDate.getFullYear()
-			var m = today.getMonth() - birthDate.getMonth()
-			if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-				age = age - 1
-			}
-			return age
-		},
-		onContextMenu(e) {
-			//prevent the browser's default menu
-			e.preventDefault()
-			//show our menu
-			this.$contextmenu({
-				items: [
-					{
-						label: 'Download image',
-						onClick: () => {
+<script setup>
+import { experiences } from '../data/experience.js';
+import SectionHeading from '../components/common/SectionHeading.vue';
+import ExperienceCard from '../components/experience/ExperienceCard.vue';
+import CTA from '../components/CTA.vue';
+import SetupSection from '../components/landing/SetupSection.vue';
+import JourneySection from '../components/landing/JourneySection.vue';
+import { useHead } from '@vueuse/head'
 
-				// TODO: CHANGE THIS
-							
-							window.open('https://res.cloudinary.com/dgglltv04/image/upload/v1710277532/new_me_zrnsck.jpg')
-						}
-					},
-					// {
-					// 	label: 'Copy image',
-					// 	onClick: () => {
-					// 		navigator.clipboard.write([
-					// 			new ClipboardItem({
-					// 				'image/png': 'https://res.cloudinary.com/dgglltv04/image/upload/v1710277532/new_me_zrnsck.jpg'
-					// 			})
-					// 		])
-					// 	}
-					// },
-					{
-						label: 'Copy image address',
-						onClick: () => {
-				// TODO: CHANGE THIS
-
-							navigator.clipboard.writeText('https://res.cloudinary.com/dgglltv04/image/upload/v1710277532/new_me_zrnsck.jpg')
-						}
-					},
-					{
-						label: 'Download polaroid',
-						onClick: () => {
-							window.open('https://res.cloudinary.com/dgglltv04/image/upload/v1710277532/new_me_zrnsck.jpg"')
-						}
-					},
-					{
-						label: 'Copy polaroid address',
-						onClick: () => {
-					// TODO: CHANGE THIS
-							navigator.clipboard.writeText('https://res.cloudinary.com/dgglltv04/image/upload/v1710277532/new_me_zrnsck.jpg')
-						}
-					}
-				],
-				iconFontClass: 'iconfont',
-				customClass: 'class-a',
-				zIndex: 3,
-				minWidth: 230,
-				x: e.x,
-				y: e.y
-			})
-		}
-	}
-}
+useHead({
+  title: 'Home',
+  meta: [
+    { name: 'description', content: 'Divy Sharma — Associate Product Manager & Developer. Specializing in real estate tech, analytics, and user-centric product development.' },
+    { property: 'og:title', content: 'Divy Sharma — Product Manager & Developer' },
+    { property: 'og:description', content: 'Associate Product Manager building delightful experiences in real estate tech.' }
+  ]
+})
 </script>
 
-<style scoped>
-/*p {
-	text-transform: lowercase;
-}*/
-.pics img {
-	width: 100%;
-}
-
-.pics {
-	margin-top: 2em;
-	margin-bottom: 2.5em;
-}
-.picsgrid {
-	display: grid;
-	/* grid-gap: 3em; */
-	grid-template-columns: repeat(3, 1fr);
-}
-.socialgrid {
-	display: grid;
-	/* grid-gap: 3em; */
-	grid-template-columns: repeat(2, 1fr);
-}
-.meirl {
-	/* margin-top: 2em; */
-	font-size: 1.1em;
-}
-@media (max-width: 750px) {
-	.meirl {
-		margin-top: 0;
-	}
-	.picsgrid,
-	.socialgrid {
-		display: grid;
-		/* grid-gap: 3em; */
-		grid-gap: 0;
-		grid-template-columns: repeat(1, 1fr);
-	}
-	.pics {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-}
-.yo,
-.name {
-	margin: 0;
-	font-size: 2.15em;
-}
-
-.name {
-	margin-top: 1.5em;
-	margin-bottom: -0.35em;
-}
-
-h1 {
-	font-size: 5em;
-	margin: 0;
-}
-.subtitle {
-	margin: 0;
-	font-size: 2em;
-	font-weight: 500;
-	opacity: 0.65;
-	margin-top: -0.25em;
-}
-.subtitle a {
-	border: none;
-}
-.main {
-	margin-top: 12em;
-}
-img.topimg {
-	width: 10em;
-	border-radius: 0.5em;
-	margin-bottom: 1em;
-}
-.vh {
+<style scoped lang="scss">
+.home-container {
+	max-width: 800px;
 	margin: 0 auto;
-	max-width: 50em;
-	margin-top: 20vh;
+	padding: 4rem 1.5rem;
+	min-height: 60vh;
+	display: flex;
+	flex-direction: column; /* Changed to column to stack sections */
+	align-items: flex-start; /* Left align everything */
 }
-.sml {
-	font-size: 0.5em;
+
+.cta-wrapper {
+	width: 100%;
+	margin-top: 2rem;
 }
-.nav a {
-	border: none;
-	margin: 0 1em;
-	font-size: 1em;
-	letter-spacing: 0.05em;
-	text-transform: uppercase;
+
+.hero-section {
+	width: 100%;
+	text-align: left;
+	margin-bottom: 4rem; /* Spacing between hero and experience */
 }
-.nav {
-	margin-top: 1em;
-}
-.yo a {
-	transition: 0.3s;
-}
-.yo a:hover {
-	color: #69e;
-}
-.topimg {
-	margin-top: 0.5em;
-	width: 100% !important;
-}
-@media (max-width: 750px) {
-	.topimg {
-		margin-top: 0;
-		width: 75% !important;
+
+.experience-section {
+	width: 100%;
+	text-align: left;
+	margin-bottom: 4rem;
+	
+	.experience-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		margin-top: 1.5rem;
 	}
-	.name {
-		margin-top: 0.75em;
+// ...
+	
+	.experience-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		margin-top: 1.5rem;
+	}
+
+	.show-all-btn-wrapper {
+		margin-top: 2rem;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+
+		.show-all-btn {
+			font-size: 0.95rem;
+			color: #444;
+			border-color: #ddd;
+			padding: 0.6rem 1.25rem;
+
+			&:hover {
+				background: #f9f9f9;
+				color: #111;
+			}
+		}
+	}
+}
+
+.headline {
+	font-family: var(--fontDisplay, serif); /* Use serif for "old style" look */
+	font-weight: 700;
+	font-size: 3rem;
+	line-height: 1.2;
+	color: #6a788c; /* Matches typical serif header color from screenshot */
+	margin-bottom: 0.5rem;
+	letter-spacing: -0.02em;
+}
+
+.sub-headline {
+	font-family: var(--font-sans);
+	font-size: var(--text-xl);
+	font-weight: 400;
+	color: var(--text-secondary);
+	margin-bottom: 2.5rem;
+	letter-spacing: 0.02em;
+}
+
+.bio-text {
+	margin-bottom: 2.5rem;
+	max-width: 650px;
+
+	p {
+		font-family: var(--font-sans);
+		font-size: var(--text-lg);
+		line-height: 1.8; /* Increased line-height for badges */
+		color: var(--text-secondary);
+		margin-bottom: 1rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.text-bold {
+			color: var(--text-primary);
+			font-weight: 600;
+		}
+
+		.tool-badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.35rem;
+			padding: 0.15rem 0.5rem;
+			border: 1px solid #e0e0e0;
+			border-radius: 6px;
+			background: #fafafa;
+			font-size: 0.95rem;
+			font-weight: 600;
+			color: #333;
+			vertical-align: middle;
+			margin: 0 0.15rem;
+			transition: all 0.2s ease;
+			white-space: nowrap;
+
+			img {
+				width: 1rem;
+				height: 1rem;
+				border-radius: 2px;
+			}
+
+			&:hover {
+				background: #fff;
+				border-color: #bbb;
+				transform: translateY(-1px);
+				box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+			}
+		}
+	}
+}
+
+.action-buttons {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 2.5rem;
+	flex-wrap: wrap;
+
+	.btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.5rem;
+		border-radius: 8px;
+		font-weight: 500;
+		text-decoration: none;
+		font-size: 1rem;
+		transition: all 0.2s ease;
+
+		i {
+			font-size: 1.2rem;
+		}
+
+		&.btn-outline {
+			background: #fff;
+			border: 1px solid #ddd;
+			color: #333;
+
+			&:hover {
+				background: #f9f9f9;
+				border-color: #ccc;
+				transform: translateY(-1px);
+			}
+		}
+
+		&.btn-solid {
+			background: #111;
+			border: 1px solid #111;
+			color: #fff;
+
+			&:hover {
+				background: #333;
+				border-color: #333;
+				transform: translateY(-1px);
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+			}
+		}
+	}
+}
+
+.social-links {
+	display: flex;
+	gap: 1.5rem;
+	
+	a {
+		color: #999;
+		font-size: 1.5rem;
+		transition: color 0.2s ease, transform 0.2s ease;
+
+		&:hover {
+			color: #111;
+			transform: translateY(-2px);
+		}
+	}
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.headline {
+		font-size: 2.5rem;
+	}
+	
+	.sub-headline {
+		font-size: 1.1rem;
+	}
+	
+	.bio-text p {
+		font-size: 1.05rem;
+	}
+
+	.home-container {
+		padding-top: 2rem;
 	}
 }
 </style>

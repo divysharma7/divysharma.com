@@ -1,10 +1,12 @@
 
 <template>
 	<div class="cont" @mouseleave="hover = false">
-		<h2 class="title fancy">Projects</h2>
-		<p class="zero">
-			Okay, enough seriousness. Let's dive into the good stuff – the projects that make me tick! Think delightful user experiences and a sprinkle of creative chaos.
-		</p>
+		<div class="page-header">
+			<h1 class="page-title">Projects</h1>
+			<p class="page-subtitle">
+				Okay, enough seriousness. Let's dive into the good stuff – the projects that make me tick! Think delightful user experiences and a sprinkle of creative chaos.
+			</p>
+		</div>
 		<div class="bigproj">
 			<Project
 				name="Techno Conclave"
@@ -65,7 +67,12 @@
 
 <script>
 import SmlProj from '../assets/data/smlproj.js'
+import Project from '../components/project.vue'
+
 export default {
+	components: {
+		Project
+	},
 	data() {
 		return {
 			hover: false,
@@ -75,9 +82,47 @@ export default {
 }
 </script>
 
+<script setup>
+import { useHead } from '@vueuse/head'
+
+useHead({
+  title: 'Projects',
+  meta: [
+    { name: 'description', content: 'Explore my portfolio of projects in product management, development, and design. See what I\'ve built and shipped.' },
+    { property: 'og:title', content: 'Projects | Divy Sharma' },
+    { property: 'og:description', content: 'Showcase of my product and engineering projects.' }
+  ]
+})
+</script>
+
 <style scoped>
 .othsmlproj {
 	font-size: 1.75em;
+}
+
+/* ── Page Title ── */
+.page-header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.page-title {
+	font-size: var(--h1);
+	font-weight: 400;
+	color: var(--heading-color);
+	margin: 0;
+	letter-spacing: -0.02em;
+	line-height: 1.1;
+	font-family: var(--font-sans);
+}
+
+.page-subtitle {
+	font-size: var(--text-lg);
+	color: var(--text-muted);
+	margin: 16px auto 0;
+	max-width: 500px;
+	line-height: 1.6;
+	text-align: center;
 }
 .others {
 	margin-top: 3em;
@@ -113,7 +158,7 @@ export default {
 	margin-top: 3em;
 	margin-bottom: 3em;
 }
-@media (max-width: 750px) {
+@media (max-width: 768px) {
 	.grid {
 		display: grid;
 		grid-gap: 1.5em;

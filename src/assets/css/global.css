@@ -1,23 +1,72 @@
+/* ══════════════════════════════════════════
+   Design System — Single Source of Truth
+   ══════════════════════════════════════════ */
+
 :root {
+	/* ── Typography ── */
+	--font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+	--fontSans: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+	--text-xs: 0.75rem;
+	/* 12px */
+	--text-sm: 0.875rem;
+	/* 14px */
+	--text-base: 1rem;
+	/* 16px */
+	--text-lg: 1.125rem;
+	/* 18px */
+	--text-xl: 1.25rem;
+	/* 20px */
+	--h3: 1.5rem;
+	/* 24px */
+	--h2: 1.75rem;
+	/* 28px */
+	--h1: clamp(32px, 5vw, 48px);
+
+	/* ── Colors ── */
+	--text-primary: #111;
+	--text-secondary: #555;
+	--text-muted: #888;
+	--heading-color: #111;
+	--bg: rgb(255, 254, 248);
+	--card-bg: #f8f8f8;
+	--border: #e8e8e8;
+
+	/* ── Legacy (kept for backward compat) ── */
 	--c-bg: #fff;
 	--c-scrollbar: #bbb;
 	--c-scrollbar-hover: rgb(223, 223, 223);
 	--red-text: #6a788c;
 	--bg-color: #FFF3E6;
-	--fontSans: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+	/* ── Layout ── */
+	--container-max: 800px;
+	--container-padding: 1.5rem;
+	--page-top: 3rem;
 }
 
+/* ── Base Reset ── */
 body {
-	/* background: linear-gradient(99deg, #c3f8da8f, #ffffff, #f3daff75, #ffffff);
-	background-size: 800% 800%;
-	-webkit-animation: gradAnim 8s ease infinite;
-	-moz-animation: gradAnim 8s ease infinite;
-	-o-animation: gradAnim 8s ease infinite;
-	animation: gradAnim 8s ease infinite; */
-	background-color: rgb(255, 254, 248);
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: var(--bg);
+	color: var(--text-primary);
 }
 
+/* ── Typography Base ── */
+p {
+	line-height: 1.6;
+	color: var(--text-secondary);
+}
+
+strong {
+	font-weight: 600;
+}
+
+/* ── Legacy Classes (preserved) ── */
 .fancy {
 	font-family: "augillion" !important;
 	text-transform: lowercase;
@@ -30,12 +79,10 @@ body {
 	font-family: var(--fontSans) !important;
 }
 
-/* body {
-	background: radial-gradient( circle at 45% -20%, hsl(263, 53%, 20%), rgba(255, 255, 255, 0) 25%), radial-gradient( circle at 55% -20%, hsl(337, 47%, 25%), rgba(255, 255, 255, 0) 25%);
-} */
-
 .title {
+	margin: 0;
 	margin-bottom: 0.25em;
+	font-size: 2.5em;
 }
 
 .img {
@@ -59,48 +106,7 @@ body {
 	margin: 0;
 }
 
-@-webkit-keyframes gradAnim {
-	0% {
-		background-position: 0% 99%;
-	}
-
-	50% {
-		background-position: 100% 2%;
-	}
-
-	100% {
-		background-position: 0% 99%;
-	}
-}
-
-@-moz-keyframes gradAnim {
-	0% {
-		background-position: 0% 99%;
-	}
-
-	50% {
-		background-position: 100% 2%;
-	}
-
-	100% {
-		background-position: 0% 99%;
-	}
-}
-
-@-o-keyframes gradAnim {
-	0% {
-		background-position: 0% 99%;
-	}
-
-	50% {
-		background-position: 100% 2%;
-	}
-
-	100% {
-		background-position: 0% 99%;
-	}
-}
-
+/* ── Animations ── */
 @keyframes gradAnim {
 	0% {
 		background-position: 0% 99%;
@@ -115,17 +121,27 @@ body {
 	}
 }
 
+@-webkit-keyframes gradAnim {
+	0% {
+		background-position: 0% 99%;
+	}
+
+	50% {
+		background-position: 100% 2%;
+	}
+
+	100% {
+		background-position: 0% 99%;
+	}
+}
+
+/* ── Home Layout ── */
 .home {
 	display: flex;
 	flex-direction: column;
 	height: 90vh;
 	justify-content: center;
 	align-items: center;
-}
-
-.title {
-	margin: 0;
-	font-size: 2.5em;
 }
 
 .socials {
@@ -140,6 +156,7 @@ body {
 	opacity: 0.7;
 }
 
+/* ── Selection ── */
 ::selection {
 	color: #222;
 	background: rgba(119, 179, 247, 0.212);
@@ -150,10 +167,7 @@ body {
 	background: rgba(119, 179, 247, 0.212);
 }
 
-strong {
-	font-weight: 550;
-}
-
+/* ── Links ── */
 .yo {
 	display: flex;
 	justify-content: flex-start;
@@ -174,19 +188,7 @@ strong {
 	opacity: 90%;
 }
 
-@media (max-width: 750px) {
-
-	.none,
-	.anti {
-		display: none;
-	}
-}
-
-p {
-	line-height: 1.6em;
-	opacity: 0.9;
-}
-
+/* ── Selection / Scrollbar ── */
 .noselect,
 br,
 img,
@@ -230,6 +232,7 @@ button {
 	border: none;
 }
 
+/* ── Progress Bar ── */
 #nprogress {
 	pointer-events: none;
 }
@@ -245,14 +248,15 @@ button {
 	height: 2px;
 }
 
+/* ── Layout Containers ── */
 .center {
 	text-align: center;
 }
 
 .cont {
 	margin: 0 auto;
-	padding: 0 2em;
-	max-width: 41em;
+	padding: 0 var(--container-padding);
+	max-width: var(--container-max);
 }
 
 .navcont {
@@ -261,14 +265,15 @@ button {
 	max-width: 80%;
 }
 
-@media (max-width: 750px) {
+/* ── Mobile (unified at 768px) ── */
+@media (max-width: 768px) {
 	.navcont {
-		max-width: 41em;
+		max-width: var(--container-max);
 	}
 
-	p {
-		line-height: 1.75em;
-		opacity: 0.8;
+	.none,
+	.anti {
+		display: none;
 	}
 
 	.smltitle {
