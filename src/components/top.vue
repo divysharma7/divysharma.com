@@ -80,7 +80,7 @@ export default {
 	methods: {
 		getSongs() {
 			if (process.env.NODE_ENV == 'development') {
-				url = 'https://arhnapi.vercel.app/api/top-tracks'
+				url = 'https://divysharma-com.vercel.app/api/top-tracks'
 			} else {
 				url = '/api/top-tracks'
 			}
