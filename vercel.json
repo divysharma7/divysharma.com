@@ -5,6 +5,9 @@
 		},
 		"api/top-tracks.js": {
 			"maxDuration": 30
+		},
+		"api/health.js": {
+			"maxDuration": 10
 		}
 	},
 	"redirects": [
@@ -40,7 +43,7 @@
 		},
 		{
 			"source": "/:pathinfo*",
-			"destination": "index.html"
+			"destination": "/index.html"
 		}
 	],
 	"github": {
