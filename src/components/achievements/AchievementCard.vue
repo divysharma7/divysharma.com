@@ -236,7 +236,8 @@ const pillDotClass = computed(() => {
 
 .ach-thumb {
 	width: 100%;
-	height: 160px;
+	height: auto;
+	aspect-ratio: 4 / 3;
 	border-radius: 14px;
 	overflow: hidden;
 	border: 1px solid #eee;
@@ -246,7 +247,7 @@ const pillDotClass = computed(() => {
 .ach-thumb img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	object-fit: contain;
 }
 
 .ach-pdf-box,
