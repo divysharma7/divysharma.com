@@ -17,6 +17,14 @@ export const config = {
 }
 
 export default async (_) => {
+	if (process.env.ENABLE_SPOTIFY !== 'true') {
+		return jsonResponse({
+			tracks: [],
+			rateLimited: true,
+			message: 'Top tracks temporarily unavailable (Rate Limited)'
+		}, 3600)
+	}
+
 	if (Date.now() < cachedResponseExpiresAt && cachedResponse) {
 		return jsonResponse(cachedResponse)
 	}
