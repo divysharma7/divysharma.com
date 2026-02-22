@@ -10,40 +10,63 @@
 			"maxDuration": 10
 		}
 	},
-	"redirects": [
+	"routes": [
 		{
-			"source": "/spotify",
-			"destination": "https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji"
+			"src": "/spotify",
+			"status": 308,
+			"headers": {
+				"Location": "https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji"
+			}
 		},
 		{
-			"source": "/twitter",
-			"destination": "https://twitter.com/Divy_Sharma6"
+			"src": "/twitter",
+			"status": 308,
+			"headers": {
+				"Location": "https://twitter.com/Divy_Sharma6"
+			}
 		},
 		{
-			"source": "/twt",
-			"destination": "https://twitter.com/Divy_Sharma6"
+			"src": "/twt",
+			"status": 308,
+			"headers": {
+				"Location": "https://twitter.com/Divy_Sharma6"
+			}
 		},
 		{
-			"source": "/ig",
-			"destination": "https://www.instagram.com/divy.sharma9/"
+			"src": "/ig",
+			"status": 308,
+			"headers": {
+				"Location": "https://www.instagram.com/divy.sharma9/"
+			}
 		},
 		{
-			"source": "/instagram",
-			"destination": "https://www.instagram.com/divy.sharma9/"
-		}
-	],
-	"rewrites": [
-		{
-			"source": "/ponder/:match*",
-			"destination": "https://ponder.vercel.app/:match*"
+			"src": "/instagram",
+			"status": 308,
+			"headers": {
+				"Location": "https://www.instagram.com/divy.sharma9/"
+			}
 		},
 		{
-			"source": "/spotifyactivity/:match*",
-			"destination": "https://spotact-website.vercel.app/:match*"
+			"src": "/ponder/(.*)",
+			"dest": "https://ponder.vercel.app/$1"
 		},
 		{
-			"source": "/:pathinfo*",
-			"destination": "/index.html"
+			"src": "/spotifyactivity/(.*)",
+			"dest": "https://spotact-website.vercel.app/$1"
+		},
+		{
+			"src": "/api/(.*)",
+			"headers": {
+				"Access-Control-Allow-Credentials": "true",
+				"Access-Control-Allow-Origin": "*",
+				"Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+				"Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+			},
+			"continue": true
+		},
+		{
+			"src": "/(.*)",
+			"dest": "/index.html"
 		}
 	],
 	"github": {
@@ -52,28 +75,5 @@
 		"silent": true
 	},
 	"trailingSlash": false,
-	"public": false,
-	"headers": [
-		{
-			"source": "/api/(.*)",
-			"headers": [
-				{
-					"key": "Access-Control-Allow-Credentials",
-					"value": "true"
-				},
-				{
-					"key": "Access-Control-Allow-Origin",
-					"value": "*"
-				},
-				{
-					"key": "Access-Control-Allow-Methods",
-					"value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-				},
-				{
-					"key": "Access-Control-Allow-Headers",
-					"value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-				}
-			]
-		}
-	]
+	"public": false
 }
