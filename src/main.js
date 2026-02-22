@@ -8,8 +8,11 @@ import 'aos/dist/aos.css'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { createHead } from '@vueuse/head'
+import { injectSpeedInsights } from '@vercel/speed-insights'
 
 // import ContextMenu from '@imengyu/vue3-context-menu'
+
+injectSpeedInsights()
 
 const app = createApp(App)
 const head = createHead()
