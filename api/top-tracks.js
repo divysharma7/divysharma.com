@@ -1,6 +1,6 @@
-import { getTopTracks } from '../lib/top-tracks'
-var Filter = require('bad-words'),
-	filter = new Filter()
+import { getTopTracks } from '../lib/top-tracks.js'
+import Filter from 'bad-words'
+const filter = new Filter()
 
 var removeByAttr = function (arr, attr, value) {
 	var i = arr.length
@@ -17,7 +17,7 @@ var removeByAttr = function (arr, attr, value) {
 	return arr
 }
 
-export default async (_, res) => {
+export default async (_) => {
 	const response = await getTopTracks()
 	const { items } = await response.json()
 
@@ -30,7 +30,5 @@ export default async (_, res) => {
 	}))
 
 	// removeByAttr(tracks, 'title', 'Song Name')
-
-	// return res.status(200).json({ items })
-	return res.status(200).json({ tracks })
+	return Response.json({ tracks })
 }
