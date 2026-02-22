@@ -1,12 +1,10 @@
-			<!-- TODO: CHANGE THIS -->
-
 <template>
 	<main class="spotflex">
 		<a
 			target="_blank"
 			class="logo"
-			href="https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji"
-			title="Now listening"
+			href="https://open.spotify.com/user/divysharma7"
+			title="Spotify"
 			rel="noopener noreferrer"
 		>
 			<img src="@/assets/img/spotify.svg" alt="Spotify Icon" />
@@ -24,13 +22,25 @@
 					}}</span>
 				</a>
 			</h5>
+			<h5 v-else-if="spotify && spotify?.lastPlayed" class="title spotifytitle">
+				<a
+					rel="noopener noreferrer"
+					class="gray"
+					:href="spotify?.songUrl"
+					target="_blank"
+				>
+					<span :title="spotify?.title">{{
+						spotify?.cleanTitle || spotify?.title
+					}}</span>
+				</a>
+			</h5>
 			<h5 class="title not" v-else>
-				<a href="//open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji" target="_blank"
+				<a href="//open.spotify.com/user/divysharma7" target="_blank"
 					>Spotify &mdash; Not playing</a
 				>
 			</h5>
-			<h5 v-if="spotify" class="artist spotifytitle">
-				<span v-if="spotify?.isPlaying" :title="spotify?.artist || 'Unknown'">{{
+			<h5 v-if="spotify && (spotify?.isPlaying || spotify?.lastPlayed)" class="artist spotifytitle">
+				<span :title="spotify?.artist || 'Unknown'">{{
 					spotify?.artist || 'Unknown'
 				}}</span>
 			</h5>
@@ -39,10 +49,10 @@
 </template>
 
 <script>
-import useSWRV from 'swrv'
-var url = ''
+import axios from 'axios'
 
-if (process.env.NODE_ENV == 'development') {
+var url = ''
+if (import.meta.env.DEV) {
 	url = 'https://divysharma-com.vercel.app/api/spotify'
 } else {
 	url = '/api/spotify'
@@ -54,13 +64,18 @@ export default {
 			spotify: false
 		}
 	},
-
-	setup() {
-		const { data, error } = useSWRV(url, undefined, { refreshInterval: 1000 })
-
-		return {
-			spotify: data,
-			error
+	mounted() {
+		this.fetchData()
+		setInterval(this.fetchData, 2000)
+	},
+	methods: {
+		async fetchData() {
+			try {
+				const response = await axios.get(url)
+				this.spotify = response.data
+			} catch (error) {
+				console.error('Error fetching Spotify data:', error)
+			}
 		}
 	}
 }
@@ -79,6 +94,15 @@ export default {
 
 .green {
 	color: rgb(6, 124, 85);
+}
+a[href].green:hover {
+	background-color: rgba(210, 255, 221, 0.562);
+}
+.gray {
+	color: #888;
+}
+a[href].gray:hover {
+	background-color: rgba(200, 200, 200, 0.25);
 }
 .artist {
 	font-size: 0.9em;
@@ -100,9 +124,7 @@ export default {
 a {
 	transition: 0.3s;
 }
-a[href].green:hover {
-	background-color: rgba(210, 255, 221, 0.562);
-}
+
 
 .spotflex {
 	display: flex;
