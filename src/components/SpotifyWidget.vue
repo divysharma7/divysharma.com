@@ -1,7 +1,7 @@
 <template>
 	<div class="spotify-widget" v-if="enabled">
 		<div class="icon-wrapper">
-			<img v-if="isPlaying" :src="coverUrl" alt="Album Art" class="album-art spin" />
+			<img v-if="isPlaying || lastPlayed" :src="coverUrl" alt="Album Art" class="album-art" :class="{ spin: isPlaying }" />
 			<div v-else class="placeholder-icon">
 				<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="#1DB954"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141 4.2-1.32 9.6-.66 13.38 1.68.42.18.6.72.36 1.141zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.38 4.2-1.26 11.28-1.02 14.52 1.02.54.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.24z"/></svg>
 			</div>
@@ -9,9 +9,10 @@
 		<div class="info">
 			<div class="status">
 				<span v-if="isPlaying" class="playing-text">Now Playing</span>
+				<span v-else-if="lastPlayed" class="idle-text">Last Played</span>
 				<span v-else class="idle-text">Not Playing</span>
 			</div>
-			<div v-if="isPlaying" class="track-info">
+			<div v-if="isPlaying || lastPlayed" class="track-info">
 				<a :href="spotifyUrl" target="_blank" rel="noopener" class="track-name">{{ track }}</a>
 				<span class="artist-name">by {{ artist }}</span>
 			</div>
@@ -27,6 +28,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 
 const enabled = ref(true) // Can be controlled by env var logic if needed
 const isPlaying = ref(false)
+const lastPlayed = ref(false)
 const track = ref('')
 const artist = ref('')
 const coverUrl = ref('')
@@ -43,12 +45,21 @@ const fetchNowPlaying = async () => {
 		const data = await res.json()
 		if (data.isPlaying) {
 			isPlaying.value = true
+			lastPlayed.value = false
+			track.value = data.title
+			artist.value = data.artist
+			coverUrl.value = data.albumImageUrl
+			spotifyUrl.value = data.songUrl
+		} else if (data.lastPlayed) {
+			isPlaying.value = false
+			lastPlayed.value = true
 			track.value = data.title
 			artist.value = data.artist
 			coverUrl.value = data.albumImageUrl
 			spotifyUrl.value = data.songUrl
 		} else {
 			isPlaying.value = false
+			lastPlayed.value = false
 		}
 	} catch (e) {
 		console.error('Error fetching Spotify data', e)
