@@ -11,7 +11,7 @@
 			this month
 		</p>
 
-		<div v-if="songs">
+		<div v-if="songs && songs.length > 0">
 			<div
 				v-for="(song, index) in songs.slice(0, 5)"
 				:key="song.songUrl"
@@ -37,6 +37,13 @@
 						</div>
 					</div>
 				</a>
+			</div>
+		</div>
+		<div v-else-if="songs && songs.length === 0">
+			<div class="song">
+				<p style="opacity: 0.7; margin: 1em 0;">
+					<em>Top tracks temporarily unavailable (Spotify API rate limit). Please check back later!</em>
+				</p>
 			</div>
 		</div>
 		<div v-else>
@@ -79,17 +86,17 @@ export default {
 	},
 	methods: {
 		getSongs() {
-			if (process.env.NODE_ENV == 'development') {
-				url = 'https://divysharma-com.vercel.app/api/top-tracks'
-			} else {
-				url = '/api/top-tracks'
-			}
+			url = '/api/top-tracks'
 			axios
 				.get(url)
 				.then((res) => {
 					this.songs = res.data.tracks
+					console.log('Top Tracks:', this.songs)
 				})
-				.catch((err) => console.log(err))
+				.catch((err) => {
+					console.log('Error fetching top tracks:', err)
+					this.songs = []
+				})
 		},
 		getRandom(min, max) {
 			return Math.floor(Math.random() * (max - min)) + min

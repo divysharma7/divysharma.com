@@ -1,32 +1,70 @@
 import { getTopTracks } from '../lib/top-tracks.js'
 
-var removeByAttr = function (arr, attr, value) {
-	var i = arr.length
-	while (i--) {
-		if (
-			arr[i] &&
-			arr[i].hasOwnProperty(attr) &&
-			arguments.length > 2 &&
-			arr[i][attr] === value
-		) {
-			arr.splice(i, 1)
-		}
-	}
-	return arr
-}
+const TOP_TRACKS_CACHE_TTL_MS = 60_000
+let cachedResponse = null
+let cachedResponseExpiresAt = 0
 
 export default async (_) => {
-	const response = await getTopTracks()
-	const { items } = await response.json()
+	if (Date.now() < cachedResponseExpiresAt && cachedResponse) {
+		return Response.json(cachedResponse)
+	}
 
-	const tracks = items.slice(0, 10).map((track) => ({
-		artist: track.artists.map((_artist) => _artist.name).join(', '),
-		songUrl: track?.external_urls?.spotify,
-		title: track?.name,
-		albumArt: track?.album?.images[0].url,
-		cleanTitle: track?.name
-	}))
+	try {
+		const response = await getTopTracks()
 
-	// removeByAttr(tracks, 'title', 'Song Name')
-	return Response.json({ tracks })
+		if (!response.ok) {
+			const body = await response.text()
+			console.error(`[api/top-tracks] Spotify API ${response.status}: ${body}`)
+
+			if (cachedResponse) {
+				return Response.json({
+					...cachedResponse,
+					stale: true,
+					rateLimited: response.status === 429
+				})
+			}
+
+			const data = {
+				tracks: [],
+				rateLimited: response.status === 429,
+				message: 'Top tracks temporarily unavailable'
+			}
+			cachedResponse = data
+			cachedResponseExpiresAt = Date.now() + TOP_TRACKS_CACHE_TTL_MS
+
+			return Response.json(data)
+		}
+
+		const payload = await response.json().catch(() => null)
+		const items = Array.isArray(payload?.items) ? payload.items : []
+
+		const tracks = items.slice(0, 10).map((track) => ({
+			artist: track?.artists?.map((_artist) => _artist.name).join(', ') || 'Unknown',
+			songUrl: track?.external_urls?.spotify || '',
+			title: track?.name || '',
+			albumArt: track?.album?.images?.[0]?.url || '',
+			cleanTitle: track?.name || ''
+		}))
+
+		const data = { tracks }
+		cachedResponse = data
+		cachedResponseExpiresAt = Date.now() + TOP_TRACKS_CACHE_TTL_MS
+
+		return Response.json(data)
+	} catch (error) {
+		console.error('[api/top-tracks] Unexpected error:', error)
+
+		if (cachedResponse) {
+			return Response.json({ ...cachedResponse, stale: true })
+		}
+
+		const data = {
+			tracks: [],
+			message: 'Top tracks temporarily unavailable'
+		}
+		cachedResponse = data
+		cachedResponseExpiresAt = Date.now() + TOP_TRACKS_CACHE_TTL_MS
+
+		return Response.json(data)
+	}
 }

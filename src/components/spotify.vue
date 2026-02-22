@@ -51,22 +51,23 @@
 <script>
 import axios from 'axios'
 
-var url = ''
-if (import.meta.env.DEV) {
-	url = 'https://divysharma-com.vercel.app/api/spotify'
-} else {
-	url = '/api/spotify'
-}
+var url = '/api/spotify'
 
 export default {
 	data() {
 		return {
-			spotify: false
+			spotify: false,
+			pollTimer: null
 		}
 	},
 	mounted() {
 		this.fetchData()
-		setInterval(this.fetchData, 2000)
+		this.pollTimer = setInterval(() => this.fetchData(), 30000)
+	},
+	unmounted() {
+		if (this.pollTimer) {
+			clearInterval(this.pollTimer)
+		}
 	},
 	methods: {
 		async fetchData() {

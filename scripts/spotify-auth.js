@@ -1,11 +1,19 @@
 import express from 'express';
 import axios from 'axios';
 import { exec } from 'child_process';
+import dotenv from 'dotenv';
 
-const client_id = '241bfbbc9ef64ceba42a8aa0217c6320'.trim();
-const client_secret = 'ee37794e46f6442f87fba77aed59cc48'.trim();
-const redirect_uri = 'http://127.0.0.1:3000';
+dotenv.config({ path: '.env.local' });
+
+const client_id = process.env.SPOTIFY_CLIENT_ID?.trim();
+const client_secret = process.env.SPOTIFY_CLIENT_SECRET?.trim();
+const redirect_uri = process.env.SPOTIFY_REDIRECT_URI?.trim() || 'http://127.0.0.1:3000';
 const scope = 'user-read-currently-playing user-read-recently-played user-top-read';
+
+if (!client_id || !client_secret) {
+	console.error('\x1b[31m%s\x1b[0m', 'Missing SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET in .env.local');
+	process.exit(1);
+}
 
 const app = express();
 const port = 3000;
