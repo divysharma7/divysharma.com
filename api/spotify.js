@@ -1,6 +1,4 @@
 import { getNowPlaying, getRecentlyPlayed } from '../lib/spotify.js'
-import { Filter } from 'bad-words'
-const filter = new Filter()
 
 export default async (_) => {
 	if (process.env.ENABLE_SPOTIFY == 'true') {
@@ -25,7 +23,7 @@ export default async (_) => {
 			const title = song?.item.name
 			const artist = song?.item.artists.map((_artist) => _artist.name).join(', ')
 			const album = song?.item.album.name
-			const cleanTitle = filter.clean(song?.item.name || '')
+			const cleanTitle = title
 			if (song?.item.album.images.length > 0) {
 				albumImageUrl = song?.item?.album?.images[0]?.url
 			}
@@ -63,7 +61,7 @@ export default async (_) => {
 					.map((_artist) => _artist.name)
 					.join(', ')
 				const album = recentSong.album.name
-				const cleanTitle = filter.clean(recentSong.name || '')
+				const cleanTitle = title
 				const albumImageUrl = recentSong.album.images[0]?.url
 				const songUrl = recentSong.external_urls.spotify
 

@@ -1,6 +1,4 @@
 import { getTopTracks } from '../lib/top-tracks.js'
-import { Filter } from 'bad-words'
-const filter = new Filter()
 
 var removeByAttr = function (arr, attr, value) {
 	var i = arr.length
@@ -26,7 +24,7 @@ export default async (_) => {
 		songUrl: track?.external_urls?.spotify,
 		title: track?.name,
 		albumArt: track?.album?.images[0].url,
-		cleanTitle: filter.clean(track?.name || '')
+		cleanTitle: track?.name
 	}))
 
 	// removeByAttr(tracks, 'title', 'Song Name')
