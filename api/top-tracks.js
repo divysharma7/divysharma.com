@@ -1,5 +1,5 @@
 import { getTopTracks } from '../lib/top-tracks.js'
-import Filter from 'bad-words'
+import { Filter } from 'bad-words'
 const filter = new Filter()
 
 var removeByAttr = function (arr, attr, value) {

@@ -1,5 +1,5 @@
 import { getNowPlaying, getRecentlyPlayed } from '../lib/spotify.js'
-import Filter from 'bad-words'
+import { Filter } from 'bad-words'
 const filter = new Filter()
 
 export default async (_) => {
