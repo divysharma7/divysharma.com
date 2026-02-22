@@ -1,12 +1,20 @@
 import { getNowPlayingAndRecent } from '../lib/spotify.js'
 
-const SPOTIFY_CACHE_TTL_MS = 15_000
+const SPOTIFY_CACHE_TTL_MS = 60_000
 let cachedResponse = null
 let cachedResponseExpiresAt = 0
 
-const setCachedResponse = (data) => {
+const jsonResponse = (data, cacheSecs = 60) => {
+	return Response.json(data, {
+		headers: {
+			'Cache-Control': `public, max-age=${Math.min(120, cacheSecs)}, s-maxage=${cacheSecs}, stale-while-revalidate=${cacheSecs}`
+		}
+	})
+}
+
+const setCachedResponse = (data, ttlMs = SPOTIFY_CACHE_TTL_MS) => {
 	cachedResponse = data
-	cachedResponseExpiresAt = Date.now() + SPOTIFY_CACHE_TTL_MS
+	cachedResponseExpiresAt = Date.now() + ttlMs
 	return data
 }
 
@@ -45,16 +53,20 @@ const mapRecentlyPlayedSong = (recentSong) => {
 	}
 }
 
+export const config = {
+	runtime: 'edge'
+}
+
 export default async (_) => {
 	if (process.env.ENABLE_SPOTIFY !== 'true') {
-		return Response.json({
+		return jsonResponse({
 			isPlaying: false,
 			message: 'Spotify feature is disabled (check the ENABLE_SPOTIFY environment variable)'
-		})
+		}, 3600)
 	}
 
 	if (Date.now() < cachedResponseExpiresAt && cachedResponse) {
-		return Response.json(cachedResponse)
+		return jsonResponse(cachedResponse)
 	}
 
 	try {
@@ -65,7 +77,7 @@ export default async (_) => {
 		if (nowPlaying.ok && nowPlaying.status !== 204) {
 			const song = await getSafeJson(nowPlaying)
 			if (song?.is_playing) {
-				return Response.json(setCachedResponse(mapNowPlayingSong(song)))
+				return jsonResponse(setCachedResponse(mapNowPlayingSong(song)))
 			}
 		}
 
@@ -74,29 +86,39 @@ export default async (_) => {
 			const recentSong = recentData?.items?.[0]?.track
 
 			if (recentSong) {
-				return Response.json(setCachedResponse(mapRecentlyPlayedSong(recentSong)))
+				return jsonResponse(setCachedResponse(mapRecentlyPlayedSong(recentSong)))
 			}
 		}
 
 		if (nowPlaying.status === 429 || recentlyPlayed.status === 429) {
+			const delay1 = parseInt(nowPlaying.headers?.get?.('retry-after') || nowPlaying.headers?.get?.('Retry-After') || '120', 10)
+			const delay2 = parseInt(recentlyPlayed.headers?.get?.('retry-after') || recentlyPlayed.headers?.get?.('Retry-After') || '120', 10)
+			const retryAfter = Math.max(delay1, delay2)
+
+			console.log(`[api/spotify] 429 Rate Limit. Parsed Retry-After: delay1=${delay1}s, delay2=${delay2}s. Combined: ${retryAfter}s`)
+
 			if (cachedResponse) {
-				return Response.json({
-					...cachedResponse,
-					stale: true,
-					rateLimited: true
-				})
+				return jsonResponse(
+					setCachedResponse({
+						...cachedResponse,
+						stale: true,
+						rateLimited: true
+					}, retryAfter * 1000),
+					retryAfter
+				)
 			}
 
-			return Response.json(
+			return jsonResponse(
 				setCachedResponse({
 					isPlaying: false,
 					rateLimited: true,
 					message: 'Spotify API rate limit reached. Please retry shortly.'
-				})
+				}, retryAfter * 1000),
+				retryAfter
 			)
 		}
 
-		return Response.json(
+		return jsonResponse(
 			setCachedResponse({
 				isPlaying: false,
 				message: 'No song playing currently and no history found'
@@ -106,13 +128,13 @@ export default async (_) => {
 		console.error('[api/spotify.js] Unexpected error:', error)
 
 		if (cachedResponse) {
-			return Response.json({
+			return jsonResponse({
 				...cachedResponse,
 				stale: true
 			})
 		}
 
-		return Response.json({
+		return jsonResponse({
 			isPlaying: false,
 			message: 'Unable to fetch Spotify data right now'
 		})

@@ -1,11 +1,5 @@
 {
 	"functions": {
-		"api/spotify.js": {
-			"maxDuration": 30
-		},
-		"api/top-tracks.js": {
-			"maxDuration": 30
-		},
 		"api/health.js": {
 			"maxDuration": 10
 		}

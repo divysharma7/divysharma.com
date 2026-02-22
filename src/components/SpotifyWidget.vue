@@ -69,7 +69,11 @@ const fetchNowPlaying = async () => {
 
 onMounted(() => {
 	fetchNowPlaying()
-	intervalId = setInterval(fetchNowPlaying, 30000) // Poll every 30s
+	intervalId = setInterval(() => {
+		if (document.visibilityState === 'visible') {
+			fetchNowPlaying()
+		}
+	}, 60000) // Poll every 60s only if tab is visible
 })
 
 onUnmounted(() => {

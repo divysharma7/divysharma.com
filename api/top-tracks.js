@@ -4,9 +4,21 @@ const TOP_TRACKS_CACHE_TTL_MS = 60_000
 let cachedResponse = null
 let cachedResponseExpiresAt = 0
 
+const jsonResponse = (data, cacheSecs = 3600) => {
+	return Response.json(data, {
+		headers: {
+			'Cache-Control': `public, max-age=${Math.min(300, cacheSecs)}, s-maxage=${cacheSecs}, stale-while-revalidate=${cacheSecs}`
+		}
+	})
+}
+
+export const config = {
+	runtime: 'edge'
+}
+
 export default async (_) => {
 	if (Date.now() < cachedResponseExpiresAt && cachedResponse) {
-		return Response.json(cachedResponse)
+		return jsonResponse(cachedResponse)
 	}
 
 	try {
@@ -16,12 +28,20 @@ export default async (_) => {
 			const body = await response.text()
 			console.error(`[api/top-tracks] Spotify API ${response.status}: ${body}`)
 
+			let retryAfter = 300
+			if (response.status === 429) {
+				const headerVal = response.headers?.get?.('retry-after') || response.headers?.get?.('Retry-After') || '120'
+				retryAfter = parseInt(headerVal, 10)
+				console.log(`[api/top-tracks] 429 Rate Limit. Retry-After header: ${headerVal} -> parsed: ${retryAfter}s`)
+			}
+
 			if (cachedResponse) {
-				return Response.json({
+				cachedResponseExpiresAt = Date.now() + retryAfter * 1000
+				return jsonResponse({
 					...cachedResponse,
 					stale: true,
 					rateLimited: response.status === 429
-				})
+				}, retryAfter)
 			}
 
 			const data = {
@@ -30,9 +50,9 @@ export default async (_) => {
 				message: 'Top tracks temporarily unavailable'
 			}
 			cachedResponse = data
-			cachedResponseExpiresAt = Date.now() + TOP_TRACKS_CACHE_TTL_MS
+			cachedResponseExpiresAt = Date.now() + retryAfter * 1000
 
-			return Response.json(data)
+			return jsonResponse(data, retryAfter)
 		}
 
 		const payload = await response.json().catch(() => null)
@@ -50,12 +70,12 @@ export default async (_) => {
 		cachedResponse = data
 		cachedResponseExpiresAt = Date.now() + TOP_TRACKS_CACHE_TTL_MS
 
-		return Response.json(data)
+		return jsonResponse(data)
 	} catch (error) {
 		console.error('[api/top-tracks] Unexpected error:', error)
 
 		if (cachedResponse) {
-			return Response.json({ ...cachedResponse, stale: true })
+			return jsonResponse({ ...cachedResponse, stale: true }, 60)
 		}
 
 		const data = {
@@ -65,6 +85,6 @@ export default async (_) => {
 		cachedResponse = data
 		cachedResponseExpiresAt = Date.now() + TOP_TRACKS_CACHE_TTL_MS
 
-		return Response.json(data)
+		return jsonResponse(data, 60)
 	}
 }
