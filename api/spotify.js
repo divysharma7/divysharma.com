@@ -1,16 +1,16 @@
-import { getNowPlaying, getRecentlyPlayed } from '../lib/spotify.js'
+import { getNowPlayingAndRecent } from '../lib/spotify.js'
 
 export default async (_) => {
 	if (process.env.ENABLE_SPOTIFY == 'true') {
-		const response = await getNowPlaying()
+		// Fetch now-playing and recently-played in parallel (single token call)
+		const { nowPlaying, recentlyPlayed } = await getNowPlayingAndRecent()
+
 		let isPlaying = false
 		let song = null
 
-		if (response.status === 204 || response.status > 400) {
-			isPlaying = false
-		} else {
+		if (nowPlaying.status !== 204 && nowPlaying.status <= 400) {
 			try {
-				song = await response.json()
+				song = await nowPlaying.json()
 				isPlaying = song?.is_playing
 			} catch (e) {
 				isPlaying = false
@@ -41,25 +41,18 @@ export default async (_) => {
 				cleanTitle
 			})
 		} else {
-			console.log('No song playing, checking recently played...')
-			const recentlyPlayed = await getRecentlyPlayed()
-			console.log('Recently played status:', recentlyPlayed.status)
-
+			// Use the already-fetched recentlyPlayed response
 			if (recentlyPlayed.status === 204 || recentlyPlayed.status > 400) {
-				console.error('Error or no content from recently played endpoint')
 				return Response.json({ isPlaying: false })
 			}
 
 			const data = await recentlyPlayed.json()
-			console.log('Recently played data:', JSON.stringify(data))
 
 			if (data && data.items && data.items.length > 0) {
 				const recentSong = data.items[0].track
 
 				const title = recentSong.name
-				const artist = recentSong.artists
-					.map((_artist) => _artist.name)
-					.join(', ')
+				const artist = recentSong.artists.map((_artist) => _artist.name).join(', ')
 				const album = recentSong.album.name
 				const cleanTitle = title
 				const albumImageUrl = recentSong.album.images[0]?.url
@@ -76,7 +69,6 @@ export default async (_) => {
 					lastPlayed: true
 				})
 			} else {
-				console.log('No recently played history found')
 				return Response.json({
 					isPlaying: false,
 					message: 'No song playing currently and no history found'

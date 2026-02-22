@@ -1,7 +1,13 @@
-
 {
+	"functions": {
+		"api/spotify.js": {
+			"maxDuration": 30
+		},
+		"api/top-tracks.js": {
+			"maxDuration": 30
+		}
+	},
 	"redirects": [
-		
 		{
 			"source": "/spotify",
 			"destination": "https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji"
@@ -10,8 +16,14 @@
 			"source": "/twitter",
 			"destination": "https://twitter.com/Divy_Sharma6"
 		},
-		{ "source": "/twt", "destination": "https://twitter.com/Divy_Sharma6" },
-		{ "source": "/ig", "destination": "https://www.instagram.com/divy.sharma9/" },
+		{
+			"source": "/twt",
+			"destination": "https://twitter.com/Divy_Sharma6"
+		},
+		{
+			"source": "/ig",
+			"destination": "https://www.instagram.com/divy.sharma9/"
+		},
 		{
 			"source": "/instagram",
 			"destination": "https://www.instagram.com/divy.sharma9/"
@@ -26,7 +38,10 @@
 			"source": "/spotifyactivity/:match*",
 			"destination": "https://spotact-website.vercel.app/:match*"
 		},
-		{ "source": "/:pathinfo*", "destination": "index.html" }
+		{
+			"source": "/:pathinfo*",
+			"destination": "index.html"
+		}
 	],
 	"github": {
 		"autoAlias": true,
@@ -39,8 +54,14 @@
 		{
 			"source": "/api/(.*)",
 			"headers": [
-				{ "key": "Access-Control-Allow-Credentials", "value": "true" },
-				{ "key": "Access-Control-Allow-Origin", "value": "*" },
+				{
+					"key": "Access-Control-Allow-Credentials",
+					"value": "true"
+				},
+				{
+					"key": "Access-Control-Allow-Origin",
+					"value": "*"
+				},
 				{
 					"key": "Access-Control-Allow-Methods",
 					"value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
