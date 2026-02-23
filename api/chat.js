@@ -1,18 +1,12 @@
-import { Configuration, OpenAIApi } from 'openai-edge'
-import { OpenAIStream, StreamingTextResponse } from 'ai'
+import { openai } from '@ai-sdk/openai'
+import { streamText } from 'ai'
 import { projects } from '../src/data/projects.js'
 import { experiences } from '../src/data/experience.js'
 import { about } from '../src/data/profile.js'
 
-// Configure OpenAI
-const config = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY
-})
-const openai = new OpenAIApi(config)
-
-// Vercel Edge Runtime (optional, but faster)
-// Vercel Serverless Function (Node.js)
-// Removing edge runtime to support local file imports and standard modules
+export const config = {
+    runtime: 'edge'
+}
 
 function generateSystemPrompt() {
     const skillNames = about.skills.map((skill) => skill.name).join(', ')
@@ -23,7 +17,7 @@ function generateSystemPrompt() {
     const experienceText = experiences
         .map(
             (exp) =>
-                `${exp.role} at ${exp.company} (${exp.period}) - ${exp.achievements.join('. ')}`
+                `${exp.role} at ${exp.company} (${exp.period}) - ${(exp.achievements || []).join('. ')}`
         )
         .join('\n- ')
 
@@ -76,19 +70,14 @@ export default async function handler(req) {
     try {
         const { messages } = await req.json()
 
-        const response = await openai.createChatCompletion({
-            model: 'gpt-3.5-turbo',
-            stream: true,
-            messages: [
-                { role: 'system', content: systemPrompt },
-                ...messages
-            ],
+        const result = streamText({
+            model: openai('gpt-3.5-turbo'),
+            system: systemPrompt,
+            messages,
             temperature: 0.7
         })
 
-        const stream = OpenAIStream(response)
-        return new StreamingTextResponse(stream)
-
+        return result.toTextStreamResponse()
     } catch (error) {
         console.error('Chat API Error:', error)
         return new Response(JSON.stringify({ error: 'Error processing chat request' }), {
