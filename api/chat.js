@@ -5,7 +5,7 @@ import { experiences } from '../src/data/experience.js'
 import { about } from '../src/data/profile.js'
 
 const google = createGoogleGenerativeAI({
-    apiKey: 'AIzaSyBWcBdc1PtPUuPdIKGg0pETWOtytBbZwLo'
+    apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY || ''
 });
 
 export const config = {
