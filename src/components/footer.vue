@@ -11,6 +11,7 @@
 						href="https://twitter.com/Divy_Sharma6"
 						rel="noopener noreferrer"
 						target="_blank"
+						@click="trackOutbound('twitter', 'https://twitter.com/Divy_Sharma6', { location: 'footer' })"
 					>
 						<bx-bxl-twitter />
 					</a>
@@ -18,6 +19,7 @@
 						href="https://www.instagram.com/divy.sharma9/"
 						rel="noopener noreferrer"
 						target="_blank"
+						@click="trackOutbound('instagram', 'https://www.instagram.com/divy.sharma9/', { location: 'footer' })"
 					>
 						<carbon-logo-instagram />
 					</a>
@@ -25,6 +27,7 @@
 						href="https://github.com/divysharma7"
 						rel="noopener noreferrer"
 						target="_blank"
+						@click="trackOutbound('github', 'https://github.com/divysharma7', { location: 'footer' })"
 					>
 						<carbon-logo-github />
 					</a>
@@ -32,6 +35,7 @@
 						href="https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji"
 						rel="noopener noreferrer"
 						target="_blank"
+						@click="trackOutbound('spotify', 'https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji', { location: 'footer' })"
 					>
 						<bx-bxl-spotify />
 					</a>
@@ -40,6 +44,7 @@
 						href="https://www.linkedin.com/in/divy-sharma-243748216/"
 						target="_blank"
 						rel="noopener noreferrer"
+						@click="trackOutbound('linkedin', 'https://www.linkedin.com/in/divy-sharma-243748216/', { location: 'footer' })"
 					>
 						<carbon-logo-linkedin />
 					</a>
@@ -48,6 +53,7 @@
 						href="https://www.behance.net/divysharma3"
 						target="_blank"
 						rel="noopener noreferrer"
+						@click="trackOutbound('behance', 'https://www.behance.net/divysharma3', { location: 'footer' })"
 					>
 						<bx-bxl-behance />
 					</a>
@@ -56,6 +62,7 @@
 						href="mailto:divysharma029@gmail.com"
 						rel="noopener noreferrer"
 						target="_blank"
+						@click="trackOutbound('email', 'mailto:divysharma029@gmail.com', { location: 'footer' })"
 					>
 						<bx-bx-mail-send />
 					</a>
@@ -64,6 +71,10 @@
 		</div>
 	</div>
 </template>
+
+<script setup>
+import { trackOutbound } from '@/analytics/umami'
+</script>
 
 <style scoped>
 .flexfoot {

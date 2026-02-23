@@ -44,6 +44,7 @@
 				rel="noopener noreferrer"
 				href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing"
 				target="_blank"
+				@click="trackEvent('resume:download', { location: 'explore' })"
 			>
 				<div id="organ" class="coolbox">
 					<div class="flexbox">
@@ -116,6 +117,7 @@ import { useHead } from '@vueuse/head'
 import Top from '../components/top.vue'
 import Website from "../components/website.vue"
 import Contact from "../components/ContactForm.vue"
+import { trackEvent, trackOutbound } from '@/analytics/umami'
 
 useHead({
   title: 'Explore',

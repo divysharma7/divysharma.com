@@ -534,7 +534,7 @@ select:focus-visible {
   position: absolute;
   left: 14px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-90%);
   color: #9ca3af;
   pointer-events: none;
   transition: color 0.15s ease;
@@ -546,7 +546,7 @@ select:focus-visible {
 
 .search-input {
   width: 100%;
-  padding: 0 2.5rem 0 2.5rem;
+  padding: 0 2.5rem 0 3rem;
   height: 52px; /* Taller touch target */
   border: 1px solid #e5e7eb;
   border-radius: 8px;

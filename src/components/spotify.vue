@@ -2,7 +2,7 @@
 	<main class="spotflex">
 		<a
 			target="_blank"
-			class="logo"
+			class="spot-logo"
 			href="https://open.spotify.com/user/divysharma7"
 			title="Spotify"
 			rel="noopener noreferrer"
@@ -142,7 +142,7 @@ a {
 	margin: 0;
 }
 
-.logo {
+.spot-logo {
 	margin: 0;
 	margin-right: 0.5em;
 }

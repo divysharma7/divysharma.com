@@ -9,6 +9,7 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { createHead } from '@vueuse/head'
 import { injectSpeedInsights } from '@vercel/speed-insights'
+import { loadUmamiScript, trackPage } from './analytics/umami'
 
 // import ContextMenu from '@imengyu/vue3-context-menu'
 
@@ -39,4 +40,19 @@ app.use(head)
 // app.use(ContextMenu)
 
 app.use(router)
-app.mount('#app')
+
+router.isReady().then(async () => {
+    await loadUmamiScript()
+
+    // Track the initial view
+    trackPage(router.currentRoute.value.fullPath, document.title)
+
+    // Track subsequent SPA navigations
+    router.afterEach(async (to) => {
+        // Wait for document.title updates by Vue/head
+        await new Promise(resolve => setTimeout(resolve, 50))
+        trackPage(to.fullPath, document.title)
+    })
+
+    app.mount('#app')
+})

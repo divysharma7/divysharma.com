@@ -1,6 +1,6 @@
 <template>
 	<div data-aos="fade-up" data-aos-duration="500" class="project noselect">
-		<a rel="noopener noreferrer" v-if="!intlink" class="link" :href="link" target="_blank">
+		<a rel="noopener noreferrer" v-if="!intlink" class="link" :href="link" target="_blank" @click="trackEvent('project:open', { name, type: 'external' })">
 			<div class="card">
 				<img loading="lazy" class="img" :alt="name" :src="img" />
 				<div class="info">
@@ -12,7 +12,7 @@
 			</div>
 		</a>
 
-		<router-link v-else class="link" :to="link">
+		<router-link v-else class="link" :to="link" @click.native="trackEvent('project:open', { name, type: 'internal' })">
 			<div class="card">
 				<img loading="lazy" class="img" :alt="name" :src="img" />
 				<div class="info">
@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import { trackEvent } from '@/analytics/umami'
+
 export default {
 	props: {
 		name: String,
@@ -40,6 +42,9 @@ export default {
 			title: this.$props.name,
 			desc: this.$props.description
 		}
+	},
+	methods: {
+		trackEvent
 	}
 }
 </script>

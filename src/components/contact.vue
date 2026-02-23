@@ -151,7 +151,8 @@ button.cool {
 	transition: 0.3s;
 	letter-spacing: 0;
 	font-size: 0.9em;
-	width: 100%;
+	width: fit-content;
+	padding: 0.75em 2em;
 	font-size: 1em;
 }
 

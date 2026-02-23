@@ -28,6 +28,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { trackEvent } from '@/analytics/umami'
 
 const form = ref({
 	name: '',
@@ -62,6 +63,7 @@ const submitForm = async () => {
 		await new Promise(resolve => setTimeout(resolve, 1000))
 		
 		success.value = true
+    trackEvent('contact:message_sent', { location: 'contact_form' })
 		form.value = { name: '', email: '', message: '' }
 	} catch (e) {
 		error.value = "Something went wrong. Please try again later."
@@ -138,12 +140,14 @@ const submitForm = async () => {
 		background: #ffeadd; /* Peach color from reference */
 		color: #a85a32; /* Darker orange/brown text */
 		border: none;
-		padding: 0.75rem 2rem;
+		/* padding: 0.75rem 2rem; */
 		border-radius: 4px;
-		font-weight: 400;
+		font-weight: 500;
 		cursor: pointer;
-		font-size: 1rem;
-		transition: opacity 0.2s;
+		font-size: 0.95rem;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		transition: opacity 0.2s, background 0.2s;
 		width: 100%;
 
 		&:disabled {

@@ -14,12 +14,12 @@
 				<!-- </router-link> -->
 
 				<div class="links">
-					<router-link to="/">Home</router-link>
-					<router-link to="/projects">Projects</router-link>
-					<router-link to="/WorkExperience">Work Experience</router-link>
-					<router-link to="/books">Books</router-link>
-					<router-link to="/explore">Explore</router-link>
-					<router-link to="/blog">Blog</router-link>
+					<router-link to="/" @click="trackEvent('nav:click', { to: '/', from: 'nav' })">Home</router-link>
+					<router-link to="/projects" @click="trackEvent('nav:click', { to: '/projects', from: 'nav' })">Projects</router-link>
+					<router-link to="/WorkExperience" @click="trackEvent('nav:click', { to: '/WorkExperience', from: 'nav' })">Work Experience</router-link>
+					<router-link to="/books" @click="trackEvent('nav:click', { to: '/books', from: 'nav' })">Books</router-link>
+					<router-link to="/explore" @click="trackEvent('nav:click', { to: '/explore', from: 'nav' })">Explore</router-link>
+					<router-link to="/blog" @click="trackEvent('nav:click', { to: '/blog', from: 'nav' })">Blog</router-link>
 				</div>
 
 				<div class="ham" @click="nav = !nav">
@@ -41,20 +41,20 @@
 
 					<div class="navdata">
 						<div class="flexer">
-							<router-link to="/" @click="nav = !nav">Home</router-link>
-							<router-link to="/projects" @click="nav = !nav"
+							<router-link to="/" @click="[nav = !nav, trackEvent('nav:click', { to: '/', from: 'nav_mobile' })]">Home</router-link>
+							<router-link to="/projects" @click="[nav = !nav, trackEvent('nav:click', { to: '/projects', from: 'nav_mobile' })]"
 								>Projects</router-link
 							>
-							<router-link to="/WorkExperience" @click="nav = !nav"
+							<router-link to="/WorkExperience" @click="[nav = !nav, trackEvent('nav:click', { to: '/WorkExperience', from: 'nav_mobile' })]"
 								>Work Experience</router-link
 							>
-							<router-link to="/books" @click="nav = !nav"
+							<router-link to="/books" @click="[nav = !nav, trackEvent('nav:click', { to: '/books', from: 'nav_mobile' })]"
 								>Books</router-link
 							>
-							<router-link to="/explore" @click="nav = !nav"
+							<router-link to="/explore" @click="[nav = !nav, trackEvent('nav:click', { to: '/explore', from: 'nav_mobile' })]"
 								>Explore</router-link
 							>
-							<router-link to="/blog" @click="nav = !nav"
+							<router-link to="/blog" @click="[nav = !nav, trackEvent('nav:click', { to: '/blog', from: 'nav_mobile' })]"
 								>Blog</router-link
 							>
 						</div>
@@ -114,6 +114,7 @@ export default {
 <script setup>
 import { useHead } from '@vueuse/head'
 import { useRoute } from 'vue-router'
+import { trackEvent } from '@/analytics/umami'
 
 const route = useRoute()
 

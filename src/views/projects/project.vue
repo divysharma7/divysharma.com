@@ -4,6 +4,7 @@ import { projects } from './aaprojects.js'
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import Fourerr from '../NotFound.vue'
+import { trackOutbound } from '@/analytics/umami'
 
 const route = useRoute()
 const data = ref()
@@ -12,6 +13,23 @@ onMounted(async () => {
 	data.value = await getPageBlocks(
 		projects.find((x) => x.id == route.params.id)?.notion || undefined
 	)
+	
+	// Delegate click events for dynamically rendered Notion links
+	setTimeout(() => {
+		const notionContainer = document.querySelector('.notionblog')
+		if (notionContainer) {
+			notionContainer.addEventListener('click', (e) => {
+				const target = e.target as Element
+				const link = target?.closest('a')
+				if (link && link.href) {
+					// Don't track internal anchor links
+					if (link.href.startsWith('http') && !link.href.includes(window.location.host)) {
+						trackOutbound('project_outbound', link.href, { project_id: route.params.id })
+					}
+				}
+			})
+		}
+	}, 1000) // slight delay to let Notion DOM inflate
 })
 </script>
 

@@ -5,14 +5,20 @@
       <div class="cta-inner">
         <p class="cta-message">{{ ctaConfig.preText }}</p>
         
-        <button @click="openBooking" class="cta-btn" aria-label="Book a free call">
-          <div class="avatar-wrapper">
-            <img 
-              :src="ctaConfig.profileImage" 
-              :alt="ctaConfig.profileAlt" 
-              class="btn-avatar"
-            />
-            <span class="avatar-text">You</span>
+        <button @click="openBooking" class="cta-btn group" aria-label="Book a free call">
+          <div class="avatars-group">
+            <div class="avatar-wrapper">
+              <img 
+                :src="ctaConfig.profileImage" 
+                :alt="ctaConfig.profileAlt" 
+                class="btn-avatar"
+              />
+            </div>
+            
+            <div class="hover-avatar-add">
+              <PlusIcon :size="12" class="plus-icon" />
+              <div class="you-avatar">You</div>
+            </div>
           </div>
           <span class="btn-text">{{ ctaConfig.linkText }}</span>
         </button>
@@ -62,17 +68,35 @@
 import { ref, computed } from 'vue';
 import { ctaConfig } from '@/config/cta';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
-import { XIcon, Cat, ArrowUpRight } from 'lucide-vue-next';
+import { trackEvent } from '@/analytics/umami';
+import { XIcon, Cat, PlusIcon } from 'lucide-vue-next';
 
 const showCalPopup = ref(false);
 const isLoading = ref(true);
 const { triggerHaptic, isMobile } = useHapticFeedback();
 
-const calUrl = computed(() =>
-  `https://cal.com/${ctaConfig.calLink}?embed=true&layout=month_view&theme=light`
-);
+const calUrl = computed(() => {
+  const uiConfig = {
+    layout: "month_view",
+    theme: "light",
+    styles: {
+      eventTypeAppItem: {
+        display: "grid",
+        "grid-template-areas": '"meta main timeslots" "meta main timeslots"',
+        width: "100%",
+        "grid-template-columns": "var(--booker-meta-width) 1fr var(--booker-timeslots-width)",
+        "grid-template-rows": "1fr 0fr",
+        "min-height": "100vh",
+        "margin-top": "50px"
+      }
+    }
+  };
+  const configStr = encodeURIComponent(JSON.stringify(uiConfig));
+  return `https://cal.com/${ctaConfig.calLink}?embed=true&theme=light&config=${configStr}`;
+});
 
 function openBooking() {
+  trackEvent('cta:book_call', { location: 'cta_component' });
   if (isMobile()) triggerHaptic('medium');
   isLoading.value = true;
   showCalPopup.value = true;
@@ -156,7 +180,12 @@ function closeBooking() {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
-/* Avatar Wrapper to handle hover swap */
+/* Avatar Group */
+.avatars-group {
+  display: flex;
+  align-items: center;
+}
+
 .avatar-wrapper {
   position: relative;
   width: 28px;
@@ -166,45 +195,57 @@ function closeBooking() {
   box-shadow: 0 0 0 2px #f3f4f6;
   background: #f3f4f6; /* Placeholder bg */
   flex-shrink: 0;
+  z-index: 2;
 }
 
 .btn-avatar {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  position: absolute;
-  top: 0;
-  left: 0;
-  filter: grayscale(0.6);
-  z-index: 2;
+  transition: transform 0.3s ease;
 }
 
-.avatar-text {
-  position: absolute;
-  inset: 0;
+/* On hover, don't swap, maybe just slight scale */
+.cta-btn:hover .btn-avatar {
+  transform: scale(1.05);
+}
+
+.hover-avatar-add {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  width: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.cta-btn:hover .hover-avatar-add {
+  opacity: 1;
+  width: 38px; /* space for icon + avatar + margin */
+  transform: translateX(0);
+  margin-left: 4px;
+}
+
+.plus-icon {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.you-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.65rem;
+  font-size: 8px;
   font-weight: 700;
   color: #555;
   text-transform: uppercase;
-  background: #e5e7eb;
-  opacity: 0;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  z-index: 1;
-}
-
-/* Hover Effects */
-.cta-btn:hover .btn-avatar {
-  opacity: 0;
-  transform: scale(0.9);
-}
-
-.cta-btn:hover .avatar-text {
-  opacity: 1;
-  transform: scale(1);
+  margin-left: 4px;
+  flex-shrink: 0;
 }
 
 .btn-text {

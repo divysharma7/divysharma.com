@@ -1,8 +1,12 @@
-import { openai } from '@ai-sdk/openai'
+import { createGoogleGenerativeAI } from '@ai-sdk/google'
 import { streamText } from 'ai'
 import { projects } from '../src/data/projects.js'
 import { experiences } from '../src/data/experience.js'
 import { about } from '../src/data/profile.js'
+
+const google = createGoogleGenerativeAI({
+    apiKey: 'AIzaSyBWcBdc1PtPUuPdIKGg0pETWOtytBbZwLo'
+});
 
 export const config = {
     runtime: 'edge'
@@ -68,10 +72,15 @@ export default async function handler(req) {
     }
 
     try {
-        const { messages } = await req.json()
+        const payload = await req.json()
+        const messages = payload?.messages
+        if (!messages) {
+            console.error('[api/chat] CRITICAL: req.json() payload missing "messages". Payload:', payload)
+            throw new Error('Messages missing from request')
+        }
 
         const result = streamText({
-            model: openai('gpt-3.5-turbo'),
+            model: google('gemini-2.5-flash'),
             system: systemPrompt,
             messages,
             temperature: 0.7
