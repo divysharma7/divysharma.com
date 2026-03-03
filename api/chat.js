@@ -1,51 +1,60 @@
-import { createGoogleGenerativeAI } from '@ai-sdk/google'
+import { createMistral } from '@ai-sdk/mistral'
 import { streamText } from 'ai'
-import { projects } from '../src/data/projects.js'
-import { experiences } from '../src/data/experience.js'
+import { retrieve } from '../lib/rag/upstashVector.js'
+import { kb } from '../src/data/kb.js'
 import { about } from '../src/data/profile.js'
 
-const google = createGoogleGenerativeAI({
-    apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY || ''
-});
+// Uses MISTRAL_API_KEY from env by default
+const mistral = createMistral()
 
-export const config = {
-    runtime: 'edge'
-}
+export const config = { runtime: 'edge' }
 
-function generateSystemPrompt() {
-    const skillNames = about.skills.map((skill) => skill.name).join(', ')
-    const socialLinksText = about.socials
-        .map((link) => `${link.name}: ${link.url}`)
-        .join('\n- ')
+const BASE_SYSTEM = `
+You are Divy Sharma's portfolio assistant.
+Speak in first person (I/me).
+Be concise, structured, and skeptical of vague questions.
+If something is not in the provided context, say you don't know and suggest checking the portfolio.
+For work inquiries: divysharma029@gmail.com
+`.trim()
 
-    const experienceText = experiences
-        .map(
-            (exp) =>
-                `${exp.role} at ${exp.company} (${exp.period}) - ${(exp.achievements || []).join('. ')}`
-        )
-        .join('\n- ')
+export default async function handler(req) {
+    if (req.method !== 'POST') return new Response('Method not allowed', { status: 405 })
 
-    const projectsText = projects
-        .map(
-            (project) =>
-                `${project.title}: ${project.shortSummary} (Link: ${project.links?.liveDemo || project.links?.github || 'N/A'})`
-        )
-        .join('\n- ')
+    try {
+        const payload = await req.json()
+        const messages = payload?.messages
+        if (!Array.isArray(messages)) {
+            return new Response(JSON.stringify({ error: 'Missing "messages" array' }), {
+                status: 400,
+                headers: { 'Content-Type': 'application/json' },
+            })
+        }
 
-    return `You are ${about.name}'s Portfolio Assistant representing ${about.name}.
+        const lastUserMsg = [...messages].reverse().find(m => m?.role === 'user')
+        const question = typeof lastUserMsg?.content === 'string'
+            ? lastUserMsg.content
+            : Array.isArray(lastUserMsg?.content)
+                ? lastUserMsg.content.map(x => x?.text || '').join(' ')
+                : ''
 
-ABOUT: ${about.description}
+        const hits = await retrieve({ query: question, topK: 6 })
+        const context = (hits?.length ? hits : [])
+            .map((h, i) => {
+                const c = h?.metadata?.content || ''
+                const src = h?.metadata?.source || h?.metadata?.resourceId || 'kb'
+                return `(${i + 1}) [${src}] ${c}`
+            })
+            .join('\n')
 
-SKILLS: ${skillNames}
+        const kbContent = kb.map(item => `Q: ${item.q}\nA: ${item.a}`).join('\n\n')
 
-EXPERIENCE:
-- ${experienceText}
+        const system = `${BASE_SYSTEM}
 
-PROJECTS:
-- ${projectsText}
+CONTEXT (authoritative KB snippets):
+${context || '(no relevant context found)'}
 
-SOCIAL LINKS:
-- ${socialLinksText}
+FAQ KNOWLEDGE:
+${kbContent}
 
 RESPONSE RULES:
 - Keep responses under 100 words
@@ -60,38 +69,23 @@ RESPONSE RULES:
 - If unsure about details, suggest visiting the portfolio sections
 - You are not a bot, you are a human. you are ${about.name}. you talk in first person.
 - Refer ${about.name} as "Me" or "I"
+- Use CONTEXT and FAQ KNOWLEDGE for factual claims about Divy.
+- If context is missing, say you don’t know instead of guessing.
 
-Your goal: Help visitors learn about your work in a friendly, concise way.`
-}
-
-const systemPrompt = generateSystemPrompt()
-
-export default async function handler(req) {
-    if (req.method !== 'POST') {
-        return new Response('Method not allowed', { status: 405 })
-    }
-
-    try {
-        const payload = await req.json()
-        const messages = payload?.messages
-        if (!messages) {
-            console.error('[api/chat] CRITICAL: req.json() payload missing "messages". Payload:', payload)
-            throw new Error('Messages missing from request')
-        }
+Your goal: Help visitors learn about your work in a friendly, concise way.`.trim()
 
         const result = streamText({
-            model: google('gemini-2.5-flash'),
-            system: systemPrompt,
+            model: mistral('mistral-large-latest'),
+            system,
             messages,
-            temperature: 0.7
+            temperature: 0.3,
         })
 
         return result.toTextStreamResponse()
-    } catch (error) {
-        console.error('Chat API Error:', error)
-        return new Response(JSON.stringify({ error: 'Error processing chat request' }), {
+    } catch (e) {
+        return new Response(JSON.stringify({ error: 'Chat failed', details: String(e) }), {
             status: 500,
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json' },
         })
     }
 }

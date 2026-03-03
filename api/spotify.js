@@ -1,6 +1,6 @@
 import { getNowPlayingAndRecent } from '../lib/spotify.js'
 
-const SPOTIFY_CACHE_TTL_MS = 60_000
+const SPOTIFY_CACHE_TTL_MS = 15_000
 let cachedResponse = null
 let cachedResponseExpiresAt = 0
 
@@ -39,19 +39,7 @@ const mapNowPlayingSong = (song) => {
 	}
 }
 
-const mapRecentlyPlayedSong = (recentSong) => {
-	const title = recentSong?.name || ''
-	return {
-		album: recentSong?.album?.name || '',
-		albumImageUrl: recentSong?.album?.images?.[0]?.url || '',
-		artist: recentSong?.artists?.map((_artist) => _artist.name).join(', ') || 'Unknown',
-		isPlaying: false,
-		songUrl: recentSong?.external_urls?.spotify || '',
-		title,
-		cleanTitle: title,
-		lastPlayed: true
-	}
-}
+// Removed mapRecentlyPlayedSong as we no longer show recent history
 
 export const config = {
 	runtime: 'edge'
@@ -81,14 +69,8 @@ export default async (_) => {
 			}
 		}
 
-		if (recentlyPlayed.ok) {
-			const recentData = await getSafeJson(recentlyPlayed)
-			const recentSong = recentData?.items?.[0]?.track
-
-			if (recentSong) {
-				return jsonResponse(setCachedResponse(mapRecentlyPlayedSong(recentSong)))
-			}
-		}
+		// Note: We used to fetch recentlyPlayed data here and map the response.
+		// That logic has been removed so "Not playing" shows instantly when playback stops.
 
 		if (nowPlaying.status === 429 || recentlyPlayed.status === 429) {
 			const delay1 = parseInt(nowPlaying.headers?.get?.('retry-after') || nowPlaying.headers?.get?.('Retry-After') || '120', 10)

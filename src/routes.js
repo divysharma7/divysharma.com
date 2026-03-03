@@ -77,5 +77,10 @@ export const routes = [
 		meta: { title: 'Certificates' },
 		component: () => import('./views/Certificates.vue')
 	},
+	{
+		path: '/journey/mentors',
+		meta: { title: 'Mentors' },
+		component: () => import('./views/Mentors.vue')
+	},
 	{ path: '/:pathMatch(.*)', component: () => import('./views/NotFound.vue'), meta: { title: 'notfound' } }
 ]

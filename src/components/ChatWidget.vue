@@ -6,7 +6,7 @@
 				<div class="chat-header">
 					<div class="header-info">
 						<div class="avatar-container">
-							<img src="/bot-avatar.jpg" alt="Avatar" class="avatar-img" />
+							<img src="/bot-avatar-transparent.png" alt="Avatar" class="avatar-img" />
 							<span class="status-indicator"></span>
 						</div>
 						<div class="header-text">
@@ -23,7 +23,7 @@
 						<!-- Assistant Welcome -->
 						<div class="message assistant">
 							<div class="avatar-small">
-								<img src="/bot-avatar.jpg" alt="Avatar" />
+								<img src="/bot-avatar-transparent.png" alt="Avatar" />
 							</div>
 							<div class="message-content">
 								<p>Hello! I'm Divy's Portfolio Assistant. How can I help you regarding his work?</p>
@@ -50,7 +50,7 @@
 						:class="msg.role"
 					>
 						<div v-if="msg.role === 'assistant'" class="avatar-small">
-							<img src="/bot-avatar.jpg" alt="Avatar" />
+							<img src="/bot-avatar-transparent.png" alt="Avatar" />
 						</div>
 						<div class="message-content">
 							<div v-html="markdownToHtml(msg.content)"></div>
@@ -59,7 +59,7 @@
 					
 					<div v-if="isLoading" class="message assistant loading">
 						<div class="avatar-small">
-							<img src="/bot-avatar.jpg" alt="Avatar" />
+							<img src="/bot-avatar-transparent.png" alt="Avatar" />
 						</div>
 						<div class="message-content bubble-loading">
 							<div class="typing-dot"></div>
@@ -101,7 +101,7 @@
 			:class="{ open: isOpen }"
 			aria-label="Toggle Chat"
 		>
-			<img v-if="!isOpen" src="/bot-avatar.jpg" alt="Chat" class="avatar-toggle" />
+			<img v-if="!isOpen" src="/bot-avatar-transparent.png" alt="Chat" class="avatar-toggle" />
 			<i v-else class="ph-bold ph-x"></i>
 		</button>
 	</div>
@@ -229,7 +229,7 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 	width: 4rem; /* Slightly larger for avatar */
 	height: 4rem;
 	border-radius: 50%;
-	background: $text-black; /* Warm Brown button */
+	background: transparent;
 	color: $bg-white;
 	border: none;
 	cursor: pointer;
@@ -261,7 +261,6 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		border-radius: 50%;
 	}
 }
 
@@ -308,10 +307,8 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 .avatar-img {
 	width: 100%;
 	height: 100%;
-	border-radius: 50%;
 	object-fit: cover;
-	border: 3px solid $bg-white; /* White border ring */
-	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+	/* Removed border and background */
 }
 
 .status-indicator {
@@ -457,10 +454,8 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 			img {
 				width: 100%;
 				height: 100%;
-				border-radius: 50%;
 				object-fit: cover;
-				border: 1px solid $bg-white;
-				box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+				/* Removed border and background */
 			}
 		}
 	}

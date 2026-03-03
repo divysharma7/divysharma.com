@@ -32,6 +32,7 @@ declare module 'vue' {
     Hero: typeof import('./src/components/Hero.vue')['default']
     HeroSection: typeof import('./src/components/HeroSection.vue')['default']
     JourneySection: typeof import('./src/components/landing/JourneySection.vue')['default']
+    MentorCard: typeof import('./src/components/achievements/MentorCard.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     Notionloader: typeof import('./src/components/notionloader.vue')['default']
     Oneko: typeof import('./src/components/Oneko.vue')['default']

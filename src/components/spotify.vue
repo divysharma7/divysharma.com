@@ -35,8 +35,8 @@
 				</a>
 			</h5>
 			<h5 class="title not" v-else>
-				<a href="//open.spotify.com/user/divysharma7" target="_blank"
-					>Spotify &mdash; Not playing</a
+				<a href="https://open.spotify.com/user/divysharma7" target="_blank"
+					>Spotify — Not playing</a
 				>
 			</h5>
 			<h5 v-if="spotify && (spotify?.isPlaying || spotify?.lastPlayed)" class="artist spotifytitle">
@@ -62,7 +62,7 @@ export default {
 	},
 	mounted() {
 		this.fetchData()
-		this.pollTimer = setInterval(() => this.fetchData(), 30000)
+		this.pollTimer = setInterval(() => this.fetchData(), 15000)
 	},
 	unmounted() {
 		if (this.pollTimer) {

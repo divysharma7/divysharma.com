@@ -2,7 +2,7 @@
 	<nav class="navbar">
 		<div class="container">
 			<router-link to="/" class="brand">
-				<img src="/pixel-avatar.jpg" alt="Divy" class="nav-logo" />
+				<img src="/bot-avatar-transparent.png" alt="Divy" class="nav-logo" />
 				Divy Sharma
 			</router-link>
 			<div class="links">
@@ -67,9 +67,8 @@ const scrollToContact = async () => {
 			.nav-logo {
 				width: 32px;
 				height: 32px;
-				border-radius: 50%;
+				/* Removed border-radius and background */
 				object-fit: cover;
-				border: 1px solid rgba(0,0,0,0.1);
 			}
 		}
 

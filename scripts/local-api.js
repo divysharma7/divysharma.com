@@ -66,6 +66,7 @@ export default function localApi() {
 			bindHandler(server, '/api/top-tracks', '../api/top-tracks.js')
 			bindHandler(server, '/api/health', '../api/health.js')
 			bindHandler(server, '/api/chat', '../api/chat.js')
+			bindHandler(server, '/api/ingest', '../api/ingest.js')
 		}
 	}
 }

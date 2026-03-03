@@ -10,7 +10,7 @@
 					<span>Divy Sharma</span>
 				</div>
 				<!-- <router-link v-else to="/"> -->
-				<img draggable="false" class="logo" src="/bot-avatar.jpg" alt="logo" v-else />
+				<img draggable="false" class="logo" src="/bot-avatar-transparent.png" alt="logo" v-else />
 				<!-- </router-link> -->
 
 				<div class="links">
@@ -246,11 +246,10 @@ useHead({
 }
 
 .logo {
-	width: 2.5em; /* Slightly larger for avatar */
-	height: 2.5em;
-	border-radius: 50%;
+	width: 3em; /* Slightly larger for avatar */
+	height: 3em;
+	/* Removed border-radius and background */
 	object-fit: cover;
-	border: 1px solid rgba(0,0,0,0.1);
 }
 
 .footer-Home {

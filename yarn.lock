@@ -11,13 +11,13 @@
     "@ai-sdk/provider-utils" "4.0.15"
     "@vercel/oidc" "3.1.0"
 
-"@ai-sdk/google@^3.0.30":
-  version "3.0.30"
-  resolved "https://registry.npmjs.org/@ai-sdk/google/-/google-3.0.30.tgz"
-  integrity sha512-ZzG6dU0XUSSXbxQJJTQUFpWeKkfzdpR7IykEZwaiaW5d+3u3RZ/zkRiGwAOcUpLp6k0eMd+IJF4looJv21ecxw==
+"@ai-sdk/mistral@^3.0.21":
+  version "3.0.21"
+  resolved "https://registry.npmjs.org/@ai-sdk/mistral/-/mistral-3.0.21.tgz"
+  integrity sha512-GhLRyfXghnKpt51t8ELU3cXwbCUcGOxZFUQFUZvNBt+y298PlOhaAK6pQtihfpNRGUycrdNotKwVajJm0a6uwg==
   dependencies:
     "@ai-sdk/provider" "3.0.8"
-    "@ai-sdk/provider-utils" "4.0.15"
+    "@ai-sdk/provider-utils" "4.0.16"
 
 "@ai-sdk/openai@^3.0.30":
   version "3.0.30"
@@ -31,6 +31,15 @@
   version "4.0.15"
   resolved "https://registry.npmjs.org/@ai-sdk/provider-utils/-/provider-utils-4.0.15.tgz"
   integrity sha512-8XiKWbemmCbvNN0CLR9u3PQiet4gtEVIrX4zzLxnCj06AwsEDJwJVBbKrEI4t6qE8XRSIvU2irka0dcpziKW6w==
+  dependencies:
+    "@ai-sdk/provider" "3.0.8"
+    "@standard-schema/spec" "^1.1.0"
+    eventsource-parser "^3.0.6"
+
+"@ai-sdk/provider-utils@4.0.16":
+  version "4.0.16"
+  resolved "https://registry.npmjs.org/@ai-sdk/provider-utils/-/provider-utils-4.0.16.tgz"
+  integrity sha512-kBvDqNkt5EwlzF9FujmNhhtl8FYg3e8FO8P5uneKliqfRThWemzBj+wfYr7ZCymAQhTRnwSSz1/SOqhOAwmx9g==
   dependencies:
     "@ai-sdk/provider" "3.0.8"
     "@standard-schema/spec" "^1.1.0"
@@ -273,6 +282,11 @@
   version "2.1.0"
   resolved "https://registry.npmjs.org/@types/throttle-debounce/-/throttle-debounce-2.1.0.tgz"
   integrity sha512-5eQEtSCoESnh2FsiLTxE121IiE60hnMqcb435fShf4bpLRjEu1Eoekht23y6zXS9Ts3l+Szu3TARnTsA0GkOkQ==
+
+"@upstash/vector@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.npmjs.org/@upstash/vector/-/vector-1.2.2.tgz"
+  integrity sha512-ptQ9xnxtKqmpNK52PCcHCszlPOLxIBfjsv7ty8RoF95pkjctS9rSjTQ3Pl9bx5VFbpDj+0dMXw88WLt6swDkgQ==
 
 "@vercel/oidc@3.1.0":
   version "3.1.0"
@@ -2219,7 +2233,7 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-"zod@^3.25.76 || ^4.1.8":
+"zod@^3.25.76 || ^4.1.8", zod@^4.3.6:
   version "4.3.6"
   resolved "https://registry.npmjs.org/zod/-/zod-4.3.6.tgz"
   integrity sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==

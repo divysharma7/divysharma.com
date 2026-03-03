@@ -6,3 +6,5 @@ dist-ssr
 debug.log
 .vercel
 .env
+.env.local
+.env.production
