@@ -40,7 +40,7 @@ const formatDate = (dateString) => {
 <style scoped lang="scss">
 .content-card {
 	padding: 1.5rem 0;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid var(--color-border);
 
 	&:last-child {
 		border-bottom: none;
@@ -50,7 +50,7 @@ const formatDate = (dateString) => {
 		display: flex;
 		gap: 0.75rem;
 		font-size: 0.8rem;
-		color: #888;
+		color: var(--color-muted);
 		margin-bottom: 0.5rem;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
@@ -63,7 +63,7 @@ const formatDate = (dateString) => {
 		
 		a {
 			text-decoration: none;
-			color: #111;
+			color: var(--color-heading);
 			
 			&:hover {
 				color: #000;
@@ -73,7 +73,7 @@ const formatDate = (dateString) => {
 	}
 
 	.excerpt {
-		color: #555;
+		color: var(--color-body);
 		font-size: 0.95rem;
 		margin: 0 0 0.75rem;
 		line-height: 1.5;
@@ -84,7 +84,7 @@ const formatDate = (dateString) => {
 		gap: 0.75rem;
 
 		.tag {
-			color: #888;
+			color: var(--color-muted);
 			font-size: 0.8rem;
 		}
 	}

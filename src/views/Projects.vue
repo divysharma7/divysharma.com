@@ -4,7 +4,7 @@
 		<div class="page-header">
 			<h1 class="page-title">Projects</h1>
 			<p class="page-subtitle">
-				Okay, enough seriousness. Let's dive into the good stuff – the projects that make me tick! Think delightful user experiences and a sprinkle of creative chaos.
+				Things I've built and shipped.
 			</p>
 		</div>
 		<div class="bigproj">
@@ -47,20 +47,17 @@
 
 		<hr />
 
-			<div class="row">
-				<div class="eight columns">
-					<p class="zero">
-						You can check out my
-						<a
-							rel="noopener noreferrer"
-							href="https://www.behance.net/divysharma3"
-							target="_blank"
-							>behance</a
-						>
-						for more. Most of my projects are available on it.
-					</p>
-				</div>
-				<div class="u-cf"></div>
+			<div>
+				<p class="zero">
+					You can check out my
+					<a
+						rel="noopener noreferrer"
+						href="https://www.behance.net/divysharma3"
+						target="_blank"
+						>behance</a
+					>
+					for more. Most of my projects are available on it.
+				</p>
 			</div>
 		</div>
 </template>
@@ -109,7 +106,7 @@ useHead({
 .page-title {
 	font-size: var(--h1);
 	font-weight: 400;
-	color: var(--heading-color);
+	color: var(--color-heading);
 	margin: 0;
 	letter-spacing: -0.02em;
 	line-height: 1.1;
@@ -118,7 +115,7 @@ useHead({
 
 .page-subtitle {
 	font-size: var(--text-lg);
-	color: var(--text-muted);
+	color: var(--color-muted);
 	margin: 16px auto 0;
 	max-width: 500px;
 	line-height: 1.6;

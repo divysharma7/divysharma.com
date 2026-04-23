@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 140">
+  <rect x="9" y="9" width="222" height="122" rx="999" fill="#FFFFFF"/>
+  <rect x="11" y="11" width="218" height="118" rx="999" fill="#FFFFFF" stroke="#111111" stroke-width="1.5"/>
+  <text x="56" y="62" font-family="'Inter', system-ui, sans-serif" font-size="32" font-weight="700" fill="#111111" text-anchor="middle" dominant-baseline="middle">R</text>
+  <text x="56" y="86" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="8" font-weight="400" fill="#888888" text-anchor="middle" dominant-baseline="middle">REACH</text>
+  <text x="104" y="62" font-family="'Inter', system-ui, sans-serif" font-size="32" font-weight="700" fill="#111111" text-anchor="middle" dominant-baseline="middle">I</text>
+  <text x="104" y="86" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="8" font-weight="400" fill="#888888" text-anchor="middle" dominant-baseline="middle">IMPACT</text>
+  <text x="148" y="62" font-family="'Inter', system-ui, sans-serif" font-size="32" font-weight="700" fill="#111111" text-anchor="middle" dominant-baseline="middle">C</text>
+  <text x="148" y="86" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="8" font-weight="400" fill="#888888" text-anchor="middle" dominant-baseline="middle">CONF.</text>
+  <text x="192" y="62" font-family="'Inter', system-ui, sans-serif" font-size="32" font-weight="700" fill="#111111" text-anchor="middle" dominant-baseline="middle">E</text>
+  <text x="192" y="86" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="8" font-weight="400" fill="#888888" text-anchor="middle" dominant-baseline="middle">EFFORT</text>
+</svg>

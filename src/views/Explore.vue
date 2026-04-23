@@ -1,114 +1,57 @@
 <template>
 	<div class="cont">
 		<div class="page-header">
-			<h2 class="page-title">explore</h2>
-			<p class="page-subtitle">Miscellaneous stuff about me.</p>
+			<h1 class="page-title">Explore</h1>
+			<p class="page-subtitle">More about me — designs, achievements, and interests.</p>
 		</div>
 
-
-		<div aos-animate data-aos="fade-up">
-			<a rel="noopener noreferrer" href="https://www.behance.net/divysharma3" target="_blank">
-				<div id="design" class="coolbox">
-					<div class="flexbox">
-						<h6>Design</h6>
-						<span>
-							<bx-bx-link-external />
-						</span>
-					</div>
-					<p>
-						(WIP) I'm mostly interested in building products and managing teams but I
-						enjoy doing design research too.
-					</p>
+		<div class="card-grid">
+			<a rel="noopener noreferrer" href="https://www.behance.net/divysharma3" target="_blank" class="explore-card explore-card--blue">
+				<div class="explore-card-head">
+					<h2>Design</h2>
+					<bx-bx-link-external class="explore-icon" />
 				</div>
+				<p>I'm mostly interested in building products and managing teams but I enjoy doing design research too.</p>
 			</a>
-		</div>
 
-		<div aos-animate data-aos="fade-up" data-aos-delay="100">
-			<a rel="noopener noreferrer" href="https://www.linkedin.com/posts/divy-sharma-243748216_startupjourney-gratitude-bitsabrpilani-activity-7168917217009496064-UFhB?utm_source=share&utm_medium=member_desktop" target="_blank">
-				<div id="events" class="coolbox">
-					<div class="flexbox">
-						<h6>Achievements</h6>
-						<span>
-							<bx-bx-link-external />
-						</span>
-					</div>
-					<p>
-						I've participated in startups competitions, Hackathons, Ideathons, Designathons, B-plans, etc.
-						Check out some of my wins.
-					</p>
+			<a rel="noopener noreferrer" href="https://www.linkedin.com/posts/divy-sharma-243748216_startupjourney-gratitude-bitsabrpilani-activity-7168917217009496064-UFhB?utm_source=share&utm_medium=member_desktop" target="_blank" class="explore-card explore-card--teal">
+				<div class="explore-card-head">
+					<h2>Achievements</h2>
+					<bx-bx-link-external class="explore-icon" />
 				</div>
+				<p>I've participated in startup competitions, hackathons, ideathons, designathons, and B-plans. Check out some of my wins.</p>
 			</a>
-		</div>
-		<div aos-animate data-aos="fade-up">
-			<a
-				rel="noopener noreferrer"
-				href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing"
-				target="_blank"
-				@click="trackEvent('resume:download', { location: 'explore' })"
-			>
-				<div id="organ" class="coolbox">
-					<div class="flexbox">
-						<h6>Résumé</h6>
-						<span>
-							<bx-bx-link-external />
-						</span>
-					</div>
-					<p>
-						Check out some of my stuff I've worked on and teams I've been a
-						part of.
-					</p>
+
+			<a rel="noopener noreferrer" href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" class="explore-card explore-card--purple" @click="trackEvent('resume:download', { location: 'explore' })">
+				<div class="explore-card-head">
+					<h2>Resume</h2>
+					<bx-bx-link-external class="explore-icon" />
 				</div>
+				<p>Check out my work, the teams I've been a part of, and the impact I've delivered.</p>
+			</a>
+
+			<a rel="noopener noreferrer" href="https://teamconatus.com/" target="_blank" class="explore-card explore-card--green">
+				<div class="explore-card-head">
+					<h2>Events</h2>
+					<bx-bx-link-external class="explore-icon" />
+				</div>
+				<p>Over the last few years I've been part of the core team of Team Conatus (technical society). Check out some events I organized.</p>
+			</a>
+
+			<a rel="noopener noreferrer" href="https://buymeacoffee.com/divy.sharma6" target="_blank" class="explore-card explore-card--amber">
+				<div class="explore-card-head">
+					<h2>Support</h2>
+					<bx-bx-link-external class="explore-icon" />
+				</div>
+				<p><strong>Buy me a coffee</strong> to support my journey in building delightful product experiences.</p>
 			</a>
 		</div>
 
-	
-		<div data-aos="fade-up" data-aos-delay="200">
-			<a rel="noopener noreferrer" href="https://teamconatus.com/" target="_blank">
-				<div id="conatus" class="coolbox">
-					<div class="flexbox">
-						<h6>Events</h6>
-						<span>
-							<bx-bx-link-external />
-						</span>
-					</div>
-					<p>
-						Over the last few years I've been part of the core teams of Team Conatus
-						(technical Society). Check out some of the events I organized.
-					</p>
-				</div>
-			</a>
-		</div> 
-		<div aos-animate data-aos="fade-up" data-aos-delay="200">
-			<a
-				rel="noopener noreferrer"
-				href="https://buymeacoffee.com/divy.sharma6"
-				target="_blank"
-			>
-				<div id="support" class="coolbox">
-					<div class="flexbox">
-						<h6>Support</h6>
-						<span>
-							<bx-bx-link-external />
-						</span>
-					</div>
-					<p>
-						<span class="bold">Buy me a coffee</span> to support my journey in
-						building delightful product experience.
-						<a href="https://www.linkedin.com/posts/divy-sharma-243748216_designathon-teamwork-hardworkpaysoff-activity-7105298291315085312-tPdb?utm_source=share&utm_medium=member_desktop" target="_blank">IIIT Delhi</a>.
-					</p>
-				</div>
-			</a>
-		</div>		
+		<Top class="top-section" />
 
+		<Website />
 
-		<br />
-		<br />
-
-		<Top id="top-tracks" style="margin-bottom: 4em" />
-
-		<Website data-aos="fade-in" />
-
-		<Contact data-aos="fade-in" style="margin-top: 4em" />
+		<Contact class="contact-section" />
 	</div>
 </template>
 
@@ -122,125 +65,115 @@ import { trackEvent, trackOutbound } from '@/analytics/umami'
 useHead({
   title: 'Explore',
   meta: [
-    { name: 'description', content: 'Miscellaneous collection of my designs, achievements, events, and other interests.' },
+    { name: 'description', content: 'More about me — designs, achievements, events, and other interests.' },
     { property: 'og:title', content: 'Explore | Divy Sharma' },
-    { property: 'og:description', content: 'Achievements, designs, and miscellanea.' }
+    { property: 'og:description', content: 'Designs, achievements, events, and interests.' }
   ]
 })
 </script>
 
 <style scoped lang="scss">
-.bold {
-	font-weight: 600;
-}
-
-/* ── Page Title ── */
+/* ── Page Header ── */
 .page-header {
 	text-align: left;
-	margin-bottom: 0;
+	margin-bottom: 2rem;
 }
 
 .page-title {
-	font-size: 37.5px;
-	font-weight: 400;
-	color: rgb(106, 120, 140);
+	font-family: var(--font-sans);
+	font-size: var(--h1);
+	font-weight: 600;
+	color: var(--color-heading);
+	line-height: var(--leading-tight);
 	margin: 0;
 }
 
 .page-subtitle {
-	font-size: 15px;
-	color: rgb(34, 34, 34);
-	margin: 0 0 25px;
+	font-size: var(--text-sm);
+	color: var(--color-body);
+	margin: 0.5rem 0 0;
 	max-width: 500px;
-	line-height: 1.6;
-	text-align: left;
+	line-height: var(--leading-normal);
 }
 
-.socials {
-	display: grid;
-	grid-gap: 1em;
-	grid-template-columns: repeat(2, 1fr);
+/* ── Card Grid ── */
+.card-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-bottom: 3rem;
 }
-.socials a {
-	color: rgb(30, 80, 165);
-	transition: 0.2s;
-	font-size: 1.1em;
-}
-.socials a:hover {
-	opacity: 0.5;
-}
-.coolbox {
-	padding: 2em;
-	border-radius: 1em;
-	margin-bottom: 1.25em;
-	transition: 0.3s;
-	color: #222;
-	h6 {
-		margin-bottom: 0.25em;
-		font-size: 1.2em;
-		margin-right: 0.2em;
+
+.explore-card {
+	display: block;
+	padding: 1.25rem 1.5rem;
+	border-radius: var(--radius-md);
+	transition: background-color var(--duration-fast) ease;
+	text-decoration: none;
+	color: var(--color-heading);
+
+	h2 {
+		font-size: var(--text-lg);
+		font-weight: 600;
+		margin: 0 0.5rem 0 0;
+		line-height: var(--leading-tight);
 	}
-	.flexbox {
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		span {
-			margin-bottom: -0.135em;
-		}
-	}
+
 	p {
-		margin-bottom: 0;
-	}
-	.cta {
-		margin: 0;
-		text-transform: none;
-		letter-spacing: 0;
-	}
-}
-#design {
-	background-color: rgba(146, 184, 250, 0.288);
-	h6 {
-		color: rgb(43, 85, 158);
-	}
-}
-#design:hover {
-	background-color: rgba(146, 184, 250, 0.4);
-}
-#events {
-	background-color: rgba(146, 250, 245, 0.288);
-	h6 {
-		color: rgb(8, 128, 72);
-	}
-	&:hover {
-		background-color: rgba(151, 228, 225, 0.384);
-	}
-}
-#conatus{
-		background-color: #e6ffeb;
-	h6 {
-		color: #036a37;
-	}
-	&:hover {
-		background-color: #bfffccb1;
-	}
-}
-#organ {
-	background-color: rgba(197, 116, 235, 0.171);
-	h6 {
-		color: rgb(136, 26, 139);
-	}
-	&:hover {
-		background-color: rgba(194, 114, 231, 0.26);
+		font-size: var(--text-sm);
+		color: var(--color-body);
+		line-height: var(--leading-normal);
+		margin: 0.35rem 0 0;
 	}
 }
 
-#support {
-	background-color: rgba(240, 227, 82, 0.171);
-	h6 {
-		color: rgb(173, 133, 14);
-	}
-	&:hover {
-		background-color: rgba(241, 216, 86, 0.26);
-	}
+.explore-card-head {
+	display: flex;
+	align-items: center;
+}
+
+.explore-icon {
+	color: var(--color-muted);
+	font-size: var(--text-sm);
+}
+
+/* ── Card Color Variants ── */
+.explore-card--blue {
+	background: rgba(146, 184, 250, 0.15);
+	h2 { color: #2b559e; }
+	&:hover { background: rgba(146, 184, 250, 0.25); }
+}
+
+.explore-card--teal {
+	background: rgba(146, 250, 245, 0.15);
+	h2 { color: #088048; }
+	&:hover { background: rgba(146, 250, 245, 0.25); }
+}
+
+.explore-card--purple {
+	background: rgba(197, 116, 235, 0.1);
+	h2 { color: #881a8b; }
+	&:hover { background: rgba(197, 116, 235, 0.18); }
+}
+
+.explore-card--green {
+	background: rgba(180, 230, 190, 0.2);
+	h2 { color: #036a37; }
+	&:hover { background: rgba(180, 230, 190, 0.35); }
+}
+
+.explore-card--amber {
+	background: rgba(240, 227, 82, 0.12);
+	h2 { color: #ad850e; }
+	&:hover { background: rgba(240, 227, 82, 0.2); }
+}
+
+/* ── Sections ── */
+.top-section {
+	margin-bottom: 3rem;
+}
+
+.contact-section {
+	margin-top: 3rem;
 }
 </style>

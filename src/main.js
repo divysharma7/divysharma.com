@@ -1,7 +1,7 @@
 import App from './App.vue'
 import { routes } from './routes.js'
 import './assets/css/normal.css'
-import './assets/css/skeleton.css'
+import './assets/css/tokens.css'
 import './assets/css/global.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'

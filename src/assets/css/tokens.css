@@ -1,0 +1,101 @@
+/* ══════════════════════════════════════════
+   Design Tokens — Single Source of Truth
+   ══════════════════════════════════════════ */
+
+:root {
+	/* ── Typography ── */
+	--font-sans: 'Figtree', 'Satoshi', system-ui, -apple-system, sans-serif;
+	--font-display: 'augillion', serif;
+
+	/* ── Font Scale ── */
+	--text-xs: 0.75rem;
+	--text-sm: 0.875rem;
+	--text-base: 1rem;
+	--text-lg: 1.125rem;
+	--text-xl: 1.25rem;
+	--h3: 1.5rem;
+	--h2: 1.75rem;
+	--h1: clamp(32px, 5vw, 48px);
+
+	/* ── Colors (Tailwind Slate) ── */
+	--color-heading: #374151;
+	--color-body: #6b7280;
+	--color-muted: #9CA3AF;
+	--color-faint: #d1d5db;
+	--color-border: #F3F4F6;
+	--color-bg: #fff;
+	--color-bg-subtle: #F9FAFB;
+	--color-bg-hover: #F3F4F6;
+	--color-accent: #374151;
+
+	/* ── Semantic Colors ── */
+	--color-success: #059669;
+	--color-success-light: #ecfdf5;
+	--color-info: #2563eb;
+	--color-info-light: #dbeafe;
+	--color-warning: #d97706;
+	--color-warning-light: #fef3c7;
+	--color-danger: #dc2626;
+	--color-danger-light: #fef2f2;
+
+	/* ── Line Heights ── */
+	--leading-tight: 1.2;
+	--leading-snug: 1.4;
+	--leading-normal: 1.6;
+	--leading-relaxed: 1.8;
+
+	/* ── Spacing ── */
+	--space-xs: 0.25rem;
+	--space-sm: 0.5rem;
+	--space-md: 1rem;
+	--space-lg: 1.5rem;
+	--space-xl: 2rem;
+	--space-2xl: 3rem;
+
+	/* ── Radii ── */
+	--radius-sm: 8px;
+	--radius-md: 12px;
+	--radius-pill: 999px;
+
+	/* ── Shadows ── */
+	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+	--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+	--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+	/* ── Motion ── */
+	--duration-fast: 150ms;
+	--duration-normal: 250ms;
+	--duration-slow: 400ms;
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+	/* ── Layout ── */
+	--container: 680px;
+	--container-wide: 960px;
+	--container-max: var(--container);
+	--container-padding: 1.5rem;
+	--page-top: 3rem;
+
+	/* ── Scrollbar ── */
+	--c-bg: #fff;
+	--c-scrollbar: #d1d5db;
+	--c-scrollbar-hover: #9CA3AF;
+
+	/* ── Focus ── */
+	--focus-ring: 0 0 0 2px #fff, 0 0 0 4px var(--color-heading);
+}
+
+/* ── Global Focus Ring ── */
+:focus-visible {
+	outline: 2px solid var(--color-heading);
+	outline-offset: 2px;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

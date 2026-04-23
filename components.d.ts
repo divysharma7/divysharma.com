@@ -37,6 +37,7 @@ declare module 'vue' {
     Notionloader: typeof import('./src/components/notionloader.vue')['default']
     Oneko: typeof import('./src/components/Oneko.vue')['default']
     Page: typeof import('./src/components/page.vue')['default']
+    PostCover: typeof import('./src/components/blog/PostCover.vue')['default']
     Project: typeof import('./src/components/project.vue')['default']
     ProjectCard: typeof import('./src/components/ProjectCard.vue')['default']
     Quote: typeof import('./src/components/Quote.vue')['default']

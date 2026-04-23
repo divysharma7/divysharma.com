@@ -5,15 +5,15 @@
 		
 		<form @submit.prevent="submitForm" class="form">
 			<div class="form-group">
-				<input type="text" id="name" v-model="form.name" required placeholder="Name" :disabled="loading" />
+				<input type="text" id="name" v-model="form.name" required placeholder="Name" aria-label="Name" :disabled="loading" />
 			</div>
 			
 			<div class="form-group">
-				<input type="email" id="email" v-model="form.email" required placeholder="Email" :disabled="loading" />
+				<input type="email" id="email" v-model="form.email" required placeholder="Email" aria-label="Email" :disabled="loading" />
 			</div>
 			
 			<div class="form-group">
-				<textarea id="message" v-model="form.message" required placeholder="Anything you wanna say" rows="5" :disabled="loading"></textarea>
+				<textarea id="message" v-model="form.message" required placeholder="Anything you wanna say" aria-label="Message" rows="5" :disabled="loading"></textarea>
 			</div>
 
 			<div v-if="error" class="error-msg">{{ error }}</div>
@@ -45,7 +45,7 @@ const submitForm = async () => {
 	
 	// Basic client-side validation
 	if (form.value.message.length < 5) {
-		error.value = "Please enter a valid message."
+		error.value = "Please write a message before sending."
 		return
 	}
 
@@ -66,7 +66,7 @@ const submitForm = async () => {
     trackEvent('contact:message_sent', { location: 'contact_form' })
 		form.value = { name: '', email: '', message: '' }
 	} catch (e) {
-		error.value = "Something went wrong. Please try again later."
+		error.value = "Couldn't send your message. Check your connection and try again, or email me at divysharma029@gmail.com."
 	} finally {
 		loading.value = false
 	}
@@ -83,53 +83,57 @@ const submitForm = async () => {
 	.section-title {
 		margin-top: 0;
 		margin-bottom: 0.5rem;
-		font-size: 2rem;
-		font-weight: 400;
-		color: #222;
+		font-family: var(--font-sans);
+		font-size: var(--h3);
+		font-weight: 600;
+		color: var(--color-heading);
+		line-height: var(--leading-tight);
 	}
 
 	.section-desc {
-		color: #444; /* Darker than before */
+		color: var(--color-body);
 		margin-bottom: 2rem;
-		line-height: 1.6;
-		font-size: 1rem;
-		
+		line-height: var(--leading-normal);
+		font-size: var(--text-sm);
+
 		.email-link {
-			color: #222;
+			color: var(--color-heading);
 			text-decoration: underline;
-			text-decoration-color: rgba(34, 34, 34, 0.4);
+			text-decoration-color: var(--color-faint);
 			text-underline-offset: 2px;
+
+			&:hover { text-decoration-color: var(--color-heading); }
 		}
 	}
 
 	.form-group {
-		margin-bottom: 1rem;
+		margin-bottom: 0.75rem;
 
 		input, textarea {
 			width: 100%;
-			padding: 0.75rem 1rem;
-			border: 1px solid #ddd;
-			background: #fff;
-			border-radius: 4px;
-			font-family: inherit;
-			font-size: 0.95rem;
-			color: #444;
-			transition: border-color 0.2s;
+			padding: 0.625rem 0.875rem;
+			border: 1px solid var(--color-border);
+			background: var(--color-bg);
+			border-radius: var(--radius-sm);
+			font-family: var(--font-sans);
+			font-size: var(--text-sm);
+			color: var(--color-heading);
+			transition: border-color var(--duration-fast);
+			box-sizing: border-box;
 
 			&::placeholder {
-				color: #999;
+				color: var(--color-muted);
 			}
 
 			&:focus {
-				outline: none;
-				border-color: #999;
+				border-color: var(--color-body);
 			}
 
 			&:disabled {
-				background: #eee;
+				background: var(--color-bg-subtle);
 			}
 		}
-		
+
 		textarea {
 			resize: vertical;
 			min-height: 120px;
@@ -137,17 +141,16 @@ const submitForm = async () => {
 	}
 
 	.btn-submit {
-		background: #ffeadd; /* Peach color from reference */
-		color: #a85a32; /* Darker orange/brown text */
+		background: var(--color-heading);
+		color: #fff;
 		border: none;
-		/* padding: 0.75rem 2rem; */
-		border-radius: 4px;
+		padding: 0.625rem 1.5rem;
+		border-radius: var(--radius-sm);
+		font-family: var(--font-sans);
 		font-weight: 500;
 		cursor: pointer;
-		font-size: 0.95rem;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		transition: opacity 0.2s, background 0.2s;
+		font-size: var(--text-sm);
+		transition: background var(--duration-fast);
 		width: 100%;
 
 		&:disabled {
@@ -156,20 +159,20 @@ const submitForm = async () => {
 		}
 
 		&:hover:not(:disabled) {
-			opacity: 0.9;
+			background: #4b5563;
 		}
 	}
 
 	.error-msg {
-		color: #d32f2f;
-		margin-bottom: 1rem;
-		font-size: 0.9rem;
+		color: var(--color-danger);
+		margin-bottom: 0.75rem;
+		font-size: var(--text-sm);
 	}
 
 	.success-msg {
-		color: #388e3c;
-		margin-bottom: 1rem;
-		font-size: 0.9rem;
+		color: var(--color-success);
+		margin-bottom: 0.75rem;
+		font-size: var(--text-sm);
 	}
 }
 </style>

@@ -3,7 +3,7 @@ export const ctaConfig = {
     profileImage: '/pixel-avatar.jpg',
     profileAlt: 'Profile',
     // Button Text
-    linkText: 'Book a Free Call',
+    linkText: 'Book a call',
 
     // Cal.com Link (Replace with your actual username/event)
     calLink: 'divy-sharma-gyxa7o',

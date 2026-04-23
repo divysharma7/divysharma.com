@@ -38,7 +38,7 @@ useHead({
   title: 'Certificates & Achievements',
   meta: [
     { name: 'description', content: 'Awards, hackathon wins, and the mentors who guided me along the way.' },
-    { property: 'og:title', content: 'Certificates & Mentors | Divy Sharma' },
+    { property: 'og:title', content: 'Certificates & Achievements | Divy Sharma' },
     { property: 'og:description', content: 'Proof of work: Hackathons, competitions, and the people who helped me.' }
   ]
 })
@@ -46,12 +46,12 @@ useHead({
 
 <style scoped>
 .cert-page {
-	padding: 72px 24px;
+	padding: 3rem var(--container-padding);
 	min-height: 100vh;
 }
 
 .cert-container {
-	max-width: var(--container-max);
+	max-width: var(--container);
 	margin: 0 auto;
 }
 
@@ -63,34 +63,28 @@ useHead({
 
 .cert-title {
 	font-size: var(--h1);
-	font-weight: 800;
+	font-weight: 600;
 	margin: 0;
-	letter-spacing: -0.03em;
-	line-height: 1.1;
+	letter-spacing: -0.02em;
+	line-height: var(--leading-tight);
 	font-family: var(--font-sans);
-	/* Premium text gradient */
-	background: linear-gradient(135deg, var(--heading-color, #111) 0%, #777 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-    padding-bottom: 4px;
+	color: var(--color-heading);
 }
 
 .cert-subtitle {
-	font-size: 1.15rem;
-	color: var(--text-muted);
+	font-size: var(--text-lg);
+	color: var(--color-muted);
 	margin: 16px auto 0;
 	max-width: 580px;
-	line-height: 1.6;
+	line-height: var(--leading-normal);
 	font-weight: 400;
 }
 
 /* ── Divider ── */
 .cert-divider {
 	height: 1px;
-	background: var(--border);
-	margin: 48px 0;
-    opacity: 0.6;
+	background: var(--color-border);
+	margin: 2.5rem 0;
 }
 
 /* ── Section Header ── */
@@ -99,22 +93,23 @@ useHead({
 }
 
 .cert-section-title {
-	font-size: var(--h2);
-	font-weight: 800;
-	color: var(--heading-color);
+	font-size: var(--h3);
+	font-weight: 600;
+	color: var(--color-heading);
+	line-height: var(--leading-tight);
 	margin: 0;
 	letter-spacing: -0.01em;
 	font-family: var(--font-sans);
 }
 
 .cert-section-count {
-	font-size: 1rem;
+	font-size: var(--text-base);
 	font-weight: 600;
-	color: var(--text-muted);
+	color: var(--color-muted);
 	margin-left: 8px;
     background: var(--border, #eee);
     padding: 2px 10px;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
     display: inline-block;
     transform: translateY(-2px);
 }

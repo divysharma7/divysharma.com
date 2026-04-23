@@ -66,7 +66,7 @@ img {
 }
 
 .notion-callout .notion-emoji {
-	font-size: 1.5em;
+	font-size: 1.5rem;
 	line-height: 1.235em;
 }
 
@@ -76,11 +76,11 @@ img {
 }
 
 .notion-title {
-	margin-bottom: 0.2em;
+	margin-bottom: 0.2rem;
 }
 
 .notion-h1 {
-	margin-bottom: 0.3em !important;
+	margin-bottom: 0.3rem !important;
 }
 
 .notion-text em {
@@ -90,7 +90,7 @@ img {
 .notion-hr {
 	border: none !important;
 	width: 100%;
-	height: 0.05em;
+	height: 0.05rem;
 	background-color: #222;
 	opacity: 0.3;
 }
@@ -105,18 +105,18 @@ img {
 }
 
 .notion-image-inset {
-	border-radius: 0.25em;
+	border-radius: 0.25rem;
 }
 
 .errnotion {
-	margin-top: -5em;
-	margin-bottom: 11em;
+	margin-top: -5rem;
+	margin-bottom: 11rem;
 }
 
 @media (max-width: 750px) {
 	.errnotion {
-		margin-top: -3em;
-		margin-bottom: 12em;
+		margin-top: -3rem;
+		margin-bottom: 12rem;
 	}
 }
 </style>

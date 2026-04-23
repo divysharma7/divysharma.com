@@ -48,14 +48,14 @@ export default {
 <style lang="scss" scoped>
 .name {
 	margin: 0;
-	margin-bottom: 0.2em;
-	font-size: 1.1em;
+	margin-bottom: 0.2rem;
+	font-size: 1.1rem;
 	font-weight: 400;
 }
 
 .description {
 	margin: 0;
-	font-size: 0.9em;
+	font-size: 0.9rem;
 	opacity: 0.8;
 	font-weight: 300;
 }
@@ -66,12 +66,12 @@ export default {
 .pop {
 	position: absolute;
 	top: -8.5em;
-	border-radius: 0.5em;
+	border-radius: 0.5rem;
 	width: 100%;
 }
 .pop img {
 	width: 90%;
-	border-radius: 0.5em;
+	border-radius: 0.5rem;
 }
 
 a {
@@ -82,10 +82,10 @@ a {
 .popmobile {
 	img {
 		width: 100%;
-		border-radius: 0.5em;
-		margin-bottom: 0.4em;
+		border-radius: 0.5rem;
+		margin-bottom: 0.4rem;
 	}
-	margin-top: 1em;
+	margin-top: 1rem;
 }
 
 .mobileimg {

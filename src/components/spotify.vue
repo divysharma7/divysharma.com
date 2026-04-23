@@ -6,6 +6,7 @@
 			href="https://open.spotify.com/user/divysharma7"
 			title="Spotify"
 			rel="noopener noreferrer"
+			aria-label="Now playing on Spotify"
 		>
 			<img src="@/assets/img/spotify.svg" alt="Spotify Icon" />
 		</a>
@@ -85,12 +86,12 @@ export default {
 <style scoped>
 .spotify {
 	border: solid rgba(34, 34, 34, 0.363) 1px;
-	border-radius: 0.5em;
-	padding: 1em;
+	border-radius: 0.5rem;
+	padding: 1rem;
 }
 
 .title {
-	font-size: 1.1em;
+	font-size: 1.1rem;
 }
 
 .green {
@@ -100,7 +101,7 @@ a[href].green:hover {
 	background-color: rgba(210, 255, 221, 0.562);
 }
 .gray {
-	color: #888;
+	color: var(--color-muted);
 }
 a[href].gray:hover {
 	background-color: rgba(200, 200, 200, 0.25);
@@ -114,7 +115,7 @@ a[href].gray:hover {
 }
 
 .spoticon {
-	margin-right: 2em;
+	margin-right: 2rem;
 }
 
 .flex {
@@ -134,7 +135,7 @@ a {
 }
 
 .spotflex img {
-	width: 1.25em;
+	width: 1.25rem;
 }
 
 .artist {
@@ -144,7 +145,7 @@ a {
 
 .spot-logo {
 	margin: 0;
-	margin-right: 0.5em;
+	margin-right: 0.5rem;
 }
 
 .not {
@@ -172,7 +173,7 @@ a {
 		max-width: 80%;
 	}
 	.spotflex {
-		margin-bottom: 0.5em;
+		margin-bottom: 0.5rem;
 	}
 }
 </style>

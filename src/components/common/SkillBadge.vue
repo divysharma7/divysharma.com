@@ -29,10 +29,10 @@ defineProps({
   background: #fafafa;
   font-size: 0.85rem;
   font-weight: 500;
-  color: #333;
+  color: var(--color-body);
   text-decoration: none;
   transition: all 0.2s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
 }
 
 .skill-badge:hover {

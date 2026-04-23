@@ -19,8 +19,8 @@
 	padding: 6rem 0 4rem;
 
 	.name {
-		font-size: 3rem;
-		font-weight: 800;
+		font-size: var(--h1);
+		font-weight: 600;
 		margin: 0 0 0.5rem;
 		letter-spacing: -0.02em;
 	}
@@ -80,7 +80,7 @@
 		padding: 4rem 0 3rem;
 
 		.name {
-			font-size: 2.5rem;
+			font-size: var(--h1);
 		}
 	}
 }

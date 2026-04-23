@@ -89,7 +89,7 @@
 	<div v-else class="not-found container" role="alert">
 		<div class="not-found-content">
 			<h1>Project Not Found</h1>
-			<p>We couldn't find the case study you're looking for. It may have been moved or deleted.</p>
+			<p>This case study doesn't exist or may have been moved.</p>
 			<router-link to="/projects" class="btn btn-primary">Browse All Projects</router-link>
 		</div>
 	</div>
@@ -190,7 +190,7 @@ useHead(seoData)
 	}
 
 	.title {
-		font-size: 2.5rem;
+		font-size: var(--h1);
 		margin: 0 0 1rem;
 	}
 
@@ -309,7 +309,7 @@ useHead(seoData)
 		max-width: 500px;
 		
 		h1 {
-			font-size: 2.5rem;
+			font-size: var(--h1);
 			margin-bottom: 1rem;
 		}
 

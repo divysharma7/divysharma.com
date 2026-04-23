@@ -8,7 +8,7 @@
 			<div class="tags">
 				<span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
 			</div>
-			<router-link :to="`/projects/${project.slug}`" class="link-text">View Case Study &rarr;</router-link>
+			<router-link :to="`/projects/${project.slug}`" class="link-text">Read case study &rarr;</router-link>
 		</div>
 	</div>
 </template>
@@ -24,14 +24,14 @@ defineProps({
 
 <style scoped lang="scss">
 .project-card {
-	border: 1px solid #eee;
+	border: 1px solid var(--color-border);
 	border-radius: 8px;
 	padding: 1.5rem;
 	transition: border-color 0.2s, box-shadow 0.2s;
 	background: #fff;
 
 	&:hover {
-		border-color: #ddd;
+		border-color: var(--color-faint);
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 	}
 
@@ -41,7 +41,7 @@ defineProps({
 		
 		a {
 			text-decoration: none;
-			color: #111;
+			color: var(--color-heading);
 			
 			&:hover {
 				color: #000;
@@ -50,7 +50,7 @@ defineProps({
 	}
 
 	.summary {
-		color: #666;
+		color: var(--color-body);
 		font-size: 0.95rem;
 		margin-bottom: 1rem;
 		line-height: 1.5;
@@ -63,7 +63,7 @@ defineProps({
 		margin-bottom: 1rem;
 
 		.tag {
-			background: #f5f5f5;
+			background: var(--color-border);
 			color: #444;
 			font-size: 0.75rem;
 			padding: 0.25rem 0.5rem;
@@ -76,7 +76,7 @@ defineProps({
 		font-size: 0.9rem;
 		font-weight: 600;
 		text-decoration: none;
-		color: #111;
+		color: var(--color-heading);
 
 		&:hover {
 			text-decoration: underline;

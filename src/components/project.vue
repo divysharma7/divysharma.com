@@ -51,11 +51,11 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-	height: 15em;
+	height: 15rem;
 	// width: 100%;
 	// aspect-ratio: 16/9;
-	border-radius: 1em;
-	padding: 1.5em;
+	border-radius: 1rem;
+	padding: 1.5rem;
 	background: white;
 	position: relative;
 	display: flex;
@@ -108,13 +108,13 @@ export default {
 	.txt {
 		margin: 0;
 		line-height: 1.4em;
-		margin-top: 0.1em;
+		margin-top: 0.1rem;
 		// margin-bottom: 0.5em;
 	}
 }
 @media (max-width: 750px) {
 	.card {
-		height: 10em;
+		height: 10rem;
 		padding-top: 5em;
 		&:before {
 			opacity: 1;
@@ -131,7 +131,7 @@ export default {
 			opacity: 1;
 			transform: translateY(0px);
 			h1 {
-				font-size: 1.65em;
+				font-size: 1.65rem;
 			}
 		}
 	}
@@ -140,6 +140,6 @@ export default {
 	text-decoration: none;
 }
 .project {
-	margin-bottom: 1.55em;
+	margin-bottom: 1.55rem;
 }
 </style>

@@ -48,12 +48,12 @@ useHead({
 
 <style scoped>
 .we-page {
-	padding: 72px 24px;
+	padding: 3rem var(--container-padding);
 	min-height: 100vh;
 }
 
 .we-container {
-	max-width: var(--container-max);
+	max-width: var(--container);
 	margin: 0 auto;
 }
 
@@ -65,27 +65,27 @@ useHead({
 
 .we-title {
 	font-size: var(--h1);
-	font-weight: 400;
-	color: var(--heading-color);
+	font-weight: 600;
+	color: var(--color-heading);
 	margin: 0;
 	letter-spacing: -0.02em;
-	line-height: 1.1;
+	line-height: var(--leading-tight);
 	font-family: var(--font-sans);
 }
 
 .we-subtitle {
 	font-size: var(--text-lg);
-	color: var(--text-muted);
+	color: var(--color-muted);
 	margin: 16px auto 0;
 	max-width: 500px;
-	line-height: 1.5;
+	line-height: var(--leading-normal);
 	font-weight: 400;
 }
 
 /* ── Divider ── */
 .we-divider {
 	height: 1px;
-	background: var(--border);
+	background: var(--color-border);
 	margin: 40px 0;
 }
 
@@ -95,9 +95,10 @@ useHead({
 }
 
 .we-section-title {
-	font-size: var(--h2);
-	font-weight: 800;
-	color: var(--heading-color);
+	font-size: var(--h3);
+	font-weight: 600;
+	color: var(--color-heading);
+	line-height: var(--leading-tight);
 	margin: 0;
 	letter-spacing: -0.01em;
 	font-family: var(--font-sans);
@@ -106,7 +107,7 @@ useHead({
 .we-section-count {
 	font-size: var(--text-base);
 	font-weight: 400;
-	color: var(--text-muted);
+	color: var(--color-muted);
 	margin-left: 4px;
 }
 
@@ -118,7 +119,7 @@ useHead({
 
 @media (max-width: 768px) {
 	.we-page {
-		padding: 48px 16px;
+		padding: 2rem 1rem;
 	}
 
 	.we-section-title {

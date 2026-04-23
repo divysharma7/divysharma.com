@@ -24,9 +24,9 @@ defineProps({
 }
 
 .sub-heading {
-  font-family: 'Inter', sans-serif;
-  color: #666;
-  font-size: 0.875rem;
+  font-family: var(--font-sans);
+  color: var(--color-body);
+  font-size: var(--text-sm);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -34,10 +34,11 @@ defineProps({
 }
 
 .heading {
-  font-family: var(--fontDisplay, serif);
-  font-size: 2rem;
-  font-weight: 700;
-  color: #111;
+  font-family: var(--font-sans);
+  font-size: var(--h3);
+  font-weight: 600;
+  color: var(--color-heading);
+  line-height: var(--leading-tight);
   margin: 0;
 }
 </style>

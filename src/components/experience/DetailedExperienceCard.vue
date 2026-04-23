@@ -47,7 +47,7 @@
 					<span class="tech-label">Technologies & Tools</span>
 					<div class="pills">
 						<span v-for="tech in experience.technologies" :key="tech.name" class="pill">
-							<img v-if="tech.icon && getIconUrl(tech.icon)" :src="getIconUrl(tech.icon)" alt="" class="pill-icon" />
+							<img v-if="tech.icon && getIconUrl(tech.icon)" :src="getIconUrl(tech.icon)" alt="" aria-hidden="true" class="pill-icon" />
 							{{ tech.name }}
 						</span>
 					</div>
@@ -123,7 +123,7 @@ function getIconUrl(icon) {
 	width: 100%;
 	height: 100%;
 	object-fit: contain;
-	border-radius: 8px;
+	border-radius: var(--radius-sm);
 	border: 1px solid #eaeaea;
     background: #fff;
 }
@@ -131,13 +131,13 @@ function getIconUrl(icon) {
 .exp-logo-placeholder {
 	width: 100%;
 	height: 100%;
-	border-radius: 8px;
-	background: #f5f5f5;
+	border-radius: var(--radius-sm);
+	background: var(--color-border);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-weight: bold;
-	color: #666;
+	color: var(--color-body);
 }
 
 /* Main Content */
@@ -157,7 +157,7 @@ function getIconUrl(icon) {
 .company-name {
 	font-size: 1.1rem;
 	font-weight: 700;
-	color: #111;
+	color: var(--color-heading);
 	margin: 0;
 }
 
@@ -167,13 +167,13 @@ function getIconUrl(icon) {
 }
 
 .exp-links a {
-	color: #999;
+	color: var(--color-muted);
 	display: flex;
 	transition: color 0.2s;
 }
 
 .exp-links a:hover {
-	color: #111;
+	color: var(--color-heading);
 }
 
 .icon {
@@ -188,7 +188,7 @@ function getIconUrl(icon) {
 	padding: 2px 8px;
 	background: #e8f5e9;
 	color: #2e7d32;
-	border-radius: 12px;
+	border-radius: var(--radius-md);
 	font-size: 0.75rem;
 	font-weight: 600;
 }
@@ -202,7 +202,7 @@ function getIconUrl(icon) {
 
 .role-title {
 	font-size: 0.95rem;
-	color: #666;
+	color: var(--color-body);
 	font-weight: 500;
 	margin-bottom: 1rem;
 }
@@ -216,20 +216,20 @@ function getIconUrl(icon) {
 .exp-header-meta-mobile {
 	display: none;
 	font-size: 0.9rem;
-	color: #666;
+	color: var(--color-body);
 	margin-bottom: 0.5rem;
 }
 
 .date {
 	font-size: 0.95rem;
-	color: #666;
+	color: var(--color-body);
 	font-weight: 500;
 	margin-bottom: 0.25rem;
 }
 
 .location {
 	font-size: 0.85rem;
-	color: #888;
+	color: var(--color-muted);
 }
 
 /* Tech Stack */
@@ -241,7 +241,7 @@ function getIconUrl(icon) {
 	display: block;
 	font-size: 0.85rem;
 	font-weight: 700;
-	color: #111;
+	color: var(--color-heading);
 	margin-bottom: 0.5rem;
 }
 
@@ -258,7 +258,7 @@ function getIconUrl(icon) {
 	padding: 4px 10px;
 	background: #f9fafb;
 	border: 1px dashed rgba(0,0,0,0.15); /* Dashed border like Ramx */
-	border-radius: 6px;
+	border-radius: var(--radius-sm);
 	font-size: 0.85rem;
 	color: #444;
 	font-weight: 500;
@@ -271,7 +271,7 @@ function getIconUrl(icon) {
 
 /* Description */
 .description {
-	color: #555;
+	color: var(--color-body);
 	font-size: 0.95rem;
 	line-height: 1.6;
 }
@@ -283,7 +283,7 @@ function getIconUrl(icon) {
 }
 
 .bullet {
-	color: #999;
+	color: var(--color-muted);
 	font-size: 0.8rem;
 	line-height: 1.8;
 }

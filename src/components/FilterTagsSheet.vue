@@ -113,8 +113,10 @@ function toggleTag(name) {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   border: none;
   background: transparent;
@@ -159,7 +161,6 @@ function toggleTag(name) {
   font-family: inherit;
   color: #333;
   background: #fafafa;
-  outline: none;
   transition: border-color 0.15s ease;
 }
 .tags-search-input:focus {
@@ -219,15 +220,15 @@ function toggleTag(name) {
 
 .tag-name { flex: 1; }
 .tag-freq {
-  font-size: 0.72rem;
-  color: #bbb;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
 }
 .tag-row.selected .tag-freq { color: #888; }
 
 .tags-empty {
   padding: 2rem 1.25rem;
   text-align: center;
-  color: #aaa;
+  color: var(--color-muted);
   font-size: 0.85rem;
 }
 

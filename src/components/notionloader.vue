@@ -1,7 +1,7 @@
 <template>
 	<div class="loadind">
 		<div class="loader"></div>
-		<h3 class="fancy loadtext">loading...</h3>
+		<h3 class="fancy loadtext">Loading content...</h3>
 	</div>
 </template>
 
@@ -33,7 +33,7 @@
 	border: var(--bor-wid) solid rgba(0, 0, 0, 0.2);
 	/* border-right: 1.1em solid rgba(0, 0, 0, 0.2);
 	border-bottom: 1.1em solid rgba(0, 0, 0, 0.2); */
-	border-left: var(--bor-wid) solid var(--red-text);
+	border-left: var(--bor-wid) solid var(--color-heading);
 	-webkit-transform: translateZ(0);
 	-ms-transform: translateZ(0);
 	transform: translateZ(0);

@@ -119,19 +119,12 @@ body {
 	font-display: swap;
 }
 
-@font-face {
-	font-family: 'Plex Mono';
-	src: url('/IBMPlexMono-Light.woff2');
-	font-weight: 400;
-	font-display: swap;
-}
-
 .mono {
-	font-family: 'Plex Mono', monospace;
+	font-family: 'JetBrains Mono', monospace;
 }
 
 html {
-	font-size: 62.5%;
+	font-size: 100%;
 }
 
 ::selection {
@@ -139,10 +132,10 @@ html {
 }
 
 body {
-	font-size: 1.6rem;
-	line-height: 1.6;
-	font-family: var(--fontSans);
-	color: #060c17;
+	font-size: 1rem;
+	line-height: var(--leading-normal);
+	font-family: var(--font-sans);
+	color: var(--color-heading);
 }
 
 a {
@@ -151,18 +144,16 @@ a {
 }
 
 p a {
-	transition: 300ms;
-	border-bottom: 1px dashed #abb0b6;
+	transition: 200ms;
+	border-bottom: 1px dashed var(--color-faint);
 	text-decoration: none;
 	color: inherit;
 }
 
 p a:not(.notion-link):hover {
 	background-color: rgba(252, 184, 153, 0.493);
-	/* background-color: rgba(184, 208, 250, 0.384); */
-	/* background-color: var(--red-text); */
 }
 
 p {
-	opacity: 0.9;
+	opacity: 1;
 }

@@ -81,24 +81,19 @@ onUnmounted(() => {
 .wisdom-card {
   position: relative;
   width: 100%;
-  max-width: 100%; /* Full width to match parent container (800px) */
-  background: #fff;
-  border-radius: 16px;
-  /* Creative shadow: soft lift */
-  box-shadow: 
-    0 10px 40px -10px rgba(0,0,0,0.08),
-    0 0 0 1px rgba(0,0,0,0.03); 
+  max-width: 100%;
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md), 0 0 0 1px rgba(0,0,0,0.03);
   overflow: hidden;
   padding: 3rem 2.5rem;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform var(--duration-normal) ease;
 }
 
 .wisdom-card:hover {
   transform: translateY(-2px);
-  box-shadow: 
-    0 20px 40px -10px rgba(0,0,0,0.12),
-    0 0 0 1px rgba(0,0,0,0.03);
+  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(0,0,0,0.03);
 }
 
 .watermark-icon {
@@ -129,11 +124,10 @@ onUnmounted(() => {
 }
 
 .quote-text {
-  /* Using serif for wisdom feel */
-  font-family: var(--fontDisplay, Georgia, serif);
-  font-size: 1.5rem;
-  color: #222;
-  line-height: 1.4;
+  font-family: var(--font-sans);
+  font-size: var(--h3);
+  color: var(--color-heading);
+  line-height: var(--leading-snug);
   margin: 0;
   font-weight: 500;
   letter-spacing: -0.01em;
@@ -143,14 +137,13 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-family: 'Inter', sans-serif;
-  color: #666;
-  font-size: 0.9rem;
-  opacity: 0.8;
+  font-family: var(--font-sans);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
 }
 
 .author-dash {
-  color: #ccc;
+  color: var(--color-faint);
   font-weight: 300;
 }
 
@@ -158,7 +151,7 @@ onUnmounted(() => {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  font-size: 0.8rem;
+  font-size: var(--text-xs);
 }
 
 /* Progress Line at Top */
@@ -168,12 +161,12 @@ onUnmounted(() => {
   left: 0;
   width: 100%;
   height: 3px;
-  background: #f3f3f3;
+  background: var(--color-border);
 }
 
 .progress-fill {
   height: 100%;
-  background: #222;
+  background: var(--color-heading);
   width: 0%;
   animation: progress linear forwards;
 }
@@ -197,7 +190,7 @@ onUnmounted(() => {
 
 @media (max-width: 640px) {
   .quote-text {
-    font-size: 1.25rem;
+    font-size: var(--text-lg);
   }
   .wisdom-card {
     padding: 2.5rem 1.5rem;

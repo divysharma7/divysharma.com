@@ -5,7 +5,7 @@
       <div class="cta-inner">
         <p class="cta-message">{{ ctaConfig.preText }}</p>
         
-        <button @click="openBooking" class="cta-btn group" aria-label="Book a free call">
+        <button @click="openBooking" class="cta-btn group" aria-label="Book a call">
           <div class="avatars-group">
             <div class="avatar-wrapper">
               <img 
@@ -126,7 +126,7 @@ function closeBooking() {
   margin: 3rem auto;
   padding: 4rem 2rem;
   border: 1.5px dashed rgba(0, 0, 0, 0.12);
-  border-radius: 20px;
+  border-radius: var(--radius-md);
   background: rgba(250, 250, 250, 0.4);
   position: relative;
   transition: border-color 0.3s ease;
@@ -161,7 +161,7 @@ function closeBooking() {
   gap: 0.6rem;
   padding: 0.45rem 1rem 0.45rem 0.45rem;
   border: 1.5px solid rgba(0, 0, 0, 0.1);
-  border-radius: 100px;
+  border-radius: var(--radius-pill);
   background: #fff;
   cursor: pointer;
   font-family: inherit;
@@ -228,7 +228,7 @@ function closeBooking() {
 }
 
 .plus-icon {
-  color: #9ca3af;
+  color: var(--color-body);
   flex-shrink: 0;
 }
 
@@ -260,7 +260,7 @@ function closeBooking() {
   position: absolute;
   bottom: 0.75rem;
   right: 1rem;
-  color: #d1d5db;
+  color: var(--color-muted);
   opacity: 0.5;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -289,11 +289,11 @@ function closeBooking() {
 .booking-modal {
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: var(--container-wide);
   height: 90vh;
   max-height: 90vh;
   background: #fff;
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow:
     0 0 0 1px rgba(0, 0, 0, 0.04),
@@ -319,7 +319,7 @@ function closeBooking() {
   justify-content: center;
   gap: 0.75rem;
   background: #fff;
-  color: #9ca3af;
+  color: var(--color-body);
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -400,7 +400,7 @@ function closeBooking() {
   .cta-card {
     margin: 2rem 0;
     padding: 2.25rem 1.25rem;
-    border-radius: 14px;
+    border-radius: var(--radius-md);
   }
 
   .cta-message {
@@ -452,8 +452,8 @@ function closeBooking() {
     transform: translateX(-50%);
     width: 36px;
     height: 4px;
-    border-radius: 4px;
-    background: #d1d5db;
+    border-radius: var(--radius-sm);
+    background: var(--color-faint);
     z-index: 15;
   }
 

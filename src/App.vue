@@ -1,5 +1,5 @@
 <template>
-	<main>
+	<div>
 		<nav v-if="$route.meta.title !== 'notfound'" class="navbar">
 			<div class="navcont">
 				<div v-if="$route.meta.title !== 'Home'" class="flexbruh noselect">
@@ -9,22 +9,20 @@
 					>
 					<span>Divy Sharma</span>
 				</div>
-				<!-- <router-link v-else to="/"> -->
-				<img draggable="false" class="logo" src="/bot-avatar-transparent.png" alt="logo" v-else />
-				<!-- </router-link> -->
+				<router-link to="/" class="logo-text" v-else>Divy Sharma</router-link>
 
 				<div class="links">
 					<router-link to="/" @click="trackEvent('nav:click', { to: '/', from: 'nav' })">Home</router-link>
 					<router-link to="/projects" @click="trackEvent('nav:click', { to: '/projects', from: 'nav' })">Projects</router-link>
-					<router-link to="/WorkExperience" @click="trackEvent('nav:click', { to: '/WorkExperience', from: 'nav' })">Work Experience</router-link>
+					<router-link to="/workexperience" @click="trackEvent('nav:click', { to: '/workexperience', from: 'nav' })">Work Experience</router-link>
 					<router-link to="/books" @click="trackEvent('nav:click', { to: '/books', from: 'nav' })">Books</router-link>
 					<router-link to="/explore" @click="trackEvent('nav:click', { to: '/explore', from: 'nav' })">Explore</router-link>
 					<router-link to="/blog" @click="trackEvent('nav:click', { to: '/blog', from: 'nav' })">Blog</router-link>
 				</div>
 
-				<div class="ham" @click="nav = !nav">
+				<button class="ham" @click="nav = !nav" aria-label="Toggle navigation">
 					<img src="@/assets/img/ham.svg" alt="Open navbar" />
-				</div>
+				</button>
 			</div>
 		</nav>
 
@@ -32,11 +30,11 @@
 			<div v-if="nav" class="fullnav">
 				<div class="navcont">
 					<div class="topsec">
-						<h1>&nbsp;</h1>
+						<span>&nbsp;</span>
 
-						<div class="ham" @click="nav = !nav">
+						<button class="ham" @click="nav = !nav" aria-label="Toggle navigation">
 							<img src="@/assets/img/close.svg" alt="Close navbar" />
-						</div>
+						</button>
 					</div>
 
 					<div class="navdata">
@@ -45,7 +43,7 @@
 							<router-link to="/projects" @click="[nav = !nav, trackEvent('nav:click', { to: '/projects', from: 'nav_mobile' })]"
 								>Projects</router-link
 							>
-							<router-link to="/WorkExperience" @click="[nav = !nav, trackEvent('nav:click', { to: '/WorkExperience', from: 'nav_mobile' })]"
+							<router-link to="/workexperience" @click="[nav = !nav, trackEvent('nav:click', { to: '/workexperience', from: 'nav_mobile' })]"
 								>Work Experience</router-link
 							>
 							<router-link to="/books" @click="[nav = !nav, trackEvent('nav:click', { to: '/books', from: 'nav_mobile' })]"
@@ -80,7 +78,7 @@
 		</div>
 		<ChatWidget />
 		<Oneko />
-	</main>
+	</div>
 </template>
 
 <script>
@@ -148,7 +146,7 @@ useHead({
 }
 
 .navcont .topsec {
-	margin-top: 0.5em;
+	margin-top: 0.5rem;
 }
 
 .navbar .links {
@@ -156,24 +154,24 @@ useHead({
 }
 
 .navbar .links a {
-	margin-left: 1em;
-	font-size: 1.1em;
+	margin-left: 1rem;
+	font-size: 1.1rem;
 	transition: 0.2s;
 }
 
 .navbar .links a.router-link-exact-active {
-	color: var(--red-text);
+	color: var(--color-heading);
 	// color: rgb(60, 124, 233);
 }
 
 .navbar .links a:hover {
-	color: var(--red-text);
+	color: var(--color-heading);
 	// color: rgb(60, 124, 233);
 }
 
 .navbar {
-	padding: 2em 0 1em 0;
-	margin-bottom: 1.5em;
+	padding: 2rem 0 1rem 0;
+	margin-bottom: 1.5rem;
 }
 
 .fade-enter-active,
@@ -201,7 +199,7 @@ useHead({
 }
 
 .ham img {
-	width: 1.3em;
+	width: 1.3rem;
 }
 
 .footer-notfound {
@@ -211,7 +209,7 @@ useHead({
 .fullnav {
 	width: 100%;
 	height: 100vh;
-	background-color: var(--bg-color);
+	background-color: var(--color-bg);
 	position: fixed;
 	top: 0;
 	z-index: 20;
@@ -219,7 +217,7 @@ useHead({
 }
 
 .footer:not(.footer-Home) {
-	margin-bottom: 4em;
+	margin-bottom: 4rem;
 }
 
 .navdata {
@@ -227,49 +225,51 @@ useHead({
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		margin-top: 3em;
+		margin-top: 3rem;
 	}
 	.btm {
 		position: absolute;
 		bottom: 5em;
 	}
 	a {
-		font-size: 2em;
-		margin-bottom: 0.65em;
+		font-size: 2rem;
+		margin-bottom: 0.65rem;
 		span {
 			width: 100% !important;
 		}
 	}
 	a.router-link-exact-active {
-		color: var(--red-text);
+		color: var(--color-heading);
 	}
 }
 
-.logo {
-	width: 3em; /* Slightly larger for avatar */
-	height: 3em;
-	/* Removed border-radius and background */
-	object-fit: cover;
+.logo-text {
+	font-family: var(--font-sans);
+	font-size: var(--text-base);
+	font-weight: 600;
+	color: var(--color-heading);
+	text-decoration: none;
+	letter-spacing: -0.01em;
 }
 
 .footer-Home {
-	margin-top: 1.25em;
+	margin-top: 1.25rem;
 }
 
 .footer-Projects {
-	margin-bottom: 2em;
-	margin-top: -3em;
+	margin-bottom: 2rem;
+	margin-top: -3rem;
 }
 
 @media (max-width: 768px) {
 	.footer-Home {
-		margin-top: 1.5em;
+		margin-top: 1.5rem;
 	}
 	.footer-Home.flexfoot {
 		margin-bottom: 4.75em;
 	}
 	.footer {
-		margin-bottom: -4em;
+		margin-bottom: -4rem;
 	}
 	.navbar .links {
 		display: none;
@@ -286,17 +286,17 @@ useHead({
 }
 
 .global-quote-wrap {
-	max-width: 800px;
+	max-width: var(--container);
 	margin: 0 auto;
 	padding: 0 1.5rem;
 }
 
 .flexbruh .back {
-	margin-right: 1em;
+	margin-right: 1rem;
 }
 
 .back {
-	font-size: 1em !important;
+	font-size: 1rem !important;
 	margin-top: -0.25em;
 }
 </style>

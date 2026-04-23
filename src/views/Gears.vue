@@ -3,7 +3,7 @@
     <!-- Header -->
     <div class="page-header">
       <h1 class="page-title">Gears</h1>
-      <p class="page-subtitle">My gears and tools i use to get my work done.</p>
+      <p class="page-subtitle">Tools and software I use daily.</p>
     </div>
 
     <hr class="divider" />
@@ -49,11 +49,21 @@
 <script setup>
 import { devices, software } from '../config/gears.js';
 import { Monitor, ArrowUpRight } from 'lucide-vue-next';
+import { useHead } from '@vueuse/head';
+
+useHead({
+  title: 'Gears',
+  meta: [
+    { name: 'description', content: 'Tools, software, and hardware I use daily to get my work done.' },
+    { property: 'og:title', content: 'Gears | Divy Sharma' },
+    { property: 'og:description', content: 'Tools, software, and hardware I use daily to get my work done.' }
+  ]
+})
 </script>
 
 <style scoped>
 .gears-page {
-  max-width: 800px;
+  max-width: var(--container);
   margin: 0 auto;
   padding: 4rem 1.5rem;
 }
@@ -64,17 +74,17 @@ import { Monitor, ArrowUpRight } from 'lucide-vue-next';
 }
 
 .page-title {
-  font-family: var(--fontDisplay, serif);
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #111;
-  letter-spacing: -0.02em;
+  font-family: var(--font-sans);
+  font-size: var(--h1);
+  font-weight: 600;
+  color: var(--color-heading);
+  line-height: var(--leading-tight);
   margin-bottom: 0.5rem;
 }
 
 .page-subtitle {
-  color: #6b7280;
-  font-size: 1.05rem;
+  color: var(--color-body);
+  font-size: var(--text-base);
   max-width: 480px;
   margin: 0 auto;
 }
@@ -91,9 +101,10 @@ import { Monitor, ArrowUpRight } from 'lucide-vue-next';
 }
 
 .section-title {
-  font-size: 1.35rem;
+  font-size: var(--h3);
   font-weight: 600;
-  color: #111;
+  color: var(--color-heading);
+  line-height: var(--leading-tight);
   margin: 0 0 1.25rem;
 }
 
@@ -127,10 +138,10 @@ import { Monitor, ArrowUpRight } from 'lucide-vue-next';
   justify-content: center;
   width: 34px;
   height: 34px;
-  border-radius: 8px;
-  background: #f3f4f6;
+  border-radius: var(--radius-sm);
+  background: var(--color-border);
   border: 1px solid rgba(0, 0, 0, 0.06);
-  color: #736f70;
+  color: var(--color-body);
   flex-shrink: 0;
 }
 
@@ -140,33 +151,33 @@ import { Monitor, ArrowUpRight } from 'lucide-vue-next';
   justify-content: center;
   min-width: 28px;
   height: 26px;
-  border-radius: 6px;
-  background: #f3f4f6;
+  border-radius: var(--radius-sm);
+  background: var(--color-border);
   border: 1px solid rgba(0, 0, 0, 0.06);
-  color: #736f70;
+  color: var(--color-body);
   flex-shrink: 0;
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
   font-weight: 500;
   padding: 0 6px;
 }
 
 .item-name {
-  font-size: 0.9rem;
-  color: #555;
+  font-size: var(--text-sm);
+  color: var(--color-body);
 }
 
 .item-link {
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  font-size: 0.9rem;
-  color: #555;
+  font-size: var(--text-sm);
+  color: var(--color-body);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .item-link:hover {
-  color: #111;
+  color: var(--color-heading);
 }
 
 .link-arrow {
@@ -185,7 +196,7 @@ import { Monitor, ArrowUpRight } from 'lucide-vue-next';
   }
 
   .page-title {
-    font-size: 2rem;
+    font-size: var(--h1);
   }
 }
 </style>

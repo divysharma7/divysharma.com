@@ -29,7 +29,7 @@ img {
 body,
 html,
 * {
-	font-family: "Inter", sans-serif !important;
+	font-family: var(--font-sans);
 	font-weight: 600;
 }
 
@@ -73,7 +73,7 @@ img {
 	margin-top: 20vh;
 }
 .sml {
-	font-size: 0.5em;
+	font-size: var(--text-xs);
 }
 .nav a {
 	border: none;

@@ -2,11 +2,11 @@
 	<div class="chat-wrapper" :class="{ open: isOpen }">
 		<!-- Chat Window -->
 		<transition name="fade-slide">
-			<div v-if="isOpen" class="chat-window" role="dialog" aria-label="Chat">				
+			<div v-if="isOpen" class="chat-window" role="dialog" aria-modal="true" aria-label="Chat">
 				<div class="chat-header">
 					<div class="header-info">
 						<div class="avatar-container">
-							<img src="/bot-avatar-transparent.png" alt="Avatar" class="avatar-img" />
+							<i class="ph-bold ph-chat-dots avatar-icon"></i>
 							<span class="status-indicator"></span>
 						</div>
 						<div class="header-text">
@@ -23,7 +23,7 @@
 						<!-- Assistant Welcome -->
 						<div class="message assistant">
 							<div class="avatar-small">
-								<img src="/bot-avatar-transparent.png" alt="Avatar" />
+								<i class="ph-bold ph-chat-dots"></i>
 							</div>
 							<div class="message-content">
 								<p>Hello! I'm Divy's Portfolio Assistant. How can I help you regarding his work?</p>
@@ -50,7 +50,7 @@
 						:class="msg.role"
 					>
 						<div v-if="msg.role === 'assistant'" class="avatar-small">
-							<img src="/bot-avatar-transparent.png" alt="Avatar" />
+							<i class="ph-bold ph-chat-dots"></i>
 						</div>
 						<div class="message-content">
 							<div v-html="markdownToHtml(msg.content)"></div>
@@ -59,7 +59,7 @@
 					
 					<div v-if="isLoading" class="message assistant loading">
 						<div class="avatar-small">
-							<img src="/bot-avatar-transparent.png" alt="Avatar" />
+							<i class="ph-bold ph-chat-dots"></i>
 						</div>
 						<div class="message-content bubble-loading">
 							<div class="typing-dot"></div>
@@ -101,7 +101,7 @@
 			:class="{ open: isOpen }"
 			aria-label="Toggle Chat"
 		>
-			<img v-if="!isOpen" src="/bot-avatar-transparent.png" alt="Chat" class="avatar-toggle" />
+			<i v-if="!isOpen" class="ph-bold ph-chat-dots"></i>
 			<i v-else class="ph-bold ph-x"></i>
 		</button>
 	</div>
@@ -205,12 +205,7 @@ watch(isOpen, async (val) => {
 </script>
 
 <style scoped lang="scss">
-/* Variables - Creamy Theme */
-$bg-cream: #fcfbf7;
-$bg-white: #ffffff;
-$text-black: #2A2522; /* Deep Warm Brown */
-$text-grey: #6a788c;
-$border-beige: #e0d8cc;
+/* Semantic color kept as local variable (not in design tokens) */
 $green-dot: #22c55e;
 $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 
@@ -219,27 +214,27 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 	bottom: 2rem;
 	right: 2rem;
 	z-index: 9999;
-	font-family: var(--fontSans), 'Inter', sans-serif;
+	font-family: var(--font-sans), 'Inter', sans-serif;
 }
 
 /* Toggle Button */
 .chat-toggle {
 	position: relative;
 	z-index: 2;
-	width: 4rem; /* Slightly larger for avatar */
-	height: 4rem;
+	width: 3.5rem;
+	height: 3.5rem;
 	border-radius: 50%;
-	background: transparent;
-	color: $bg-white;
+	background: var(--color-heading);
+	color: #fff;
 	border: none;
 	cursor: pointer;
-	box-shadow: 0 4px 12px rgba(42, 37, 34, 0.2);
+	box-shadow: var(--shadow-md);
 	transition: 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 1.5rem;
-	padding: 0; /* Remove padding for full image */
+	font-size: 1.35rem;
+	padding: 0;
 	overflow: hidden;
 
 	&:hover {
@@ -247,8 +242,8 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 	}
 
 	&.open {
-		background: $bg-white;
-		color: $text-black;
+		background: var(--color-bg);
+		color: var(--color-heading);
 		box-shadow: $shadow-soft;
 		transform: rotate(90deg);
 		
@@ -257,11 +252,6 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 		}
 	}
 
-	.avatar-toggle {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
 }
 
 /* Window */
@@ -273,22 +263,22 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 	width: 380px;
 	height: 600px;
 	max-height: 80vh;
-	background: $bg-cream;
-	border-radius: 24px;
+	background: var(--color-bg-subtle);
+	border-radius: var(--radius-md);
 	box-shadow: $shadow-soft;
-	border: 1px solid $border-beige;
+	border: 1px solid var(--color-border);
 	display: flex;
 	flex-direction: column;
 	overflow: hidden;
-	color: $text-black;
+	color: var(--color-heading);
 	transform-origin: bottom right;
 }
 
 /* Header */
 .chat-header {
 	padding: 1.25rem 1.5rem;
-	border-bottom: 1px solid rgba(224, 216, 204, 0.5);
-	background: rgba(252, 251, 247, 0.9);
+	border-bottom: 1px solid var(--color-border);
+	background: var(--color-bg);
 	backdrop-filter: blur(5px);
 }
 
@@ -300,15 +290,18 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 
 .avatar-container {
 	position: relative;
-	width: 48px;
-	height: 48px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: var(--color-heading);
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.avatar-img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	/* Removed border and background */
+.avatar-icon {
+	color: #fff;
+	font-size: var(--text-lg);
 }
 
 .status-indicator {
@@ -319,7 +312,7 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 	height: 12px;
 	background: $green-dot;
 	border-radius: 50%;
-	border: 2px solid $bg-white;
+	border: 2px solid var(--color-bg);
 }
 
 .header-text {
@@ -330,14 +323,14 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 
 .title {
 	font-weight: 700;
-	font-size: 1rem;
-	color: $text-black;
+	font-size: var(--text-base);
+	color: var(--color-heading);
 	letter-spacing: -0.01em;
 }
 
 .status {
-	font-size: 0.75rem;
-	color: $text-grey;
+	font-size: var(--text-xs);
+	color: var(--color-body);
 	font-weight: 500;
 	display: flex;
 	align-items: center;
@@ -372,11 +365,11 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 }
 
 .suggestions-label {
-	font-size: 0.75rem;
+	font-size: var(--text-xs);
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
-	color: #9ca3af; /* Light grey label */
+	color: var(--color-muted); /* Light grey label */
 	margin-bottom: 0.5rem;
 	margin-left: 0.25rem;
 }
@@ -388,25 +381,22 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 }
 
 .suggestion-chip {
-	background: $bg-white;
-	border: 1px solid $border-beige;
-	color: $text-black;
-	padding: 0.85rem 1.25rem;
-	border-radius: 20px;
-	font-size: 0.8rem;
-	font-weight: 600;
-	text-transform: uppercase;
-	letter-spacing: 0.02em;
+	background: var(--color-bg);
+	border: 1px solid var(--color-border);
+	color: var(--color-heading);
+	padding: 0.625rem 1rem;
+	border-radius: var(--radius-sm);
+	font-size: var(--text-sm);
+	font-weight: 500;
 	cursor: pointer;
-	transition: all 0.2s;
+	transition: all var(--duration-fast);
 	text-align: left;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 	font-family: inherit;
-	line-height: 1.4;
+	line-height: var(--leading-snug);
 
 	&:hover {
-		background: #faf9f6;
-		border-color: #d0c8be;
+		background: var(--color-bg-subtle);
+		border-color: var(--color-border);
 		transform: translateY(-1px);
 		box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 	}
@@ -417,15 +407,15 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 	gap: 0.75rem;
 	align-items: flex-start;
 	max-width: 100%;
-	font-size: 0.95rem;
-	line-height: 1.6;
+	font-size: var(--text-sm);
+	line-height: var(--leading-normal);
 
 	&.user {
 		align-self: flex-end;
 		flex-direction: row-reverse;
 		
 		.message-content {
-			background: #060c17; /* Black user bubble */
+			background: var(--color-heading); /* Black user bubble */
 			color: #ffffff;
 			padding: 0.85rem 1.25rem;
 			border-radius: 20px 20px 4px 20px;
@@ -437,26 +427,26 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 		align-self: flex-start;
 		
 		.message-content {
-			background: $bg-white;
-			color: $text-black;
+			background: var(--color-bg);
+			color: var(--color-heading);
 			border-radius: 4px 20px 20px 20px;
 			padding: 1rem 1.25rem;
-			border: 1px solid $border-beige;
+			border: 1px solid var(--color-border);
 			box-shadow: 0 2px 6px rgba(180, 160, 130, 0.05);
 			max-width: 90%;
 		}
 
 		.avatar-small {
 			flex-shrink: 0;
-			width: 36px;
-			height: 36px;
-			
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-				/* Removed border and background */
-			}
+			width: 28px;
+			height: 28px;
+			border-radius: 50%;
+			background: var(--color-heading);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			font-size: var(--text-xs);
 		}
 	}
 }
@@ -464,8 +454,8 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 /* Input Area */
 .chat-input-area {
 	padding: 1.25rem;
-	background: $bg-white;
-	border-top: 1px solid rgba(224, 216, 204, 0.5);
+	background: var(--color-bg);
+	border-top: 1px solid var(--color-border);
 	display: flex;
 	align-items: center;
 	gap: 0.75rem;
@@ -476,23 +466,22 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 .chat-input-area input {
 	flex: 1;
 	padding: 0.85rem 1.25rem;
-	background: $bg-cream;
+	background: var(--color-bg-subtle);
 	border: 1px solid transparent;
-	color: $text-black;
-	border-radius: 20px;
-	outline: none;
-	font-size: 0.95rem;
-	transition: all 0.2s;
+	color: var(--color-heading);
+	border-radius: var(--radius-md);
+	font-size: var(--text-sm);
+	transition: all var(--duration-fast);
 	font-family: inherit;
 
 	&::placeholder {
-		color: #9ca3af;
+		color: var(--color-muted);
 	}
 
 	&:focus {
-		background: #fff;
-		border-color: $border-beige;
-		box-shadow: 0 0 0 4px rgba(224, 216, 204, 0.2);
+		background: var(--color-bg);
+		border-color: var(--color-border);
+		box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
 	}
 }
 
@@ -502,10 +491,10 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	background: #060c17; /* Black send button */
+	background: var(--color-heading); /* Black send button */
 	color: #fff;
 	border: none;
-	border-radius: 12px; /* Soft square */
+	border-radius: var(--radius-md); /* Soft square */
 	cursor: pointer;
 	transition: all 0.2s;
 	font-size: 1.2rem;
@@ -513,7 +502,7 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 	&:disabled {
 		opacity: 0.5;
 		cursor: not-allowed;
-		background: #ccc;
+		background: var(--color-faint);
 	}
 
 	&:not(:disabled):hover {
@@ -534,7 +523,7 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 .typing-dot {
 	width: 6px;
 	height: 6px;
-	background: $text-grey;
+	background: var(--color-body);
 	border-radius: 50%;
 	animation: typing 1.4s infinite ease-in-out;
 	opacity: 0.6;

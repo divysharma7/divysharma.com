@@ -42,15 +42,15 @@ import { achievements } from '../../data/achievements.js';
 	margin: 0;
 	font-size: 1.75rem;
 	font-weight: 800;
-	color: #111;
+	color: var(--color-heading);
 	letter-spacing: -0.01em;
-	font-family: 'Inter', system-ui, -apple-system, sans-serif;
+	font-family: var(--font-sans);
 }
 
 .ach-section-count {
 	font-size: 1rem;
 	font-weight: 400;
-	color: #999;
+	color: var(--color-muted);
 	margin-left: 4px;
 }
 

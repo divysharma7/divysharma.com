@@ -374,13 +374,13 @@ defineExpose({ draftTags });
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 0.06em;
-  color: #111;
+  color: var(--color-heading);
 }
 
 .header-clear {
   font-size: 0.82rem;
   font-weight: 500;
-  color: #111;
+  color: var(--color-heading);
   background: none;
   border: none;
   cursor: pointer;
@@ -400,7 +400,7 @@ defineExpose({ draftTags });
   height: 44px;
   border: none;
   background: none;
-  color: #111;
+  color: var(--color-heading);
   cursor: pointer;
   flex-shrink: 0;
   margin-right: -6px;
@@ -416,9 +416,9 @@ defineExpose({ draftTags });
 }
 
 .applied-label {
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
   font-weight: 700;
-  color: #111;
+  color: var(--color-heading);
   margin-bottom: 0.5rem;
   text-transform: none;
 }
@@ -437,14 +437,14 @@ defineExpose({ draftTags });
   border: 1px solid #999;
   border-radius: 0;
   background: #fff;
-  font-size: 0.76rem;
+  font-size: var(--text-xs);
   font-family: inherit;
-  color: #111;
+  color: var(--color-heading);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: background 0.12s ease;
 }
-.applied-chip:active { background: #f0f0f0; }
+.applied-chip:active { background: var(--color-border); }
 
 /* ═══ Scrollable Body ═══ */
 .panel-body {
@@ -463,7 +463,7 @@ defineExpose({ draftTags });
 
 /* ★ Black left border on expanded section */
 .accordion-section.open {
-  border-left-color: #111;
+  border-left-color: var(--color-heading);
 }
 
 .accordion-header {
@@ -490,7 +490,7 @@ defineExpose({ draftTags });
 .acc-label {
   font-size: 0.92rem;
   font-weight: 700;
-  color: #111;
+  color: var(--color-heading);
   text-transform: none;
 }
 
@@ -502,7 +502,7 @@ defineExpose({ draftTags });
 }
 
 .acc-chevron {
-  color: #111;
+  color: var(--color-heading);
   transition: transform 0.25s ease;
   flex-shrink: 0;
 }
@@ -540,8 +540,8 @@ defineExpose({ draftTags });
   -webkit-tap-highlight-color: transparent;
   transition: background 0.12s ease;
 }
-.radio-row:active { background: #f5f5f5; }
-.radio-row.selected { font-weight: 600; color: #111; }
+.radio-row:active { background: var(--color-border); }
+.radio-row.selected { font-weight: 600; color: var(--color-heading); }
 
 .radio-dot {
   display: flex;
@@ -550,11 +550,11 @@ defineExpose({ draftTags });
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  border: 2px solid #bbb;
+  border: 2px solid var(--color-faint);
   flex-shrink: 0;
   transition: border-color 0.15s ease;
 }
-.radio-row.selected .radio-dot { border-color: #111; }
+.radio-row.selected .radio-dot { border-color: var(--color-heading); }
 
 .radio-inner {
   width: 12px;
@@ -583,8 +583,8 @@ defineExpose({ draftTags });
   -webkit-tap-highlight-color: transparent;
   transition: background 0.12s ease;
 }
-.check-row:active { background: #f5f5f5; }
-.check-row.selected { font-weight: 600; color: #111; }
+.check-row:active { background: var(--color-border); }
+.check-row.selected { font-weight: 600; color: var(--color-heading); }
 
 .check-box {
   display: flex;
@@ -593,28 +593,28 @@ defineExpose({ draftTags });
   width: 22px;
   height: 22px;
   border-radius: 3px;
-  border: 1.5px solid #bbb;
+  border: 1.5px solid var(--color-faint);
   background: #fff;
   flex-shrink: 0;
   transition: all 0.15s ease;
 }
 .check-row.selected .check-box {
   background: #111;
-  border-color: #111;
+  border-color: var(--color-heading);
   color: #fff;
 }
 
 .check-label { flex: 1; }
 
 .check-hint {
-  font-size: 0.7rem;
-  color: #999;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
   white-space: nowrap;
 }
 
 .check-count {
-  font-size: 0.72rem;
-  color: #999;
+  font-size: var(--text-xs);
+  color: var(--color-muted);
   margin-left: auto;
 }
 
@@ -630,7 +630,7 @@ defineExpose({ draftTags });
 .footer-count {
   font-size: 0.82rem;
   font-weight: 700;
-  color: #111;
+  color: var(--color-heading);
   margin-bottom: 0.5rem;
 }
 
@@ -654,7 +654,7 @@ defineExpose({ draftTags });
 }
 .apply-btn:active {
   background: #fff;
-  color: #111;
+  color: var(--color-heading);
 }
 .apply-btn span {
   text-transform: none;

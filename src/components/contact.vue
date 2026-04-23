@@ -20,12 +20,14 @@
 						v-model="form.name"
 						required
 						placeholder="Name"
+						aria-label="Name"
 					/>
 					<input
 						type="email"
 						v-model="form.email"
 						required
 						placeholder="Email"
+						aria-label="Email"
 						:disabled="loading"
 					/>
 					<textarea
@@ -33,6 +35,7 @@
 						v-model="form.message"
 						required
 						placeholder="Anything you wanna say"
+						aria-label="Message"
 						:disabled="loading"
 					/>
 
@@ -125,21 +128,21 @@ textarea {
 	background-color: rgba($color: #fff, $alpha: 0.2) !important;
 	min-width: 100%;
 	max-width: 100%;
-	font-family: var(--fontSans);
+	font-family: var(--font-sans);
 	transition: 0.2s;
 }
 
 textarea {
-	min-height: 6em;
+	min-height: 6rem;
 }
 
 input:focus,
 textarea:focus {
-	border-color: var(--red-text) !important;
+	border-color: var(--color-heading) !important;
 }
 
 button {
-	font-family: var(--fontSans);
+	font-family: var(--font-sans);
 	text-transform: initial;
 }
 
@@ -150,10 +153,10 @@ button.cool {
 	border: none;
 	transition: 0.3s;
 	letter-spacing: 0;
-	font-size: 0.9em;
+	font-size: 0.9rem;
 	width: fit-content;
-	padding: 0.75em 2em;
-	font-size: 1em;
+	padding: 0.75rem 2rem;
+	font-size: 1rem;
 }
 
 button.cool:hover:not(:disabled) {
@@ -177,8 +180,8 @@ button.cool:disabled {
 .loader,
 .loader:after {
 	border-radius: 50%;
-	width: 1em;
-	height: 1em;
+	width: 1rem;
+	height: 1rem;
 }
 .loader {
 	margin: 0 auto;
@@ -218,7 +221,7 @@ button.cool:disabled {
 
 @media (max-width: 750px) {
 	button.cool {
-		margin-bottom: 3em;
+		margin-bottom: 3rem;
 		width: 60%;
 		margin-top: 0.75em;
 	}

@@ -93,7 +93,7 @@
 				</a>
 
 				<div v-else class="ach-placeholder">
-					No media available
+					No certificate image available
 				</div>
 			</div>
 			<!-- Caption -->
@@ -121,11 +121,11 @@ const props = defineProps({
 .ach-card {
 	background: var(--card-bg, #ffffff);
 	border: 1px solid var(--border, #eaeaea);
-	border-radius: 20px;
-	padding: 24px;
+	border-radius: var(--radius-md);
+	padding: 1.5rem;
 	display: flex;
 	flex-direction: column;
-	gap: 24px;
+	gap: 1.5rem;
 	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 	position: relative;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
@@ -134,8 +134,8 @@ const props = defineProps({
 @media (min-width: 900px) {
 	.ach-card {
 		flex-direction: row;
-		padding: 32px;
-		gap: 40px;
+		padding: 2rem;
+		gap: 2.5rem;
 	}
 }
 
@@ -150,7 +150,7 @@ const props = defineProps({
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 1.25rem;
 }
 
 @media (min-width: 900px) {
@@ -164,20 +164,20 @@ const props = defineProps({
 .ach-header {
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 0.75rem;
 }
 
 .ach-org-row {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 0.5rem;
     flex-wrap: wrap;
 }
 
 .ach-monogram {
 	width: 20px;
 	height: 20px;
-	border-radius: 4px;
+	border-radius: var(--radius-sm);
 	background: #111;
 	color: #fff;
 	display: grid;
@@ -197,28 +197,28 @@ const props = defineProps({
 .ach-meta-dots {
 	display: flex;
 	align-items: center;
-	gap: 6px;
+	gap: 0.375rem;
 	font-size: 0.8rem;
-	color: #888;
+	color: var(--color-muted);
 	font-weight: 500;
 }
 
 .dot {
-	font-size: 0.6rem;
+	font-size: var(--text-xs);
 	opacity: 0.5;
 }
 
 .ach-level-text {
     font-weight: 600;
-    color: #111;
+    color: var(--color-heading);
 }
 
 .ach-title {
 	margin: 0;
-	font-size: 1.6rem;
-	font-weight: 800;
-	color: var(--heading-color, #111);
-	line-height: 1.2;
+	font-size: var(--text-base);
+	font-weight: 600;
+	color: var(--color-heading);
+	line-height: var(--leading-tight);
 	letter-spacing: -0.02em;
 }
 
@@ -226,15 +226,15 @@ const props = defineProps({
 .ach-chips {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 8px;
-	margin-top: 2px;
+	gap: 0.5rem;
+	margin-top: 0.125rem;
 }
 
 .ach-chip {
 	font-size: 0.75rem;
 	font-weight: 600;
-	padding: 4px 10px;
-	border-radius: 6px;
+	padding: 0.25rem 0.625rem;
+	border-radius: var(--radius-sm);
 	background: #f1f5f9;
 	color: #334155;
 	border: 1px solid #e2e8f0;
@@ -244,8 +244,8 @@ const props = defineProps({
 .ach-bullets {
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
-    margin-top: 4px;
+	gap: 0.5rem;
+    margin-top: 0.25rem;
 }
 
 .ach-bullet {
@@ -256,13 +256,13 @@ const props = defineProps({
 
 .bullet-label {
 	font-weight: 700;
-	color: #111;
-	margin-right: 4px;
+	color: var(--color-heading);
+	margin-right: 0.25rem;
 }
 
 .outcome-bullet {
-    margin-top: 4px;
-    padding-left: 10px;
+    margin-top: 0.25rem;
+    padding-left: 0.625rem;
     border-left: 2px solid #22c55e;
 }
 
@@ -272,56 +272,56 @@ const props = defineProps({
 
 /* Role & Skills */
 .ach-role-strip {
-	background: #fafafa;
+	background: var(--color-bg-subtle);
 	border: 1px solid #eee;
-	border-radius: 12px;
-	padding: 12px;
+	border-radius: var(--radius-md);
+	padding: 0.75rem;
 	display: flex;
 	flex-direction: column;
-	gap: 8px;
-    margin-top: 4px;
+	gap: 0.5rem;
+    margin-top: 0.25rem;
 }
 
 .ach-role {
 	font-size: 0.85rem;
-	color: #333;
+	color: var(--color-heading);
 }
 
 .ach-skills {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 6px;
+	gap: 0.375rem;
 }
 
 .ach-skill-tag {
-	font-size: 0.7rem;
+	font-size: var(--text-xs);
 	font-weight: 600;
 	background: #fff;
 	border: 1px solid #ddd;
-	padding: 2px 8px;
-	border-radius: 4px;
-	color: #666;
+	padding: 0.125rem 0.5rem;
+	border-radius: var(--radius-sm);
+	color: var(--color-body);
 }
 
 /* Actions */
 .ach-actions {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 12px;
+	gap: 0.75rem;
 	margin-top: auto;
-    padding-top: 6px;
+    padding-top: 0.375rem;
 }
 
 .ach-btn {
 	text-decoration: none;
 	font-size: 0.85rem;
 	font-weight: 600;
-	padding: 8px 16px;
-	border-radius: 8px;
+	padding: 0.5rem 1rem;
+	border-radius: var(--radius-sm);
 	transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 0.25rem;
 }
 
 .btn-primary {
@@ -338,12 +338,12 @@ const props = defineProps({
 
 .btn-secondary {
 	background: transparent;
-	color: #111;
+	color: var(--color-heading);
 	border: 1px solid #ddd;
 }
 
 .btn-secondary:hover {
-	background: #f5f5f5;
+	background: var(--color-border);
 	border-color: #ccc;
 }
 
@@ -352,7 +352,7 @@ const props = defineProps({
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	gap: 12px;
+	gap: 0.75rem;
     min-width: 0;
 }
 
@@ -362,7 +362,7 @@ const props = defineProps({
 	aspect-ratio: 4 / 3;
 	background: #f8f9fa;
 	border: 1px solid #e5e5e5;
-	border-radius: 12px;
+	border-radius: var(--radius-md);
 	overflow: hidden;
     box-shadow: inset 0 2px 10px rgba(0,0,0,0.02);
 }
@@ -389,7 +389,7 @@ const props = defineProps({
 	object-fit: contain;
 	object-position: center;
 	transition: transform 0.4s ease;
-    padding: 16px; 
+    padding: 1rem;
     box-sizing: border-box;
     background: #fff;
 }
@@ -421,7 +421,7 @@ const props = defineProps({
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #111;
+    color: var(--color-heading);
     transform: scale(0.8);
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -433,7 +433,7 @@ const props = defineProps({
 
 .ach-media-caption {
 	font-size: 0.75rem;
-	color: #888;
+	color: var(--color-muted);
 	text-align: center;
 	font-weight: 500;
 }
@@ -444,17 +444,17 @@ const props = defineProps({
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    background: #f8f8f8;
+    gap: 0.75rem;
+    background: var(--color-bg-subtle);
     color: #444;
 }
 
 .fallback-card:hover {
-    background: #f0f0f0;
+    background: var(--color-border);
 }
 
 .fallback-icon {
-    font-size: 2rem;
+    font-size: var(--text-xl);
 }
 
 .fallback-text {
@@ -468,13 +468,13 @@ const props = defineProps({
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #999;
+    color: var(--color-muted);
     font-size: 0.85rem;
 }
 
 @media (max-width: 899px) {
 	.ach-card {
-		padding: 20px;
+		padding: 1.25rem;
 	}
 	.ach-title {
 		font-size: 1.4rem;

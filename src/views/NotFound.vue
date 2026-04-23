@@ -5,7 +5,7 @@
 				<router-link to="/" class="forofour">404</router-link>
 			</h1>
 			<p class="top">
-				It seems like this page doesn't exist. You might find what you're
+				This page doesn't exist. You might find what you're
 				looking for at
 				<a
 					rel="noopener noreferrer"
@@ -17,7 +17,7 @@
 			</p>
 			<p class="btm">
 				Or you can
-				<router-link to="/">go back home</router-link>, or
+				<router-link to="/">Go home</router-link>, or
 				<router-link to="/explore#contact">contact me</router-link> if you think
 				this is a mistake.
 			</p>
@@ -94,7 +94,7 @@ export default {
 .forofour {
 	border: none;
 	opacity: 1;
-	color: var(--red-text);
+	color: var(--color-heading);
 	/* color: rgb(8, 75, 119); */
 	transition: 0.2s;
 }

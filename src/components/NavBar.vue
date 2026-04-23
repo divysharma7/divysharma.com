@@ -59,7 +59,7 @@ const scrollToContact = async () => {
 			font-weight: 700;
 			text-decoration: none;
 			color: #111;
-			font-family: var(--fontDisplay);
+			font-family: var(--font-display);
 			display: flex;
 			align-items: center;
 			gap: 0.75rem;

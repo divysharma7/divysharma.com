@@ -1,366 +1,607 @@
 <template>
-	<div class="home-container">
-		<div class="hero-section">
-			<h1 class="headline fancy">
-				divy sharma
-			</h1>
-			<h2 class="sub-headline">
-				product manager • entrepreneur
-			</h2>
+	<div class="home-page" @mousemove="onMouseMove">
 
-			<div class="bio-text">
-				<p>
-					Hi, I'm Divy. I'm an Associate Product Manager in real estate tech, working closely with the Marketing team.
-				</p>
-				<p>
-					I use
-					<span class="tool-badge">
-						<img src="https://cdn.simpleicons.org/metabase" alt="Metabase" />
-						Metabase
-					</span>,
-					<span class="tool-badge">
-						<img src="https://cdn.simpleicons.org/posthog" alt="PostHog" />
-						PostHog
-					</span>,
-					<span class="tool-badge">
-						<img src="https://cdn.simpleicons.org/googleanalytics" alt="GA4" />
-						GA4
-					</span>,
-					<span class="tool-badge">
-						<img src="https://cdn.simpleicons.org/googleads" alt="Google Ads" />
-						Google Ads
-					</span>,
-					<span class="tool-badge">
-						<img src="https://cdn.simpleicons.org/meta" alt="Meta Ads" />
-						Meta Ads
-					</span>,
-					<span class="tool-badge">
-						<img src="https://cdn.simpleicons.org/semrush" alt="Semrush" />
-						Semrush
-					</span>,
-					and
-					<span class="tool-badge">
-						<img src="https://cdn.simpleicons.org/googlesheets" alt="Sheets" />
-						Sheets
-					</span>
-					to understand what users are doing and where we’re losing them. Then I turn those insights into execution using
-					<span class="tool-badge">
-						<img src="https://cdn.simpleicons.org/figma" alt="Figma" />
-						Figma
-					</span>
-					and
-					<span class="tool-badge">
-						<img src="https://cdn.simpleicons.org/jira" alt="Jira" />
-						Jira
-					</span>.
-				</p>
-				<p>
-					My work starts with <span class="text-bold">Asking Right Questions</span>. The ones that make us stop and rethink what we think we know. I spend a lot of time <span class="text-bold">unblocking my team</span> from dependencies so they can focus on building, not waiting. I try to <span class="text-bold">lead with empathy</span> because behind every metric and every deadline, there are people doing their best.
-				</p>
-				<p>
-					I obsess over the funnel not as a chart, but as a <span class="text-bold">story</span>. Where do users hesitate? Where do they get confused? Where do we lose their trust?
-				</p>
-				<p>
-					I track retention and conversion closely, dig deep into drop-offs, and use <span class="text-bold">Opportunity Solution Trees</span> to separate noise from real insights. My goal is simple <span class="text-bold">to learn from the best people and do what best teams do to bring revenue impact to the organisation.</span>
-				</p>
-			</div>
+		<!-- Custom cursor follower (decorative, doesn't hide native cursor) -->
+		<div class="cursor-dot" ref="cursorDot"></div>
 
-			<div class="action-buttons">
-				<a
-					href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="btn btn-outline"
-				>
-					<i class="ph-bold ph-file-text"></i>
-					Resume / CV
-				</a>
-				<a href="mailto:divysharma029@gmail.com" class="btn btn-solid">
-					<i class="ph-bold ph-paper-plane-tilt"></i>
-					Get in touch
-				</a>
-			</div>
+		<div class="home-container">
 
-			<div class="social-links">
-				<a href="https://twitter.com/Divy_Sharma6" target="_blank" aria-label="Twitter">
-					<i class="ph-bold ph-x-logo"></i>
-				</a>
-				<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" aria-label="LinkedIn">
-					<i class="ph-bold ph-linkedin-logo"></i>
-				</a>
-				<a href="https://github.com/divysharma7" target="_blank" aria-label="GitHub">
-					<i class="ph-bold ph-github-logo"></i>
-				</a>
-				<a href="mailto:divysharma029@gmail.com" aria-label="Email">
-					<i class="ph-bold ph-envelope-simple"></i>
-				</a>
-			</div>
+			<!-- ── Hero ── -->
+			<section class="hero">
+				<h1 class="hero-name">divy sharma</h1>
+				<p class="hero-bio">
+					Associate Product Manager at <span class="tag">ASBL</span> in Hyderabad, reporting to the VP Growth. I work on real estate tech with the Marketing team, mostly on funnel and acquisition. Before ASBL, I founded <span class="tag">Aqua-Alert</span>, an IoT water management startup incubated at <strong>NSRCEL, IIM Bangalore</strong>. It was something like a Fitbit for water meters, and shut down in February 2025.
+				</p>
+				<div class="hero-meta">
+					<span><i class="ph-bold ph-map-pin"></i> Hyderabad, India</span>
+					<span><i class="ph-bold ph-clock"></i> {{ currentTime }}</span>
+				</div>
+
+				<div class="hero-ctas">
+					<a href="mailto:divysharma029@gmail.com" class="cta-btn cta-btn--primary">
+						<i class="ph-bold ph-paper-plane-tilt"></i> Get in touch
+					</a>
+					<a href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" rel="noopener" class="cta-btn cta-btn--outline">
+						<i class="ph-bold ph-file-text"></i> Resume
+					</a>
+				</div>
+				<div class="hero-socials">
+					<a href="https://twitter.com/Divy_Sharma6" target="_blank" aria-label="Twitter"><i class="ph-bold ph-x-logo"></i></a>
+					<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" aria-label="LinkedIn"><i class="ph-bold ph-linkedin-logo"></i></a>
+					<a href="https://github.com/divysharma7" target="_blank" aria-label="GitHub"><i class="ph-bold ph-github-logo"></i></a>
+					<a href="mailto:divysharma029@gmail.com" aria-label="Email"><i class="ph-bold ph-envelope-simple"></i></a>
+				</div>
+			</section>
+
+			<!-- ── Divider ── -->
+			<div class="divider"></div>
+
+			<!-- ── Latest Blog ── -->
+			<section class="section">
+				<h2 class="section-heading">Latest from Blog</h2>
+				<div class="blog-stack">
+					<router-link
+						v-for="post in posts.slice(0, 3)"
+						:key="post.slug"
+						:to="'/blog/' + post.slug"
+						class="blog-card"
+					>
+						<div class="blog-body">
+							<span class="blog-date">{{ formatDate(post.publishedAt) }}</span>
+							<h3>{{ post.title }}</h3>
+							<p>{{ post.excerpt }}</p>
+						</div>
+						<span class="arrow">→</span>
+					</router-link>
+				</div>
+				<router-link to="/blog" class="view-all">Read more posts →</router-link>
+			</section>
+
+			<!-- ── Divider ── -->
+			<div class="divider"></div>
+
+			<!-- ── Experience ── -->
+			<section class="section">
+				<h2 class="section-heading">Experience</h2>
+				<div class="exp-stack">
+					<ExperienceCard
+						v-for="exp in experiences"
+						:key="exp.company"
+						:experience="exp"
+					/>
+				</div>
+				<router-link to="/workexperience" class="view-all">See full experience →</router-link>
+			</section>
+
+			<!-- ── Divider ── -->
+			<div class="divider"></div>
+
+			<!-- ── Explore ── -->
+			<section class="section">
+				<h2 class="section-heading">Explore</h2>
+				<div class="explore-grid">
+					<router-link to="/journey" class="explore-card">
+						<i class="ph-bold ph-path"></i>
+						<div>
+							<h4>My Journey</h4>
+							<p>Overview of my learning and career journey.</p>
+						</div>
+					</router-link>
+					<router-link to="/journey/certificates" class="explore-card">
+						<i class="ph-bold ph-certificate"></i>
+						<div>
+							<h4>Certificates & Achievements</h4>
+							<p>A curated list of certificates and achievements.</p>
+						</div>
+					</router-link>
+					<router-link to="/journey/mentors" class="explore-card">
+						<i class="ph-bold ph-users-three"></i>
+						<div>
+							<h4>Gurus & Mentors</h4>
+							<p>The people who shaped my journey.</p>
+						</div>
+					</router-link>
+					<router-link to="/gears" class="explore-card">
+						<i class="ph-bold ph-gear-six"></i>
+						<div>
+							<h4>Gears & Setup</h4>
+							<p>Tools and software I use daily.</p>
+						</div>
+					</router-link>
+					<router-link to="/books" class="explore-card">
+						<i class="ph-bold ph-book-open-text"></i>
+						<div>
+							<h4>Books</h4>
+							<p>What I'm reading and what shaped my thinking.</p>
+						</div>
+					</router-link>
+					<router-link to="/explore" class="explore-card">
+						<i class="ph-bold ph-compass"></i>
+						<div>
+							<h4>Explore</h4>
+							<p>Curated links and things I find interesting.</p>
+						</div>
+					</router-link>
+				</div>
+			</section>
+
+
 		</div>
-
-		<!-- Work Experience Section -->
-		<div class="experience-section">
-			<SectionHeading heading="Experience" subHeading="Featured" />
-			
-			<div class="experience-list">
-				<ExperienceCard 
-					v-for="experience in experiences" 
-					:key="experience.company" 
-					:experience="experience" 
-				/>
-			</div>
-
-			<div class="show-all-btn-wrapper">
-				<router-link to="/workexperience" class="btn btn-outline show-all-btn">
-					Show all work experiences
-				</router-link>
-			</div>
-		</div>
-
-		<!-- Setup Section -->
-		<SetupSection />
-
-		<!-- Journey Section -->
-		<JourneySection />
-
-		<div class="cta-wrapper">
-			<CTA />
-		</div>
-
 	</div>
 </template>
 
 <script setup>
-import { experiences } from '../data/experience.js';
-import SectionHeading from '../components/common/SectionHeading.vue';
-import ExperienceCard from '../components/experience/ExperienceCard.vue';
-import CTA from '../components/CTA.vue';
-import SetupSection from '../components/landing/SetupSection.vue';
-import JourneySection from '../components/landing/JourneySection.vue';
+import { ref, onMounted, onUnmounted } from 'vue'
+import { experiences } from '../data/experience.js'
+import { posts } from '../data/posts.js'
+import ExperienceCard from '../components/experience/ExperienceCard.vue'
 import { useHead } from '@vueuse/head'
 
 useHead({
-  title: 'Home',
-  meta: [
-    { name: 'description', content: 'Divy Sharma — Associate Product Manager & Developer. Specializing in real estate tech, analytics, and user-centric product development.' },
-    { property: 'og:title', content: 'Divy Sharma — Product Manager & Developer' },
-    { property: 'og:description', content: 'Associate Product Manager building delightful experiences in real estate tech.' }
-  ]
+	title: 'Home',
+	meta: [
+		{ name: 'description', content: 'Divy Sharma — Associate Product Manager & Entrepreneur. Building growth experiences in real estate tech.' },
+		{ property: 'og:title', content: 'Divy Sharma — Product Manager & Entrepreneur' },
+		{ property: 'og:description', content: 'PM at ASBL. Building growth systems for real estate tech.' }
+	]
 })
+
+function formatDate(dateStr) {
+	return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+}
+
+// Live clock
+const currentTime = ref('')
+let clockInterval = null
+function updateClock() {
+	currentTime.value = new Date().toLocaleTimeString('en-US', {
+		hour: '2-digit', minute: '2-digit', second: '2-digit',
+		timeZone: 'Asia/Kolkata'
+	})
+}
+onMounted(() => { updateClock(); clockInterval = setInterval(updateClock, 1000) })
+onUnmounted(() => clearInterval(clockInterval))
+
+// Custom cursor (decorative follower — native cursor stays visible)
+const cursorDot = ref(null)
+let cx = 0, cy = 0, tx = 0, ty = 0, rafId = null
+
+function onMouseMove(e) {
+	tx = e.clientX - 20
+	ty = e.clientY - 20
+}
+
+function animateCursor() {
+	cx += (tx - cx) * 0.12
+	cy += (ty - cy) * 0.12
+	if (cursorDot.value) {
+		cursorDot.value.style.transform = `translate(${cx}px, ${cy}px)`
+	}
+	rafId = requestAnimationFrame(animateCursor)
+}
+
+onMounted(() => { rafId = requestAnimationFrame(animateCursor) })
+onUnmounted(() => { if (rafId) cancelAnimationFrame(rafId) })
 </script>
 
 <style scoped lang="scss">
+/* ── Base ── */
+.home-page {
+	background: #fff;
+	min-height: 100vh;
+}
+
 .home-container {
-	max-width: 800px;
+	max-width: var(--container);
 	margin: 0 auto;
-	padding: 4rem 1.5rem;
-	min-height: 60vh;
-	display: flex;
-	flex-direction: column; /* Changed to column to stack sections */
-	align-items: flex-start; /* Left align everything */
-}
-
-.cta-wrapper {
-	width: 100%;
-	margin-top: 2rem;
-}
-
-.hero-section {
-	width: 100%;
-	text-align: left;
-	margin-bottom: 4rem; /* Spacing between hero and experience */
-}
-
-.experience-section {
-	width: 100%;
-	text-align: left;
-	margin-bottom: 4rem;
-	
-	.experience-list {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-		margin-top: 1.5rem;
-	}
-// ...
-	
-	.experience-list {
-		display: flex;
-		flex-direction: column;
-		gap: 1.5rem;
-		margin-top: 1.5rem;
-	}
-
-	.show-all-btn-wrapper {
-		margin-top: 2rem;
-		display: flex;
-		justify-content: center;
-		width: 100%;
-
-		.show-all-btn {
-			font-size: 0.95rem;
-			color: #444;
-			border-color: #ddd;
-			padding: 0.6rem 1.25rem;
-
-			&:hover {
-				background: #f9f9f9;
-				color: #111;
-			}
-		}
-	}
-}
-
-.headline {
-	font-family: var(--fontDisplay, serif); /* Use serif for "old style" look */
-	font-weight: 700;
-	font-size: 3rem;
-	line-height: 1.2;
-	color: #6a788c; /* Matches typical serif header color from screenshot */
-	margin-bottom: 0.5rem;
-	letter-spacing: -0.02em;
-}
-
-.sub-headline {
+	padding: 3.5rem 1.5rem 4rem;
 	font-family: var(--font-sans);
-	font-size: var(--text-xl);
-	font-weight: 400;
-	color: var(--text-secondary);
-	margin-bottom: 2.5rem;
-	letter-spacing: 0.02em;
 }
 
-.bio-text {
-	margin-bottom: 2.5rem;
-	max-width: 650px;
+/* ── Cursor follower ── */
+.cursor-dot {
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: rgba(229, 231, 235, 0.6);
+	box-shadow:
+		rgba(239, 239, 243, 0.5) 1px -1px 0 0,
+		rgba(239, 239, 243, 0.5) -1px -1px 0 0,
+		rgba(255, 255, 255, 0.9) 0 1px 1px 0 inset,
+		rgba(0, 0, 0, 0.02) 0 -1px 1px 0 inset,
+		rgba(0, 0, 0, 0.06) 0 3px 14px 0;
+	pointer-events: none;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	will-change: transform;
 
-	p {
-		font-family: var(--font-sans);
-		font-size: var(--text-lg);
-		line-height: 1.8; /* Increased line-height for badges */
-		color: var(--text-secondary);
-		margin-bottom: 1rem;
+	@media (max-width: 768px) { display: none; }
+}
 
-		&:last-child {
-			margin-bottom: 0;
-		}
+/* ── Hero ── */
+.hero {
+	margin-bottom: 0;
+}
 
-		.text-bold {
-			color: var(--text-primary);
-			font-weight: 600;
-		}
+.hero-name {
+	font-family: var(--font-sans);
+	font-size: var(--h1);
+	font-weight: 600;
+	line-height: var(--leading-tight);
+	color: var(--color-heading);
+	margin: 0 0 0.75rem;
+}
 
-		.tool-badge {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.35rem;
-			padding: 0.15rem 0.5rem;
-			border: 1px solid #e0e0e0;
-			border-radius: 6px;
-			background: #fafafa;
-			font-size: 0.95rem;
-			font-weight: 600;
-			color: #333;
-			vertical-align: middle;
-			margin: 0 0.15rem;
-			transition: all 0.2s ease;
-			white-space: nowrap;
+.hero-bio {
+	font-size: var(--text-lg);
+	line-height: var(--leading-normal);
+	letter-spacing: 0.38px;
+	color: var(--color-body);
+	margin: 0 0 1rem;
 
-			img {
-				width: 1rem;
-				height: 1rem;
-				border-radius: 2px;
-			}
-
-			&:hover {
-				background: #fff;
-				border-color: #bbb;
-				transform: translateY(-1px);
-				box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-			}
-		}
+	strong {
+		color: var(--color-heading);
+		font-weight: 500;
 	}
 }
 
-.action-buttons {
-	display: flex;
-	gap: 1rem;
-	margin-bottom: 2.5rem;
-	flex-wrap: wrap;
+@keyframes fadeUp {
+	from { opacity: 0; transform: translateY(8px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
 
-	.btn {
+.tag {
+	display: inline-block;
+	background: var(--color-border);
+	color: var(--color-heading);
+	padding: 4px 8px;
+	border-radius: var(--radius-sm);
+	font-size: var(--text-xs);
+	font-weight: 500;
+	line-height: normal;
+	vertical-align: middle;
+	margin: 0 2px;
+	animation: fadeUp 500ms ease-out both;
+
+	&:nth-of-type(2) { animation-delay: 80ms; }
+	&:nth-of-type(3) { animation-delay: 160ms; }
+
+	&--sm {
+		font-size: var(--text-xs);
+		padding: 3px 7px;
+		animation: none;
+	}
+}
+
+.hero-meta {
+	color: var(--color-body);
+	font-size: var(--text-sm);
+	display: flex;
+	gap: 16px;
+
+	span {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.5rem;
-		padding: 0.75rem 1.5rem;
-		border-radius: 8px;
-		font-weight: 500;
-		text-decoration: none;
-		font-size: 1rem;
-		transition: all 0.2s ease;
-
-		i {
-			font-size: 1.2rem;
-		}
-
-		&.btn-outline {
-			background: #fff;
-			border: 1px solid #ddd;
-			color: #333;
-
-			&:hover {
-				background: #f9f9f9;
-				border-color: #ccc;
-				transform: translateY(-1px);
-			}
-		}
-
-		&.btn-solid {
-			background: #111;
-			border: 1px solid #111;
-			color: #fff;
-
-			&:hover {
-				background: #333;
-				border-color: #333;
-				transform: translateY(-1px);
-				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-			}
-		}
+		gap: 5px;
 	}
+
+	i { font-size: var(--text-sm); color: var(--color-faint); }
 }
 
-.social-links {
+/* ── Hero CTAs ── */
+.hero-ctas {
 	display: flex;
-	gap: 1.5rem;
-	
-	a {
-		color: #999;
-		font-size: 1.5rem;
-		transition: color 0.2s ease, transform 0.2s ease;
+	gap: 0.625rem;
+	margin-top: 1.5rem;
+	flex-wrap: wrap;
+}
+
+.cta-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.6rem 1.15rem;
+	border-radius: var(--radius-sm);
+	font-size: var(--text-sm);
+	font-weight: 500;
+	text-decoration: none;
+	transition: all var(--duration-fast);
+
+	i { font-size: var(--text-sm); }
+
+	&--primary {
+		background: var(--color-heading);
+		color: #fff;
+		border: 1px solid var(--color-heading);
 
 		&:hover {
-			color: #111;
-			transform: translateY(-2px);
+			background: #4b5563;
+			transform: translateY(-1px);
+			box-shadow: var(--shadow-md);
+		}
+	}
+
+	&--outline {
+		background: var(--color-bg);
+		color: var(--color-heading);
+		border: 1px solid var(--color-border);
+
+		&:hover {
+			border-color: var(--color-faint);
+			transform: translateY(-1px);
 		}
 	}
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-	.headline {
-		font-size: 2.5rem;
+.hero-socials {
+	display: flex;
+	gap: 0.25rem;
+	margin-top: 1rem;
+
+	a {
+		color: var(--color-faint);
+		font-size: var(--text-lg);
+		padding: 0.375rem;
+		min-width: 40px;
+		min-height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: color var(--duration-fast);
+
+		&:hover { color: var(--color-heading); }
 	}
-	
-	.sub-headline {
-		font-size: 1.1rem;
+}
+
+/* ── About ── */
+.hero-about {
+	margin-top: 2rem;
+
+	p {
+		font-size: var(--text-sm);
+		line-height: var(--leading-relaxed);
+		color: var(--color-body);
+		margin: 0 0 1rem;
+
+		&:last-child { margin-bottom: 0; }
+
+		strong {
+			color: var(--color-heading);
+			font-weight: 600;
+		}
 	}
-	
-	.bio-text p {
-		font-size: 1.05rem;
+}
+
+.tool-badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.125rem 0.5rem;
+	background: var(--color-border);
+	border-radius: var(--radius-sm);
+	font-size: var(--text-sm);
+	font-weight: 500;
+	color: var(--color-heading);
+	white-space: nowrap;
+	margin: 0 0.1rem;
+}
+
+/* ── Dividers ── */
+.divider {
+	border: none;
+	border-top: 1px solid var(--color-border);
+	margin: 2.5rem 0;
+}
+
+/* ── Sections ── */
+.section-heading {
+	font-family: var(--font-sans);
+	font-size: var(--h3);
+	font-weight: 600;
+	color: var(--color-heading);
+	line-height: var(--leading-tight);
+	margin: 0 0 1.25rem;
+}
+
+/* ── Shared arrow ── */
+.arrow {
+	color: var(--color-faint);
+	font-size: var(--text-base);
+	flex-shrink: 0;
+	opacity: 0;
+	transition: all 0.15s ease;
+	padding-top: 2px;
+}
+
+/* ── Projects ── */
+.project-stack {
+	display: flex;
+	flex-direction: column;
+}
+
+.project-card {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 1rem 0;
+	border-bottom: 1px solid var(--color-border);
+	text-decoration: none;
+	transition: background 0.15s;
+
+	&:first-child { padding-top: 0; }
+	&:last-child { border-bottom: none; }
+
+	&:hover {
+		.arrow { opacity: 1; transform: translateX(3px); }
+		h3 { color: #111827; }
+	}
+}
+
+.project-body {
+	flex: 1;
+	min-width: 0;
+}
+
+.project-head {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	margin-bottom: 0.25rem;
+
+	h3 {
+		font-size: var(--text-sm);
+		font-weight: 600;
+		color: var(--color-heading);
+		margin: 0;
+		transition: color 0.15s;
 	}
 
-	.home-container {
-		padding-top: 2rem;
+	.sep { color: #e5e7eb; font-weight: 300; }
+	.role { font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); }
+}
+
+.project-body > p {
+	font-size: var(--text-sm);
+	color: var(--color-body);
+	line-height: var(--leading-normal);
+	margin: 0 0 0.5rem;
+}
+
+.project-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
+
+/* ── Blog ── */
+.blog-stack {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 1.25rem;
+}
+
+.blog-card {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 1rem 0;
+	border-bottom: 1px solid var(--color-border);
+	text-decoration: none;
+
+	&:first-child { padding-top: 0; }
+	&:last-child { border-bottom: none; }
+
+	&:hover {
+		.arrow { opacity: 1; transform: translateX(3px); }
+		h3 { color: #111827; }
 	}
+}
+
+.blog-body {
+	flex: 1;
+	min-width: 0;
+
+	.blog-date {
+		font-size: var(--text-xs);
+		color: var(--color-muted);
+		font-weight: 500;
+	}
+
+	h3 {
+		font-size: var(--text-sm);
+		font-weight: 600;
+		color: var(--color-heading);
+		margin: 0.1rem 0 0.25rem;
+		line-height: var(--leading-snug);
+		transition: color 0.15s;
+	}
+
+	p {
+		font-size: var(--text-sm);
+		color: var(--color-body);
+		line-height: var(--leading-normal);
+		margin: 0;
+	}
+}
+
+.view-all {
+	font-size: var(--text-sm);
+	font-weight: 500;
+	color: var(--color-muted);
+	text-decoration: none;
+	transition: color 0.15s;
+
+	&:hover { color: var(--color-heading); }
+}
+
+/* ── Experience ── */
+.exp-stack {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	margin-bottom: 1.25rem;
+}
+
+/* ── Explore ── */
+.explore-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+}
+
+.explore-card {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	padding: 14px 16px;
+	background: var(--color-bg-subtle);
+	border: 1px solid var(--color-border);
+	border-radius: var(--radius-md);
+	text-decoration: none;
+	transition: all 0.15s;
+
+	&:hover {
+		border-color: #e5e7eb;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+		transform: translateY(-1px);
+	}
+
+	i {
+		font-size: var(--text-lg);
+		color: var(--color-muted);
+		margin-top: 2px;
+		flex-shrink: 0;
+	}
+
+	h4 {
+		font-size: var(--text-sm);
+		font-weight: 600;
+		color: var(--color-heading);
+		margin: 0 0 0.15rem;
+	}
+
+	p {
+		font-size: var(--text-sm);
+		color: var(--color-muted);
+		line-height: var(--leading-snug);
+		margin: 0;
+	}
+}
+
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+	.home-container { padding: 2rem 1.25rem 3rem; }
+	.hero-bio { font-size: 16px; }
+	.explore-grid { grid-template-columns: 1fr; }
+	.arrow { display: none; }
+}
+
+@media (max-width: 480px) {
+	.cta-buttons { flex-direction: column; align-items: center; }
 }
 </style>
