@@ -20,7 +20,7 @@
 	/* ── Colors (Tailwind Slate) ── */
 	--color-heading: #374151;
 	--color-body: #6b7280;
-	--color-muted: #9CA3AF;
+	--color-muted: #64748B;
 	--color-faint: #d1d5db;
 	--color-border: #F3F4F6;
 	--color-bg: #fff;
@@ -78,7 +78,7 @@
 	/* ── Scrollbar ── */
 	--c-bg: #fff;
 	--c-scrollbar: #d1d5db;
-	--c-scrollbar-hover: #9CA3AF;
+	--c-scrollbar-hover: #6B7280;
 
 	/* ── Focus ── */
 	--focus-ring: 0 0 0 2px #fff, 0 0 0 4px var(--color-heading);
@@ -92,7 +92,12 @@
 
 /* ── Reduced Motion ── */
 @media (prefers-reduced-motion: reduce) {
-	*, *::before, *::after {
+
+	*,
+	*::before,
+	*::after {
+		/* !important needed to override any component or library animations
+		   for users who have requested reduced motion (a11y best practice) */
 		animation-duration: 0.01ms !important;
 		animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;

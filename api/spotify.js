@@ -58,9 +58,7 @@ export default async (_) => {
 	}
 
 	try {
-		console.log('[api/spotify.js] Calling getNowPlayingAndRecent()')
 		const { nowPlaying, recentlyPlayed } = await getNowPlayingAndRecent()
-		console.log('[api/spotify.js] Successfully got response from getNowPlayingAndRecent()')
 
 		if (nowPlaying.ok && nowPlaying.status !== 204) {
 			const song = await getSafeJson(nowPlaying)
@@ -76,8 +74,6 @@ export default async (_) => {
 			const delay1 = parseInt(nowPlaying.headers?.get?.('retry-after') || nowPlaying.headers?.get?.('Retry-After') || '120', 10)
 			const delay2 = parseInt(recentlyPlayed.headers?.get?.('retry-after') || recentlyPlayed.headers?.get?.('Retry-After') || '120', 10)
 			const retryAfter = Math.max(delay1, delay2)
-
-			console.log(`[api/spotify] 429 Rate Limit. Parsed Retry-After: delay1=${delay1}s, delay2=${delay2}s. Combined: ${retryAfter}s`)
 
 			if (cachedResponse) {
 				return jsonResponse(
@@ -107,7 +103,7 @@ export default async (_) => {
 			})
 		)
 	} catch (error) {
-		console.error('[api/spotify.js] Unexpected error:', error)
+		console.error('[api/spotify] error')
 
 		if (cachedResponse) {
 			return jsonResponse({

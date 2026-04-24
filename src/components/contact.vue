@@ -43,10 +43,10 @@
 
 					<div class="flex-center">
 						<button
-							:style="loading ? 'padding: 0 3em;' : ''"
 							type="submit"
 							:disabled="loading"
 							class="cool u-pull-right"
+							:class="{ 'btn-loading': loading }"
 						>
 							<span v-if="!loading">Send message</span>
 							<span v-if="loading">
@@ -72,8 +72,6 @@
 import axios from 'axios'
 const errormsg =
 	'An error occurred. Please try again, or message me on one of my socials instead.'
-var url = ''
-
 export default {
 	data() {
 		return {
@@ -90,15 +88,10 @@ export default {
 	methods: {
 		submitForm() {
 			this.loading = true
-			if (process.env.NODE_ENV == 'development') {
-				url = '/api/msg'
-			} else {
-				url = '/api/msg'
-			}
+			var url = '/api/msg'
 			axios
 				.post(url, this.form)
 				.then((res) => {
-					console.log(res.data)
 					if (res.data.error == false) {
 						this.form.name = ''
 						this.form.email = ''
@@ -123,27 +116,31 @@ export default {
 </script>
 
 <style scoped lang="scss">
-input,
-textarea {
-	background-color: rgba($color: #fff, $alpha: 0.2) !important;
+form input,
+form textarea {
+	background-color: rgba($color: #fff, $alpha: 0.2);
 	min-width: 100%;
 	max-width: 100%;
 	font-family: var(--font-sans);
 	transition: 0.2s;
 }
 
-textarea {
+form textarea {
 	min-height: 6rem;
 }
 
-input:focus,
-textarea:focus {
-	border-color: var(--color-heading) !important;
+form input:focus,
+form textarea:focus {
+	border-color: var(--color-heading);
 }
 
 button {
 	font-family: var(--font-sans);
 	text-transform: initial;
+}
+
+.btn-loading {
+	padding: 0 3em;
 }
 
 button.cool {

@@ -9,6 +9,70 @@ const mistral = createMistral()
 
 export const config = { runtime: 'edge' }
 
+/* ── Rate limiting ─────────────────────────────────────────────── */
+const RATE_LIMIT_WINDOW_MS = 60_000 // 1 minute
+const MAX_REQUESTS_PER_WINDOW = 10
+
+/** @type {Map<string, number[]>} IP -> array of request timestamps */
+const ipRequestMap = new Map()
+
+// Purge stale entries every 5 minutes to prevent unbounded growth
+setInterval(() => {
+    const now = Date.now()
+    for (const [ip, timestamps] of ipRequestMap) {
+        const recent = timestamps.filter(t => now - t < RATE_LIMIT_WINDOW_MS)
+        if (recent.length === 0) {
+            ipRequestMap.delete(ip)
+        } else {
+            ipRequestMap.set(ip, recent)
+        }
+    }
+}, 5 * 60_000)
+
+function isRateLimited(ip) {
+    const now = Date.now()
+    const timestamps = (ipRequestMap.get(ip) || []).filter(
+        t => now - t < RATE_LIMIT_WINDOW_MS,
+    )
+    if (timestamps.length >= MAX_REQUESTS_PER_WINDOW) {
+        ipRequestMap.set(ip, timestamps)
+        return true
+    }
+    timestamps.push(now)
+    ipRequestMap.set(ip, timestamps)
+    return false
+}
+
+/* ── Message validation ────────────────────────────────────────── */
+const MAX_MESSAGES = 50
+const MAX_TOTAL_CONTENT_LENGTH = 10_000
+
+function validateMessages(messages) {
+    if (!Array.isArray(messages) || messages.length === 0) {
+        return 'Request must include a non-empty "messages" array.'
+    }
+    if (messages.length > MAX_MESSAGES) {
+        return `Too many messages. Maximum is ${MAX_MESSAGES}.`
+    }
+
+    let totalContentLength = 0
+
+    for (let i = 0; i < messages.length; i++) {
+        const msg = messages[i]
+        if (typeof msg?.role !== 'string' || typeof msg?.content !== 'string') {
+            return `Each message must have a "role" (string) and "content" (string). Problem at index ${i}.`
+        }
+        totalContentLength += msg.content.length
+    }
+
+    if (totalContentLength > MAX_TOTAL_CONTENT_LENGTH) {
+        return `Total message content is too long. Maximum is ${MAX_TOTAL_CONTENT_LENGTH} characters.`
+    }
+
+    return null // valid
+}
+
+/* ── System prompt ─────────────────────────────────────────────── */
 const BASE_SYSTEM = `
 You are Divy Sharma's portfolio assistant.
 Speak in first person (I/me).
@@ -20,11 +84,23 @@ For work inquiries: divysharma029@gmail.com
 export default async function handler(req) {
     if (req.method !== 'POST') return new Response('Method not allowed', { status: 405 })
 
+    // Rate limiting
+    const ip = req.headers.get('x-forwarded-for') || 'unknown'
+    if (isRateLimited(ip)) {
+        return new Response(
+            JSON.stringify({ error: 'Too many requests. Please try again later.' }),
+            { status: 429, headers: { 'Content-Type': 'application/json' } },
+        )
+    }
+
     try {
         const payload = await req.json()
         const messages = payload?.messages
-        if (!Array.isArray(messages)) {
-            return new Response(JSON.stringify({ error: 'Missing "messages" array' }), {
+
+        // Validate messages
+        const validationError = validateMessages(messages)
+        if (validationError) {
+            return new Response(JSON.stringify({ error: validationError }), {
                 status: 400,
                 headers: { 'Content-Type': 'application/json' },
             })
@@ -83,7 +159,8 @@ Your goal: Help visitors learn about your work in a friendly, concise way.`.trim
 
         return result.toTextStreamResponse()
     } catch (e) {
-        return new Response(JSON.stringify({ error: 'Chat failed', details: String(e) }), {
+        console.error('Chat handler error:', e)
+        return new Response(JSON.stringify({ error: 'Something went wrong. Please try again later.' }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' },
         })

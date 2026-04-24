@@ -118,13 +118,24 @@ const escapeHtml = (text) =>
 		.replace(/"/g, '&quot;')
 		.replace(/'/g, '&#39;')
 
+const sanitizeUrl = (url) => {
+	try {
+		const parsed = new URL(url, window.location.origin)
+		if (['http:', 'https:', 'mailto:'].includes(parsed.protocol)) return url
+		return '#'
+	} catch {
+		return '#'
+	}
+}
+
 // Minimal markdown renderer (sanitized)
 const markdownToHtml = (text) => {
 	let html = escapeHtml(text)
 	html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
 	html = html.replace(
 		/\[([^\]]+)\]\(([^)]+)\)/g,
-		'<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>'
+		(_, label, url) =>
+			`<a href="${sanitizeUrl(url)}" target="_blank" rel="noopener noreferrer">${label}</a>`
 	)
 	html = html.replace(/\n/g, '<br>')
 	return html
@@ -185,8 +196,7 @@ const sendMessage = async (text) => {
 			await scrollToBottom()
 		}
 
-	} catch (error) {
-		console.error(error)
+	} catch {
 		messages.value.push({ role: 'assistant', content: "Sorry, I'm having trouble connecting right now. Please try again later." })
 	} finally {
 		isLoading.value = false

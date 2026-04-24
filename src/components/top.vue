@@ -3,8 +3,6 @@
 		<h5 class="smltitle zero">Top Tracks</h5>
 		<p>
 			My top tracks from
-			<!-- TODO: CHANGE THIS -->
-
 			<a href="https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji" target="_blank"
 				>Spotify</a
 			>
@@ -55,13 +53,13 @@
 							<h4 class="title">
 								<span
 									class="skeleton-box"
-									:style="`width: ${getRandom(45, 80)}%`"
+									:style="`width: ${barWidths[(i - 1) * 2]}%`"
 								></span>
 							</h4>
 							<h5 class="artist">
 								<span
 									class="skeleton-box"
-									:style="`width: ${getRandom(45, 80)}%`"
+									:style="`width: ${barWidths[(i - 1) * 2 + 1]}%`"
 								></span>
 							</h5>
 						</div>
@@ -78,8 +76,14 @@ var url = ''
 export default {
 	data() {
 		return {
-			songs: false
+			songs: false,
+			barWidths: []
 		}
+	},
+	created() {
+		this.barWidths = Array.from({ length: 10 }, () =>
+			Math.floor(Math.random() * (80 - 45)) + 45
+		)
 	},
 	mounted() {
 		this.getSongs()
@@ -91,15 +95,10 @@ export default {
 				.get(url)
 				.then((res) => {
 					this.songs = res.data.tracks
-					console.log('Top Tracks:', this.songs)
 				})
-				.catch((err) => {
-					console.log('Error fetching top tracks:', err)
+				.catch(() => {
 					this.songs = []
 				})
-		},
-		getRandom(min, max) {
-			return Math.floor(Math.random() * (max - min)) + min
 		}
 	}
 }
@@ -122,13 +121,13 @@ a.yah:hover {
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
-		.index {
+		.index.index {
 			font-size: 2em;
 			font-variant-numeric: tabular-nums;
 			margin: 0;
 			margin-right: 1em;
 			transition: 0.3s;
-			line-height: 0 !important;
+			line-height: 0;
 		}
 		.title {
 			font-size: 1.2em;

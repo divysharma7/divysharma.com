@@ -83,42 +83,42 @@
 					<router-link to="/journey" class="explore-card">
 						<i class="ph-bold ph-path"></i>
 						<div>
-							<h4>My Journey</h4>
+							<h3>My Journey</h3>
 							<p>Overview of my learning and career journey.</p>
 						</div>
 					</router-link>
 					<router-link to="/journey/certificates" class="explore-card">
 						<i class="ph-bold ph-certificate"></i>
 						<div>
-							<h4>Certificates & Achievements</h4>
+							<h3>Certificates & Achievements</h3>
 							<p>A curated list of certificates and achievements.</p>
 						</div>
 					</router-link>
 					<router-link to="/journey/mentors" class="explore-card">
 						<i class="ph-bold ph-users-three"></i>
 						<div>
-							<h4>Gurus & Mentors</h4>
+							<h3>Gurus & Mentors</h3>
 							<p>The people who shaped my journey.</p>
 						</div>
 					</router-link>
 					<router-link to="/gears" class="explore-card">
 						<i class="ph-bold ph-gear-six"></i>
 						<div>
-							<h4>Gears & Setup</h4>
+							<h3>Gears & Setup</h3>
 							<p>Tools and software I use daily.</p>
 						</div>
 					</router-link>
 					<router-link to="/books" class="explore-card">
 						<i class="ph-bold ph-book-open-text"></i>
 						<div>
-							<h4>Books</h4>
+							<h3>Books</h3>
 							<p>What I'm reading and what shaped my thinking.</p>
 						</div>
 					</router-link>
 					<router-link to="/explore" class="explore-card">
 						<i class="ph-bold ph-compass"></i>
 						<div>
-							<h4>Explore</h4>
+							<h3>Explore</h3>
 							<p>Curated links and things I find interesting.</p>
 						</div>
 					</router-link>
@@ -577,7 +577,7 @@ onUnmounted(() => { if (rafId) cancelAnimationFrame(rafId) })
 		flex-shrink: 0;
 	}
 
-	h4 {
+	h3 {
 		font-size: var(--text-sm);
 		font-weight: 600;
 		color: var(--color-heading);

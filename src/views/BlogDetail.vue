@@ -175,6 +175,20 @@ import { useHead } from '@vueuse/head'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
+function sanitizeUrl(url) {
+	try {
+		const parsed = new URL(url, window.location.origin)
+		if (['http:', 'https:', 'mailto:'].includes(parsed.protocol)) return url
+		return '#'
+	} catch {
+		return '#'
+	}
+}
+
+function escapeHtml(str) {
+	return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+}
+
 export default {
 	name: 'BlogDetail',
 	setup() {
@@ -244,8 +258,10 @@ export default {
 			html = html.replace(/((<li>[^\n]*<\/li>\n?)+)/g, m => '<ul>' + m.replace(/\n/g, '') + '</ul>')
 			html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
 			html = html.replace(/==([^=\n]+)==/g, '<mark>$1</mark>')
-			html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="blog-image" loading="lazy" />')
-			html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+			html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) =>
+				`<img src="${sanitizeUrl(src)}" alt="${escapeHtml(alt)}" class="blog-image" loading="lazy" />`)
+			html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, text, href) =>
+				`<a href="${sanitizeUrl(href)}" target="_blank" rel="noopener">${escapeHtml(text)}</a>`)
 			html = html.replace(/\n\n/g, '</p><p>')
 			html = html.replace(/\n/g, '<br>')
 			return `<p>${html}</p>`

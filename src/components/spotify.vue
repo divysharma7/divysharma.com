@@ -75,8 +75,8 @@ export default {
 			try {
 				const response = await axios.get(url)
 				this.spotify = response.data
-			} catch (error) {
-				console.error('Error fetching Spotify data:', error)
+			} catch {
+				// Spotify widget is non-critical; fail silently
 			}
 		}
 	}

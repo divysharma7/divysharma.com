@@ -3,11 +3,14 @@
 		<div class="exp-row">
 			<!-- Left: Logo -->
 			<div class="exp-logo-wrapper">
-				<img 
-					v-if="experience.logo" 
-					:src="experience.logo" 
-					:alt="experience.company" 
+				<img
+					v-if="experience.logo"
+					:src="experience.logo"
+					:alt="experience.company"
 					class="exp-logo"
+					loading="lazy"
+					width="48"
+					height="48"
 				/>
 				<div v-else class="exp-logo-placeholder">
 					{{ experience.company[0] }}

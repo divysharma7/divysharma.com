@@ -15,9 +15,9 @@
 				<!-- <img loading="lazy" :src="img" class="mobileimg" :alt="title" /> -->
 			</div>
 			<div @mouseover="hover = true" @mouseleave="hover = false" class="info">
-				<h4 class="name" v-html="name"></h4>
+				<h4 class="name">{{ name }}</h4>
 				<h5 class="description">
-					<span v-if="desc" v-html="description"></span>
+					<span v-if="desc">{{ description }}</span>
 					<span v-else>This is a small description for the project above.</span>
 				</h5>
 			</div>
@@ -39,9 +39,7 @@ export default {
 			mobileLarger: breakpoints.greater('md')
 		}
 	},
-	methods: {
-		getHover() { }
-	}
+
 }
 </script>
 

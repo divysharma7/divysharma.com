@@ -101,9 +101,7 @@ export default {
 	},
 	watch: {
 		nav() {
-			document.querySelector('body').style.overflow = this.nav
-				? 'hidden'
-				: 'auto'
+			document.body.classList.toggle('nav-open', this.nav)
 		}
 	}
 }
@@ -194,8 +192,8 @@ useHead({
 	opacity: 0;
 }
 
-.ham {
-	display: none !important;
+.navbar .navcont .ham {
+	display: none;
 }
 
 .ham img {
@@ -235,7 +233,7 @@ useHead({
 		font-size: 2rem;
 		margin-bottom: 0.65rem;
 		span {
-			width: 100% !important;
+			width: 100%;
 		}
 	}
 	a.router-link-exact-active {
@@ -274,8 +272,8 @@ useHead({
 	.navbar .links {
 		display: none;
 	}
-	.ham {
-		display: block !important;
+	.navbar .navcont .ham {
+		display: block;
 	}
 }
 
@@ -295,8 +293,12 @@ useHead({
 	margin-right: 1rem;
 }
 
-.back {
-	font-size: 1rem !important;
+.navbar .flexbruh .back {
+	font-size: 1rem;
 	margin-top: -0.25em;
+}
+
+body.nav-open {
+	overflow: hidden;
 }
 </style>

@@ -2,6 +2,9 @@
 	"functions": {
 		"api/health.js": {
 			"maxDuration": 10
+		},
+		"api/chat.js": {
+			"maxDuration": 30
 		}
 	},
 	"routes": [
@@ -52,9 +55,27 @@
 			"src": "/api/(.*)",
 			"headers": {
 				"Access-Control-Allow-Credentials": "true",
-				"Access-Control-Allow-Origin": "*",
+				"Access-Control-Allow-Origin": "https://divysharma.com",
 				"Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
-				"Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+				"Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
+				"X-Frame-Options": "DENY",
+				"X-Content-Type-Options": "nosniff",
+				"Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+				"Referrer-Policy": "strict-origin-when-cross-origin",
+				"X-XSS-Protection": "1; mode=block",
+				"Permissions-Policy": "camera=(), microphone=(), geolocation=()"
+			},
+			"continue": true
+		},
+		{
+			"src": "(.*)",
+			"headers": {
+				"X-Frame-Options": "DENY",
+				"X-Content-Type-Options": "nosniff",
+				"Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+				"Referrer-Policy": "strict-origin-when-cross-origin",
+				"X-XSS-Protection": "1; mode=block",
+				"Permissions-Policy": "camera=(), microphone=(), geolocation=()"
 			},
 			"continue": true
 		},

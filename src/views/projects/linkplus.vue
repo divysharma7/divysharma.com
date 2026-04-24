@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<div class="navcont">
-			<img src="https://i.imgur.com/u8g9pHc.png" draggable="false" />
+			<img src="https://i.imgur.com/u8g9pHc.png" alt="Link+ AI preview" loading="lazy" draggable="false" />
 		</div>
 		<div class="navcont">
 			<div class="row">

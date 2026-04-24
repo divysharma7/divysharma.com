@@ -33,14 +33,12 @@ export default async (_) => {
 		const response = await getTopTracks()
 
 		if (!response.ok) {
-			const body = await response.text()
-			console.error(`[api/top-tracks] Spotify API ${response.status}: ${body}`)
+			await response.text()
 
 			let retryAfter = 300
 			if (response.status === 429) {
 				const headerVal = response.headers?.get?.('retry-after') || response.headers?.get?.('Retry-After') || '120'
 				retryAfter = parseInt(headerVal, 10)
-				console.log(`[api/top-tracks] 429 Rate Limit. Retry-After header: ${headerVal} -> parsed: ${retryAfter}s`)
 			}
 
 			if (cachedResponse) {
@@ -80,7 +78,7 @@ export default async (_) => {
 
 		return jsonResponse(data)
 	} catch (error) {
-		console.error('[api/top-tracks] Unexpected error:', error)
+		console.error('[api/top-tracks] error')
 
 		if (cachedResponse) {
 			return jsonResponse({ ...cachedResponse, stale: true }, 60)

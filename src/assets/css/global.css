@@ -2,6 +2,13 @@
    Global Styles — Built on tokens.css
    ══════════════════════════════════════════ */
 
+/* ── Override CDN font-display for Phosphor Icons ── */
+@font-face {
+	font-family: 'Phosphor-Bold';
+	font-display: swap;
+	src: url('https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/Phosphor-Bold.woff2') format('woff2');
+}
+
 /* ── Base Reset ── */
 body {
 	font-family: var(--font-sans);
@@ -23,13 +30,14 @@ strong {
 
 /* ── Display Font ── */
 .fancy {
-	font-family: var(--font-display) !important;
+	font-family: var(--font-display);
 	text-transform: lowercase;
 	color: var(--color-heading);
 }
 
 .notion-page,
 .notion-page-offset {
+	/* !important needed to override vue3-notion's own inline/scoped styles */
 	padding: 0 !important;
 	font-family: var(--font-sans) !important;
 }

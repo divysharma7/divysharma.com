@@ -61,8 +61,7 @@ const fetchNowPlaying = async () => {
 			isPlaying.value = false
 			lastPlayed.value = false
 		}
-	} catch (e) {
-		console.error('Error fetching Spotify data', e)
+	} catch {
 		isPlaying.value = false
 	}
 }

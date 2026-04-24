@@ -13,9 +13,19 @@ import { loadUmamiScript, trackPage } from './analytics/umami'
 
 // import ContextMenu from '@imengyu/vue3-context-menu'
 
-injectSpeedInsights()
-
 const app = createApp(App)
+
+if (import.meta.env.PROD) {
+	injectSpeedInsights()
+}
+
+app.config.errorHandler = (err, instance, info) => {
+  console.error(`[Vue Error] ${info}:`, err)
+}
+
+window.addEventListener('unhandledrejection', (event) => {
+  console.error('[Unhandled Promise]', event.reason)
+})
 const head = createHead()
 
 const router = createRouter({

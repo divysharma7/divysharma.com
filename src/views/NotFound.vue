@@ -5,25 +5,15 @@
 				<router-link to="/" class="forofour">404</router-link>
 			</h1>
 			<p class="top">
-				This page doesn't exist. You might find what you're
-				looking for at
-				<a
-					rel="noopener noreferrer"
-					:href="`https://arhn.us${$route.fullPath}`"
-					style="word-wrap: break-word"
-					target="_blank"
-					>{{ `arhn.us${$route.fullPath}` }}</a
-				>.
+				The page you're looking for doesn't exist.
 			</p>
 			<p class="btm">
-				Or you can
-				<router-link to="/">Go home</router-link>, or
+				You can
+				<router-link to="/">go home</router-link>, or
 				<router-link to="/explore#contact">contact me</router-link> if you think
 				this is a mistake.
 			</p>
 			<div v-if="!nosocials" class="yo">
-				// TODO: CHANGE THIS
-
 				<a
 					href="https://twitter.com/Divy_Sharma6"
 					rel="noopener noreferrer"

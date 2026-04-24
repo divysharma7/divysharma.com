@@ -5,9 +5,9 @@
 				<img loading="lazy" class="img" :alt="name" :src="img" />
 				<div class="info">
 					<h1 class="title">
-						<span v-html="title"></span>
+						{{ title }}
 					</h1>
-					<p class="txt" v-html="desc"></p>
+					<p class="txt">{{ desc }}</p>
 				</div>
 			</div>
 		</a>
@@ -17,9 +17,9 @@
 				<img loading="lazy" class="img" :alt="name" :src="img" />
 				<div class="info">
 					<h1 class="title">
-						<span v-html="title"></span>
+						{{ title }}
 					</h1>
-					<p class="txt" v-html="desc"></p>
+					<p class="txt">{{ desc }}</p>
 				</div>
 			</div>
 		</router-link>
