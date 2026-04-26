@@ -18,6 +18,7 @@
 					href="https://twitter.com/Divy_Sharma6"
 					rel="noopener noreferrer"
 					target="_blank"
+					@click="gtmPush('click:social', { platform: 'twitter', location: '404_page' })"
 				>
 					<bx-bxl-twitter />
 				</a>
@@ -25,6 +26,7 @@
 					href="https://www.instagram.com/divy.sharma9/"
 					rel="noopener noreferrer"
 					target="_blank"
+					@click="gtmPush('click:social', { platform: 'instagram', location: '404_page' })"
 				>
 					<carbon-logo-instagram />
 				</a>
@@ -32,6 +34,7 @@
 					href="https://github.com/divysharma7"
 					rel="noopener noreferrer"
 					target="_blank"
+					@click="gtmPush('click:social', { platform: 'github', location: '404_page' })"
 				>
 					<carbon-logo-github />
 				</a>
@@ -39,6 +42,7 @@
 					href="https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji"
 					rel="noopener noreferrer"
 					target="_blank"
+					@click="gtmPush('click:social', { platform: 'spotify', location: '404_page' })"
 				>
 					<bx-bxl-spotify />
 				</a>
@@ -47,6 +51,7 @@
 					href="https://www.linkedin.com/in/divy-sharma-243748216/"
 					target="_blank"
 					rel="noopener noreferrer"
+					@click="gtmPush('click:social', { platform: 'linkedin', location: '404_page' })"
 				>
 					<carbon-logo-linkedin />
 				</a>
@@ -55,6 +60,7 @@
 					href="https://www.behance.net/divysharma3"
 					target="_blank"
 					rel="noopener noreferrer"
+					@click="gtmPush('click:social', { platform: 'behance', location: '404_page' })"
 				>
 					<bx-bxl-behance />
 				</a>
@@ -63,6 +69,7 @@
 					href="mailto:divysharma029@gmail.com"
 					rel="noopener noreferrer"
 					target="_blank"
+					@click="gtmPush('click:social', { platform: 'email', location: '404_page' })"
 				>
 					
 					<bx-bx-mail-send />
@@ -76,6 +83,12 @@
 export default {
 	props: {
 		nosocials: Boolean
+	},
+	methods: {
+		gtmPush(event, params) {
+			window.dataLayer = window.dataLayer || []
+			window.dataLayer.push({ event, ...params })
+		}
 	}
 }
 </script>

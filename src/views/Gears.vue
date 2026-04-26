@@ -1,10 +1,12 @@
 <template>
   <div class="gears-page">
     <!-- Header -->
-    <div class="page-header">
-      <h1 class="page-title">Gears</h1>
-      <p class="page-subtitle">Tools and software I use daily.</p>
-    </div>
+    <PageHero
+      icon="ph-gear-six"
+      title="Gears"
+      :accent-from="1"
+      subtitle="Tools and software I use daily."
+    />
 
     <hr class="divider" />
 
@@ -50,6 +52,7 @@
 import { devices, software } from '../config/gears.js';
 import { Monitor, ArrowUpRight } from 'lucide-vue-next';
 import { useHead } from '@vueuse/head';
+import PageHero from '@/components/PageHero.vue';
 
 useHead({
   title: 'Gears',
@@ -66,27 +69,6 @@ useHead({
   max-width: var(--container);
   margin: 0 auto;
   padding: 4rem 1.5rem;
-}
-
-.page-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.page-title {
-  font-family: var(--font-sans);
-  font-size: var(--h1);
-  font-weight: 600;
-  color: var(--color-heading);
-  line-height: var(--leading-tight);
-  margin-bottom: 0.5rem;
-}
-
-.page-subtitle {
-  color: var(--color-body);
-  font-size: var(--text-base);
-  max-width: 480px;
-  margin: 0 auto;
 }
 
 .divider {

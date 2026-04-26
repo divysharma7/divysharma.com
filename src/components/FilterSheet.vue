@@ -307,6 +307,14 @@ const previewCount = computed(() => {
 
 // ── Actions ──
 function apply() {
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({
+    event: 'books:filter_apply',
+    sort: draftSort.value,
+    status_count: draftStatus.value.length,
+    tag_count: draftTags.value.length,
+    apm: draftApm.value
+  })
   emit('apply', {
     quick: draftQuick.value,
     apm: draftApm.value,
@@ -329,7 +337,7 @@ defineExpose({ draftTags });
 /* ═══ Wrapper ═══ */
 .filter-wrapper {
   position: relative;
-  z-index: 2000;
+  z-index: var(--z-dropdown);
 }
 
 /* ═══ Backdrop ═══ */
@@ -338,7 +346,7 @@ defineExpose({ draftTags });
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
-  z-index: 2000;
+  z-index: var(--z-modal);
 }
 
 /* ═══ Panel (Drawer) ═══ */
@@ -352,7 +360,7 @@ defineExpose({ draftTags });
   background: #fff;
   display: flex;
   flex-direction: column;
-  z-index: 2001;
+  z-index: var(--z-modal);
   box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
 }
 

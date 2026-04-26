@@ -3,7 +3,7 @@
 		<h5 class="smltitle zero">Top Tracks</h5>
 		<p>
 			My top tracks from
-			<a href="https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji" target="_blank"
+			<a href="https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji" target="_blank" @click="gtmPush('click:outbound', { platform: 'spotify', location: 'top_tracks' })"
 				>Spotify</a
 			>
 			this month
@@ -74,6 +74,12 @@
 import axios from 'axios'
 var url = ''
 export default {
+	methods: {
+		gtmPush(event, params) {
+			window.dataLayer = window.dataLayer || []
+			window.dataLayer.push({ event, ...params })
+		}
+	},
 	data() {
 		return {
 			songs: false,

@@ -4,6 +4,7 @@ import { projects } from './aaprojects.js'
 import { ref, onMounted } from 'vue'
 import { useRoute } from 'vue-router'
 import Fourerr from '../NotFound.vue'
+import Notionloader from '../../components/notionloader.vue'
 import { trackOutbound } from '@/analytics/umami'
 
 const route = useRoute()
@@ -25,6 +26,8 @@ onMounted(async () => {
 					// Don't track internal anchor links
 					if (link.href.startsWith('http') && !link.href.includes(window.location.host)) {
 						trackOutbound('project_outbound', link.href, { project_id: route.params.id })
+						window.dataLayer = window.dataLayer || []
+						window.dataLayer.push({ event: 'click:project_outbound', project_id: route.params.id, link_href: link.href })
 					}
 				}
 			})

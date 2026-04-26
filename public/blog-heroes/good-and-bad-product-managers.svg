@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Inter, 'Helvetica Neue', sans-serif">
+  <rect width="1280" height="720" fill="#F4EFE6"/>
+
+  <!-- Subtitle (mono) — GOOD / BAD with accent slash -->
+  <text x="96" y="240" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="18" font-weight="500" letter-spacing="0.04em">
+    <tspan fill="#1A1A1A">GOOD </tspan><tspan fill="#E8765A">/</tspan><tspan fill="#1A1A1A"> BAD</tspan>
+  </text>
+
+  <!-- Title -->
+  <text x="96" y="330" font-size="88" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">Good product managers</text>
+  <text x="96" y="420" font-size="88" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">and bad product</text>
+  <text x="96" y="510" font-size="88" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">managers</text>
+</svg>

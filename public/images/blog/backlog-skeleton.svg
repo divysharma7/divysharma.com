@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="380" fill="#f9f7f4" rx="12"/>
+
+  <!-- Spine (horizontal backbone) -->
+  <line x1="80" y1="190" x2="720" y2="190" stroke="#2a2a2a" stroke-width="3"/>
+
+  <!-- Spine nodes -->
+  <circle cx="120" cy="190" r="22" fill="#E8765A" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="120" y="187" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">Sign</text>
+  <text x="120" y="198" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">up</text>
+
+  <circle cx="270" cy="190" r="22" fill="#E8765A" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="270" y="194" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">Browse</text>
+
+  <circle cx="420" cy="190" r="22" fill="#E8765A" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="420" y="187" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">Pur-</text>
+  <text x="420" y="198" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">chase</text>
+
+  <circle cx="570" cy="190" r="22" fill="#E8765A" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="570" y="194" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">Receive</text>
+
+  <circle cx="690" cy="190" r="22" fill="#E8765A" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="690" y="194" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">Review</text>
+
+  <!-- Ribs going UP (essential features - bold) -->
+  <!-- Sign up ribs -->
+  <line x1="120" y1="168" x2="120" y2="110" stroke="#2a2a2a" stroke-width="1.5"/>
+  <rect x="80" y="80" width="80" height="30" rx="5" fill="#fff" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="120" y="100" text-anchor="middle" font-size="9" fill="#2a2a2a">Email auth</text>
+
+  <line x1="120" y1="80" x2="120" y2="50" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect x="80" y="22" width="80" height="28" rx="5" fill="#fff" stroke="#ccc" stroke-width="1" opacity="0.5"/>
+  <text x="120" y="40" text-anchor="middle" font-size="8" fill="#aaa">Social login</text>
+
+  <!-- Browse ribs -->
+  <line x1="270" y1="168" x2="270" y2="110" stroke="#2a2a2a" stroke-width="1.5"/>
+  <rect x="225" y="80" width="90" height="30" rx="5" fill="#fff" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="270" y="100" text-anchor="middle" font-size="9" fill="#2a2a2a">Search + filter</text>
+
+  <line x1="270" y1="80" x2="270" y2="50" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect x="228" y="22" width="84" height="28" rx="5" fill="#fff" stroke="#ccc" stroke-width="1" opacity="0.5"/>
+  <text x="270" y="40" text-anchor="middle" font-size="8" fill="#aaa">Saved filters</text>
+
+  <!-- Purchase ribs -->
+  <line x1="420" y1="168" x2="420" y2="110" stroke="#2a2a2a" stroke-width="1.5"/>
+  <rect x="375" y="80" width="90" height="30" rx="5" fill="#fff" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="420" y="100" text-anchor="middle" font-size="9" fill="#2a2a2a">Checkout flow</text>
+
+  <!-- Receive ribs -->
+  <line x1="570" y1="168" x2="570" y2="110" stroke="#2a2a2a" stroke-width="1.5"/>
+  <rect x="525" y="80" width="90" height="30" rx="5" fill="#fff" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="570" y="100" text-anchor="middle" font-size="9" fill="#2a2a2a">Order status</text>
+
+  <!-- Review ribs -->
+  <line x1="690" y1="168" x2="690" y2="110" stroke="#2a2a2a" stroke-width="1.5"/>
+  <rect x="645" y="80" width="90" height="30" rx="5" fill="#fff" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="690" y="100" text-anchor="middle" font-size="9" fill="#2a2a2a">Rate + review</text>
+
+  <!-- Ribs going DOWN (more features) -->
+  <!-- Sign up down -->
+  <line x1="120" y1="212" x2="120" y2="260" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect x="75" y="260" width="90" height="28" rx="5" fill="#fff" stroke="#ccc" stroke-width="1" opacity="0.5"/>
+  <text x="120" y="278" text-anchor="middle" font-size="8" fill="#aaa">Onboarding</text>
+
+  <!-- Browse down -->
+  <line x1="270" y1="212" x2="270" y2="260" stroke="#2a2a2a" stroke-width="1.5"/>
+  <rect x="225" y="260" width="90" height="28" rx="5" fill="#fff" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="270" y="278" text-anchor="middle" font-size="9" fill="#2a2a2a">Product page</text>
+
+  <!-- Purchase down -->
+  <line x1="420" y1="212" x2="420" y2="260" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect x="375" y="260" width="90" height="28" rx="5" fill="#fff" stroke="#ccc" stroke-width="1" opacity="0.5"/>
+  <text x="420" y="278" text-anchor="middle" font-size="8" fill="#aaa">Payment split</text>
+
+  <!-- Receive down -->
+  <line x1="570" y1="212" x2="570" y2="260" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect x="525" y="260" width="90" height="28" rx="5" fill="#fff" stroke="#ccc" stroke-width="1" opacity="0.5"/>
+  <text x="570" y="278" text-anchor="middle" font-size="8" fill="#aaa">Live tracking</text>
+
+  <!-- Legend -->
+  <rect x="80" y="320" width="16" height="16" rx="3" fill="#fff" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="104" y="333" font-size="11" fill="#2a2a2a">Essential to walk</text>
+
+  <rect x="250" y="320" width="16" height="16" rx="3" fill="#fff" stroke="#ccc" stroke-width="1" opacity="0.5"/>
+  <text x="274" y="333" font-size="11" fill="#aaa">Attach later</text>
+
+  <text x="460" y="333" font-size="11" fill="#E8765A" font-weight="600">&#9679; Spine = user journey</text>
+  <text x="460" y="353" font-size="11" fill="#71717a">Ribs = features attached to each stage</text>
+</svg>

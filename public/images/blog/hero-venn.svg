@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="440" fill="#fafafa" rx="12"/>
+
+  <!-- Three circles -->
+  <circle cx="330" cy="200" r="140" fill="none" stroke="#a1a1aa" stroke-width="1.8" stroke-dasharray="6 4" opacity="0.7"/>
+  <circle cx="470" cy="200" r="140" fill="none" stroke="#a1a1aa" stroke-width="1.8" stroke-dasharray="6 4" opacity="0.7"/>
+  <circle cx="400" cy="320" r="140" fill="none" stroke="#a1a1aa" stroke-width="1.8" stroke-dasharray="6 4" opacity="0.7"/>
+
+  <!-- Subtle fills for overlaps -->
+  <clipPath id="mp"><circle cx="330" cy="200" r="140"/></clipPath>
+  <clipPath id="gp"><circle cx="470" cy="200" r="140"/></clipPath>
+  <clipPath id="pp"><circle cx="400" cy="320" r="140"/></clipPath>
+
+  <!-- Marketing-Growth overlap -->
+  <circle cx="470" cy="200" r="140" fill="#e4e4e7" opacity="0.35" clip-path="url(#mp)"/>
+  <!-- Marketing-Product overlap -->
+  <circle cx="400" cy="320" r="140" fill="#e4e4e7" opacity="0.35" clip-path="url(#mp)"/>
+  <!-- Growth-Product overlap -->
+  <circle cx="400" cy="320" r="140" fill="#e4e4e7" opacity="0.35" clip-path="url(#gp)"/>
+
+  <!-- Center triple overlap -->
+  <g clip-path="url(#mp)">
+    <g clip-path="url(#gp)">
+      <circle cx="400" cy="320" r="140" fill="#d4d4d8" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- Circle labels -->
+  <text x="260" y="170" text-anchor="middle" font-size="18" font-weight="600" fill="#3f3f46">Marketing</text>
+  <text x="260" y="192" text-anchor="middle" font-size="12" fill="#71717a">Awareness</text>
+  <text x="260" y="208" text-anchor="middle" font-size="12" fill="#71717a">Acquisition</text>
+  <text x="260" y="224" text-anchor="middle" font-size="12" fill="#71717a">Brand</text>
+
+  <text x="540" y="170" text-anchor="middle" font-size="18" font-weight="600" fill="#3f3f46">Growth</text>
+  <text x="540" y="192" text-anchor="middle" font-size="12" fill="#71717a">Full funnel</text>
+  <text x="540" y="208" text-anchor="middle" font-size="12" fill="#71717a">Experimentation</text>
+  <text x="540" y="224" text-anchor="middle" font-size="12" fill="#71717a">Data + eng</text>
+
+  <text x="400" y="380" text-anchor="middle" font-size="18" font-weight="600" fill="#3f3f46">Product</text>
+  <text x="400" y="402" text-anchor="middle" font-size="12" fill="#71717a">Core value</text>
+  <text x="400" y="418" text-anchor="middle" font-size="12" fill="#71717a">Activation &amp; retention</text>
+
+  <!-- Overlap labels -->
+  <text x="400" y="165" text-anchor="middle" font-size="11" fill="#52525b" font-style="italic">Paid channels</text>
+  <text x="400" y="180" text-anchor="middle" font-size="11" fill="#52525b" font-style="italic">Attribution</text>
+
+  <text x="310" y="290" text-anchor="middle" font-size="11" fill="#52525b" font-style="italic">Content</text>
+  <text x="310" y="305" text-anchor="middle" font-size="11" fill="#52525b" font-style="italic">Positioning</text>
+
+  <text x="490" y="290" text-anchor="middle" font-size="11" fill="#52525b" font-style="italic">Onboarding</text>
+  <text x="490" y="305" text-anchor="middle" font-size="11" fill="#52525b" font-style="italic">Lifecycle</text>
+
+  <!-- Center label -->
+  <text x="400" y="258" text-anchor="middle" font-size="11" font-weight="600" fill="#18181b">where most</text>
+  <text x="400" y="273" text-anchor="middle" font-size="11" font-weight="600" fill="#18181b">companies get</text>
+  <text x="400" y="288" text-anchor="middle" font-size="11" font-weight="600" fill="#18181b">confused</text>
+</svg>

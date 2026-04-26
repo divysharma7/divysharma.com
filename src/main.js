@@ -62,6 +62,14 @@ router.isReady().then(async () => {
         // Wait for document.title updates by Vue/head
         await new Promise(resolve => setTimeout(resolve, 50))
         trackPage(to.fullPath, document.title)
+
+        // GTM dataLayer push for GA4 via Google Tag Manager
+        window.dataLayer = window.dataLayer || []
+        window.dataLayer.push({
+            event: 'page_view',
+            page_path: to.fullPath,
+            page_title: document.title
+        })
     })
 
     app.mount('#app')

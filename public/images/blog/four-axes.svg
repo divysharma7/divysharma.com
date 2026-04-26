@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="320" fill="#fafafa" rx="12"/>
+
+  <!-- Table structure -->
+  <!-- Header row -->
+  <rect x="40" y="30" width="200" height="44" rx="0" fill="none"/>
+  <rect x="240" y="30" width="270" height="44" rx="0" fill="#18181b"/>
+  <rect x="510" y="30" width="270" height="44" rx="0" fill="#18181b"/>
+
+  <!-- Round top corners on header -->
+  <rect x="240" y="30" width="270" height="44" fill="#18181b" rx="8"/>
+  <rect x="240" y="50" width="270" height="24" fill="#18181b"/>
+  <rect x="510" y="30" width="270" height="44" fill="#3f3f46" rx="8"/>
+  <rect x="510" y="50" width="270" height="24" fill="#3f3f46"/>
+
+  <text x="375" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Product</text>
+  <text x="645" y="58" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">Growth</text>
+
+  <!-- Row 1: Time horizon -->
+  <rect x="40" y="82" width="200" height="52" fill="#f4f4f5" stroke="#e4e4e7" stroke-width="0.5"/>
+  <rect x="240" y="82" width="270" height="52" fill="#fff" stroke="#e4e4e7" stroke-width="0.5"/>
+  <rect x="510" y="82" width="270" height="52" fill="#fff" stroke="#e4e4e7" stroke-width="0.5"/>
+
+  <text x="140" y="106" text-anchor="middle" font-size="13" font-weight="600" fill="#18181b">Time horizon</text>
+  <text x="140" y="122" text-anchor="middle" font-size="11" fill="#71717a">How long to measure</text>
+
+  <text x="375" y="106" text-anchor="middle" font-size="13" fill="#3f3f46">Months and quarters</text>
+  <text x="375" y="122" text-anchor="middle" font-size="11" fill="#71717a">Feature launches, platform bets</text>
+
+  <text x="645" y="106" text-anchor="middle" font-size="13" fill="#3f3f46">Weeks and days</text>
+  <text x="645" y="122" text-anchor="middle" font-size="11" fill="#71717a">Channel tests, onboarding tweaks</text>
+
+  <!-- Row 2: Definition of success -->
+  <rect x="40" y="134" width="200" height="52" fill="#f4f4f5" stroke="#e4e4e7" stroke-width="0.5"/>
+  <rect x="240" y="134" width="270" height="52" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.5"/>
+  <rect x="510" y="134" width="270" height="52" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.5"/>
+
+  <text x="140" y="158" text-anchor="middle" font-size="13" font-weight="600" fill="#18181b">Success</text>
+  <text x="140" y="174" text-anchor="middle" font-size="11" fill="#71717a">What winning means</text>
+
+  <text x="375" y="158" text-anchor="middle" font-size="13" fill="#3f3f46">Is this the right thing to build?</text>
+  <text x="375" y="174" text-anchor="middle" font-size="11" fill="#71717a">Value creation</text>
+
+  <text x="645" y="158" text-anchor="middle" font-size="13" fill="#3f3f46">Are we extracting all value?</text>
+  <text x="645" y="174" text-anchor="middle" font-size="11" fill="#71717a">Value delivery at scale</text>
+
+  <!-- Row 3: Default mode -->
+  <rect x="40" y="186" width="200" height="52" fill="#f4f4f5" stroke="#e4e4e7" stroke-width="0.5"/>
+  <rect x="240" y="186" width="270" height="52" fill="#fff" stroke="#e4e4e7" stroke-width="0.5"/>
+  <rect x="510" y="186" width="270" height="52" fill="#fff" stroke="#e4e4e7" stroke-width="0.5"/>
+
+  <text x="140" y="210" text-anchor="middle" font-size="13" font-weight="600" fill="#18181b">Default mode</text>
+  <text x="140" y="226" text-anchor="middle" font-size="11" fill="#71717a">How the team operates</text>
+
+  <text x="375" y="210" text-anchor="middle" font-size="13" fill="#3f3f46">Build</text>
+  <text x="375" y="226" text-anchor="middle" font-size="11" fill="#71717a">Ship features and systems</text>
+
+  <text x="645" y="210" text-anchor="middle" font-size="13" fill="#3f3f46">Measure, then build small</text>
+  <text x="645" y="226" text-anchor="middle" font-size="11" fill="#71717a">Smallest test of the hypothesis</text>
+
+  <!-- Row 4: Scope of curiosity -->
+  <rect x="40" y="238" width="200" height="52" fill="#f4f4f5" stroke="#e4e4e7" stroke-width="0.5"/>
+  <rect x="240" y="238" width="270" height="52" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.5"/>
+  <rect x="510" y="238" width="270" height="52" fill="#fafafa" stroke="#e4e4e7" stroke-width="0.5"/>
+
+  <text x="140" y="262" text-anchor="middle" font-size="13" font-weight="600" fill="#18181b">Curiosity</text>
+  <text x="140" y="278" text-anchor="middle" font-size="11" fill="#71717a">Where attention goes</text>
+
+  <text x="375" y="262" text-anchor="middle" font-size="13" fill="#3f3f46">What the product should become</text>
+  <text x="375" y="278" text-anchor="middle" font-size="11" fill="#71717a">Next version, roadmap</text>
+
+  <text x="645" y="262" text-anchor="middle" font-size="13" fill="#3f3f46">Gap between product and UX</text>
+  <text x="645" y="278" text-anchor="middle" font-size="11" fill="#71717a">Friction, dropoffs, missing sessions</text>
+</svg>

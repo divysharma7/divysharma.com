@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="420" fill="#fafafa" rx="12"/>
+
+  <!-- BEFORE column -->
+  <text x="200" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#3f3f46">BEFORE</text>
+  <line x1="60" y1="52" x2="340" y2="52" stroke="#e4e4e7" stroke-width="1"/>
+
+  <!-- Online path (works) -->
+  <rect x="60" y="70" width="120" height="40" rx="6" fill="#fff" stroke="#a1a1aa" stroke-width="1.2"/>
+  <text x="120" y="95" text-anchor="middle" font-size="12" fill="#3f3f46">Website</text>
+
+  <line x1="180" y1="90" x2="210" y2="90" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="210" y="70" width="120" height="40" rx="6" fill="#fff" stroke="#a1a1aa" stroke-width="1.2"/>
+  <text x="270" y="88" text-anchor="middle" font-size="11" fill="#3f3f46">Pixel / CAPI</text>
+  <text x="270" y="102" text-anchor="middle" font-size="11" fill="#3f3f46">Events</text>
+
+  <text x="350" y="95" text-anchor="middle" font-size="18" fill="#22c55e">&#10003;</text>
+
+  <!-- Offline path (broken) -->
+  <rect x="60" y="140" width="120" height="56" rx="6" fill="#fff" stroke="#a1a1aa" stroke-width="1.2"/>
+  <text x="120" y="160" text-anchor="middle" font-size="11" fill="#3f3f46">Walk-ins</text>
+  <text x="120" y="175" text-anchor="middle" font-size="11" fill="#3f3f46">Phone calls</text>
+  <text x="120" y="190" text-anchor="middle" font-size="11" fill="#3f3f46">Broker referrals</text>
+
+  <line x1="180" y1="168" x2="210" y2="168" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="210" y="148" width="80" height="40" rx="6" fill="#fff" stroke="#a1a1aa" stroke-width="1.2"/>
+  <text x="250" y="172" text-anchor="middle" font-size="12" fill="#3f3f46">CRM</text>
+
+  <!-- Broken arrow -->
+  <line x1="290" y1="168" x2="310" y2="168" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="330" y="173" text-anchor="middle" font-size="18" fill="#ef4444">&#10007;</text>
+
+  <text x="200" y="230" text-anchor="middle" font-size="12" font-style="italic" fill="#71717a">Ad platforms only see online converts</text>
+  <text x="200" y="248" text-anchor="middle" font-size="12" font-style="italic" fill="#71717a">Lookalikes built on half the picture</text>
+
+  <!-- Divider -->
+  <line x1="400" y1="30" x2="400" y2="390" stroke="#d4d4d8" stroke-width="1" stroke-dasharray="6 4"/>
+
+  <!-- AFTER column -->
+  <text x="600" y="40" text-anchor="middle" font-size="16" font-weight="700" fill="#3f3f46">AFTER</text>
+  <line x1="460" y1="52" x2="740" y2="52" stroke="#e4e4e7" stroke-width="1"/>
+
+  <!-- Online path (same) -->
+  <rect x="460" y="70" width="120" height="40" rx="6" fill="#fff" stroke="#a1a1aa" stroke-width="1.2"/>
+  <text x="520" y="95" text-anchor="middle" font-size="12" fill="#3f3f46">Website</text>
+
+  <line x1="580" y1="90" x2="610" y2="90" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="610" y="70" width="120" height="40" rx="6" fill="#fff" stroke="#a1a1aa" stroke-width="1.2"/>
+  <text x="670" y="88" text-anchor="middle" font-size="11" fill="#3f3f46">Pixel / CAPI</text>
+  <text x="670" y="102" text-anchor="middle" font-size="11" fill="#3f3f46">Events</text>
+
+  <text x="748" y="95" text-anchor="middle" font-size="18" fill="#22c55e">&#10003;</text>
+
+  <!-- Offline path (now connected) -->
+  <rect x="460" y="140" width="120" height="56" rx="6" fill="#fff" stroke="#a1a1aa" stroke-width="1.2"/>
+  <text x="520" y="160" text-anchor="middle" font-size="11" fill="#3f3f46">Walk-ins</text>
+  <text x="520" y="175" text-anchor="middle" font-size="11" fill="#3f3f46">Phone calls</text>
+  <text x="520" y="190" text-anchor="middle" font-size="11" fill="#3f3f46">Broker referrals</text>
+
+  <line x1="580" y1="168" x2="610" y2="168" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="610" y="148" width="80" height="40" rx="6" fill="#fff" stroke="#a1a1aa" stroke-width="1.2"/>
+  <text x="650" y="172" text-anchor="middle" font-size="12" fill="#3f3f46">CRM</text>
+
+  <!-- Server-side integration -->
+  <line x1="650" y1="188" x2="650" y2="220" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="590" y="220" width="120" height="44" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1.2"/>
+  <text x="650" y="238" text-anchor="middle" font-size="10" font-weight="600" fill="#166534">Server-side</text>
+  <text x="650" y="252" text-anchor="middle" font-size="10" font-weight="600" fill="#166534">Integration</text>
+
+  <!-- Arrow to platforms -->
+  <line x1="650" y1="264" x2="650" y2="296" stroke="#a1a1aa" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+  <rect x="580" y="296" width="140" height="44" rx="6" fill="#fff" stroke="#a1a1aa" stroke-width="1.2"/>
+  <text x="650" y="314" text-anchor="middle" font-size="11" fill="#3f3f46">Google CAPI</text>
+  <text x="650" y="330" text-anchor="middle" font-size="11" fill="#3f3f46">Meta CAPI</text>
+
+  <text x="740" y="322" text-anchor="middle" font-size="18" fill="#22c55e">&#10003;</text>
+
+  <!-- Hashed ID note -->
+  <text x="548" y="250" text-anchor="middle" font-size="9" fill="#71717a" transform="rotate(-90, 548, 250)">hashed IDs</text>
+
+  <text x="600" y="372" text-anchor="middle" font-size="12" font-style="italic" fill="#71717a">Platforms see all conversions</text>
+  <text x="600" y="390" text-anchor="middle" font-size="12" font-style="italic" fill="#71717a">Lookalikes match real customer base</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#a1a1aa"/>
+    </marker>
+  </defs>
+</svg>

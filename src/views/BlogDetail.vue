@@ -17,6 +17,13 @@
 					Back to posts
 				</router-link>
 
+				<img
+					v-if="post.heroImage"
+					:src="post.heroImage"
+					:alt="post.heroAlt || post.title"
+					class="post-hero-image"
+				/>
+
 				<h1 class="post-title">{{ post.title }}</h1>
 				<p class="post-dek">{{ post.excerpt }}</p>
 
@@ -25,7 +32,7 @@
 						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
 						<span>{{ formatDateLong(post.publishedAt) }}</span>
 					</div>
-					<button class="share-trigger" @click="showShareModal = true">Share</button>
+					<button class="share-trigger" @click="[showShareModal = true, gtmPush('blog:share_open', { post_slug: post.slug })]">Share</button>
 				</div>
 
 				<!-- Stats bar -->
@@ -60,7 +67,7 @@
 				<section class="related" v-if="relatedPosts.length">
 					<h2 class="related-heading">Other posts you might like</h2>
 					<div class="related-list">
-						<router-link v-for="p in relatedPosts" :key="p.slug" :to="`/blog/${p.slug}`" class="related-item">
+						<router-link v-for="p in relatedPosts" :key="p.slug" :to="`/blog/${p.slug}`" class="related-item" @click="gtmPush('click:related_post', { from_slug: post.slug, to_slug: p.slug, to_title: p.title })">
 							<div class="related-content">
 								<span class="related-date">{{ formatDateLong(p.publishedAt) }}</span>
 								<p class="related-title">{{ p.title }}</p>
@@ -197,6 +204,8 @@ export default {
 
 		useHead(computed(() => {
 			if (!post.value) return { title: 'Post not found' }
+			const url = `https://divysharma.com/blog/${post.value.slug}`
+			const image = post.value.heroImage ? `https://divysharma.com${post.value.heroImage}` : 'https://divysharma.com/og-image.png'
 			return {
 				title: post.value.title,
 				meta: [
@@ -204,7 +213,12 @@ export default {
 					{ property: 'og:title', content: `${post.value.title} | Divy Sharma` },
 					{ property: 'og:description', content: post.value.excerpt },
 					{ property: 'og:type', content: 'article' },
+					{ property: 'og:url', content: url },
+					{ property: 'og:image', content: image },
 					{ name: 'twitter:card', content: 'summary_large_image' },
+					{ name: 'twitter:title', content: `${post.value.title} | Divy Sharma` },
+					{ name: 'twitter:description', content: post.value.excerpt },
+					{ name: 'twitter:image', content: image },
 				]
 			}
 		}))
@@ -306,6 +320,7 @@ export default {
 		},
 		handleTocClick(id) {
 			this.showToc = false
+			this.gtmPush('blog:toc_click', { post_slug: this.post.slug, section_id: id })
 			this.$nextTick(() => {
 				const el = document.getElementById(id)
 				if (el) {
@@ -321,10 +336,12 @@ export default {
 		doCopyLink() {
 			navigator.clipboard?.writeText(this.shareUrl('copy_link'))
 			this.linkCopied = true
+			this.gtmPush('blog:copy_link', { post_slug: this.post.slug })
 			setTimeout(() => { this.linkCopied = false }, 2000)
 		},
 		shareX() {
 			const url = this.shareUrl('twitter')
+			this.gtmPush('blog:share', { post_slug: this.post.slug, platform: 'twitter' })
 			window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(this.post.title)}`, '_blank')
 			this.showShareModal = false
 		},
@@ -334,8 +351,13 @@ export default {
 		},
 		shareLinkedIn() {
 			const url = this.shareUrl('linkedin')
+			this.gtmPush('blog:share', { post_slug: this.post.slug, platform: 'linkedin' })
 			window.open(`https://linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank')
 			this.showShareModal = false
+		},
+		gtmPush(event, params) {
+			window.dataLayer = window.dataLayer || []
+			window.dataLayer.push({ event, ...params })
 		}
 	},
 	mounted() {
@@ -409,6 +431,14 @@ button {
 	&:hover { opacity: 0.6; }
 }
 
+.post-hero-image {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	border-radius: var(--radius-md);
+	margin-bottom: 2rem;
+}
+
 .post-title {
 	font-family: var(--font-sans);
 	font-size: var(--h1);
@@ -474,7 +504,7 @@ button {
 .post-rule {
 	border: none;
 	border-top: 1px solid var(--color-border);
-	margin: 0 0 2.5rem;
+	margin: 1.5rem 0 2.5rem;
 }
 
 /* ── Article + Sidebar layout ── */
@@ -705,7 +735,7 @@ button {
 	bottom: 1.5rem;
 	left: 50%;
 	transform: translateX(-50%);
-	z-index: 100;
+	z-index: var(--z-sticky);
 	cursor: pointer;
 }
 
@@ -748,7 +778,7 @@ button {
 .toc-overlay {
 	position: fixed;
 	inset: 0;
-	z-index: 1200;
+	z-index: var(--z-modal);
 	background: rgba(0, 0, 0, 0.6);
 	backdrop-filter: blur(12px);
 	-webkit-backdrop-filter: blur(12px);
@@ -862,7 +892,7 @@ button {
 	inset: 0;
 	background: rgba(0,0,0,0.25);
 	backdrop-filter: blur(2px);
-	z-index: 1100;
+	z-index: var(--z-modal);
 	display: flex;
 	align-items: center;
 	justify-content: center;

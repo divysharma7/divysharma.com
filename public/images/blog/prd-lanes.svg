@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="320" fill="#fafafa" rx="12"/>
+
+  <!-- Lane 1: PM -->
+  <rect x="40" y="30" width="170" height="260" rx="8" fill="#18181b"/>
+  <text x="125" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Product Manager</text>
+  <line x1="60" y1="68" x2="190" y2="68" stroke="#3f3f46" stroke-width="0.5"/>
+  <text x="125" y="94" text-anchor="middle" font-size="12" fill="#d4d4d8">Goals</text>
+  <text x="125" y="114" text-anchor="middle" font-size="12" fill="#d4d4d8">Requirements</text>
+  <text x="125" y="134" text-anchor="middle" font-size="12" fill="#d4d4d8">Scope</text>
+  <text x="125" y="154" text-anchor="middle" font-size="12" fill="#d4d4d8">Success criteria</text>
+  <text x="125" y="174" text-anchor="middle" font-size="12" fill="#d4d4d8">Market context</text>
+  <text x="125" y="200" text-anchor="middle" font-size="11" fill="#71717a" font-style="italic">The "what" and "why"</text>
+
+  <!-- Boundary line with X -->
+  <line x1="224" y1="40" x2="224" y2="280" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.6"/>
+  <text x="224" y="300" text-anchor="middle" font-size="10" fill="#ef4444" font-weight="600">DON'T CROSS</text>
+
+  <!-- Lane 2: UX/UI -->
+  <rect x="238" y="30" width="170" height="260" rx="8" fill="#fff" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="323" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#3f3f46">UX / UI</text>
+  <line x1="258" y1="68" x2="388" y2="68" stroke="#e4e4e7" stroke-width="0.5"/>
+  <text x="323" y="94" text-anchor="middle" font-size="12" fill="#52525b">User flows</text>
+  <text x="323" y="114" text-anchor="middle" font-size="12" fill="#52525b">Visual design</text>
+  <text x="323" y="134" text-anchor="middle" font-size="12" fill="#52525b">Interactions</text>
+  <text x="323" y="154" text-anchor="middle" font-size="12" fill="#52525b">Prototypes</text>
+  <text x="323" y="200" text-anchor="middle" font-size="11" fill="#a1a1aa" font-style="italic">The "how it feels"</text>
+
+  <!-- Lane 3: Engineering -->
+  <rect x="418" y="30" width="170" height="260" rx="8" fill="#fff" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="503" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#3f3f46">Engineering</text>
+  <line x1="438" y1="68" x2="568" y2="68" stroke="#e4e4e7" stroke-width="0.5"/>
+  <text x="503" y="94" text-anchor="middle" font-size="12" fill="#52525b">Architecture</text>
+  <text x="503" y="114" text-anchor="middle" font-size="12" fill="#52525b">Implementation</text>
+  <text x="503" y="134" text-anchor="middle" font-size="12" fill="#52525b">Technical debt</text>
+  <text x="503" y="154" text-anchor="middle" font-size="12" fill="#52525b">Performance</text>
+  <text x="503" y="200" text-anchor="middle" font-size="11" fill="#a1a1aa" font-style="italic">The "how it's built"</text>
+
+  <!-- Lane 4: QA -->
+  <rect x="598" y="30" width="170" height="260" rx="8" fill="#fff" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="683" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#3f3f46">QA</text>
+  <line x1="618" y1="68" x2="748" y2="68" stroke="#e4e4e7" stroke-width="0.5"/>
+  <text x="683" y="94" text-anchor="middle" font-size="12" fill="#52525b">Test plans</text>
+  <text x="683" y="114" text-anchor="middle" font-size="12" fill="#52525b">Coverage</text>
+  <text x="683" y="134" text-anchor="middle" font-size="12" fill="#52525b">Edge cases</text>
+  <text x="683" y="154" text-anchor="middle" font-size="12" fill="#52525b">Regression</text>
+  <text x="683" y="200" text-anchor="middle" font-size="11" fill="#a1a1aa" font-style="italic">The "does it work"</text>
+</svg>

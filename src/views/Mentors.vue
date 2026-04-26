@@ -2,11 +2,12 @@
 	<main class="mentors-page">
 
 		<!-- Header -->
-		<header class="page-header">
-			<span class="eyebrow">My board of advisors</span>
-			<h1 class="page-title">People who taught me how to think</h1>
-			<p class="page-subtitle">Mentors across product, growth, design, and leadership — and the single most useful thing each one taught me.</p>
-		</header>
+		<PageHero
+			icon="ph-users-three"
+			title="Mentors"
+			:accent-from="1"
+			subtitle="People who taught me how to think."
+		/>
 
 		<!-- Filters -->
 		<nav class="filters" aria-label="Filter mentors by category">
@@ -16,7 +17,7 @@
 				:key="f.key"
 				class="filter-btn"
 				:class="{ active: activeFilter === f.key }"
-				@click="activeFilter = f.key; showAll = false"
+				@click="[activeFilter = f.key, showAll = false, gtmPush('mentors:filter', { category: f.key })]"
 			>{{ f.label }} {{ f.count }}</button>
 		</nav>
 
@@ -91,7 +92,7 @@
 
 		<!-- Show more -->
 		<div class="show-more-wrap" v-if="!showAll && hiddenCount > 0">
-			<button class="show-more-btn" @click="showAll = true">
+			<button class="show-more-btn" @click="[showAll = true, gtmPush('mentors:show_more', { hidden_count: hiddenCount })]">
 				Show {{ hiddenCount }} more {{ hiddenCount === 1 ? 'mentor' : 'mentors' }}
 			</button>
 		</div>
@@ -102,6 +103,11 @@
 </template>
 
 <script>
+function gtmPush(event, params) {
+	window.dataLayer = window.dataLayer || []
+	window.dataLayer.push({ event, ...params })
+}
+
 const mentors = [
 	{
 		id: 'anant', name: 'Anant Chaturvedi', initials: 'AC',
@@ -244,6 +250,7 @@ export default {
 
 <script setup>
 import { useHead } from '@vueuse/head'
+import PageHero from '@/components/PageHero.vue'
 useHead({
 	title: 'Gurus & Mentors',
 	meta: [
@@ -273,35 +280,6 @@ button {
 	padding: 3rem 1.5rem 5rem;
 	font-family: var(--font-sans);
 	color: var(--color-heading);
-}
-
-/* ── Header ── */
-.eyebrow {
-	display: block;
-	font-size: var(--text-xs);
-	font-weight: 500;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-	color: var(--color-muted);
-	margin-bottom: 0.625rem;
-}
-
-.page-title {
-	font-family: var(--font-sans);
-	font-size: var(--h1);
-	font-weight: 600;
-	color: var(--color-heading);
-	line-height: var(--leading-tight);
-	letter-spacing: -0.02em;
-	margin: 0 0 0.625rem;
-}
-
-.page-subtitle {
-	font-size: var(--text-sm);
-	line-height: var(--leading-normal);
-	color: var(--color-body);
-	margin: 0;
-	max-width: 58ch;
 }
 
 /* ── Filters ── */
@@ -648,8 +626,6 @@ button {
 /* ── Responsive ── */
 @media (max-width: 640px) {
 	.mentors-page { padding: 2rem 1.25rem 4rem; }
-
-	.page-title { font-size: 28px; }
 
 	.mentor-grid { grid-template-columns: 1fr; }
 

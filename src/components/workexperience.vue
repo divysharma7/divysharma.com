@@ -2,10 +2,11 @@
 	<div class="we-page">
 		<div class="we-container">
 			<!-- Header -->
-			<div class="we-header">
-				<h1 class="we-title">Work Experience</h1>
-				<p class="we-subtitle">My work experiences across different companies and roles.</p>
-			</div>
+			<PageHero
+				icon="ph-briefcase"
+				title="Experience"
+				subtitle="My work experiences across different companies and roles."
+			/>
 
 			<div class="we-divider"></div>
 
@@ -32,15 +33,16 @@
 </template>
 
 <script setup>
+import PageHero from '@/components/PageHero.vue';
 import DetailedExperienceCard from './experience/DetailedExperienceCard.vue';
 import { allWorkExperiences as experiences } from '../data/experience.js';
 import { useHead } from '@vueuse/head'
 
 useHead({
-  title: 'Work Experience',
+  title: 'Experience',
   meta: [
     { name: 'description', content: 'My professional journey as a Product Manager. Roles, companies, and impact delivered across various organizations.' },
-    { property: 'og:title', content: 'Work Experience | Divy Sharma' },
+    { property: 'og:title', content: 'Experience | Divy Sharma' },
     { property: 'og:description', content: 'From engineering to product management — my professional timeline.' }
   ]
 })
@@ -55,31 +57,6 @@ useHead({
 .we-container {
 	max-width: var(--container);
 	margin: 0 auto;
-}
-
-/* ── Header ── */
-.we-header {
-	text-align: center;
-	margin-bottom: 0;
-}
-
-.we-title {
-	font-size: var(--h1);
-	font-weight: 600;
-	color: var(--color-heading);
-	margin: 0;
-	letter-spacing: -0.02em;
-	line-height: var(--leading-tight);
-	font-family: var(--font-sans);
-}
-
-.we-subtitle {
-	font-size: var(--text-lg);
-	color: var(--color-muted);
-	margin: 16px auto 0;
-	max-width: 500px;
-	line-height: var(--leading-normal);
-	font-weight: 400;
 }
 
 /* ── Divider ── */

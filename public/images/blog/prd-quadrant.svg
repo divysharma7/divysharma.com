@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="380" fill="#fafafa" rx="12"/>
+
+  <!-- Quadrant grid -->
+  <!-- Top-left: What -->
+  <rect x="40" y="30" width="355" height="155" rx="10" fill="#fff" stroke="#e4e4e7" stroke-width="1"/>
+  <text x="60" y="60" font-size="16" font-weight="700" fill="#18181b">What is it?</text>
+  <text x="60" y="84" font-size="12" fill="#52525b">Functional &amp; non-functional aspects</text>
+  <text x="60" y="102" font-size="12" fill="#52525b">Core requirements summary</text>
+  <text x="60" y="120" font-size="12" fill="#52525b">Key deliverables</text>
+  <text x="60" y="144" font-size="11" fill="#a1a1aa" font-style="italic">The reader should know the product after this</text>
+
+  <!-- Top-right: Why -->
+  <rect x="405" y="30" width="355" height="155" rx="10" fill="#fff" stroke="#e4e4e7" stroke-width="1"/>
+  <text x="425" y="60" font-size="16" font-weight="700" fill="#18181b">Why do it?</text>
+  <text x="425" y="84" font-size="12" fill="#52525b">Data-backed urgency</text>
+  <text x="425" y="102" font-size="12" fill="#52525b">Quantitative + qualitative angles</text>
+  <text x="425" y="120" font-size="12" fill="#52525b">Business &amp; commercial needs</text>
+  <text x="425" y="144" font-size="11" fill="#a1a1aa" font-style="italic">Technical motivations that drive timing</text>
+
+  <!-- Bottom-left: Who -->
+  <rect x="40" y="195" width="355" height="155" rx="10" fill="#fff" stroke="#e4e4e7" stroke-width="1"/>
+  <text x="60" y="225" font-size="16" font-weight="700" fill="#18181b">Who is it for?</text>
+  <text x="60" y="249" font-size="12" fill="#52525b">Target user or customer group</text>
+  <text x="60" y="267" font-size="12" fill="#52525b">Why these users and not others</text>
+  <text x="60" y="285" font-size="12" fill="#52525b">User context and constraints</text>
+  <text x="60" y="309" font-size="11" fill="#a1a1aa" font-style="italic">Narrow enough to be actionable</text>
+
+  <!-- Bottom-right: How -->
+  <rect x="405" y="195" width="355" height="155" rx="10" fill="#fff" stroke="#e4e4e7" stroke-width="1"/>
+  <text x="425" y="225" font-size="16" font-weight="700" fill="#18181b">How is it done?</text>
+  <text x="425" y="249" font-size="12" fill="#52525b">System design dependencies</text>
+  <text x="425" y="267" font-size="12" fill="#52525b">Interface dependencies</text>
+  <text x="425" y="285" font-size="12" fill="#52525b">Technical ecosystem overview</text>
+  <text x="425" y="309" font-size="11" fill="#a1a1aa" font-style="italic">Educate, don't prescribe implementation</text>
+</svg>

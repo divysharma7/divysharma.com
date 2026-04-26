@@ -256,9 +256,9 @@
 					<p>If something here resonated — I'd like to hear from you.</p>
 					<div class="story-cta-links">
 						<a href="mailto:divysharma029@gmail.com" class="cta-link">Email me</a>
-						<a href="https://twitter.com/Divy_Sharma6" target="_blank" rel="noopener" class="cta-link">Say hi on X</a>
-						<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" rel="noopener" class="cta-link">LinkedIn</a>
-						<a href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" rel="noopener" class="cta-link">Resume</a>
+						<a href="https://twitter.com/Divy_Sharma6" target="_blank" rel="noopener" class="cta-link" @click="gtmPush('click:social', { platform: 'twitter', location: 'journey_cta' })">Say hi on X</a>
+						<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" rel="noopener" class="cta-link" @click="gtmPush('click:social', { platform: 'linkedin', location: 'journey_cta' })">LinkedIn</a>
+						<a href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" rel="noopener" class="cta-link" @click="gtmPush('click:resume_download', { location: 'journey_cta' })">Resume</a>
 					</div>
 				</div>
 
@@ -363,6 +363,10 @@ export default {
 	},
 
 	methods: {
+		gtmPush(event, params) {
+			window.dataLayer = window.dataLayer || []
+			window.dataLayer.push({ event, ...params })
+		},
 		/* ═══════════════════════════════════════════
 		   BEHAVIOR 1 — Drag from dock to canvas
 		   ═══════════════════════════════════════════ */
@@ -564,6 +568,8 @@ export default {
 				}, 450)
 				this.announce(`Placed ${this.drag.label} sticker`)
 				trackEvent('hero.sticker.place', { stickerId: this.drag.dockId, x: pos.x, y: pos.y, method: 'drag' })
+				window.dataLayer = window.dataLayer || []
+				window.dataLayer.push({ event: 'journey:sticker_place', sticker_id: this.drag.dockId, x: pos.x, y: pos.y, method: 'drag' })
 
 			} else if (this.drag.source === 'user') {
 				const s = this.userPlaced.find(p => p.uid === this.drag.uid)
@@ -577,6 +583,8 @@ export default {
 					trackEvent('hero.sticker.reposition', {
 						stickerId: s.id, fromX, fromY, toX: pos.x, toY: pos.y,
 					})
+					window.dataLayer = window.dataLayer || []
+					window.dataLayer.push({ event: 'journey:sticker_reposition', sticker_id: s.id })
 				}
 			}
 
@@ -792,6 +800,8 @@ export default {
 				if (s) s.fresh = false
 			}, 450)
 			trackEvent('hero.sticker.place', { stickerId: st.id, x, y, method: 'click' })
+			window.dataLayer = window.dataLayer || []
+			window.dataLayer.push({ event: 'journey:sticker_place', sticker_id: st.id, x, y, method: 'click' })
 			this.announce(`Placed ${st.label} sticker`)
 			this._saveBoardState()
 		},
@@ -1067,7 +1077,7 @@ button {
 /* ── Floating drag sticker ── */
 .sticker--floating {
 	position: fixed;
-	z-index: 9999;
+	z-index: var(--z-toast);
 	pointer-events: none;
 	transform: translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1.08);
 	filter: drop-shadow(0 16px 32px rgba(0,0,0,0.6)) drop-shadow(0 2px 4px rgba(0,0,0,0.25));

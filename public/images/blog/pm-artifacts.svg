@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="300" fill="#f9f7f4" rx="12"/>
+
+  <!-- Without artifacts (left) -->
+  <text x="200" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#a1a1aa">Without artifacts</text>
+
+  <!-- PM figure (overwhelmed) -->
+  <circle cx="200" cy="100" r="18" fill="#f9f7f4" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="200" y="104" text-anchor="middle" font-size="12" fill="#2a2a2a">PM</text>
+  <line x1="200" y1="118" x2="200" y2="175" stroke="#2a2a2a" stroke-width="1.5"/>
+  <line x1="200" y1="175" x2="188" y2="210" stroke="#2a2a2a" stroke-width="1.5"/>
+  <line x1="200" y1="175" x2="212" y2="210" stroke="#2a2a2a" stroke-width="1.5"/>
+
+  <!-- Many incoming arrows (questions) -->
+  <line x1="80" y1="80" x2="178" y2="95" stroke="#a1a1aa" stroke-width="1" marker-end="url(#arrowG)"/>
+  <text x="60" y="78" font-size="9" fill="#a1a1aa">Sales Q</text>
+
+  <line x1="80" y1="120" x2="178" y2="105" stroke="#a1a1aa" stroke-width="1" marker-end="url(#arrowG)"/>
+  <text x="50" y="118" font-size="9" fill="#a1a1aa">Eng Q</text>
+
+  <line x1="80" y1="160" x2="178" y2="130" stroke="#a1a1aa" stroke-width="1" marker-end="url(#arrowG)"/>
+  <text x="40" y="158" font-size="9" fill="#a1a1aa">Support Q</text>
+
+  <line x1="320" y1="80" x2="222" y2="95" stroke="#a1a1aa" stroke-width="1" marker-end="url(#arrowG)"/>
+  <text x="325" y="78" font-size="9" fill="#a1a1aa">Marketing Q</text>
+
+  <line x1="320" y1="120" x2="222" y2="105" stroke="#a1a1aa" stroke-width="1" marker-end="url(#arrowG)"/>
+  <text x="325" y="118" font-size="9" fill="#a1a1aa">Exec Q</text>
+
+  <line x1="320" y1="160" x2="222" y2="130" stroke="#a1a1aa" stroke-width="1" marker-end="url(#arrowG)"/>
+  <text x="325" y="158" font-size="9" fill="#a1a1aa">Customer Q</text>
+
+  <!-- Swamped indicator -->
+  <text x="200" y="240" text-anchor="middle" font-size="12" fill="#a1a1aa" font-style="italic">"I'm swamped"</text>
+  <text x="200" y="258" text-anchor="middle" font-size="11" fill="#a1a1aa">bottleneck</text>
+
+  <!-- Divider -->
+  <line x1="400" y1="30" x2="400" y2="280" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="6 4"/>
+
+  <!-- With artifacts (right) -->
+  <text x="600" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#18181b">With artifacts</text>
+
+  <!-- PM figure (calm) -->
+  <circle cx="600" cy="100" r="18" fill="#f9f7f4" stroke="#2a2a2a" stroke-width="1.5"/>
+  <text x="600" y="104" text-anchor="middle" font-size="12" fill="#2a2a2a">PM</text>
+  <line x1="600" y1="118" x2="600" y2="175" stroke="#2a2a2a" stroke-width="1.5"/>
+  <line x1="600" y1="175" x2="588" y2="210" stroke="#2a2a2a" stroke-width="1.5"/>
+  <line x1="600" y1="175" x2="612" y2="210" stroke="#2a2a2a" stroke-width="1.5"/>
+
+  <!-- Artifacts (documents) that answer questions -->
+  <rect x="470" y="145" width="80" height="28" rx="4" fill="#fff" stroke="#18181b" stroke-width="1.2"/>
+  <text x="510" y="163" text-anchor="middle" font-size="9" fill="#2a2a2a">FAQ doc</text>
+
+  <rect x="650" y="145" width="100" height="28" rx="4" fill="#fff" stroke="#18181b" stroke-width="1.2"/>
+  <text x="700" y="163" text-anchor="middle" font-size="9" fill="#2a2a2a">One-pager</text>
+
+  <rect x="470" y="185" width="100" height="28" rx="4" fill="#fff" stroke="#18181b" stroke-width="1.2"/>
+  <text x="520" y="203" text-anchor="middle" font-size="9" fill="#2a2a2a">Presentation</text>
+
+  <rect x="650" y="185" width="100" height="28" rx="4" fill="#fff" stroke="#18181b" stroke-width="1.2"/>
+  <text x="700" y="203" text-anchor="middle" font-size="9" fill="#2a2a2a">White paper</text>
+
+  <!-- Questions go to artifacts, not PM -->
+  <line x1="480" y1="80" x2="498" y2="143" stroke="#2a2a2a" stroke-width="1" marker-end="url(#arrowD)" stroke-dasharray="4 3"/>
+  <text x="455" y="78" font-size="9" fill="#71717a">Sales Q</text>
+
+  <line x1="720" y1="80" x2="708" y2="143" stroke="#2a2a2a" stroke-width="1" marker-end="url(#arrowD)" stroke-dasharray="4 3"/>
+  <text x="725" y="78" font-size="9" fill="#71717a">Eng Q</text>
+
+  <text x="600" y="240" text-anchor="middle" font-size="12" fill="#18181b" font-weight="500">Scales without bottleneck</text>
+  <text x="600" y="258" text-anchor="middle" font-size="11" fill="#71717a" font-style="italic">artifacts answer the questions</text>
+
+  <defs>
+    <marker id="arrowG" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#a1a1aa"/>
+    </marker>
+    <marker id="arrowD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2a2a2a"/>
+    </marker>
+  </defs>
+</svg>

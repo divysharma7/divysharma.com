@@ -7,6 +7,7 @@
 			title="Spotify"
 			rel="noopener noreferrer"
 			aria-label="Now playing on Spotify"
+			@click="gtmPush('click:outbound', { platform: 'spotify', location: 'spotify_widget' })"
 		>
 			<img src="@/assets/img/spotify.svg" alt="Spotify Icon" />
 		</a>
@@ -36,7 +37,7 @@
 				</a>
 			</h5>
 			<h5 class="title not" v-else>
-				<a href="https://open.spotify.com/user/divysharma7" target="_blank"
+				<a href="https://open.spotify.com/user/divysharma7" target="_blank" @click="gtmPush('click:outbound', { platform: 'spotify', location: 'spotify_widget' })"
 					>Spotify — Not playing</a
 				>
 			</h5>
@@ -71,6 +72,10 @@ export default {
 		}
 	},
 	methods: {
+		gtmPush(event, params) {
+			window.dataLayer = window.dataLayer || []
+			window.dataLayer.push({ event, ...params })
+		},
 		async fetchData() {
 			try {
 				const response = await axios.get(url)

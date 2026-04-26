@@ -2,10 +2,11 @@
 	<div class="cert-page">
 		<div class="cert-container">
 			<!-- Header -->
-			<div class="cert-header">
-				<h1 class="cert-title">Certificates & Achievements</h1>
-				<p class="cert-subtitle">Awards, hackathons, competitions, and proof that I occasionally finish things.</p>
-			</div>
+			<PageHero
+				icon="ph-certificate"
+				title="Achievements"
+				subtitle="Awards, hackathons, competitions, and proof that I occasionally finish things."
+			/>
 
 			<div class="cert-divider"></div>
 
@@ -33,12 +34,13 @@
 import AchievementCard from '../components/achievements/AchievementCard.vue';
 import { achievements } from '../data/achievements.js';
 import { useHead } from '@vueuse/head';
+import PageHero from '@/components/PageHero.vue';
 
 useHead({
-  title: 'Certificates & Achievements',
+  title: 'Achievements',
   meta: [
     { name: 'description', content: 'Awards, hackathon wins, and the mentors who guided me along the way.' },
-    { property: 'og:title', content: 'Certificates & Achievements | Divy Sharma' },
+    { property: 'og:title', content: 'Achievements | Divy Sharma' },
     { property: 'og:description', content: 'Proof of work: Hackathons, competitions, and the people who helped me.' }
   ]
 })
@@ -53,31 +55,6 @@ useHead({
 .cert-container {
 	max-width: var(--container);
 	margin: 0 auto;
-}
-
-/* ── Header ── */
-.cert-header {
-	text-align: center;
-	margin-bottom: 0;
-}
-
-.cert-title {
-	font-size: var(--h1);
-	font-weight: 600;
-	margin: 0;
-	letter-spacing: -0.02em;
-	line-height: var(--leading-tight);
-	font-family: var(--font-sans);
-	color: var(--color-heading);
-}
-
-.cert-subtitle {
-	font-size: var(--text-lg);
-	color: var(--color-muted);
-	margin: 16px auto 0;
-	max-width: 580px;
-	line-height: var(--leading-normal);
-	font-weight: 400;
 }
 
 /* ── Divider ── */

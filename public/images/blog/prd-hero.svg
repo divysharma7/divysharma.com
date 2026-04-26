@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="440" fill="#fafafa" rx="12"/>
+
+  <!-- Three circles -->
+  <circle cx="340" cy="180" r="120" fill="none" stroke="#d4d4d8" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="460" cy="180" r="120" fill="none" stroke="#d4d4d8" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <circle cx="400" cy="280" r="120" fill="none" stroke="#d4d4d8" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <!-- Circle labels -->
+  <text x="280" y="150" text-anchor="middle" font-size="15" font-weight="600" fill="#3f3f46">Product</text>
+  <text x="280" y="168" text-anchor="middle" font-size="11" fill="#71717a">Goals, users,</text>
+  <text x="280" y="182" text-anchor="middle" font-size="11" fill="#71717a">market context</text>
+
+  <text x="520" y="150" text-anchor="middle" font-size="15" font-weight="600" fill="#3f3f46">Engineering</text>
+  <text x="520" y="168" text-anchor="middle" font-size="11" fill="#71717a">Feasibility,</text>
+  <text x="520" y="182" text-anchor="middle" font-size="11" fill="#71717a">constraints</text>
+
+  <text x="400" y="410" text-anchor="middle" font-size="15" font-weight="600" fill="#3f3f46">Design</text>
+  <text x="400" y="428" text-anchor="middle" font-size="11" fill="#71717a">Flows, interactions</text>
+
+  <!-- Center: PRD -->
+  <circle cx="400" cy="210" r="42" fill="#18181b"/>
+  <text x="400" y="206" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">PRD</text>
+  <text x="400" y="224" text-anchor="middle" font-size="10" fill="#a1a1aa">scope + reason</text>
+  <text x="400" y="236" text-anchor="middle" font-size="10" fill="#a1a1aa">+ desired output</text>
+
+  <!-- Overlap labels -->
+  <text x="358" y="144" text-anchor="middle" font-size="10" fill="#71717a" font-style="italic">Requirements</text>
+  <text x="442" y="144" text-anchor="middle" font-size="10" fill="#71717a" font-style="italic">Acceptance</text>
+  <text x="442" y="156" text-anchor="middle" font-size="10" fill="#71717a" font-style="italic">criteria</text>
+  <text x="340" y="272" text-anchor="middle" font-size="10" fill="#71717a" font-style="italic">User stories</text>
+  <text x="460" y="272" text-anchor="middle" font-size="10" fill="#71717a" font-style="italic">Technical</text>
+  <text x="460" y="284" text-anchor="middle" font-size="10" fill="#71717a" font-style="italic">constraints</text>
+</svg>

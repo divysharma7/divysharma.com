@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Inter, 'Helvetica Neue', sans-serif">
+  <rect width="1280" height="720" fill="#F4EFE6"/>
+
+  <!-- Large numeral (accent) -->
+  <text x="96" y="500" font-size="240" font-weight="700" fill="#E8765A" letter-spacing="-0.04em">10</text>
+
+  <!-- Subtitle (mono) -->
+  <text x="500" y="280" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="18" font-weight="500" fill="#1A1A1A" letter-spacing="0.04em">PRD / TIPS</text>
+
+  <!-- Title (drops the leading "10") -->
+  <text x="500" y="370" font-size="88" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">PRD tips I keep</text>
+  <text x="500" y="460" font-size="88" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">coming back to</text>
+</svg>

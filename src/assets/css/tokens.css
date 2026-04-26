@@ -68,6 +68,25 @@
 	--duration-slow: 400ms;
 	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
+	/* ── Z-Index Scale ── */
+	--z-base: 0;
+	--z-content: 1;
+	--z-sticky: 100;
+	--z-dropdown: 500;
+	--z-overlay: 1000;
+	--z-modal: 1100;
+	--z-toast: 1200;
+
+	/* ── Page Hero ── */
+	--hero-title-color: var(--color-heading);
+	--hero-accent-color: var(--color-heading);
+	--hero-subtitle-color: var(--color-muted);
+	--hero-icon-color: var(--color-muted);
+	--hero-icon-border: var(--color-border);
+	--hero-max-width: var(--container);
+	--hero-padding: 3rem 1.5rem 2.5rem;
+	--hero-padding-mobile: 2rem 1.25rem;
+
 	/* ── Layout ── */
 	--container: 680px;
 	--container-wide: 960px;

@@ -43,7 +43,7 @@ const scrollToContact = async () => {
 	top: 0;
 	background: rgba(255, 255, 255, 0.9);
 	backdrop-filter: blur(10px);
-	z-index: 100;
+	z-index: var(--z-sticky);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
 	.container {

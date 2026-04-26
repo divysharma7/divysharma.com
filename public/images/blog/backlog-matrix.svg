@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="440" fill="#f9f7f4" rx="12"/>
+
+  <!-- Axes -->
+  <!-- Y axis -->
+  <line x1="140" y1="60" x2="140" y2="380" stroke="#2a2a2a" stroke-width="2"/>
+  <polygon points="140,55 135,68 145,68" fill="#2a2a2a"/>
+  <!-- X axis -->
+  <line x1="140" y1="380" x2="720" y2="380" stroke="#2a2a2a" stroke-width="2"/>
+  <polygon points="725,380 712,375 712,385" fill="#2a2a2a"/>
+
+  <!-- Axis labels -->
+  <text x="70" y="225" text-anchor="middle" font-size="13" font-weight="600" fill="#2a2a2a" transform="rotate(-90, 70, 225)">Customer Value</text>
+  <text x="80" y="80" font-size="11" fill="#71717a">High</text>
+  <text x="80" y="375" font-size="11" fill="#71717a">Low</text>
+  <text x="430" y="415" text-anchor="middle" font-size="13" font-weight="600" fill="#2a2a2a">Development Cost &amp; Risk</text>
+  <text x="160" y="415" font-size="11" fill="#71717a">Low</text>
+  <text x="690" y="415" font-size="11" fill="#71717a">High</text>
+
+  <!-- Grid line (center) -->
+  <line x1="430" y1="60" x2="430" y2="380" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="6 4"/>
+  <line x1="140" y1="220" x2="720" y2="220" stroke="#e4e4e7" stroke-width="1" stroke-dasharray="6 4"/>
+
+  <!-- TOP-LEFT: High Value, Low Cost (DO NOW - highlighted) -->
+  <rect x="148" y="68" width="274" height="144" rx="8" fill="#E8765A" opacity="0.08"/>
+  <rect x="148" y="68" width="274" height="144" rx="8" fill="none" stroke="#E8765A" stroke-width="2"/>
+
+  <text x="285" y="100" text-anchor="middle" font-size="15" font-weight="700" fill="#E8765A">&#9733; TOP OF LIST</text>
+  <text x="285" y="118" text-anchor="middle" font-size="11" fill="#E8765A">do now</text>
+
+  <!-- Example cards in this quadrant -->
+  <rect x="175" y="132" width="110" height="32" rx="4" fill="#fff" stroke="#2a2a2a" stroke-width="1" transform="rotate(-2, 230, 148)"/>
+  <text x="230" y="152" text-anchor="middle" font-size="9" fill="#2a2a2a">Date filter</text>
+  <rect x="300" y="136" width="100" height="32" rx="4" fill="#fff" stroke="#2a2a2a" stroke-width="1" transform="rotate(1, 350, 152)"/>
+  <text x="350" y="156" text-anchor="middle" font-size="9" fill="#2a2a2a">Sort by price</text>
+  <rect x="210" y="170" width="120" height="28" rx="4" fill="#fff" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="270" y="188" text-anchor="middle" font-size="9" fill="#2a2a2a">Email templates</text>
+
+  <!-- TOP-RIGHT: High Value, High Cost -->
+  <rect x="438" y="68" width="274" height="144" rx="8" fill="none" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="575" y="100" text-anchor="middle" font-size="13" font-weight="600" fill="#3f3f46">Higher priority</text>
+  <text x="575" y="118" text-anchor="middle" font-size="11" fill="#71717a">than low/low</text>
+
+  <rect x="475" y="140" width="120" height="32" rx="4" fill="#fff" stroke="#2a2a2a" stroke-width="1" transform="rotate(1, 535, 156)"/>
+  <text x="535" y="160" text-anchor="middle" font-size="9" fill="#2a2a2a">Recommendation engine</text>
+  <rect x="610" y="145" width="80" height="28" rx="4" fill="#fff" stroke="#2a2a2a" stroke-width="1"/>
+  <text x="650" y="163" text-anchor="middle" font-size="9" fill="#2a2a2a">App rebuild</text>
+
+  <!-- BOTTOM-LEFT: Low Value, Low Cost -->
+  <rect x="148" y="228" width="274" height="144" rx="8" fill="none" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="285" y="290" text-anchor="middle" font-size="12" fill="#a1a1aa" font-style="italic">Low priority</text>
+  <text x="285" y="308" text-anchor="middle" font-size="11" fill="#a1a1aa">maybe later</text>
+
+  <rect x="195" y="320" width="90" height="28" rx="4" fill="#fff" stroke="#ccc" stroke-width="1" opacity="0.5"/>
+  <text x="240" y="338" text-anchor="middle" font-size="9" fill="#aaa">Dark mode</text>
+  <rect x="300" y="316" width="90" height="28" rx="4" fill="#fff" stroke="#ccc" stroke-width="1" opacity="0.5"/>
+  <text x="345" y="334" text-anchor="middle" font-size="9" fill="#aaa">Icon refresh</text>
+
+  <!-- BOTTOM-RIGHT: Low Value, High Cost (CUT) -->
+  <rect x="438" y="228" width="274" height="144" rx="8" fill="none" stroke="#d4d4d8" stroke-width="1"/>
+
+  <rect x="490" y="280" width="100" height="28" rx="4" fill="#fff" stroke="#ccc" stroke-width="1" opacity="0.4"/>
+  <text x="540" y="298" text-anchor="middle" font-size="9" fill="#aaa">Blockchain audit</text>
+  <rect x="610" y="290" width="80" height="28" rx="4" fill="#fff" stroke="#ccc" stroke-width="1" opacity="0.4"/>
+  <text x="650" y="308" text-anchor="middle" font-size="9" fill="#aaa">AI chatbot</text>
+
+  <!-- Big X over bottom-right -->
+  <line x1="450" y1="240" x2="700" y2="360" stroke="#E8765A" stroke-width="2.5" opacity="0.3"/>
+  <line x1="700" y1="240" x2="450" y2="360" stroke="#E8765A" stroke-width="2.5" opacity="0.3"/>
+  <text x="575" y="265" text-anchor="middle" font-size="16" font-weight="800" fill="#E8765A" opacity="0.6">CUT</text>
+</svg>

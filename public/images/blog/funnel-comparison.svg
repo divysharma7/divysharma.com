@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="480" fill="#fafafa" rx="12"/>
+
+  <!-- LEFT: Traditional Marketing -->
+  <text x="200" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="#3f3f46">Traditional Org</text>
+  <line x1="40" y1="48" x2="360" y2="48" stroke="#e4e4e7" stroke-width="1"/>
+
+  <!-- Funnel layers - left -->
+  <!-- Awareness -->
+  <polygon points="60,70 340,70 320,130 80,130" fill="#3f3f46" opacity="0.12" stroke="#3f3f46" stroke-width="1"/>
+  <text x="200" y="105" text-anchor="middle" font-size="13" font-weight="500" fill="#3f3f46">Awareness</text>
+
+  <!-- Acquisition -->
+  <polygon points="80,138 320,138 300,198 100,198" fill="#3f3f46" opacity="0.12" stroke="#3f3f46" stroke-width="1"/>
+  <text x="200" y="173" text-anchor="middle" font-size="13" font-weight="500" fill="#3f3f46">Acquisition</text>
+
+  <!-- Marketing bracket -->
+  <line x1="350" y1="75" x2="365" y2="75" stroke="#71717a" stroke-width="1"/>
+  <line x1="365" y1="75" x2="365" y2="193" stroke="#71717a" stroke-width="1"/>
+  <line x1="350" y1="193" x2="365" y2="193" stroke="#71717a" stroke-width="1"/>
+  <text x="375" y="138" text-anchor="start" font-size="12" font-weight="600" fill="#3f3f46">Marketing</text>
+
+  <!-- Activation -->
+  <polygon points="100,206 300,206 280,266 120,266" fill="#a78bfa" opacity="0.15" stroke="#a78bfa" stroke-width="1"/>
+  <text x="200" y="241" text-anchor="middle" font-size="13" font-weight="500" fill="#3f3f46">Activation</text>
+
+  <!-- Retention -->
+  <polygon points="120,274 280,274 265,334 135,334" fill="#a78bfa" opacity="0.15" stroke="#a78bfa" stroke-width="1"/>
+  <text x="200" y="309" text-anchor="middle" font-size="13" font-weight="500" fill="#3f3f46">Retention</text>
+
+  <!-- Product bracket -->
+  <line x1="350" y1="211" x2="365" y2="211" stroke="#71717a" stroke-width="1"/>
+  <line x1="365" y1="211" x2="365" y2="329" stroke="#71717a" stroke-width="1"/>
+  <line x1="350" y1="329" x2="365" y2="329" stroke="#71717a" stroke-width="1"/>
+  <text x="375" y="274" text-anchor="start" font-size="12" font-weight="600" fill="#3f3f46">Product</text>
+
+  <!-- Revenue -->
+  <polygon points="135,342 265,342 250,402 150,402" fill="#fbbf24" opacity="0.2" stroke="#fbbf24" stroke-width="1"/>
+  <text x="200" y="377" text-anchor="middle" font-size="13" font-weight="500" fill="#3f3f46">Revenue</text>
+
+  <!-- Sales bracket -->
+  <line x1="350" y1="347" x2="365" y2="347" stroke="#71717a" stroke-width="1"/>
+  <line x1="365" y1="347" x2="365" y2="397" stroke="#71717a" stroke-width="1"/>
+  <line x1="350" y1="397" x2="365" y2="397" stroke="#71717a" stroke-width="1"/>
+  <text x="375" y="376" text-anchor="start" font-size="12" font-weight="600" fill="#3f3f46">Sales</text>
+
+  <text x="200" y="440" text-anchor="middle" font-size="12" font-style="italic" fill="#71717a">Funnel split across 3+ teams</text>
+  <text x="200" y="458" text-anchor="middle" font-size="12" font-style="italic" fill="#71717a">Each team optimizes its own slice</text>
+
+  <!-- RIGHT: Growth Team -->
+  <text x="600" y="36" text-anchor="middle" font-size="16" font-weight="700" fill="#3f3f46">Growth Team</text>
+  <line x1="440" y1="48" x2="760" y2="48" stroke="#e4e4e7" stroke-width="1"/>
+
+  <!-- Single unified funnel -->
+  <polygon points="460,70 740,70 720,130 480,130" fill="#18181b" opacity="0.08" stroke="#3f3f46" stroke-width="1.2"/>
+  <text x="600" y="105" text-anchor="middle" font-size="13" font-weight="500" fill="#3f3f46">Awareness</text>
+
+  <polygon points="480,138 720,138 700,198 500,198" fill="#18181b" opacity="0.08" stroke="#3f3f46" stroke-width="1.2"/>
+  <text x="600" y="173" text-anchor="middle" font-size="13" font-weight="500" fill="#3f3f46">Acquisition</text>
+
+  <polygon points="500,206 700,206 680,266 520,266" fill="#18181b" opacity="0.08" stroke="#3f3f46" stroke-width="1.2"/>
+  <text x="600" y="241" text-anchor="middle" font-size="13" font-weight="500" fill="#3f3f46">Activation</text>
+
+  <polygon points="520,274 680,274 665,334 535,334" fill="#18181b" opacity="0.08" stroke="#3f3f46" stroke-width="1.2"/>
+  <text x="600" y="309" text-anchor="middle" font-size="13" font-weight="500" fill="#3f3f46">Retention</text>
+
+  <polygon points="535,342 665,342 650,402 550,402" fill="#18181b" opacity="0.08" stroke="#3f3f46" stroke-width="1.2"/>
+  <text x="600" y="377" text-anchor="middle" font-size="13" font-weight="500" fill="#3f3f46">Revenue</text>
+
+  <!-- Growth bracket spanning entire funnel -->
+  <line x1="750" y1="75" x2="765" y2="75" stroke="#3f3f46" stroke-width="1.5"/>
+  <line x1="765" y1="75" x2="765" y2="397" stroke="#3f3f46" stroke-width="1.5"/>
+  <line x1="750" y1="397" x2="765" y2="397" stroke="#3f3f46" stroke-width="1.5"/>
+  <text x="775" y="230" text-anchor="start" font-size="12" font-weight="700" fill="#18181b" writing-mode="tb">Growth</text>
+
+  <!-- Disciplines inside -->
+  <text x="455" y="440" text-anchor="start" font-size="11" fill="#52525b">Data</text>
+  <text x="505" y="440" text-anchor="start" font-size="11" fill="#52525b">Design</text>
+  <text x="565" y="440" text-anchor="start" font-size="11" fill="#52525b">Copy</text>
+  <text x="612" y="440" text-anchor="start" font-size="11" fill="#52525b">Perf. Marketing</text>
+  <text x="455" y="458" text-anchor="start" font-size="12" font-style="italic" fill="#71717a">One team owns the full funnel</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Inter, 'Helvetica Neue', sans-serif">
+  <rect width="1280" height="720" fill="#F4EFE6"/>
+
+  <!-- Subtitle (mono) -->
+  <text x="96" y="280" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="18" font-weight="500" fill="#1A1A1A" letter-spacing="0.04em">THREE JOBS / ONE FUNNEL</text>
+
+  <!-- Accent rule -->
+  <rect x="96" y="300" width="64" height="12" rx="1" fill="#E8765A"/>
+
+  <!-- Title -->
+  <text x="96" y="380" font-size="88" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">Growth vs Marketing</text>
+  <text x="96" y="470" font-size="88" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">vs Product</text>
+</svg>

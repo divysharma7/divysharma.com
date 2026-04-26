@@ -1,12 +1,14 @@
 <template>
 	<div class="cont">
-		<div class="page-header">
-			<h1 class="page-title">Explore</h1>
-			<p class="page-subtitle">More about me — designs, achievements, and interests.</p>
-		</div>
+		<PageHero
+			icon="ph-compass"
+			title="Explore"
+			:accent-from="1"
+			subtitle="More about me — designs, achievements, and interests."
+		/>
 
 		<div class="card-grid">
-			<a rel="noopener noreferrer" href="https://www.behance.net/divysharma3" target="_blank" class="explore-card explore-card--blue">
+			<a rel="noopener noreferrer" href="https://www.behance.net/divysharma3" target="_blank" class="explore-card explore-card--blue" @click="gtmPush('click:explore_card', { card: 'design', destination: 'behance' })">
 				<div class="explore-card-head">
 					<h2>Design</h2>
 					<bx-bx-link-external class="explore-icon" />
@@ -14,7 +16,7 @@
 				<p>I'm mostly interested in building products and managing teams but I enjoy doing design research too.</p>
 			</a>
 
-			<a rel="noopener noreferrer" href="https://www.linkedin.com/posts/divy-sharma-243748216_startupjourney-gratitude-bitsabrpilani-activity-7168917217009496064-UFhB?utm_source=share&utm_medium=member_desktop" target="_blank" class="explore-card explore-card--teal">
+			<a rel="noopener noreferrer" href="https://www.linkedin.com/posts/divy-sharma-243748216_startupjourney-gratitude-bitsabrpilani-activity-7168917217009496064-UFhB?utm_source=share&utm_medium=member_desktop" target="_blank" class="explore-card explore-card--teal" @click="gtmPush('click:explore_card', { card: 'achievements', destination: 'linkedin' })">
 				<div class="explore-card-head">
 					<h2>Achievements</h2>
 					<bx-bx-link-external class="explore-icon" />
@@ -22,7 +24,7 @@
 				<p>I've participated in startup competitions, hackathons, ideathons, designathons, and B-plans. Check out some of my wins.</p>
 			</a>
 
-			<a rel="noopener noreferrer" href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" class="explore-card explore-card--purple" @click="trackEvent('resume:download', { location: 'explore' })">
+			<a rel="noopener noreferrer" href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" class="explore-card explore-card--purple" @click="[trackEvent('resume:download', { location: 'explore' }), gtmPush('click:resume_download', { location: 'explore' })]">
 				<div class="explore-card-head">
 					<h2>Resume</h2>
 					<bx-bx-link-external class="explore-icon" />
@@ -30,7 +32,7 @@
 				<p>Check out my work, the teams I've been a part of, and the impact I've delivered.</p>
 			</a>
 
-			<a rel="noopener noreferrer" href="https://teamconatus.com/" target="_blank" class="explore-card explore-card--green">
+			<a rel="noopener noreferrer" href="https://teamconatus.com/" target="_blank" class="explore-card explore-card--green" @click="gtmPush('click:explore_card', { card: 'events', destination: 'teamconatus' })">
 				<div class="explore-card-head">
 					<h2>Events</h2>
 					<bx-bx-link-external class="explore-icon" />
@@ -38,7 +40,7 @@
 				<p>Over the last few years I've been part of the core team of Team Conatus (technical society). Check out some events I organized.</p>
 			</a>
 
-			<a rel="noopener noreferrer" href="https://buymeacoffee.com/divy.sharma6" target="_blank" class="explore-card explore-card--amber">
+			<a rel="noopener noreferrer" href="https://buymeacoffee.com/divy.sharma6" target="_blank" class="explore-card explore-card--amber" @click="gtmPush('click:explore_card', { card: 'support', destination: 'buymeacoffee' })">
 				<div class="explore-card-head">
 					<h2>Support</h2>
 					<bx-bx-link-external class="explore-icon" />
@@ -57,10 +59,16 @@
 
 <script setup>
 import { useHead } from '@vueuse/head'
+import PageHero from '@/components/PageHero.vue'
 import Top from '../components/top.vue'
 import Website from "../components/website.vue"
 import Contact from "../components/ContactForm.vue"
 import { trackEvent, trackOutbound } from '@/analytics/umami'
+
+function gtmPush(event, params) {
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({ event, ...params })
+}
 
 useHead({
   title: 'Explore',
@@ -73,29 +81,6 @@ useHead({
 </script>
 
 <style scoped lang="scss">
-/* ── Page Header ── */
-.page-header {
-	text-align: left;
-	margin-bottom: 2rem;
-}
-
-.page-title {
-	font-family: var(--font-sans);
-	font-size: var(--h1);
-	font-weight: 600;
-	color: var(--color-heading);
-	line-height: var(--leading-tight);
-	margin: 0;
-}
-
-.page-subtitle {
-	font-size: var(--text-sm);
-	color: var(--color-body);
-	margin: 0.5rem 0 0;
-	max-width: 500px;
-	line-height: var(--leading-normal);
-}
-
 /* ── Card Grid ── */
 .card-grid {
 	display: flex;

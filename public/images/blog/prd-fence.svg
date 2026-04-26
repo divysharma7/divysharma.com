@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="340" fill="#fafafa" rx="12"/>
+
+  <!-- IN SCOPE side -->
+  <text x="220" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#18181b">IN SCOPE</text>
+
+  <!-- Feature cards inside fence -->
+  <rect x="60" y="56" width="320" height="44" rx="6" fill="#fff" stroke="#d4d4d8" stroke-width="1"/>
+  <circle cx="84" cy="78" r="10" fill="#22c55e" opacity="0.15"/>
+  <text x="84" y="82" text-anchor="middle" font-size="12" fill="#22c55e">&#10003;</text>
+  <text x="104" y="82" font-size="13" fill="#3f3f46">Date range filter on search results</text>
+
+  <rect x="60" y="110" width="320" height="44" rx="6" fill="#fff" stroke="#d4d4d8" stroke-width="1"/>
+  <circle cx="84" cy="132" r="10" fill="#22c55e" opacity="0.15"/>
+  <text x="84" y="136" text-anchor="middle" font-size="12" fill="#22c55e">&#10003;</text>
+  <text x="104" y="136" font-size="13" fill="#3f3f46">Preset ranges: today, 7d, 30d</text>
+
+  <rect x="60" y="164" width="320" height="44" rx="6" fill="#fff" stroke="#d4d4d8" stroke-width="1"/>
+  <circle cx="84" cy="186" r="10" fill="#22c55e" opacity="0.15"/>
+  <text x="84" y="190" text-anchor="middle" font-size="12" fill="#22c55e">&#10003;</text>
+  <text x="104" y="190" font-size="13" fill="#3f3f46">Custom date picker</text>
+
+  <rect x="60" y="218" width="320" height="44" rx="6" fill="#fff" stroke="#d4d4d8" stroke-width="1"/>
+  <circle cx="84" cy="240" r="10" fill="#22c55e" opacity="0.15"/>
+  <text x="84" y="244" text-anchor="middle" font-size="12" fill="#22c55e">&#10003;</text>
+  <text x="104" y="244" font-size="13" fill="#3f3f46">Mobile-responsive filter UI</text>
+
+  <!-- THE FENCE -->
+  <line x1="410" y1="28" x2="410" y2="300" stroke="#3f3f46" stroke-width="2.5"/>
+
+  <!-- Fence posts -->
+  <line x1="410" y1="28" x2="410" y2="300" stroke="#3f3f46" stroke-width="2.5"/>
+  <rect x="405" y="40" width="10" height="3" fill="#3f3f46"/>
+  <rect x="405" y="80" width="10" height="3" fill="#3f3f46"/>
+  <rect x="405" y="120" width="10" height="3" fill="#3f3f46"/>
+  <rect x="405" y="160" width="10" height="3" fill="#3f3f46"/>
+  <rect x="405" y="200" width="10" height="3" fill="#3f3f46"/>
+  <rect x="405" y="240" width="10" height="3" fill="#3f3f46"/>
+  <rect x="405" y="280" width="10" height="3" fill="#3f3f46"/>
+
+  <!-- Horizontal fence rails -->
+  <line x1="403" y1="60" x2="417" y2="60" stroke="#3f3f46" stroke-width="1.5"/>
+  <line x1="403" y1="100" x2="417" y2="100" stroke="#3f3f46" stroke-width="1.5"/>
+  <line x1="403" y1="140" x2="417" y2="140" stroke="#3f3f46" stroke-width="1.5"/>
+  <line x1="403" y1="180" x2="417" y2="180" stroke="#3f3f46" stroke-width="1.5"/>
+  <line x1="403" y1="220" x2="417" y2="220" stroke="#3f3f46" stroke-width="1.5"/>
+  <line x1="403" y1="260" x2="417" y2="260" stroke="#3f3f46" stroke-width="1.5"/>
+
+  <!-- OUT OF SCOPE side -->
+  <text x="590" y="36" text-anchor="middle" font-size="15" font-weight="700" fill="#71717a">OUT OF SCOPE</text>
+
+  <!-- Feature cards outside fence with reasons -->
+  <rect x="440" y="56" width="320" height="56" rx="6" fill="#fff" stroke="#e4e4e7" stroke-width="1" opacity="0.7"/>
+  <circle cx="464" cy="78" r="10" fill="#ef4444" opacity="0.1"/>
+  <text x="464" y="82" text-anchor="middle" font-size="12" fill="#ef4444">&#10007;</text>
+  <text x="484" y="76" font-size="13" fill="#71717a">Saved search filters</text>
+  <text x="484" y="96" font-size="11" fill="#a1a1aa" font-style="italic">Low usage in user research</text>
+
+  <rect x="440" y="124" width="320" height="56" rx="6" fill="#fff" stroke="#e4e4e7" stroke-width="1" opacity="0.7"/>
+  <circle cx="464" cy="146" r="10" fill="#ef4444" opacity="0.1"/>
+  <text x="464" y="150" text-anchor="middle" font-size="12" fill="#ef4444">&#10007;</text>
+  <text x="484" y="144" font-size="13" fill="#71717a">Export filtered results as CSV</text>
+  <text x="484" y="164" font-size="11" fill="#a1a1aa" font-style="italic">Planned for v2 — separate PRD</text>
+
+  <rect x="440" y="192" width="320" height="56" rx="6" fill="#fff" stroke="#e4e4e7" stroke-width="1" opacity="0.7"/>
+  <circle cx="464" cy="214" r="10" fill="#ef4444" opacity="0.1"/>
+  <text x="464" y="218" text-anchor="middle" font-size="12" fill="#ef4444">&#10007;</text>
+  <text x="484" y="212" font-size="13" fill="#71717a">Natural language date input</text>
+  <text x="484" y="232" font-size="11" fill="#a1a1aa" font-style="italic">Engineering cost too high for MVP</text>
+
+  <!-- Bottom note -->
+  <text x="400" y="310" text-anchor="middle" font-size="12" fill="#3f3f46" font-weight="500">Argue why you leave things out. Otherwise the scope discussion never ends.</text>
+</svg>

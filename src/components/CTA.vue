@@ -1,33 +1,10 @@
 <template>
   <section class="cta-section">
-    <div class="cta-card">
-      <!-- Centered content -->
-      <div class="cta-inner">
-        <p class="cta-message">{{ ctaConfig.preText }}</p>
-        
-        <button @click="openBooking" class="cta-btn group" aria-label="Book a call">
-          <div class="avatars-group">
-            <div class="avatar-wrapper">
-              <img 
-                :src="ctaConfig.profileImage" 
-                :alt="ctaConfig.profileAlt" 
-                class="btn-avatar"
-              />
-            </div>
-            
-            <div class="hover-avatar-add">
-              <PlusIcon :size="12" class="plus-icon" />
-              <div class="you-avatar">You</div>
-            </div>
-          </div>
-          <span class="btn-text">{{ ctaConfig.linkText }}</span>
-        </button>
-      </div>
-
-      <!-- Cat doodle accent -->
-      <div class="doodle-accent" aria-hidden="true">
-        <Cat :size="20" />
-      </div>
+    <h2 class="cta-heading">Work with Divy</h2>
+    <div class="cta-card" @click="openBooking" role="button" tabindex="0" @keydown.enter="openBooking">
+      <h3 class="cta-title">1:1 Coaching</h3>
+      <p class="cta-desc">One hour with Divy. Personalized to your exact role and challenge.</p>
+      <span class="cta-link">Book a Session <span class="cta-arrow">&rarr;</span></span>
     </div>
 
     <!-- Booking Modal -->
@@ -69,7 +46,7 @@ import { ref, computed } from 'vue';
 import { ctaConfig } from '@/config/cta';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
 import { trackEvent } from '@/analytics/umami';
-import { XIcon, Cat, PlusIcon } from 'lucide-vue-next';
+import { XIcon } from 'lucide-vue-next';
 
 const showCalPopup = ref(false);
 const isLoading = ref(true);
@@ -95,8 +72,14 @@ const calUrl = computed(() => {
   return `https://cal.com/${ctaConfig.calLink}?embed=true&theme=light&config=${configStr}`;
 });
 
+function gtmPush(event, params) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event, ...params });
+}
+
 function openBooking() {
   trackEvent('cta:book_call', { location: 'cta_component' });
+  gtmPush('cta:book_call', { location: 'cta_component' });
   if (isMobile()) triggerHaptic('medium');
   isLoading.value = true;
   showCalPopup.value = true;
@@ -104,6 +87,7 @@ function openBooking() {
 }
 
 function closeBooking() {
+  gtmPush('cta:booking_close');
   showCalPopup.value = false;
   document.body.style.overflow = '';
 }
@@ -111,163 +95,73 @@ function closeBooking() {
 
 <style scoped>
 /* ═══════════════════════════════════════════
-   CTA Section
+   CTA Section — "Work with Divy"
    ═══════════════════════════════════════════ */
 .cta-section {
-  display: flex;
-  justify-content: center;
   width: 100%;
-  /* padding: 0 1rem; Removed to allow full width */
+  margin-top: 3rem;
+}
+
+.cta-heading {
+  font-size: var(--h2);
+  font-weight: 400;
+  color: var(--color-heading);
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+  font-family: var(--font-sans);
 }
 
 .cta-card {
-  width: 100%;
-  max-width: 100%;
-  margin: 3rem auto;
-  padding: 4rem 2rem;
-  border: 1.5px dashed rgba(0, 0, 0, 0.12);
+  padding: 1.5rem 1.75rem;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-heading);
   border-radius: var(--radius-md);
-  background: rgba(250, 250, 250, 0.4);
-  position: relative;
-  transition: border-color 0.3s ease;
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .cta-card:hover {
-  border-color: rgba(0, 0, 0, 0.22);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border-color: var(--color-heading);
 }
 
-.cta-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.75rem;
+.cta-title {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-heading);
+  margin: 0 0 0.5rem;
+  font-family: var(--font-sans);
 }
 
-/* ─── Message ─── */
-.cta-message {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #6b7280;
-  text-align: center;
-  line-height: 1.5;
-  letter-spacing: -0.01em;
-  margin: 0;
+.cta-desc {
+  font-size: var(--text-base);
+  color: var(--color-body);
+  margin: 0 0 1.25rem;
+  line-height: var(--leading-relaxed);
 }
 
-/* ─── Button ─── */
-.cta-btn {
+.cta-link {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-heading);
+  text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.45rem 1rem 0.45rem 0.45rem;
-  border: 1.5px solid rgba(0, 0, 0, 0.1);
-  border-radius: var(--radius-pill);
-  background: #fff;
-  cursor: pointer;
-  font-family: inherit;
-  transition: all 0.25s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  gap: 0.25rem;
+  transition: gap 0.2s ease;
 }
 
-.cta-btn:hover {
-  border-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transform: translateY(-1px);
+.cta-card:hover .cta-link {
+  gap: 0.5rem;
 }
 
-.cta-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+.cta-arrow {
+  transition: transform 0.2s ease;
 }
 
-/* Avatar Group */
-.avatars-group {
-  display: flex;
-  align-items: center;
-}
-
-.avatar-wrapper {
-  position: relative;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 0 0 2px #f3f4f6;
-  background: #f3f4f6; /* Placeholder bg */
-  flex-shrink: 0;
-  z-index: 2;
-}
-
-.btn-avatar {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-/* On hover, don't swap, maybe just slight scale */
-.cta-btn:hover .btn-avatar {
-  transform: scale(1.05);
-}
-
-.hover-avatar-add {
-  display: flex;
-  align-items: center;
-  opacity: 0;
-  width: 0;
-  transform: translateX(-10px);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
-}
-
-.cta-btn:hover .hover-avatar-add {
-  opacity: 1;
-  width: 38px; /* space for icon + avatar + margin */
-  transform: translateX(0);
-  margin-left: 4px;
-}
-
-.plus-icon {
-  color: var(--color-body);
-  flex-shrink: 0;
-}
-
-.you-avatar {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 8px;
-  font-weight: 700;
-  color: #555;
-  text-transform: uppercase;
-  margin-left: 4px;
-  flex-shrink: 0;
-}
-
-.btn-text {
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #1f2937;
-  white-space: nowrap;
-}
-
-/* ─── Cat doodle ─── */
-.doodle-accent {
-  position: absolute;
-  bottom: 0.75rem;
-  right: 1rem;
-  color: var(--color-muted);
-  opacity: 0.5;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-}
-
-.cta-card:hover .doodle-accent {
-  opacity: 0.8;
+.cta-card:hover .cta-arrow {
+  transform: translateX(2px);
 }
 
 /* ═══════════════════════════════════════════
@@ -276,7 +170,7 @@ function closeBooking() {
 .overlay {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: var(--z-modal);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -398,32 +292,7 @@ function closeBooking() {
    ═══════════════════════════════════════════ */
 @media (max-width: 640px) {
   .cta-card {
-    margin: 2rem 0;
-    padding: 2.25rem 1.25rem;
-    border-radius: var(--radius-md);
-  }
-
-  .cta-message {
-    font-size: 1.1rem;
-  }
-
-  .cta-btn {
-    padding: 0.5rem 0.7rem;
-    padding-right: 0.85rem;
-    gap: 0.5rem;
-  }
-
-  .btn-avatar {
-    width: 24px;
-    height: 24px;
-  }
-
-  .btn-text {
-    font-size: 0.85rem;
-  }
-
-  .doodle-accent {
-    display: none;
+    padding: 1.25rem;
   }
 
   /* Bottom-sheet style modal on mobile */
@@ -443,7 +312,6 @@ function closeBooking() {
       0 -1px 4px rgba(0, 0, 0, 0.06);
   }
 
-  /* Pull handle indicator */
   .booking-modal::before {
     content: '';
     position: absolute;
@@ -462,7 +330,6 @@ function closeBooking() {
     right: 16px;
   }
 
-  /* Slide up from bottom on mobile */
   .slide-up-enter-from {
     transform: translateY(100%);
     opacity: 1;
@@ -474,8 +341,8 @@ function closeBooking() {
 }
 
 /* ─── Focus ─── */
-.cta-btn:focus-visible {
-  outline: 2px solid #374151;
+.cta-card:focus-visible {
+  outline: 2px solid var(--color-heading);
   outline-offset: 2px;
 }
 

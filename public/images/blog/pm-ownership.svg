@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" font-family="'Segoe UI', system-ui, sans-serif">
+  <rect width="800" height="320" fill="#f9f7f4" rx="12"/>
+
+  <!-- Two columns: Strong PM vs Weak PM -->
+
+  <!-- Strong PM column -->
+  <rect x="40" y="30" width="345" height="260" rx="10" fill="#fff" stroke="#2a2a2a" stroke-width="1.5"/>
+  <rect x="40" y="30" width="345" height="40" rx="10" fill="#18181b"/>
+  <rect x="40" y="55" width="345" height="15" fill="#18181b"/>
+  <text x="212" y="56" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Strong PM</text>
+
+  <text x="60" y="96" font-size="12" fill="#2a2a2a">&#10003;  Owns the outcome</text>
+  <text x="60" y="120" font-size="12" fill="#2a2a2a">&#10003;  Anticipates problems early</text>
+  <text x="60" y="144" font-size="12" fill="#2a2a2a">&#10003;  Takes written positions</text>
+  <text x="60" y="168" font-size="12" fill="#2a2a2a">&#10003;  Defines the "what," not the "how"</text>
+  <text x="60" y="192" font-size="12" fill="#2a2a2a">&#10003;  Creates reusable artifacts</text>
+  <text x="60" y="216" font-size="12" fill="#2a2a2a">&#10003;  Focuses on revenue &amp; customers</text>
+  <text x="60" y="240" font-size="12" fill="#2a2a2a">&#10003;  Defines own success measures</text>
+  <text x="60" y="264" font-size="12" fill="#2a2a2a">&#10003;  Ships status reports on time</text>
+
+  <!-- Weak PM column -->
+  <rect x="415" y="30" width="345" height="260" rx="10" fill="#fff" stroke="#d4d4d8" stroke-width="1" opacity="0.7"/>
+  <rect x="415" y="30" width="345" height="40" rx="10" fill="#e4e4e7"/>
+  <rect x="415" y="55" width="345" height="15" fill="#e4e4e7"/>
+  <text x="587" y="56" text-anchor="middle" font-size="14" font-weight="700" fill="#71717a">Weak PM</text>
+
+  <text x="435" y="96" font-size="12" fill="#a1a1aa">&#10007;  Makes excuses</text>
+  <text x="435" y="120" font-size="12" fill="#a1a1aa">&#10007;  Puts out fires all day</text>
+  <text x="435" y="144" font-size="12" fill="#a1a1aa">&#10007;  Voices opinions, doesn't write</text>
+  <text x="435" y="168" font-size="12" fill="#a1a1aa">&#10007;  Drifts into engineering's "how"</text>
+  <text x="435" y="192" font-size="12" fill="#a1a1aa">&#10007;  Answers every question live</text>
+  <text x="435" y="216" font-size="12" fill="#a1a1aa">&#10007;  Counts competitor features</text>
+  <text x="435" y="240" font-size="12" fill="#a1a1aa">&#10007;  Waits to be told what to do</text>
+  <text x="435" y="264" font-size="12" fill="#a1a1aa">&#10007;  Forgets, because they don't care</text>
+</svg>

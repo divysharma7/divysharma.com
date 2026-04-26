@@ -21,14 +21,14 @@
 					<a href="mailto:divysharma029@gmail.com" class="cta-btn cta-btn--primary">
 						<i class="ph-bold ph-paper-plane-tilt"></i> Get in touch
 					</a>
-					<a href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" rel="noopener" class="cta-btn cta-btn--outline">
+					<a href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" rel="noopener" class="cta-btn cta-btn--outline" @click="gtmPush('click:resume_download', { location: 'home_hero' })">
 						<i class="ph-bold ph-file-text"></i> Resume
 					</a>
 				</div>
 				<div class="hero-socials">
-					<a href="https://twitter.com/Divy_Sharma6" target="_blank" aria-label="Twitter"><i class="ph-bold ph-x-logo"></i></a>
-					<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" aria-label="LinkedIn"><i class="ph-bold ph-linkedin-logo"></i></a>
-					<a href="https://github.com/divysharma7" target="_blank" aria-label="GitHub"><i class="ph-bold ph-github-logo"></i></a>
+					<a href="https://twitter.com/Divy_Sharma6" target="_blank" aria-label="Twitter" @click="gtmPush('click:social', { platform: 'twitter', location: 'home_hero' })"><i class="ph-bold ph-x-logo"></i></a>
+					<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" aria-label="LinkedIn" @click="gtmPush('click:social', { platform: 'linkedin', location: 'home_hero' })"><i class="ph-bold ph-linkedin-logo"></i></a>
+					<a href="https://github.com/divysharma7" target="_blank" aria-label="GitHub" @click="gtmPush('click:social', { platform: 'github', location: 'home_hero' })"><i class="ph-bold ph-github-logo"></i></a>
 					<a href="mailto:divysharma029@gmail.com" aria-label="Email"><i class="ph-bold ph-envelope-simple"></i></a>
 				</div>
 			</section>
@@ -41,17 +41,25 @@
 				<h2 class="section-heading">Latest from Blog</h2>
 				<div class="blog-stack">
 					<router-link
-						v-for="post in posts.slice(0, 3)"
+						v-for="(post, index) in posts.slice(0, 3)"
 						:key="post.slug"
 						:to="'/blog/' + post.slug"
 						class="blog-card"
+						@click="gtmPush('click:blog_card', { post_title: post.title, post_slug: post.slug, location: 'home' })"
 					>
 						<div class="blog-body">
 							<span class="blog-date">{{ formatDate(post.publishedAt) }}</span>
 							<h3>{{ post.title }}</h3>
 							<p>{{ post.excerpt }}</p>
 						</div>
-						<span class="arrow">→</span>
+						<img
+							v-if="post.heroImage"
+							:src="post.heroImage"
+							:alt="post.heroAlt || post.title"
+							class="blog-card-hero"
+							loading="lazy"
+						/>
+						<span v-else class="arrow">→</span>
 					</router-link>
 				</div>
 				<router-link to="/blog" class="view-all">Read more posts →</router-link>
@@ -70,7 +78,7 @@
 						:experience="exp"
 					/>
 				</div>
-				<router-link to="/workexperience" class="view-all">See full experience →</router-link>
+				<router-link to="/workexperience" class="view-all" @click="gtmPush('click:view_all', { section: 'experience' })">See full experience →</router-link>
 			</section>
 
 			<!-- ── Divider ── -->
@@ -125,6 +133,10 @@
 				</div>
 			</section>
 
+			<!-- ── Book a Call ── -->
+			<div class="cta-wrapper">
+				<CTA />
+			</div>
 
 		</div>
 	</div>
@@ -135,6 +147,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { experiences } from '../data/experience.js'
 import { posts } from '../data/posts.js'
 import ExperienceCard from '../components/experience/ExperienceCard.vue'
+import CTA from '../components/CTA.vue'
 import { useHead } from '@vueuse/head'
 
 useHead({
@@ -145,6 +158,11 @@ useHead({
 		{ property: 'og:description', content: 'PM at ASBL. Building growth systems for real estate tech.' }
 	]
 })
+
+function gtmPush(event, params) {
+	window.dataLayer = window.dataLayer || []
+	window.dataLayer.push({ event, ...params })
+}
 
 function formatDate(dateStr) {
 	return new Date(dateStr).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
@@ -212,7 +230,7 @@ onUnmounted(() => { if (rafId) cancelAnimationFrame(rafId) })
 		rgba(0, 0, 0, 0.02) 0 -1px 1px 0 inset,
 		rgba(0, 0, 0, 0.06) 0 3px 14px 0;
 	pointer-events: none;
-	z-index: 9999;
+	z-index: var(--z-toast);
 	top: 0;
 	left: 0;
 	will-change: transform;
@@ -501,6 +519,14 @@ onUnmounted(() => { if (rafId) cancelAnimationFrame(rafId) })
 	}
 }
 
+.blog-card-hero {
+	width: 160px;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	border-radius: var(--radius-sm);
+	flex-shrink: 0;
+}
+
 .blog-body {
 	flex: 1;
 	min-width: 0;
@@ -599,6 +625,7 @@ onUnmounted(() => { if (rafId) cancelAnimationFrame(rafId) })
 	.hero-bio { font-size: 16px; }
 	.explore-grid { grid-template-columns: 1fr; }
 	.arrow { display: none; }
+	.blog-card-hero { width: 120px; }
 }
 
 @media (max-width: 480px) {

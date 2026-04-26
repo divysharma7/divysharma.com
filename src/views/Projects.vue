@@ -1,12 +1,12 @@
 
 <template>
 	<div class="cont" @mouseleave="hover = false">
-		<div class="page-header">
-			<h1 class="page-title">Projects</h1>
-			<p class="page-subtitle">
-				Things I've built and shipped.
-			</p>
-		</div>
+		<PageHero
+			icon="ph-rocket-launch"
+			title="Projects"
+			:accent-from="1"
+			subtitle="Things I've built and shipped."
+		/>
 		<div class="bigproj">
 			<Project
 				name="Techno Conclave"
@@ -68,7 +68,8 @@ import Project from '../components/project.vue'
 
 export default {
 	components: {
-		Project
+		Project,
+		PageHero
 	},
 	data() {
 		return {
@@ -81,6 +82,7 @@ export default {
 
 <script setup>
 import { useHead } from '@vueuse/head'
+import PageHero from '@/components/PageHero.vue'
 
 useHead({
   title: 'Projects',
@@ -97,30 +99,7 @@ useHead({
 	font-size: 1.75em;
 }
 
-/* ── Page Title ── */
-.page-header {
-	text-align: center;
-	margin-bottom: 2rem;
-}
 
-.page-title {
-	font-size: var(--h1);
-	font-weight: 400;
-	color: var(--color-heading);
-	margin: 0;
-	letter-spacing: -0.02em;
-	line-height: 1.1;
-	font-family: var(--font-sans);
-}
-
-.page-subtitle {
-	font-size: var(--text-lg);
-	color: var(--color-muted);
-	margin: 16px auto 0;
-	max-width: 500px;
-	line-height: 1.6;
-	text-align: center;
-}
 .others {
 	margin-top: 3em;
 	margin-bottom: 3em;

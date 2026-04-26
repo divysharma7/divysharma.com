@@ -97,7 +97,7 @@
 		<button
 			class="chat-toggle"
 			type="button"
-			@click="isOpen = !isOpen"
+			@click="[isOpen = !isOpen, gtmPush('chat:toggle', { action: isOpen ? 'close' : 'open' })]"
 			:class="{ open: isOpen }"
 			aria-label="Toggle Chat"
 		>
@@ -162,8 +162,14 @@ const scrollToBottom = async () => {
 	}
 }
 
+function gtmPush(event, params) {
+	window.dataLayer = window.dataLayer || []
+	window.dataLayer.push({ event, ...params })
+}
+
 const sendMessage = async (text) => {
 	if (!text.trim() || isLoading.value) return
+	gtmPush('chat:message_sent', { is_suggestion: suggestions.includes(text) })
 
 	const userMsg = { role: 'user', content: text }
 	messages.value.push(userMsg)
@@ -223,7 +229,7 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 	position: fixed;
 	bottom: 2rem;
 	right: 2rem;
-	z-index: 9999;
+	z-index: var(--z-toast);
 	font-family: var(--font-sans), 'Inter', sans-serif;
 }
 
@@ -470,7 +476,7 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 	align-items: center;
 	gap: 0.75rem;
 	position: relative;
-	z-index: 20; /* Ensure input is clickable above cat */
+	z-index: var(--z-content); /* Ensure input is clickable above cat */
 }
 
 .chat-input-area input {
@@ -580,14 +586,14 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 		bottom: 0;
 		right: 0;
 		left: 0;
-		z-index: 10000;
+		z-index: var(--z-modal);
 	}
-	
+
 	.chat-toggle.open {
 		position: fixed;
 		bottom: 1.5rem;
 		right: 1.5rem;
-		z-index: 10001;
+		z-index: var(--z-modal);
 	}
 
 	.chat-input-area {

@@ -1,12 +1,12 @@
 <template>
   <div class="books-page">
     <!-- Header -->
-    <div class="page-header">
-      <h1 class="page-title">Books</h1>
-      <p class="page-subtitle">
-        What I am reading, what I have read, and what I keep pretending I will read.
-      </p>
-    </div>
+    <PageHero
+      icon="ph-book-open-text"
+      title="Books"
+      :accent-from="1"
+      subtitle="What I am reading, what I have read, and what I keep pretending I will read."
+    />
 
     <!-- Sticky Filter Bar -->
     <div class="filter-bar" :class="{ stuck: isStuck }">
@@ -30,7 +30,7 @@
             <button
               class="filter-trigger-btn"
               :class="{ 'has-active': totalFilterCount > 0 }"
-              @click="filterSheetOpen = true"
+              @click="[filterSheetOpen = true, gtmPush('books:filter_open')]"
               aria-label="Filter and sort"
             >
               <span class="btn-text desktop-only-text">Filter &amp; Sort</span>
@@ -182,6 +182,7 @@
 import { ref, computed, onMounted, onUnmounted, reactive, watch } from 'vue';
 import { books, allTags } from '../config/books.js';
 import FilterSheet from '../components/FilterSheet.vue';
+import PageHero from '@/components/PageHero.vue';
 import { useHead } from '@vueuse/head'
 
 useHead({
@@ -204,6 +205,11 @@ const showAllTags = ref(false);
 const isStuck = ref(false);
 const filtersExpanded = ref(false);
 const filterSheetOpen = ref(false);
+
+function gtmPush(event, params) {
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({ event, ...params })
+}
 const tagsSheetOpen = ref(false);
 const filterSheetRef = ref(null);
 
@@ -239,12 +245,14 @@ function toggleStatus(book) {
   const next = map[current];
   bookStatuses[book.title] = next;
   localStorage.setItem(`book_status_${book.title}`, next);
+  gtmPush('books:status_change', { book_title: book.title, new_status: next })
 }
 
 function toggleStatusFilter(status) {
   const i = activeStatus.value.indexOf(status);
   if (i >= 0) activeStatus.value.splice(i, 1);
   else activeStatus.value.push(status);
+  gtmPush('books:filter_status', { status })
 }
 
 const statusCounts = computed(() => {
@@ -314,6 +322,7 @@ function toggleTag(tag) {
 
 function toggleQuick(key) {
   activeQuick.value = activeQuick.value === key ? null : key;
+  gtmPush('books:filter_quick', { filter_key: key })
 }
 
 function clearAll() {
@@ -323,7 +332,16 @@ function clearAll() {
   activeStatus.value = [];
   activeTags.value = [];
   activeQuick.value = null;
+  gtmPush('books:clear_filters')
 }
+
+let _booksSearchTimer = null
+watch(query, (val) => {
+  clearTimeout(_booksSearchTimer)
+  if (val.length >= 2) {
+    _booksSearchTimer = setTimeout(() => gtmPush('books:search', { search_query: val }), 500)
+  }
+})
 
 const filteredBooks = computed(() => {
   let list = [...books];
@@ -455,26 +473,6 @@ function apmClass(r) {
   padding: 3rem 1.5rem 5rem;
 }
 
-.page-header { text-align: center; margin-bottom: 2rem; }
-
-.page-title {
-  font-family: var(--font-sans);
-  font-size: var(--h1);
-  font-weight: 600;
-  color: var(--color-heading);
-  line-height: var(--leading-tight);
-  letter-spacing: -0.02em;
-  margin: 0 0 0.5rem;
-}
-
-.page-subtitle {
-  color: var(--color-body);
-  font-size: var(--text-lg);
-  max-width: 500px;
-  margin: 0 auto;
-  line-height: var(--leading-normal);
-}
-
 /* ═══ Focus-Visible Global ═══ */
 button:focus-visible,
 input:focus-visible,
@@ -487,7 +485,7 @@ select:focus-visible {
 .filter-bar {
   position: sticky;
   top: 0;
-  z-index: 20;
+  z-index: var(--z-sticky);
   /* Normal state: transparent, lives in the page flow */
   background: transparent;
   border-bottom: 1px solid transparent;

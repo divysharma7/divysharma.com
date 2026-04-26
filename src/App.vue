@@ -12,15 +12,15 @@
 				<router-link to="/" class="logo-text" v-else>Divy Sharma</router-link>
 
 				<div class="links">
-					<router-link to="/" @click="trackEvent('nav:click', { to: '/', from: 'nav' })">Home</router-link>
-					<router-link to="/projects" @click="trackEvent('nav:click', { to: '/projects', from: 'nav' })">Projects</router-link>
-					<router-link to="/workexperience" @click="trackEvent('nav:click', { to: '/workexperience', from: 'nav' })">Work Experience</router-link>
-					<router-link to="/books" @click="trackEvent('nav:click', { to: '/books', from: 'nav' })">Books</router-link>
-					<router-link to="/explore" @click="trackEvent('nav:click', { to: '/explore', from: 'nav' })">Explore</router-link>
-					<router-link to="/blog" @click="trackEvent('nav:click', { to: '/blog', from: 'nav' })">Blog</router-link>
+					<router-link to="/" @click="[trackEvent('nav:click', { to: '/', from: 'nav' }), gtmNav('/', 'desktop')]">Home</router-link>
+					<router-link to="/projects" @click="[trackEvent('nav:click', { to: '/projects', from: 'nav' }), gtmNav('/projects', 'desktop')]">Projects</router-link>
+					<router-link to="/workexperience" @click="[trackEvent('nav:click', { to: '/workexperience', from: 'nav' }), gtmNav('/workexperience', 'desktop')]">Experience</router-link>
+					<router-link to="/books" @click="[trackEvent('nav:click', { to: '/books', from: 'nav' }), gtmNav('/books', 'desktop')]">Books</router-link>
+					<router-link to="/explore" @click="[trackEvent('nav:click', { to: '/explore', from: 'nav' }), gtmNav('/explore', 'desktop')]">Explore</router-link>
+					<router-link to="/blog" @click="[trackEvent('nav:click', { to: '/blog', from: 'nav' }), gtmNav('/blog', 'desktop')]">Blog</router-link>
 				</div>
 
-				<button class="ham" @click="nav = !nav" aria-label="Toggle navigation">
+				<button class="ham" @click="[nav = !nav, gtmMenuToggle()]" aria-label="Toggle navigation">
 					<img src="@/assets/img/ham.svg" alt="Open navbar" />
 				</button>
 			</div>
@@ -32,27 +32,27 @@
 					<div class="topsec">
 						<span>&nbsp;</span>
 
-						<button class="ham" @click="nav = !nav" aria-label="Toggle navigation">
+						<button class="ham" @click="[nav = !nav, gtmMenuToggle()]" aria-label="Toggle navigation">
 							<img src="@/assets/img/close.svg" alt="Close navbar" />
 						</button>
 					</div>
 
 					<div class="navdata">
 						<div class="flexer">
-							<router-link to="/" @click="[nav = !nav, trackEvent('nav:click', { to: '/', from: 'nav_mobile' })]">Home</router-link>
-							<router-link to="/projects" @click="[nav = !nav, trackEvent('nav:click', { to: '/projects', from: 'nav_mobile' })]"
+							<router-link to="/" @click="[nav = !nav, trackEvent('nav:click', { to: '/', from: 'nav_mobile' }), gtmNav('/', 'mobile')]">Home</router-link>
+							<router-link to="/projects" @click="[nav = !nav, trackEvent('nav:click', { to: '/projects', from: 'nav_mobile' }), gtmNav('/projects', 'mobile')]"
 								>Projects</router-link
 							>
-							<router-link to="/workexperience" @click="[nav = !nav, trackEvent('nav:click', { to: '/workexperience', from: 'nav_mobile' })]"
-								>Work Experience</router-link
+							<router-link to="/workexperience" @click="[nav = !nav, trackEvent('nav:click', { to: '/workexperience', from: 'nav_mobile' }), gtmNav('/workexperience', 'mobile')]"
+								>Experience</router-link
 							>
-							<router-link to="/books" @click="[nav = !nav, trackEvent('nav:click', { to: '/books', from: 'nav_mobile' })]"
+							<router-link to="/books" @click="[nav = !nav, trackEvent('nav:click', { to: '/books', from: 'nav_mobile' }), gtmNav('/books', 'mobile')]"
 								>Books</router-link
 							>
-							<router-link to="/explore" @click="[nav = !nav, trackEvent('nav:click', { to: '/explore', from: 'nav_mobile' })]"
+							<router-link to="/explore" @click="[nav = !nav, trackEvent('nav:click', { to: '/explore', from: 'nav_mobile' }), gtmNav('/explore', 'mobile')]"
 								>Explore</router-link
 							>
-							<router-link to="/blog" @click="[nav = !nav, trackEvent('nav:click', { to: '/blog', from: 'nav_mobile' })]"
+							<router-link to="/blog" @click="[nav = !nav, trackEvent('nav:click', { to: '/blog', from: 'nav_mobile' }), gtmNav('/blog', 'mobile')]"
 								>Blog</router-link
 							>
 						</div>
@@ -113,6 +113,15 @@ import { useRoute } from 'vue-router'
 import { trackEvent } from '@/analytics/umami'
 
 const route = useRoute()
+
+function gtmNav(linkUrl, navType) {
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({ event: 'click:nav', link_url: linkUrl, nav_type: navType })
+}
+function gtmMenuToggle() {
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({ event: 'click:mobile_menu', action: document.querySelector('.fullnav') ? 'close' : 'open' })
+}
 
 useHead({
   title: 'Divy Sharma',
@@ -196,6 +205,14 @@ useHead({
 	display: none;
 }
 
+.ham {
+	background: none;
+	border: none;
+	padding: 0.5rem;
+	cursor: pointer;
+	line-height: 0;
+}
+
 .ham img {
 	width: 1.3rem;
 }
@@ -210,7 +227,7 @@ useHead({
 	background-color: var(--color-bg);
 	position: fixed;
 	top: 0;
-	z-index: 20;
+	z-index: var(--z-overlay);
 	overflow: hidden;
 }
 

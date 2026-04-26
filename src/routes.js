@@ -19,7 +19,7 @@ export const routes = [
 	},
 	{
 		path: '/blog',
-		meta: { title: 'Blog' },
+		meta: { title: 'Essays' },
 		component: () => import('./views/Blog.vue')
 	},
 	{
@@ -38,7 +38,7 @@ export const routes = [
 	},
 	{
 		path: '/workexperience',
-		meta: { title: 'work experience' },
+		meta: { title: 'experience' },
 		component: () => import('./components/workexperience.vue')
 	},
 	{
@@ -74,7 +74,7 @@ export const routes = [
 	},
 	{
 		path: '/journey/certificates',
-		meta: { title: 'Certificates' },
+		meta: { title: 'Achievements' },
 		component: () => import('./views/Certificates.vue')
 	},
 	{

@@ -64,6 +64,8 @@ export default {
 			})
 		},
 		handleTagClick(tag) {
+			window.dataLayer = window.dataLayer || []
+			window.dataLayer.push({ event: 'blog:tag_click', tag_name: tag, source: 'blog_card' })
 			this.$router.push({ path: '/blog', query: { tag } })
 		}
 	}

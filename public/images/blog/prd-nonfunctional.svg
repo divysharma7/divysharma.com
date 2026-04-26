@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="300" fill="#fafafa" rx="12"/>
+
+  <!-- Four boxes in a row -->
+  <!-- Performance -->
+  <rect x="40" y="50" width="165" height="140" rx="10" fill="#fff" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="122" y="88" text-anchor="middle" font-size="14" font-weight="600" fill="#3f3f46">Performance</text>
+  <text x="122" y="112" text-anchor="middle" font-size="11" fill="#71717a">Response times</text>
+  <text x="122" y="128" text-anchor="middle" font-size="11" fill="#71717a">Throughput</text>
+  <text x="122" y="144" text-anchor="middle" font-size="11" fill="#71717a">Load handling</text>
+
+  <!-- Security -->
+  <rect x="220" y="50" width="165" height="140" rx="10" fill="#fff" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="302" y="88" text-anchor="middle" font-size="14" font-weight="600" fill="#3f3f46">Security</text>
+  <text x="302" y="112" text-anchor="middle" font-size="11" fill="#71717a">Auth &amp; access</text>
+  <text x="302" y="128" text-anchor="middle" font-size="11" fill="#71717a">Data protection</text>
+  <text x="302" y="144" text-anchor="middle" font-size="11" fill="#71717a">Compliance</text>
+
+  <!-- Scalability -->
+  <rect x="400" y="50" width="165" height="140" rx="10" fill="#fff" stroke="#d4d4d8" stroke-width="1"/>
+  <text x="482" y="88" text-anchor="middle" font-size="14" font-weight="600" fill="#3f3f46">Scalability</text>
+  <text x="482" y="112" text-anchor="middle" font-size="11" fill="#71717a">Growth capacity</text>
+  <text x="482" y="128" text-anchor="middle" font-size="11" fill="#71717a">Infrastructure</text>
+  <text x="482" y="144" text-anchor="middle" font-size="11" fill="#71717a">Data volume</text>
+
+  <!-- Usability (highlighted) -->
+  <rect x="580" y="50" width="180" height="140" rx="10" fill="#18181b" stroke="none"/>
+  <text x="670" y="88" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Usability</text>
+  <text x="670" y="112" text-anchor="middle" font-size="11" fill="#d4d4d8">How it feels to use</text>
+  <text x="670" y="128" text-anchor="middle" font-size="11" fill="#d4d4d8">Learnability</text>
+  <text x="670" y="144" text-anchor="middle" font-size="11" fill="#d4d4d8">Error recovery</text>
+  <text x="670" y="168" text-anchor="middle" font-size="10" fill="#a1a1aa" font-style="italic">PMs forget this one</text>
+
+  <!-- Arrow pointing to usability -->
+  <text x="400" y="235" text-anchor="middle" font-size="13" fill="#3f3f46">Everyone remembers the first three.</text>
+  <text x="400" y="255" text-anchor="middle" font-size="13" font-weight="600" fill="#18181b">Usability is also a non-functional requirement.</text>
+  <text x="400" y="278" text-anchor="middle" font-size="12" fill="#71717a" font-style="italic">Line out how you want users to feel.</text>
+</svg>

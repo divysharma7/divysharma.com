@@ -2,13 +2,11 @@
 	<div class="blog-page">
 
 		<!-- ── Hero ── -->
-		<header class="blog-hero">
-			<div class="blog-hero-icon">
-				<i class="ph-bold ph-notebook"></i>
-			</div>
-			<h1 class="blog-hero-title">The <span class="accent">Blog</span></h1>
-			<p class="blog-hero-sub">Essays on product management, career, and shipping software people actually use.</p>
-
+		<PageHero
+			icon="ph-notebook"
+			title="Essays"
+			subtitle="Essays on product management, career, and shipping software people actually use."
+		>
 			<!-- Search -->
 			<div class="blog-search">
 				<svg class="blog-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -21,7 +19,7 @@
 					class="blog-search-input"
 				/>
 			</div>
-		</header>
+		</PageHero>
 
 		<!-- ── Content: Posts + Sidebar ── -->
 		<div class="blog-container">
@@ -30,20 +28,30 @@
 				<!-- Left: Post list -->
 				<div class="post-list">
 					<router-link
-						v-for="post in filteredPosts"
+						v-for="(post, index) in filteredPosts"
 						:key="post.slug"
 						:to="`/blog/${post.slug}`"
 						class="post-row"
+						@click="gtmPush('click:blog_post', { post_title: post.title, post_slug: post.slug, position: index + 1 })"
 					>
-						<div class="post-row-body">
-							<span class="post-row-date">{{ formatDate(post.publishedAt) }}</span>
-							<h2 class="post-row-title">{{ post.title }}</h2>
-							<p class="post-row-excerpt">{{ post.excerpt }}</p>
-							<div class="post-row-meta">
-								<span class="post-row-stat"><i class="ph-bold ph-clock"></i> {{ readTime(post) }} min read</span>
+						<img
+							v-if="post.heroImage"
+							:src="post.heroImage"
+							:alt="post.heroAlt || post.title"
+							class="post-row-hero"
+							loading="lazy"
+						/>
+						<div class="post-row-content">
+							<div class="post-row-body">
+								<span class="post-row-date">{{ formatDate(post.publishedAt) }}</span>
+								<h2 class="post-row-title">{{ post.title }}</h2>
+								<p class="post-row-excerpt">{{ post.excerpt }}</p>
+								<div class="post-row-meta">
+									<span class="post-row-stat"><i class="ph-bold ph-clock"></i> {{ readTime(post) }} min read</span>
+								</div>
 							</div>
+							<span class="post-row-tag" v-if="post.tags[0]">{{ post.tags[0] }}</span>
 						</div>
-						<span class="post-row-tag" v-if="post.tags[0]">{{ post.tags[0] }}</span>
 					</router-link>
 
 					<!-- Empty state -->
@@ -76,14 +84,22 @@
 			</div>
 		</div>
 
+		<!-- ── Book a Call ── -->
+		<div class="blog-container">
+			<CTA />
+		</div>
+
 	</div>
 </template>
 
 <script>
 import { posts } from '@/data/posts'
+import CTA from '@/components/CTA.vue'
+import PageHero from '@/components/PageHero.vue'
 
 export default {
 	name: 'Blog',
+	components: { CTA, PageHero },
 	data() {
 		return {
 			allPosts: [],
@@ -115,7 +131,12 @@ export default {
 		}
 	},
 	methods: {
+		gtmPush(event, params) {
+			window.dataLayer = window.dataLayer || []
+			window.dataLayer.push({ event, ...params })
+		},
 		selectTag(tag) {
+			this.gtmPush('blog:filter_tag', { tag_name: tag || 'all' })
 			this.selectedTag = tag
 			this.searchQuery = ''
 			if (tag) {
@@ -141,6 +162,14 @@ export default {
 	watch: {
 		'$route.query.tag'(tag) {
 			this.selectedTag = tag || null
+		},
+		searchQuery(val) {
+			clearTimeout(this._searchTimer)
+			if (val.length >= 2) {
+				this._searchTimer = setTimeout(() => {
+					this.gtmPush('blog:search', { search_query: val })
+				}, 500)
+			}
 		}
 	}
 }
@@ -149,10 +178,10 @@ export default {
 <script setup>
 import { useHead } from '@vueuse/head'
 useHead({
-	title: 'Blog',
+	title: 'Essays',
 	meta: [
 		{ name: 'description', content: 'Essays on product management, career, and shipping software people actually use.' },
-		{ property: 'og:title', content: "Divy Sharma's Blog" },
+		{ property: 'og:title', content: "Essays | Divy Sharma" },
 		{ property: 'og:description', content: 'Essays on product, career, and shipping software.' }
 	]
 })
@@ -174,48 +203,6 @@ button {
 .blog-page {
 	min-height: 100vh;
 	font-family: var(--font-sans);
-}
-
-/* ── Hero ── */
-.blog-hero {
-	text-align: center;
-	padding: 3rem 1.5rem 2.5rem;
-	max-width: var(--container);
-	margin: 0 auto;
-}
-
-.blog-hero-icon {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 3rem;
-	height: 3rem;
-	border: 1px solid var(--color-border);
-	border-radius: var(--radius-md);
-	margin-bottom: 1rem;
-	color: var(--color-muted);
-	font-size: var(--text-xl);
-}
-
-.blog-hero-title {
-	font-family: var(--font-sans);
-	font-size: var(--h1);
-	font-weight: 700;
-	color: var(--color-heading);
-	line-height: var(--leading-tight);
-	margin: 0 0 0.5rem;
-
-	.accent {
-		color: var(--color-body);
-	}
-}
-
-.blog-hero-sub {
-	font-size: var(--text-sm);
-	color: var(--color-muted);
-	line-height: var(--leading-normal);
-	margin: 0 auto 1.5rem;
-	max-width: 480px;
 }
 
 /* ── Search ── */
@@ -272,9 +259,8 @@ button {
 
 .post-row {
 	display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
-	gap: 1.5rem;
+	flex-direction: column;
+	gap: 0;
 	padding: 1.5rem 0;
 	border-top: 1px solid var(--color-border);
 	text-decoration: none;
@@ -282,6 +268,21 @@ button {
 
 	&:last-child { border-bottom: 1px solid var(--color-border); }
 	&:hover { opacity: 0.7; }
+}
+
+.post-row-hero {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+	border-radius: var(--radius-sm);
+	margin-bottom: 1rem;
+}
+
+.post-row-content {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1.5rem;
 }
 
 .post-row-body {
@@ -403,6 +404,5 @@ button {
 	}
 
 	.blog-container { padding: 0 1.25rem 3rem; }
-	.blog-hero { padding: 2rem 1.25rem; }
 }
 </style>

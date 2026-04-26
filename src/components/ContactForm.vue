@@ -64,9 +64,13 @@ const submitForm = async () => {
 		
 		success.value = true
     trackEvent('contact:message_sent', { location: 'contact_form' })
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({ event: 'contact:message_sent', location: 'contact_form' })
 		form.value = { name: '', email: '', message: '' }
 	} catch (e) {
 		error.value = "Couldn't send your message. Check your connection and try again, or email me at divysharma029@gmail.com."
+		window.dataLayer = window.dataLayer || []
+		window.dataLayer.push({ event: 'contact:form_error', error_type: 'submission_failed' })
 	} finally {
 		loading.value = false
 	}

@@ -8,19 +8,19 @@
 					<h3 class="footer-name">Divy Sharma</h3>
 					<p class="footer-tagline">Associate Product Manager building growth systems and honest products.</p>
 					<div class="footer-socials">
-						<a href="mailto:divysharma029@gmail.com" aria-label="Email" rel="noopener noreferrer" @click="trackOutbound('email', 'mailto:divysharma029@gmail.com', { location: 'footer' })">
+						<a href="mailto:divysharma029@gmail.com" aria-label="Email" rel="noopener noreferrer" @click="[trackOutbound('email', 'mailto:divysharma029@gmail.com', { location: 'footer' }), gtmPush('click:outbound', { platform: 'email', location: 'footer_icons' })]">
 							<i class="ph-bold ph-envelope-simple"></i>
 						</a>
-						<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" @click="trackOutbound('linkedin', 'https://www.linkedin.com/in/divy-sharma-243748216/', { location: 'footer' })">
+						<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" @click="[trackOutbound('linkedin', 'https://www.linkedin.com/in/divy-sharma-243748216/', { location: 'footer' }), gtmPush('click:outbound', { platform: 'linkedin', location: 'footer_icons' })]">
 							<i class="ph-bold ph-linkedin-logo"></i>
 						</a>
-						<a href="https://github.com/divysharma7" target="_blank" rel="noopener noreferrer" aria-label="GitHub" @click="trackOutbound('github', 'https://github.com/divysharma7', { location: 'footer' })">
+						<a href="https://github.com/divysharma7" target="_blank" rel="noopener noreferrer" aria-label="GitHub" @click="[trackOutbound('github', 'https://github.com/divysharma7', { location: 'footer' }), gtmPush('click:outbound', { platform: 'github', location: 'footer_icons' })]">
 							<i class="ph-bold ph-github-logo"></i>
 						</a>
-						<a href="https://twitter.com/Divy_Sharma6" target="_blank" rel="noopener noreferrer" aria-label="Twitter" @click="trackOutbound('twitter', 'https://twitter.com/Divy_Sharma6', { location: 'footer' })">
+						<a href="https://twitter.com/Divy_Sharma6" target="_blank" rel="noopener noreferrer" aria-label="Twitter" @click="[trackOutbound('twitter', 'https://twitter.com/Divy_Sharma6', { location: 'footer' }), gtmPush('click:outbound', { platform: 'twitter', location: 'footer_icons' })]">
 							<i class="ph-bold ph-x-logo"></i>
 						</a>
-						<a href="https://www.behance.net/divysharma3" target="_blank" rel="noopener noreferrer" aria-label="Behance" @click="trackOutbound('behance', 'https://www.behance.net/divysharma3', { location: 'footer' })">
+						<a href="https://www.behance.net/divysharma3" target="_blank" rel="noopener noreferrer" aria-label="Behance" @click="[trackOutbound('behance', 'https://www.behance.net/divysharma3', { location: 'footer' }), gtmPush('click:outbound', { platform: 'behance', location: 'footer_icons' })]">
 							<i class="ph-bold ph-behance-logo"></i>
 						</a>
 					</div>
@@ -54,11 +54,11 @@
 				<div class="footer-col">
 					<h4 class="footer-col-title">Connect</h4>
 					<nav class="footer-nav">
-						<a href="mailto:divysharma029@gmail.com">Email</a>
-						<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-						<a href="https://twitter.com/Divy_Sharma6" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-						<a href="https://github.com/divysharma7" target="_blank" rel="noopener noreferrer">GitHub</a>
-						<a href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+						<a href="mailto:divysharma029@gmail.com" @click="gtmPush('click:outbound', { platform: 'email', location: 'footer_connect' })">Email</a>
+						<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" rel="noopener noreferrer" @click="gtmPush('click:outbound', { platform: 'linkedin', location: 'footer_connect' })">LinkedIn</a>
+						<a href="https://twitter.com/Divy_Sharma6" target="_blank" rel="noopener noreferrer" @click="gtmPush('click:outbound', { platform: 'twitter', location: 'footer_connect' })">Twitter / X</a>
+						<a href="https://github.com/divysharma7" target="_blank" rel="noopener noreferrer" @click="gtmPush('click:outbound', { platform: 'github', location: 'footer_connect' })">GitHub</a>
+						<a href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" rel="noopener noreferrer" @click="gtmPush('click:resume_download', { location: 'footer_connect' })">Resume</a>
 					</nav>
 				</div>
 
@@ -80,6 +80,11 @@
 <script setup>
 import Spotify from './spotify.vue'
 import { trackOutbound } from '@/analytics/umami'
+
+function gtmPush(event, params) {
+  window.dataLayer = window.dataLayer || []
+  window.dataLayer.push({ event, ...params })
+}
 </script>
 
 <style scoped>
