@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    ignore:
+      # katex moderate vulns (GHSA-3wc5, GHSA-f98w, GHSA-cvr6, GHSA-cg87, GHSA-64fm)
+      # Upstream fix blocked by vue3-notion depending on katex <=0.16.20
+      # Re-evaluate: 2026-07-27
+      - dependency-name: katex
+        update-types: ["version-update:semver-patch"]
