@@ -455,6 +455,7 @@ function handleApply({ quick, apm, tags, status, sort }) {
 
 // ── Helpers ──
 function initials(title) {
+  if (!title) return 'B';
   const w = title.replace(/[^\w\s]/g, '').split(' ').filter(Boolean);
   return ((w[0]?.[0] ?? 'B') + (w[1]?.[0] ?? '')).toUpperCase();
 }
