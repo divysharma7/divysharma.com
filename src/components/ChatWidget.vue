@@ -53,6 +53,7 @@
 							<MessageCircle :size="12" />
 						</div>
 						<div class="message-content">
+							<!-- Safe: input runs through escapeHtml() before regex markup injection + sanitizeUrl() on URLs -->
 							<div v-html="markdownToHtml(msg.content)"></div>
 						</div>
 					</div>

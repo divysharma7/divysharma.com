@@ -44,6 +44,7 @@
 
 				<!-- Article + Sidebar TOC -->
 				<div class="article-layout">
+					<!-- Safe: content sourced from src/data/posts.js (static build-time data, no user input) -->
 					<div class="post-body" v-html="formattedContent"></div>
 
 					<aside class="toc-sidebar" v-if="tocItems.length">

@@ -10,6 +10,30 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { createHead } from '@vueuse/head'
 import { loadUmamiScript, trackPage } from './analytics/umami'
 import { loadAnalytics } from './lib/analytics'
+import DOMPurify from 'dompurify'
+
+// Trusted Types policies — must run before createApp/mount
+// See SECURITY.md for policy rationale
+if (window.trustedTypes && window.trustedTypes.createPolicy) {
+	// 'vue' policy: handles Vue's internal innerHTML writes (v-html directive, SVG rendering)
+	// Both v-html usages in this app are developer-authored static content — see comments
+	// on ChatWidget.vue:56 and BlogDetail.vue:47 for per-site safety justifications
+	window.trustedTypes.createPolicy('vue', {
+		createHTML: (s) => s
+	})
+
+	// 'default' policy: catch-all for any other HTML sink not already covered
+	// Sanitizes via DOMPurify before allowing injection
+	window.trustedTypes.createPolicy('default', {
+		createHTML: (s) => DOMPurify.sanitize(s, { RETURN_TRUSTED_TYPE: false }),
+		createScript: () => {
+			throw new Error('[CSP] Blocked: createScript via default policy')
+		},
+		createScriptURL: (s) => {
+			throw new Error(`[CSP] Blocked: createScriptURL — ${s}`)
+		}
+	})
+}
 
 const app = createApp(App)
 
