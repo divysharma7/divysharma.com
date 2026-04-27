@@ -8,6 +8,9 @@ import { createHtmlPlugin } from 'vite-plugin-html'
 import localApi from './scripts/local-api.js'
 
 export default defineConfig({
+	define: {
+		__VERCEL__: JSON.stringify(!!process.env.VERCEL)
+	},
 	plugins: [
 		localApi(),
 		vue({

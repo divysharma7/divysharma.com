@@ -93,7 +93,7 @@ router.isReady().then(async () => {
 
     // Load GA4 + Speed Insights after mount, during idle time
     loadAnalytics()
-    if (import.meta.env.PROD) {
+    if (import.meta.env.PROD && __VERCEL__) {
         import('@vercel/speed-insights').then(({ injectSpeedInsights }) => {
             window.requestIdleCallback
                 ? window.requestIdleCallback(() => injectSpeedInsights(), { timeout: 5000 })
