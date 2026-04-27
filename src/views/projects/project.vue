@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { NotionRenderer, getPageBlocks, useGetPageBlocks } from 'vue3-notion'
+import { NotionRenderer, getPageBlocks } from 'vue3-notion'
 import { projects } from './aaprojects.js'
-import { ref, onMounted } from 'vue'
+import { ref, watch, nextTick, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import Fourerr from '../NotFound.vue'
 import Notionloader from '../../components/notionloader.vue'
@@ -9,44 +9,65 @@ import { trackOutbound } from '@/analytics/umami'
 
 const route = useRoute()
 const data = ref()
+const error = ref<string | null>(null)
 
-onMounted(async () => {
-	data.value = await getPageBlocks(
-		projects.find((x) => x.id == route.params.id)?.notion || undefined
-	)
-	
-	// Delegate click events for dynamically rendered Notion links
-	setTimeout(() => {
-		const notionContainer = document.querySelector('.notionblog')
-		if (notionContainer) {
-			notionContainer.addEventListener('click', (e) => {
-				const target = e.target as Element
-				const link = target?.closest('a')
-				if (link && link.href) {
-					// Don't track internal anchor links
-					if (link.href.startsWith('http') && !link.href.includes(window.location.host)) {
-						trackOutbound('project_outbound', link.href, { project_id: route.params.id })
-						window.dataLayer = window.dataLayer || []
-						window.dataLayer.push({ event: 'click:project_outbound', project_id: route.params.id, link_href: link.href })
-					}
-				}
-			})
-		}
-	}, 1000) // slight delay to let Notion DOM inflate
+let clickHandler: ((e: Event) => void) | null = null
+let notionContainer: Element | null = null
+
+onUnmounted(() => {
+	if (notionContainer && clickHandler) {
+		notionContainer.removeEventListener('click', clickHandler)
+	}
 })
+
+// Delegate click events once Notion content renders
+watch(data, async (newData) => {
+	if (!newData) return
+	await nextTick()
+	notionContainer = document.querySelector('.notionblog')
+	if (!notionContainer) return
+	clickHandler = (e: Event) => {
+		const target = e.target as Element
+		const link = target?.closest('a')
+		if (link && link.href) {
+			if (link.href.startsWith('http') && !link.href.includes(window.location.host)) {
+				trackOutbound('project_outbound', link.href, { project_id: route.params.id })
+				window.dataLayer = window.dataLayer || []
+				window.dataLayer.push({ event: 'click:project_outbound', project_id: route.params.id, link_href: link.href })
+			}
+		}
+	}
+	notionContainer.addEventListener('click', clickHandler)
+}, { once: true })
+
+const notionId = projects.find((x) => x.id === route.params.id)?.notion
+
+if (!notionId) {
+	error.value = 'project_not_found'
+} else {
+	getPageBlocks(notionId)
+		.then((blocks) => { data.value = blocks })
+		.catch((err) => {
+			error.value = err instanceof Error ? err.message : 'fetch_failed'
+			console.error('[ProjectDetail] getPageBlocks failed:', err)
+		})
+}
 </script>
 
 <template>
 	<main>
-		<div v-if="data == 'TypeError: Failed to fetch'">
-			<div class="errnotion">
-				<Fourerr nosocials />
-			</div>
+		<!-- Error state -->
+		<div v-if="error" class="errnotion">
+			<Fourerr nosocials />
 		</div>
-		<div class="cont notionblog" v-if="data">
+
+		<!-- Success state -->
+		<div v-else-if="data" class="cont notionblog">
 			<NotionRenderer :blockMap="data" fullPage prism katex />
 			<br />
 		</div>
+
+		<!-- Loading state -->
 		<div v-else class="cont">
 			<Notionloader />
 		</div>
