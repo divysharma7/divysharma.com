@@ -19,7 +19,9 @@ export function useHapticFeedback() {
                 navigator.vibrate(pattern);
             }
         } catch (error) {
-            console.debug('Haptic feedback not supported:', error);
+            if (import.meta.env.DEV) {
+                console.debug('Haptic feedback not supported:', error);
+            }
         }
     };
 
