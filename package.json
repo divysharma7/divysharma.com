@@ -46,6 +46,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
+		"@lhci/cli": "^0.15.1",
 		"@tailwindcss/postcss": "^4.1.18",
 		"@vitejs/plugin-vue": "^5.2.4",
 		"@vue/compiler-sfc": "^3.3.4",
