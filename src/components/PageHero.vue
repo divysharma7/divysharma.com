@@ -1,7 +1,7 @@
 <template>
 	<header class="page-hero" :class="{ 'page-hero--left': align === 'left' }">
 		<div class="page-hero__icon" aria-hidden="true">
-			<i :class="['ph-bold', icon]"></i>
+			<component :is="icon" :size="20" />
 		</div>
 		<h1 class="page-hero__title">
 			<template v-for="(word, i) in titleWords" :key="i">
@@ -19,7 +19,7 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-	icon: { type: String, required: true },
+	icon: { type: [Object, Function], required: true },
 	title: { type: String, required: true },
 	accentFrom: { type: Number, default: null },
 	subtitle: { type: String, default: '' },
@@ -56,7 +56,6 @@ const accentStart = computed(() => {
 	border-radius: var(--radius-md);
 	margin-bottom: 1rem;
 	color: var(--hero-icon-color);
-	font-size: var(--text-xl);
 }
 
 .page-hero__title {

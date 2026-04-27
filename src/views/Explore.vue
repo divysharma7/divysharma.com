@@ -1,7 +1,7 @@
 <template>
 	<div class="cont">
 		<PageHero
-			icon="ph-compass"
+			:icon="Compass"
 			title="Explore"
 			:accent-from="1"
 			subtitle="More about me — designs, achievements, and interests."
@@ -60,6 +60,7 @@
 <script setup>
 import { useHead } from '@vueuse/head'
 import PageHero from '@/components/PageHero.vue'
+import { Compass } from 'lucide-vue-next'
 import Top from '../components/top.vue'
 import Website from "../components/website.vue"
 import Contact from "../components/ContactForm.vue"

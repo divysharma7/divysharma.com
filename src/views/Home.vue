@@ -13,23 +13,23 @@
 					Associate Product Manager at <span class="tag">ASBL</span> in Hyderabad, reporting to the VP Growth. I work on real estate tech with the Marketing team, mostly on funnel and acquisition. Before ASBL, I founded <span class="tag">Aqua-Alert</span>, an IoT water management startup incubated at <strong>NSRCEL, IIM Bangalore</strong>. It was something like a Fitbit for water meters, and shut down in February 2025.
 				</p>
 				<div class="hero-meta">
-					<span><i class="ph-bold ph-map-pin"></i> Hyderabad, India</span>
-					<span><i class="ph-bold ph-clock"></i> {{ currentTime }}</span>
+					<span><MapPin :size="14" /> Hyderabad, India</span>
+					<span><Clock :size="14" /> {{ currentTime }}</span>
 				</div>
 
 				<div class="hero-ctas">
 					<a href="mailto:divysharma029@gmail.com" class="cta-btn cta-btn--primary">
-						<i class="ph-bold ph-paper-plane-tilt"></i> Get in touch
+						<Send :size="14" /> Get in touch
 					</a>
 					<a href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" rel="noopener" class="cta-btn cta-btn--outline" @click="gtmPush('click:resume_download', { location: 'home_hero' })">
-						<i class="ph-bold ph-file-text"></i> Resume
+						<FileText :size="14" /> Resume
 					</a>
 				</div>
 				<div class="hero-socials">
-					<a href="https://twitter.com/Divy_Sharma6" target="_blank" aria-label="Twitter" @click="gtmPush('click:social', { platform: 'twitter', location: 'home_hero' })"><i class="ph-bold ph-x-logo"></i></a>
-					<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" aria-label="LinkedIn" @click="gtmPush('click:social', { platform: 'linkedin', location: 'home_hero' })"><i class="ph-bold ph-linkedin-logo"></i></a>
-					<a href="https://github.com/divysharma7" target="_blank" aria-label="GitHub" @click="gtmPush('click:social', { platform: 'github', location: 'home_hero' })"><i class="ph-bold ph-github-logo"></i></a>
-					<a href="mailto:divysharma029@gmail.com" aria-label="Email"><i class="ph-bold ph-envelope-simple"></i></a>
+					<a href="https://twitter.com/Divy_Sharma6" target="_blank" aria-label="Twitter" @click="gtmPush('click:social', { platform: 'twitter', location: 'home_hero' })"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+					<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" aria-label="LinkedIn" @click="gtmPush('click:social', { platform: 'linkedin', location: 'home_hero' })"><Linkedin :size="18" /></a>
+					<a href="https://github.com/divysharma7" target="_blank" aria-label="GitHub" @click="gtmPush('click:social', { platform: 'github', location: 'home_hero' })"><Github :size="18" /></a>
+					<a href="mailto:divysharma029@gmail.com" aria-label="Email"><Mail :size="18" /></a>
 				</div>
 			</section>
 
@@ -59,10 +59,10 @@
 							class="blog-card-hero"
 							loading="lazy"
 						/>
-						<span v-else class="arrow">→</span>
+						<span v-else class="arrow">&rarr;</span>
 					</router-link>
 				</div>
-				<router-link to="/blog" class="view-all">Read more posts →</router-link>
+				<router-link to="/blog" class="view-all">Read more posts &rarr;</router-link>
 			</section>
 
 			<!-- ── Divider ── -->
@@ -78,7 +78,7 @@
 						:experience="exp"
 					/>
 				</div>
-				<router-link to="/workexperience" class="view-all" @click="gtmPush('click:view_all', { section: 'experience' })">See full experience →</router-link>
+				<router-link to="/workexperience" class="view-all" @click="gtmPush('click:view_all', { section: 'experience' })">See full experience &rarr;</router-link>
 			</section>
 
 			<!-- ── Divider ── -->
@@ -89,42 +89,42 @@
 				<h2 class="section-heading">Explore</h2>
 				<div class="explore-grid">
 					<router-link to="/journey" class="explore-card">
-						<i class="ph-bold ph-path"></i>
+						<Route :size="18" />
 						<div>
 							<h3>My Journey</h3>
 							<p>Overview of my learning and career journey.</p>
 						</div>
 					</router-link>
 					<router-link to="/journey/certificates" class="explore-card">
-						<i class="ph-bold ph-certificate"></i>
+						<Award :size="18" />
 						<div>
 							<h3>Certificates & Achievements</h3>
 							<p>A curated list of certificates and achievements.</p>
 						</div>
 					</router-link>
 					<router-link to="/journey/mentors" class="explore-card">
-						<i class="ph-bold ph-users-three"></i>
+						<Users :size="18" />
 						<div>
 							<h3>Gurus & Mentors</h3>
 							<p>The people who shaped my journey.</p>
 						</div>
 					</router-link>
 					<router-link to="/gears" class="explore-card">
-						<i class="ph-bold ph-gear-six"></i>
+						<Settings :size="18" />
 						<div>
 							<h3>Gears & Setup</h3>
 							<p>Tools and software I use daily.</p>
 						</div>
 					</router-link>
 					<router-link to="/books" class="explore-card">
-						<i class="ph-bold ph-book-open-text"></i>
+						<BookOpen :size="18" />
 						<div>
 							<h3>Books</h3>
 							<p>What I'm reading and what shaped my thinking.</p>
 						</div>
 					</router-link>
 					<router-link to="/explore" class="explore-card">
-						<i class="ph-bold ph-compass"></i>
+						<Compass :size="18" />
 						<div>
 							<h3>Explore</h3>
 							<p>Curated links and things I find interesting.</p>
@@ -149,6 +149,7 @@ import { posts } from '../data/posts.js'
 import ExperienceCard from '../components/experience/ExperienceCard.vue'
 import CTA from '../components/CTA.vue'
 import { useHead } from '@vueuse/head'
+import { MapPin, Clock, Send, FileText, Linkedin, Github, Mail, Route, Award, Users, Settings, BookOpen, Compass } from 'lucide-vue-next'
 
 useHead({
 	title: 'Home',
@@ -305,7 +306,7 @@ onUnmounted(() => { if (rafId) cancelAnimationFrame(rafId) })
 		gap: 5px;
 	}
 
-	i { font-size: var(--text-sm); color: var(--color-faint); }
+	:deep(svg) { color: var(--color-faint); }
 }
 
 /* ── Hero CTAs ── */
@@ -326,8 +327,6 @@ onUnmounted(() => { if (rafId) cancelAnimationFrame(rafId) })
 	font-weight: 500;
 	text-decoration: none;
 	transition: all var(--duration-fast);
-
-	i { font-size: var(--text-sm); }
 
 	&--primary {
 		background: var(--color-heading);
@@ -596,8 +595,7 @@ onUnmounted(() => { if (rafId) cancelAnimationFrame(rafId) })
 		transform: translateY(-1px);
 	}
 
-	i {
-		font-size: var(--text-lg);
+	:deep(svg) {
 		color: var(--color-muted);
 		margin-top: 2px;
 		flex-shrink: 0;

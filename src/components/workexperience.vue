@@ -3,7 +3,7 @@
 		<div class="we-container">
 			<!-- Header -->
 			<PageHero
-				icon="ph-briefcase"
+				:icon="Briefcase"
 				title="Experience"
 				subtitle="My work experiences across different companies and roles."
 			/>
@@ -34,6 +34,7 @@
 
 <script setup>
 import PageHero from '@/components/PageHero.vue';
+import { Briefcase } from 'lucide-vue-next';
 import DetailedExperienceCard from './experience/DetailedExperienceCard.vue';
 import { allWorkExperiences as experiences } from '../data/experience.js';
 import { useHead } from '@vueuse/head'

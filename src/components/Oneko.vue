@@ -181,6 +181,10 @@ function onAnimationFrame(timestamp) {
   if (!nekoEl || !nekoEl.isConnected) {
     return;
   }
+  if (document.hidden) {
+    animationFrameId = window.requestAnimationFrame(onAnimationFrame);
+    return;
+  }
   if (!lastFrameTimestamp) {
     lastFrameTimestamp = timestamp;
   }

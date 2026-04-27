@@ -3,7 +3,7 @@
 		<div class="cert-container">
 			<!-- Header -->
 			<PageHero
-				icon="ph-certificate"
+				:icon="Award"
 				title="Achievements"
 				subtitle="Awards, hackathons, competitions, and proof that I occasionally finish things."
 			/>
@@ -35,6 +35,7 @@ import AchievementCard from '../components/achievements/AchievementCard.vue';
 import { achievements } from '../data/achievements.js';
 import { useHead } from '@vueuse/head';
 import PageHero from '@/components/PageHero.vue';
+import { Award } from 'lucide-vue-next';
 
 useHead({
   title: 'Achievements',

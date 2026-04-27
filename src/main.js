@@ -8,16 +8,10 @@ import 'aos/dist/aos.css'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { createHead } from '@vueuse/head'
-import { injectSpeedInsights } from '@vercel/speed-insights'
 import { loadUmamiScript, trackPage } from './analytics/umami'
-
-// import ContextMenu from '@imengyu/vue3-context-menu'
+import { loadAnalytics } from './lib/analytics'
 
 const app = createApp(App)
-
-if (import.meta.env.PROD) {
-	injectSpeedInsights()
-}
 
 app.config.errorHandler = (err, instance, info) => {
   console.error(`[Vue Error] ${info}:`, err)
@@ -47,7 +41,6 @@ const router = createRouter({
 app.use(AOS.init())
 
 app.use(head)
-// app.use(ContextMenu)
 
 app.use(router)
 
@@ -63,7 +56,7 @@ router.isReady().then(async () => {
         await new Promise(resolve => setTimeout(resolve, 50))
         trackPage(to.fullPath, document.title)
 
-        // GTM dataLayer push for GA4 via Google Tag Manager
+        // dataLayer push for GA4 (loaded via idle callback)
         window.dataLayer = window.dataLayer || []
         window.dataLayer.push({
             event: 'page_view',
@@ -73,4 +66,14 @@ router.isReady().then(async () => {
     })
 
     app.mount('#app')
+
+    // Load GA4 + Speed Insights after mount, during idle time
+    loadAnalytics()
+    if (import.meta.env.PROD) {
+        import('@vercel/speed-insights').then(({ injectSpeedInsights }) => {
+            window.requestIdleCallback
+                ? window.requestIdleCallback(() => injectSpeedInsights(), { timeout: 5000 })
+                : setTimeout(() => injectSpeedInsights(), 4000)
+        })
+    }
 })

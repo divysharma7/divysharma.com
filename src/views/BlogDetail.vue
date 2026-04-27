@@ -37,7 +37,7 @@
 
 				<!-- Stats bar -->
 				<div class="stats-bar">
-					<span class="stat"><i class="ph-bold ph-clock"></i> {{ readTime }} min read</span>
+					<span class="stat"><Clock :size="12" /> {{ readTime }} min read</span>
 				</div>
 
 				<hr class="post-rule" />
@@ -72,7 +72,7 @@
 								<span class="related-date">{{ formatDateLong(p.publishedAt) }}</span>
 								<p class="related-title">{{ p.title }}</p>
 								<p class="related-desc">{{ p.excerpt }}</p>
-								<span class="related-meta"><i class="ph-bold ph-clock"></i> {{ getReadTime(p) }} min read</span>
+								<span class="related-meta"><Clock :size="12" /> {{ getReadTime(p) }} min read</span>
 							</div>
 						</router-link>
 					</div>
@@ -179,6 +179,7 @@
 <script>
 import { posts } from '@/data/posts'
 import { useHead } from '@vueuse/head'
+import { Clock } from 'lucide-vue-next'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 

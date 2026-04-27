@@ -6,7 +6,7 @@
 				<div class="chat-header">
 					<div class="header-info">
 						<div class="avatar-container">
-							<i class="ph-bold ph-chat-dots avatar-icon"></i>
+							<MessageCircle :size="18" class="avatar-icon" />
 							<span class="status-indicator"></span>
 						</div>
 						<div class="header-text">
@@ -23,7 +23,7 @@
 						<!-- Assistant Welcome -->
 						<div class="message assistant">
 							<div class="avatar-small">
-								<i class="ph-bold ph-chat-dots"></i>
+								<MessageCircle :size="12" />
 							</div>
 							<div class="message-content">
 								<p>Hello! I'm Divy's Portfolio Assistant. How can I help you regarding his work?</p>
@@ -50,7 +50,7 @@
 						:class="msg.role"
 					>
 						<div v-if="msg.role === 'assistant'" class="avatar-small">
-							<i class="ph-bold ph-chat-dots"></i>
+							<MessageCircle :size="12" />
 						</div>
 						<div class="message-content">
 							<div v-html="markdownToHtml(msg.content)"></div>
@@ -59,7 +59,7 @@
 					
 					<div v-if="isLoading" class="message assistant loading">
 						<div class="avatar-small">
-							<i class="ph-bold ph-chat-dots"></i>
+							<MessageCircle :size="12" />
 						</div>
 						<div class="message-content bubble-loading">
 							<div class="typing-dot"></div>
@@ -87,7 +87,7 @@
 						:disabled="!input.trim() || isLoading"
 						class="send-btn"
 					>
-						<i class="ph-bold ph-paper-plane-right"></i>
+						<Send :size="16" />
 					</button>
 				</div>
 			</div>
@@ -101,14 +101,15 @@
 			:class="{ open: isOpen }"
 			aria-label="Toggle Chat"
 		>
-			<i v-if="!isOpen" class="ph-bold ph-chat-dots"></i>
-			<i v-else class="ph-bold ph-x"></i>
+			<MessageCircle v-if="!isOpen" :size="22" />
+			<X v-else :size="22" />
 		</button>
 	</div>
 </template>
 
 <script setup>
 import { ref, nextTick, watch } from 'vue'
+import { MessageCircle, Send, X } from 'lucide-vue-next'
 
 const escapeHtml = (text) =>
 	text

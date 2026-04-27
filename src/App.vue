@@ -83,9 +83,11 @@
 
 <script>
 import Footer from './components/footer.vue'
-import ChatWidget from './components/ChatWidget.vue'
-import Oneko from './components/Oneko.vue'
+import { defineAsyncComponent } from 'vue'
 import Quote from './components/Quote.vue'
+
+const ChatWidget = defineAsyncComponent(() => import('./components/ChatWidget.vue'))
+const Oneko = defineAsyncComponent(() => import('./components/Oneko.vue'))
 
 export default {
 	components: {
@@ -111,8 +113,10 @@ export default {
 import { useHead } from '@vueuse/head'
 import { useRoute } from 'vue-router'
 import { trackEvent } from '@/analytics/umami'
+import { computed } from 'vue'
 
 const route = useRoute()
+const canonicalUrl = computed(() => `https://divysharma.com${route.path}`)
 
 function gtmNav(linkUrl, navType) {
   window.dataLayer = window.dataLayer || []
@@ -131,13 +135,13 @@ useHead({
     { name: 'author', content: 'Divy Sharma' },
     { property: 'og:type', content: 'website' },
     { property: 'og:site_name', content: 'Divy Sharma' },
-    { property: 'og:image', content: 'https://divysharma.com/og-image.png' }, // Needs a real OG image
+    { property: 'og:image', content: 'https://divysharma.com/og-image.png' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: '@divysharma' },
     { name: 'twitter:creator', content: '@divysharma' }
   ],
   link: [
-    { rel: 'canonical', href: () => `https://divysharma.com${route.path}` }
+    { rel: 'canonical', href: canonicalUrl }
   ]
 })
 </script>

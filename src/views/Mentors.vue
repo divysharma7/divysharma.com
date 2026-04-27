@@ -3,7 +3,7 @@
 
 		<!-- Header -->
 		<PageHero
-			icon="ph-users-three"
+			:icon="Users"
 			title="Mentors"
 			:accent-from="1"
 			subtitle="People who taught me how to think."
@@ -251,6 +251,7 @@ export default {
 <script setup>
 import { useHead } from '@vueuse/head'
 import PageHero from '@/components/PageHero.vue'
+import { Users } from 'lucide-vue-next'
 useHead({
 	title: 'Gurus & Mentors',
 	meta: [

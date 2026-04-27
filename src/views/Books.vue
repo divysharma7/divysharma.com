@@ -2,7 +2,7 @@
   <div class="books-page">
     <!-- Header -->
     <PageHero
-      icon="ph-book-open-text"
+      :icon="BookOpen"
       title="Books"
       :accent-from="1"
       subtitle="What I am reading, what I have read, and what I keep pretending I will read."
@@ -183,6 +183,7 @@ import { ref, computed, onMounted, onUnmounted, reactive, watch } from 'vue';
 import { books, allTags } from '../config/books.js';
 import FilterSheet from '../components/FilterSheet.vue';
 import PageHero from '@/components/PageHero.vue';
+import { BookOpen } from 'lucide-vue-next';
 import { useHead } from '@vueuse/head'
 
 useHead({

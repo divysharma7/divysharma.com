@@ -83,15 +83,22 @@ defineProps({
 	}
 });
 
+const brandIcons = import.meta.glob('@/assets/brands/*.svg', { eager: true, query: '?url', import: 'default' });
+
+function getBrandUrl(name) {
+	const match = Object.entries(brandIcons).find(([k]) => k.includes(`/${name}.svg`));
+	return match ? match[1] : null;
+}
+
 const iconMap = {
-	metabase: 'https://cdn.simpleicons.org/metabase/509EE3',
-	posthog: 'https://cdn.simpleicons.org/posthog/000',
-	figma: 'https://cdn.simpleicons.org/figma',
-	jira: 'https://cdn.simpleicons.org/jira/0052CC',
-	postgresql: 'https://cdn.simpleicons.org/postgresql/4169E1',
-	googleanalytics: 'https://cdn.simpleicons.org/googleanalytics/E37400',
-	notion: 'https://cdn.simpleicons.org/notion/000',
-    googlesheets: 'https://cdn.simpleicons.org/googlesheets/34A853',
+	metabase: getBrandUrl('metabase'),
+	posthog: getBrandUrl('posthog'),
+	figma: getBrandUrl('figma'),
+	jira: getBrandUrl('jira'),
+	postgresql: getBrandUrl('postgresql'),
+	googleanalytics: getBrandUrl('googleanalytics'),
+	notion: getBrandUrl('notion'),
+	googlesheets: getBrandUrl('googlesheets'),
 };
 
 function getIconUrl(icon) {

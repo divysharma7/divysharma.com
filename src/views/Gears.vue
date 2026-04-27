@@ -2,7 +2,7 @@
   <div class="gears-page">
     <!-- Header -->
     <PageHero
-      icon="ph-gear-six"
+      :icon="SettingsIcon"
       title="Gears"
       :accent-from="1"
       subtitle="Tools and software I use daily."
@@ -50,7 +50,7 @@
 
 <script setup>
 import { devices, software } from '../config/gears.js';
-import { Monitor, ArrowUpRight } from 'lucide-vue-next';
+import { Monitor, ArrowUpRight, Settings as SettingsIcon } from 'lucide-vue-next';
 import { useHead } from '@vueuse/head';
 import PageHero from '@/components/PageHero.vue';
 

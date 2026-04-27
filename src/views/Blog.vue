@@ -3,7 +3,7 @@
 
 		<!-- ── Hero ── -->
 		<PageHero
-			icon="ph-notebook"
+			:icon="Notebook"
 			title="Essays"
 			subtitle="Essays on product management, career, and shipping software people actually use."
 		>
@@ -47,7 +47,7 @@
 								<h2 class="post-row-title">{{ post.title }}</h2>
 								<p class="post-row-excerpt">{{ post.excerpt }}</p>
 								<div class="post-row-meta">
-									<span class="post-row-stat"><i class="ph-bold ph-clock"></i> {{ readTime(post) }} min read</span>
+									<span class="post-row-stat"><Clock :size="12" /> {{ readTime(post) }} min read</span>
 								</div>
 							</div>
 							<span class="post-row-tag" v-if="post.tags[0]">{{ post.tags[0] }}</span>
@@ -96,6 +96,7 @@
 import { posts } from '@/data/posts'
 import CTA from '@/components/CTA.vue'
 import PageHero from '@/components/PageHero.vue'
+import { Notebook, Clock } from 'lucide-vue-next'
 
 export default {
 	name: 'Blog',

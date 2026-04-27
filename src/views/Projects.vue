@@ -2,7 +2,7 @@
 <template>
 	<div class="cont" @mouseleave="hover = false">
 		<PageHero
-			icon="ph-rocket-launch"
+			:icon="Rocket"
 			title="Projects"
 			:accent-from="1"
 			subtitle="Things I've built and shipped."
@@ -83,6 +83,7 @@ export default {
 <script setup>
 import { useHead } from '@vueuse/head'
 import PageHero from '@/components/PageHero.vue'
+import { Rocket } from 'lucide-vue-next'
 
 useHead({
   title: 'Projects',
