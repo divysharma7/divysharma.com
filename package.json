@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "cross-env NODE_ENV=production vite build",
+		"postbuild": "node scripts/generate-csp.js",
 		"serve": "vite preview"
 	},
 	"prettier": {
