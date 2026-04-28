@@ -3,6 +3,9 @@ import { streamText } from 'ai'
 import { retrieve } from '../lib/rag/upstashVector.js'
 import { kb } from '../src/data/kb.js'
 import { about } from '../src/data/profile.js'
+import { initOtel } from './_otel.js'
+
+initOtel()
 
 // Uses MISTRAL_API_KEY from env by default
 const mistral = createMistral()
@@ -155,6 +158,10 @@ Your goal: Help visitors learn about your work in a friendly, concise way.`.trim
             system,
             messages,
             temperature: 0.3,
+            experimental_telemetry: {
+                isEnabled: true,
+                functionId: 'portfolio-chat',
+            },
         })
 
         return result.toTextStreamResponse()

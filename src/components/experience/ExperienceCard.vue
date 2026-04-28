@@ -1,5 +1,5 @@
 <template>
-	<div class="experience-item">
+	<div class="experience-item" :class="{ 'experience-item--compact': compact }">
 		<div class="exp-row">
 			<!-- Left: Logo -->
 			<div class="exp-logo-wrapper">
@@ -46,7 +46,7 @@
 				</div>
 
 				<!-- Tech Pills -->
-				<div class="tech-stack" v-if="experience.technologies && experience.technologies.length">
+				<div class="tech-stack" v-if="!compact && experience.technologies && experience.technologies.length">
 					<span class="tech-label">Technologies & Tools</span>
 					<div class="pills">
 						<span v-for="tech in experience.technologies" :key="tech.name" class="pill">
@@ -57,7 +57,7 @@
 				</div>
 
 				<!-- Description -->
-				<div class="description" v-if="experience.description">
+				<div class="description" v-if="!compact && experience.description">
 					<p v-for="(item, i) in experience.description" :key="i" class="desc-item">
 						<span class="bullet">•</span> {{ item }}
 					</p>
@@ -76,10 +76,14 @@
 <script setup>
 import { GlobeIcon } from 'lucide-vue-next';
 
-defineProps({
+const props = defineProps({
 	experience: {
 		type: Object,
 		required: true
+	},
+	compact: {
+		type: Boolean,
+		default: false
 	}
 });
 
@@ -213,6 +217,10 @@ function getIconUrl(icon) {
 	color: var(--color-body);
 	font-weight: 500;
 	margin-bottom: 1rem;
+}
+
+.experience-item--compact .role-title {
+	margin-bottom: 0;
 }
 
 /* Metadata */
