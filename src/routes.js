@@ -63,6 +63,11 @@ export const routes = [
 	},
 	{ path: '/p/:id', name: 'Page', component: () => import('./views/projects/project.vue') },
 	{
+		path: '/resume',
+		meta: { title: 'Resume' },
+		component: () => import('./views/Resume.vue')
+	},
+	{
 		path: '/gears',
 		meta: { title: 'Gears' },
 		component: () => import('./views/Gears.vue')

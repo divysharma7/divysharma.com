@@ -28,12 +28,6 @@ strong {
 	color: var(--color-heading);
 }
 
-.notion-page,
-.notion-page-offset {
-	/* !important needed to override vue3-notion's own inline/scoped styles */
-	padding: 0 !important;
-	font-family: var(--font-sans) !important;
-}
 
 .title {
 	margin: 0;

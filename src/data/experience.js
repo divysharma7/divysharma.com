@@ -32,6 +32,33 @@ export const experiences = [
         }
     },
     {
+        company: "NSRCEL – IIM Bangalore",
+        role: "Campus Founder",
+        startDate: "July 2025",
+        endDate: "Nov 2025",
+        location: "Bangalore, India",
+        logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1751986051/Frame_4_sktekq.png",
+        current: false,
+        description: [
+            "Selected among top student entrepreneurs across India for NSRCEL's Campus Founders Program.",
+            "Completed 4-month hands-on entrepreneurial training powered by GPS Renewables.",
+            "Worked under mentorship from startup coaches, VCs, and product leaders on startup execution frameworks.",
+            "Learned and applied lean startup methodologies, business validation, and GTM planning."
+        ],
+        technologies: [
+            { name: "Lean Startup", icon: null },
+            { name: "Business Validation", icon: null },
+            { name: "Go-To-Market", icon: null },
+            { name: "Pitching", icon: null },
+            { name: "Market Research", icon: null },
+            { name: "Customer Discovery", icon: null },
+            { name: "Product Strategy", icon: null },
+            { name: "Startup Building", icon: null },
+            { name: "Competitive Analysis", icon: null }
+        ],
+        links: { website: "#" }
+    },
+    {
         company: "Aqua-Alert",
         role: "Co-founder & CEO",
         startDate: "December 2023",
@@ -40,7 +67,7 @@ export const experiences = [
         logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1771087227/Aqua-Alert_oikhf4.png",
         current: false,
         description: [
-            "Founded Aqua-Alert, a “Fitbit for Water” venture combining IoT hardware and mobile software to track water usage and detect leakages in real time.",
+            "Founded Aqua-Alert, a \u201cFitbit for Water\u201d venture combining IoT hardware and mobile software to track water usage and detect leakages in real time.",
             "Conducted UX research with 200+ participants and facilitated structured design thinking workshops to validate the core problem statement.",
             "Built and led a five-member cross-functional team spanning hardware, firmware, and app development.",
             "Raised ₹10 Lakhs in early-stage funding and successfully developed and shipped a functional MVP integrating sensor hardware with mobile analytics dashboards.",
@@ -104,7 +131,7 @@ export const allWorkExperiences = [
         logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1751986051/Frame_4_sktekq.png",
         current: false,
         description: [
-            "Selected among top student entrepreneurs across India for NSRCEL’s Campus Founders Program.",
+            "Selected among top student entrepreneurs across India for NSRCEL's Campus Founders Program.",
             "Completed 4-month hands-on entrepreneurial training powered by GPS Renewables.",
             "Worked under mentorship from startup coaches, VCs, and product leaders on startup execution frameworks.",
             "Learned and applied lean startup methodologies, business validation, and GTM planning."
@@ -172,6 +199,35 @@ export const allWorkExperiences = [
             { name: "Pitching", icon: null },
             { name: "Market Fit Validation", icon: null },
             { name: "UX Design", icon: null }
+        ],
+        links: { website: "#" }
+    },
+    {
+        company: "Aqua-Alert",
+        role: "Co-founder & CEO",
+        startDate: "December 2023",
+        endDate: "February 2025",
+        location: "Noida, India",
+        logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1771087227/Aqua-Alert_oikhf4.png",
+        current: false,
+        description: [
+            "Founded Aqua-Alert, a \u201cFitbit for Water\u201d venture combining IoT hardware and mobile software to track water usage and detect leakages in real time.",
+            "Conducted UX research with 200+ participants and facilitated structured design thinking workshops to validate the core problem statement.",
+            "Built and led a five-member cross-functional team spanning hardware, firmware, and app development.",
+            "Raised \u20B910 Lakhs in early-stage funding and successfully developed and shipped a functional MVP integrating sensor hardware with mobile analytics dashboards.",
+            "Designed early GTM experiments targeting residential communities and sustainability-focused user segments."
+        ],
+        technologies: [
+            { name: "Product Strategy", icon: null },
+            { name: "IoT Integration", icon: null },
+            { name: "UX Research", icon: null },
+            { name: "Customer Discovery", icon: null },
+            { name: "MVP Development", icon: null },
+            { name: "Fundraising", icon: null },
+            { name: "Go-to-Market Strategy", icon: null },
+            { name: "Team Leadership", icon: null },
+            { name: "Design Thinking", icon: null },
+            { name: "Agile Product Development", icon: null }
         ],
         links: { website: "#" }
     },
