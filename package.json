@@ -40,7 +40,7 @@
 		"pdfjs-dist": "^5.7.284",
 		"posthog-js": "^1.372.3",
 		"rollup": "^4.60.2",
-		"swrv": "^1.0.0-beta.8",
+		"swrv": "^1.2.0",
 		"vue": "^3.3.4",
 		"vue-router": "^4.2.4",
 		"vue3-notion": "^0.1.45",
