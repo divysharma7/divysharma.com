@@ -357,6 +357,18 @@ export const books = [
         effort: 5,
         business: 4,
         usability: 3,
+        readingStatus: 'backlog',
+    },
+    {
+        title: 'Cues',
+        coverImage: '/images/cues-cover.webp',
+        summary: 'The science behind charismatic communication — warmth and competence cues that make people trust, listen, and remember you.',
+        topics: ['Body language', 'Vocal cues', 'First impressions', 'Charisma science', 'Nonverbal communication'],
+        apmRating: 3,
+        tags: ['Communication', 'Psychology', 'Leadership'],
+        effort: 2,
+        business: 3,
+        usability: 4,
         readingStatus: 'in_progress',
     },
     {

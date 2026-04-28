@@ -1,10 +1,34 @@
 <template>
   <section class="cta-section">
-    <h2 class="cta-heading">Work with Divy</h2>
-    <div class="cta-card" @click="openBooking" role="button" tabindex="0" @keydown.enter="openBooking">
-      <h3 class="cta-title">1:1 Coaching</h3>
-      <p class="cta-desc">One hour with Divy. Personalized to your exact role and challenge.</p>
-      <span class="cta-link">Book a Session <span class="cta-arrow">&rarr;</span></span>
+    <h2 class="cta-heading">Need a Thinking Partner?</h2>
+    <div class="cta-grid">
+      <div class="cta-card" @click="openBooking" role="button" tabindex="0" @keydown.enter="openBooking">
+        <div class="cta-content">
+          <h3 class="cta-title">1:1 Sessions</h3>
+          <p class="cta-meta">60 min · 1:1 · Free intro call</p>
+          <p class="cta-desc">Bring your roadmap, your resume, your half-baked idea, or a problem you can't stop thinking about. We'll work through it together — no fluff, no scripts, just thinking.</p>
+          <button class="cta-btn" tabindex="-1">
+            Book a Session <span class="cta-arrow">&rarr;</span>
+          </button>
+        </div>
+      </div>
+
+      <a
+        href="https://www.instagram.com/buildwithdivy/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cta-card cta-card--link"
+        @click="trackInstagram"
+      >
+        <div class="cta-content">
+          <h3 class="cta-title">Product Management, Unfiltered</h3>
+          <p class="cta-meta">Instagram · @buildwithdivy · 2-3 posts a week</p>
+          <p class="cta-desc">For PMs and aspiring PMs who want the actual playbook — discovery, prioritisation, stakeholder management — broken down into things you can use Monday morning.</p>
+          <span class="cta-btn" role="button" aria-label="Follow @buildwithdivy on Instagram">
+            Follow @buildwithdivy <span class="cta-arrow">&rarr;</span>
+          </span>
+        </div>
+      </a>
     </div>
 
     <!-- Booking Modal -->
@@ -20,7 +44,7 @@
               </div>
 
               <!-- Calendar iframe -->
-              <iframe 
+              <iframe
                 :src="calUrl"
                 class="booking-frame"
                 frameborder="0"
@@ -45,8 +69,8 @@
 import { ref, computed } from 'vue';
 import { ctaConfig } from '@/config/cta';
 import { useHapticFeedback } from '@/hooks/useHapticFeedback';
-import { trackEvent } from '@/analytics/umami';
 import { XIcon } from 'lucide-vue-next';
+import posthog from 'posthog-js';
 
 const showCalPopup = ref(false);
 const isLoading = ref(true);
@@ -78,8 +102,8 @@ function gtmPush(event, params) {
 }
 
 function openBooking() {
-  trackEvent('cta:book_call', { location: 'cta_component' });
   gtmPush('cta:book_call', { location: 'cta_component' });
+  posthog.capture('cta:book_call', { location: 'cta_component' });
   if (isMobile()) triggerHaptic('medium');
   isLoading.value = true;
   showCalPopup.value = true;
@@ -88,14 +112,20 @@ function openBooking() {
 
 function closeBooking() {
   gtmPush('cta:booking_close');
+  posthog.capture('cta:booking_close');
   showCalPopup.value = false;
   document.body.style.overflow = '';
+}
+
+function trackInstagram() {
+  posthog.capture('cta:instagram_click', { location: 'cta_component' });
+  gtmPush('cta:instagram_click', { location: 'cta_component' });
 }
 </script>
 
 <style scoped>
 /* ═══════════════════════════════════════════
-   CTA Section — "Work with Divy"
+   CTA Section — "Need a Thinking Partner?"
    ═══════════════════════════════════════════ */
 .cta-section {
   width: 100%;
@@ -103,57 +133,91 @@ function closeBooking() {
 }
 
 .cta-heading {
-  font-size: var(--h2);
-  font-weight: 400;
+  font-size: var(--h3);
+  font-weight: 600;
   color: var(--color-heading);
   margin: 0 0 1rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   font-family: var(--font-sans);
 }
 
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
 .cta-card {
-  padding: 1.5rem 1.75rem;
+  padding: 1.75rem;
   border: 1px solid var(--color-border);
-  border-left: 3px solid var(--color-heading);
   border-radius: var(--radius-md);
-  background: var(--color-surface);
+  background: var(--color-bg);
   cursor: pointer;
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .cta-card:hover {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  border-color: var(--color-heading);
+  border-color: var(--color-faint);
+}
+
+.cta-card--link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .cta-title {
   font-size: var(--text-lg);
   font-weight: 600;
   color: var(--color-heading);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.35rem;
   font-family: var(--font-sans);
 }
 
+.cta-meta {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-muted);
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.02em;
+}
+
 .cta-desc {
-  font-size: var(--text-base);
-  color: var(--color-body);
+  font-size: var(--text-sm);
+  color: var(--color-heading);
   margin: 0 0 1.25rem;
   line-height: var(--leading-relaxed);
+  flex: 1;
 }
 
-.cta-link {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--color-heading);
-  text-decoration: none;
+.cta-btn {
+  align-self: flex-start;
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  transition: gap 0.2s ease;
+  gap: 0.4rem;
+  padding: 0.55rem 1.15rem;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  font-family: var(--font-sans);
+  color: #fff;
+  background: var(--color-heading);
+  border: 1px solid var(--color-heading);
+  cursor: pointer;
+  transition: all var(--duration-fast);
 }
 
-.cta-card:hover .cta-link {
-  gap: 0.5rem;
+.cta-card:hover .cta-btn {
+  background: #4b5563;
+  box-shadow: var(--shadow-sm);
 }
 
 .cta-arrow {
@@ -161,7 +225,7 @@ function closeBooking() {
 }
 
 .cta-card:hover .cta-arrow {
-  transform: translateX(2px);
+  transform: translateX(3px);
 }
 
 /* ═══════════════════════════════════════════
@@ -291,6 +355,11 @@ function closeBooking() {
    Mobile (≤ 640px)
    ═══════════════════════════════════════════ */
 @media (max-width: 640px) {
+  .cta-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   .cta-card {
     padding: 1.25rem;
   }
