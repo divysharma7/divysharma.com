@@ -1,5 +1,6 @@
 <template>
-	<div>
+	<div class="app-root">
+		<div class="grid-bg" aria-hidden="true" />
 		<nav v-if="$route.meta.title !== 'notfound'" class="navbar">
 			<div class="navcont">
 				<div v-if="$route.meta.title !== 'Home'" class="flexbruh noselect">
@@ -12,12 +13,12 @@
 				<router-link to="/" class="logo-text" v-else>Divy Sharma</router-link>
 
 				<div class="links">
-					<router-link to="/" @click="[trackEvent('nav:click', { to: '/', from: 'nav' }), gtmNav('/', 'desktop')]">Home</router-link>
-					<router-link to="/projects" @click="[trackEvent('nav:click', { to: '/projects', from: 'nav' }), gtmNav('/projects', 'desktop')]">Projects</router-link>
-					<router-link to="/workexperience" @click="[trackEvent('nav:click', { to: '/workexperience', from: 'nav' }), gtmNav('/workexperience', 'desktop')]">Experience</router-link>
-					<router-link to="/books" @click="[trackEvent('nav:click', { to: '/books', from: 'nav' }), gtmNav('/books', 'desktop')]">Books</router-link>
-					<router-link to="/explore" @click="[trackEvent('nav:click', { to: '/explore', from: 'nav' }), gtmNav('/explore', 'desktop')]">Explore</router-link>
-					<router-link to="/blog" @click="[trackEvent('nav:click', { to: '/blog', from: 'nav' }), gtmNav('/blog', 'desktop')]">Blog</router-link>
+					<router-link to="/" @click="gtmNav('/', 'desktop')">Home</router-link>
+					<router-link to="/projects" @click="gtmNav('/projects', 'desktop')">Projects</router-link>
+					<router-link to="/workexperience" @click="gtmNav('/workexperience', 'desktop')">Experience</router-link>
+					<router-link to="/books" @click="gtmNav('/books', 'desktop')">Books</router-link>
+					<router-link to="/explore" @click="gtmNav('/explore', 'desktop')">Explore</router-link>
+					<router-link to="/blog" @click="gtmNav('/blog', 'desktop')">Blog</router-link>
 				</div>
 
 				<button class="ham" @click="[nav = !nav, gtmMenuToggle()]" aria-label="Toggle navigation">
@@ -39,20 +40,20 @@
 
 					<div class="navdata">
 						<div class="flexer">
-							<router-link to="/" @click="[nav = !nav, trackEvent('nav:click', { to: '/', from: 'nav_mobile' }), gtmNav('/', 'mobile')]">Home</router-link>
-							<router-link to="/projects" @click="[nav = !nav, trackEvent('nav:click', { to: '/projects', from: 'nav_mobile' }), gtmNav('/projects', 'mobile')]"
+							<router-link to="/" @click="[nav = !nav, gtmNav('/', 'mobile')]">Home</router-link>
+							<router-link to="/projects" @click="[nav = !nav, gtmNav('/projects', 'mobile')]"
 								>Projects</router-link
 							>
-							<router-link to="/workexperience" @click="[nav = !nav, trackEvent('nav:click', { to: '/workexperience', from: 'nav_mobile' }), gtmNav('/workexperience', 'mobile')]"
+							<router-link to="/workexperience" @click="[nav = !nav, gtmNav('/workexperience', 'mobile')]"
 								>Experience</router-link
 							>
-							<router-link to="/books" @click="[nav = !nav, trackEvent('nav:click', { to: '/books', from: 'nav_mobile' }), gtmNav('/books', 'mobile')]"
+							<router-link to="/books" @click="[nav = !nav, gtmNav('/books', 'mobile')]"
 								>Books</router-link
 							>
-							<router-link to="/explore" @click="[nav = !nav, trackEvent('nav:click', { to: '/explore', from: 'nav_mobile' }), gtmNav('/explore', 'mobile')]"
+							<router-link to="/explore" @click="[nav = !nav, gtmNav('/explore', 'mobile')]"
 								>Explore</router-link
 							>
-							<router-link to="/blog" @click="[nav = !nav, trackEvent('nav:click', { to: '/blog', from: 'nav_mobile' }), gtmNav('/blog', 'mobile')]"
+							<router-link to="/blog" @click="[nav = !nav, gtmNav('/blog', 'mobile')]"
 								>Blog</router-link
 							>
 						</div>
@@ -112,19 +113,23 @@ export default {
 <script setup>
 import { useHead } from '@vueuse/head'
 import { useRoute } from 'vue-router'
-import { trackEvent } from '@/analytics/umami'
 import { computed } from 'vue'
 
+import posthog from 'posthog-js'
+
 const route = useRoute()
-const canonicalUrl = computed(() => `https://divysharma.com${route.path}`)
+const canonicalUrl = computed(() => `https://divysharma-com.vercel.app${route.path}`)
 
 function gtmNav(linkUrl, navType) {
   window.dataLayer = window.dataLayer || []
   window.dataLayer.push({ event: 'click:nav', link_url: linkUrl, nav_type: navType })
+  posthog.capture('nav:click', { to: linkUrl, device: navType })
 }
 function gtmMenuToggle() {
+  const action = document.querySelector('.fullnav') ? 'close' : 'open'
   window.dataLayer = window.dataLayer || []
-  window.dataLayer.push({ event: 'click:mobile_menu', action: document.querySelector('.fullnav') ? 'close' : 'open' })
+  window.dataLayer.push({ event: 'click:mobile_menu', action })
+  posthog.capture(`nav:mobile_menu_${action}`)
 }
 
 useHead({
@@ -135,7 +140,7 @@ useHead({
     { name: 'author', content: 'Divy Sharma' },
     { property: 'og:type', content: 'website' },
     { property: 'og:site_name', content: 'Divy Sharma' },
-    { property: 'og:image', content: 'https://divysharma.com/og-image.png' },
+    { property: 'og:image', content: 'https://divysharma-com.vercel.app/og-image.png' },
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:site', content: '@divysharma' },
     { name: 'twitter:creator', content: '@divysharma' }
@@ -147,7 +152,40 @@ useHead({
 </script>
 
 <style lang="scss">
-@import 'vue3-notion/dist/style.css'; /* optional Notion-like styles */
+.app-root {
+	min-height: 100vh;
+	width: 100%;
+	position: relative;
+}
+
+.grid-bg {
+	position: fixed;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	background-image:
+		linear-gradient(to right, #e7e5e4 1px, transparent 1px),
+		linear-gradient(to bottom, #e7e5e4 1px, transparent 1px);
+	background-size: 20px 20px;
+	mask-image:
+		repeating-linear-gradient(to right, black 0px, black 3px, transparent 3px, transparent 8px),
+		repeating-linear-gradient(to bottom, black 0px, black 3px, transparent 3px, transparent 8px),
+		radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%);
+	-webkit-mask-image:
+		repeating-linear-gradient(to right, black 0px, black 3px, transparent 3px, transparent 8px),
+		repeating-linear-gradient(to bottom, black 0px, black 3px, transparent 3px, transparent 8px),
+		radial-gradient(ellipse 70% 60% at 50% 0%, #000 60%, transparent 100%);
+	mask-composite: intersect;
+	-webkit-mask-composite: source-in;
+}
+
+.navbar,
+main,
+.cont,
+.fullnav {
+	position: relative;
+	z-index: 1;
+}
 
 .navbar .navcont,
 .navcont .topsec {

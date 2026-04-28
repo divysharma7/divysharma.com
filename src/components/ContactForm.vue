@@ -28,8 +28,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { trackEvent } from '@/analytics/umami'
-
+import posthog from 'posthog-js'
 const form = ref({
 	name: '',
 	email: '',
@@ -63,14 +62,16 @@ const submitForm = async () => {
 		await new Promise(resolve => setTimeout(resolve, 1000))
 		
 		success.value = true
-    trackEvent('contact:message_sent', { location: 'contact_form' })
     window.dataLayer = window.dataLayer || []
     window.dataLayer.push({ event: 'contact:message_sent', location: 'contact_form' })
+		posthog.capture('contact:message_sent', { location: 'contact_form' })
 		form.value = { name: '', email: '', message: '' }
 	} catch (e) {
 		error.value = "Couldn't send your message. Check your connection and try again, or email me at divysharma029@gmail.com."
 		window.dataLayer = window.dataLayer || []
 		window.dataLayer.push({ event: 'contact:form_error', error_type: 'submission_failed' })
+		posthog.capture('contact:form_error', { error_type: 'submission_failed' })
+		posthog.captureException(e)
 	} finally {
 		loading.value = false
 	}

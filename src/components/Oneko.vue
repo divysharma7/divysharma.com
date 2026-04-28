@@ -246,6 +246,7 @@ function initNeko() {
 onMounted(() => {
   isReducedMotion = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches;
   if (isReducedMotion) return;
+  if (window.innerWidth < 1024) return;
   initNeko();
 });
 

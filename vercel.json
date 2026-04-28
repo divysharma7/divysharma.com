@@ -69,7 +69,7 @@
 			"src": "/api/(.*)",
 			"headers": {
 				"Access-Control-Allow-Credentials": "true",
-				"Access-Control-Allow-Origin": "https://divysharma.com",
+				"Access-Control-Allow-Origin": "https://divysharma-com.vercel.app",
 				"Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
 				"Access-Control-Allow-Headers": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version",
 				"X-Frame-Options": "DENY",
@@ -92,7 +92,7 @@
 				"Permissions-Policy": "camera=(), microphone=(), geolocation=(), interest-cohort=()",
 				"Cross-Origin-Opener-Policy": "same-origin",
 				"Cross-Origin-Resource-Policy": "same-origin",
-				"Content-Security-Policy-Report-Only": "default-src 'self'; script-src 'self' 'sha256-PLACEHOLDER' 'strict-dynamic' https://www.googletagmanager.com https://cloud.umami.is https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: https://www.googletagmanager.com; font-src 'self' data:; connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://cloud.umami.is https://www.google-analytics.com https://analytics.google.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; require-trusted-types-for 'script'; trusted-types default vue; upgrade-insecure-requests; report-uri /api/csp-report"
+				"Content-Security-Policy-Report-Only": "default-src 'self'; script-src 'self' 'sha256-PLACEHOLDER' 'strict-dynamic' https://www.googletagmanager.com https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: https://www.googletagmanager.com; font-src 'self' data:; connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://www.google-analytics.com https://analytics.google.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; require-trusted-types-for 'script'; trusted-types default vue; upgrade-insecure-requests; report-uri /api/csp-report"
 			},
 			"continue": true
 		},

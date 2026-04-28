@@ -111,6 +111,7 @@
 <script setup>
 import { ref, nextTick, watch } from 'vue'
 import { MessageCircle, Send, X } from 'lucide-vue-next'
+import posthog from 'posthog-js'
 
 const escapeHtml = (text) =>
 	text
@@ -167,11 +168,12 @@ const scrollToBottom = async () => {
 function gtmPush(event, params) {
 	window.dataLayer = window.dataLayer || []
 	window.dataLayer.push({ event, ...params })
+	posthog.capture(event, params)
 }
 
 const sendMessage = async (text) => {
 	if (!text.trim() || isLoading.value) return
-	gtmPush('chat:message_sent', { is_suggestion: suggestions.includes(text) })
+	gtmPush('chat:message_sent', { is_suggestion: suggestions.includes(text), message_length: text.trim().length, page: window.location.pathname })
 
 	const userMsg = { role: 'user', content: text }
 	messages.value.push(userMsg)

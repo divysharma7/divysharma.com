@@ -7,7 +7,7 @@
  */
 export default function handler(req, res) {
 	if (req.method === 'OPTIONS') {
-		res.setHeader('Access-Control-Allow-Origin', 'https://divysharma.com')
+		res.setHeader('Access-Control-Allow-Origin', 'https://divysharma-com.vercel.app')
 		res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS')
 		res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
 		return res.status(204).end()

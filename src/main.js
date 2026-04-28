@@ -8,9 +8,30 @@ import 'aos/dist/aos.css'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { createHead } from '@vueuse/head'
-import { loadUmamiScript, trackPage } from './analytics/umami'
 import { loadAnalytics } from './lib/analytics'
 import DOMPurify from 'dompurify'
+import posthog from 'posthog-js'
+
+// Defer PostHog init to avoid blocking first paint.
+// Note: posthog-js silently drops capture() calls made before init() completes
+// (it does NOT queue them). This is acceptable here because:
+// - router.afterEach is registered after router.isReady(), so it only fires on
+//   subsequent navigations — by then init will have completed (max 3.5s).
+// - captureException in error handlers: losing errors in the first ~3.5s is an
+//   acceptable tradeoff vs. blocking rendering for all users.
+const initPostHog = () => {
+  posthog.init(import.meta.env.VITE_POSTHOG_PROJECT_TOKEN || '', {
+    api_host: import.meta.env.VITE_POSTHOG_HOST || 'https://eu.i.posthog.com',
+    capture_pageview: false,
+    capture_pageleave: true,
+    autocapture: true,
+  })
+}
+if ('requestIdleCallback' in window) {
+  window.requestIdleCallback(initPostHog, { timeout: 3500 })
+} else {
+  setTimeout(initPostHog, 3000)
+}
 
 // Trusted Types policies — must run before createApp/mount
 // See SECURITY.md for policy rationale
@@ -39,10 +60,12 @@ const app = createApp(App)
 
 app.config.errorHandler = (err, instance, info) => {
   console.error(`[Vue Error] ${info}:`, err)
+  posthog.captureException(err)
 }
 
 window.addEventListener('unhandledrejection', (event) => {
   console.error('[Unhandled Promise]', event.reason)
+  posthog.captureException(event.reason)
 })
 const head = createHead()
 
@@ -69,23 +92,17 @@ app.use(head)
 app.use(router)
 
 router.isReady().then(async () => {
-    await loadUmamiScript()
-
-    // Track the initial view
-    trackPage(router.currentRoute.value.fullPath, document.title)
-
-    // Track subsequent SPA navigations
+    // Track SPA navigations via GA4 + PostHog
     router.afterEach(async (to) => {
-        // Wait for document.title updates by Vue/head
         await new Promise(resolve => setTimeout(resolve, 50))
-        trackPage(to.fullPath, document.title)
-
-        // dataLayer push for GA4 (loaded via idle callback)
         window.dataLayer = window.dataLayer || []
         window.dataLayer.push({
             event: 'page_view',
             page_path: to.fullPath,
             page_title: document.title
+        })
+        posthog.capture('$pageview', {
+            $current_url: window.location.origin + to.fullPath,
         })
     })
 
