@@ -222,7 +222,7 @@
 					<div class="edu-grid">
 						<div class="edu-card">
 							<div class="edu-header">
-								<img src="/images/akgec-logo.png" alt="AKGEC" class="edu-logo" />
+								<img src="/images/akgec-logo.webp" alt="AKGEC" class="edu-logo" />
 								<div class="edu-header-text">
 									<h3 class="edu-name">Ajay Kumar Garg Engineering College</h3>
 									<span class="edu-meta">Bachelor of Technology, Information Technology · CGPA 7.4</span>
@@ -235,7 +235,7 @@
 
 						<div class="edu-card">
 							<div class="edu-header">
-								<img src="/images/kvs-logo.png" alt="KV" class="edu-logo" />
+								<img src="/images/kvs-logo.webp" alt="KV" class="edu-logo" />
 								<div class="edu-header-text">
 									<h3 class="edu-name">Kendriya Vidyalaya, Gomti Nagar</h3>
 									<span class="edu-meta">Grade: 92.8%</span>
@@ -258,7 +258,7 @@
 						<a href="mailto:divysharma029@gmail.com" class="cta-link">Email me</a>
 						<a href="https://twitter.com/Divy_Sharma6" target="_blank" rel="noopener" class="cta-link" @click="gtmPush('click:social', { platform: 'twitter', location: 'journey_cta' })">Say hi on X</a>
 						<a href="https://www.linkedin.com/in/divy-sharma-243748216/" target="_blank" rel="noopener" class="cta-link" @click="gtmPush('click:social', { platform: 'linkedin', location: 'journey_cta' })">LinkedIn</a>
-						<a href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" rel="noopener" class="cta-link" @click="gtmPush('click:resume_download', { location: 'journey_cta' })">Resume</a>
+						<router-link to="/resume" class="cta-link" @click="gtmPush('click:resume_download', { location: 'journey_cta' })">Resume</router-link>
 					</div>
 				</div>
 
@@ -281,8 +281,6 @@
 </template>
 
 <script>
-import { trackEvent } from '@/analytics/umami'
-
 let _uid = 0
 
 export default {
@@ -567,7 +565,6 @@ export default {
 					if (s) s.fresh = false
 				}, 450)
 				this.announce(`Placed ${this.drag.label} sticker`)
-				trackEvent('hero.sticker.place', { stickerId: this.drag.dockId, x: pos.x, y: pos.y, method: 'drag' })
 				window.dataLayer = window.dataLayer || []
 				window.dataLayer.push({ event: 'journey:sticker_place', sticker_id: this.drag.dockId, x: pos.x, y: pos.y, method: 'drag' })
 
@@ -580,9 +577,6 @@ export default {
 					s.z = ++this.zCounter
 					s.rot = this.drag.origRot  // preserve original rotation
 					this.announce(`Moved ${s.label} sticker`)
-					trackEvent('hero.sticker.reposition', {
-						stickerId: s.id, fromX, fromY, toX: pos.x, toY: pos.y,
-					})
 					window.dataLayer = window.dataLayer || []
 					window.dataLayer.push({ event: 'journey:sticker_reposition', sticker_id: s.id })
 				}
@@ -799,7 +793,6 @@ export default {
 				const s = this.userPlaced.find(p => p.uid === uid)
 				if (s) s.fresh = false
 			}, 450)
-			trackEvent('hero.sticker.place', { stickerId: st.id, x, y, method: 'click' })
 			window.dataLayer = window.dataLayer || []
 			window.dataLayer.push({ event: 'journey:sticker_place', sticker_id: st.id, x, y, method: 'click' })
 			this.announce(`Placed ${st.label} sticker`)

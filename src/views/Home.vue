@@ -21,9 +21,9 @@
 					<a href="mailto:divysharma029@gmail.com" class="cta-btn cta-btn--primary">
 						<Send :size="14" /> Get in touch
 					</a>
-					<a href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" rel="noopener" class="cta-btn cta-btn--outline" @click="gtmPush('click:resume_download', { location: 'home_hero' })">
+					<router-link to="/resume" class="cta-btn cta-btn--outline" @click="gtmPush('click:resume_download', { location: 'home_hero' })">
 						<FileText :size="14" /> Resume
-					</a>
+					</router-link>
 				</div>
 				<div class="hero-socials">
 					<a href="https://twitter.com/Divy_Sharma6" target="_blank" aria-label="Twitter" @click="gtmPush('click:social', { platform: 'twitter', location: 'home_hero' })"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
@@ -31,6 +31,23 @@
 					<a href="https://github.com/divysharma7" target="_blank" aria-label="GitHub" @click="gtmPush('click:social', { platform: 'github', location: 'home_hero' })"><Github :size="18" /></a>
 					<a href="mailto:divysharma029@gmail.com" aria-label="Email"><Mail :size="18" /></a>
 				</div>
+			</section>
+
+			<!-- ── Divider ── -->
+			<div class="divider"></div>
+
+			<!-- ── Experience ── -->
+			<section class="section">
+				<h2 class="section-heading">Experience</h2>
+				<div class="exp-stack">
+					<ExperienceCard
+						v-for="exp in experiences.slice(0, 3)"
+						:key="exp.company"
+						:experience="exp"
+						compact
+					/>
+				</div>
+				<router-link to="/workexperience" class="view-all" @click="gtmPush('click:view_all', { section: 'experience' })">See full experience &rarr;</router-link>
 			</section>
 
 			<!-- ── Divider ── -->
@@ -63,22 +80,6 @@
 					</router-link>
 				</div>
 				<router-link to="/blog" class="view-all">Read more posts &rarr;</router-link>
-			</section>
-
-			<!-- ── Divider ── -->
-			<div class="divider"></div>
-
-			<!-- ── Experience ── -->
-			<section class="section">
-				<h2 class="section-heading">Experience</h2>
-				<div class="exp-stack">
-					<ExperienceCard
-						v-for="exp in experiences"
-						:key="exp.company"
-						:experience="exp"
-					/>
-				</div>
-				<router-link to="/workexperience" class="view-all" @click="gtmPush('click:view_all', { section: 'experience' })">See full experience &rarr;</router-link>
 			</section>
 
 			<!-- ── Divider ── -->
@@ -150,6 +151,7 @@ import ExperienceCard from '../components/experience/ExperienceCard.vue'
 import CTA from '../components/CTA.vue'
 import { useHead } from '@vueuse/head'
 import { MapPin, Clock, Send, FileText, Linkedin, Github, Mail, Route, Award, Users, Settings, BookOpen, Compass } from 'lucide-vue-next'
+import posthog from 'posthog-js'
 
 useHead({
 	title: 'Home',
@@ -163,6 +165,7 @@ useHead({
 function gtmPush(event, params) {
 	window.dataLayer = window.dataLayer || []
 	window.dataLayer.push({ event, ...params })
+	posthog.capture(event, params)
 }
 
 function formatDate(dateStr) {
@@ -206,7 +209,7 @@ onUnmounted(() => { if (rafId) cancelAnimationFrame(rafId) })
 <style scoped lang="scss">
 /* ── Base ── */
 .home-page {
-	background: #fff;
+	background: transparent;
 	min-height: 100vh;
 }
 

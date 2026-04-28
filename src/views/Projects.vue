@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import SmlProj from '../assets/data/smlproj.js'
+import SmlProj from '@/data/smlproj.js'
 import Project from '../components/project.vue'
 
 export default {

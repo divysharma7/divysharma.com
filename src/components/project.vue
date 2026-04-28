@@ -1,6 +1,6 @@
 <template>
 	<div data-aos="fade-up" data-aos-duration="500" class="project noselect">
-		<a rel="noopener noreferrer" v-if="!intlink" class="link" :href="link" target="_blank" @click="[trackEvent('project:open', { name, type: 'external' }), gtmPush('click:project_open', { project_name: name, link_type: 'external' })]">
+		<a rel="noopener noreferrer" v-if="!intlink" class="link" :href="link" target="_blank" @click="gtmPush('click:project_open', { project_name: name, link_type: 'external' })">
 			<div class="card">
 				<img loading="lazy" class="img" :alt="name" :src="img" />
 				<div class="info">
@@ -12,7 +12,7 @@
 			</div>
 		</a>
 
-		<router-link v-else class="link" :to="link" @click.native="[trackEvent('project:open', { name, type: 'internal' }), gtmPush('click:project_open', { project_name: name, link_type: 'internal' })]">
+		<router-link v-else class="link" :to="link" @click.native="gtmPush('click:project_open', { project_name: name, link_type: 'internal' })">
 			<div class="card">
 				<img loading="lazy" class="img" :alt="name" :src="img" />
 				<div class="info">
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { trackEvent } from '@/analytics/umami'
+import posthog from 'posthog-js'
 
 export default {
 	props: {
@@ -44,10 +44,10 @@ export default {
 		}
 	},
 	methods: {
-		trackEvent,
 		gtmPush(event, params) {
 			window.dataLayer = window.dataLayer || []
 			window.dataLayer.push({ event, ...params })
+			posthog.capture(event, params)
 		}
 	}
 }

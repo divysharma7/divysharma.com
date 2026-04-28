@@ -173,6 +173,7 @@
 					</div>
 				</div>
 			</transition>
+		<SocialShareSidebar />
 		</template>
 	</div>
 </template>
@@ -183,6 +184,10 @@ import { useHead } from '@vueuse/head'
 import { Clock } from 'lucide-vue-next'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import SocialShareSidebar from '@/components/SocialShareSidebar.vue'
+import posthog from 'posthog-js'
+import { useScrollDepth } from '@/composables/useScrollDepth'
+import { useTimeSpent } from '@/composables/useTimeSpent'
 
 function sanitizeUrl(url) {
 	try {
@@ -200,14 +205,21 @@ function escapeHtml(str) {
 
 export default {
 	name: 'BlogDetail',
+	components: { SocialShareSidebar },
 	setup() {
 		const route = useRoute()
 		const post = computed(() => posts.find(p => p.slug === route.params.slug) || null)
 
+		const getPostProps = () => post.value
+			? { slug: post.value.slug, title: post.value.title }
+			: {}
+		useScrollDepth('blog:scroll_depth', getPostProps)
+		useTimeSpent('blog:time_spent', getPostProps)
+
 		useHead(computed(() => {
 			if (!post.value) return { title: 'Post not found' }
-			const url = `https://divysharma.com/blog/${post.value.slug}`
-			const image = post.value.heroImage ? `https://divysharma.com${post.value.heroImage}` : 'https://divysharma.com/og-image.png'
+			const url = `https://divysharma-com.vercel.app/blog/${post.value.slug}`
+			const image = post.value.heroImage ? `https://divysharma-com.vercel.app${post.value.heroImage}` : 'https://divysharma-com.vercel.app/og-image.png'
 			return {
 				title: post.value.title,
 				meta: [
@@ -304,6 +316,9 @@ export default {
 			this.showShareModal = false
 			this.showToc = false
 			this.linkCopied = false
+			if (this.post) {
+				posthog.capture('blog:post_viewed', { post_slug: this.post.slug, post_title: this.post.title })
+			}
 		},
 		onScroll() {
 			const docHeight = document.body.scrollHeight - window.innerHeight
@@ -339,11 +354,13 @@ export default {
 			navigator.clipboard?.writeText(this.shareUrl('copy_link'))
 			this.linkCopied = true
 			this.gtmPush('blog:copy_link', { post_slug: this.post.slug })
+			posthog.capture('blog:copy_link', { post_slug: this.post.slug })
 			setTimeout(() => { this.linkCopied = false }, 2000)
 		},
 		shareX() {
 			const url = this.shareUrl('twitter')
 			this.gtmPush('blog:share', { post_slug: this.post.slug, platform: 'twitter' })
+			posthog.capture('blog:share', { post_slug: this.post.slug, platform: 'twitter' })
 			window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(this.post.title)}`, '_blank')
 			this.showShareModal = false
 		},
@@ -354,6 +371,7 @@ export default {
 		shareLinkedIn() {
 			const url = this.shareUrl('linkedin')
 			this.gtmPush('blog:share', { post_slug: this.post.slug, platform: 'linkedin' })
+			posthog.capture('blog:share', { post_slug: this.post.slug, platform: 'linkedin' })
 			window.open(`https://linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank')
 			this.showShareModal = false
 		},

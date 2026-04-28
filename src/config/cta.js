@@ -1,6 +1,6 @@
 export const ctaConfig = {
     // Profile image to show in the button
-    profileImage: '/pixel-avatar.jpg',
+    profileImage: '/pixel-avatar.webp',
     profileAlt: 'Profile',
     // Button Text
     linkText: 'Book a call',

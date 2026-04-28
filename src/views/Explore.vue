@@ -24,13 +24,13 @@
 				<p>I've participated in startup competitions, hackathons, ideathons, designathons, and B-plans. Check out some of my wins.</p>
 			</a>
 
-			<a rel="noopener noreferrer" href="https://drive.google.com/file/d/1DxcRgUE_-V8B23Yz4L-Padn3t07I2xwp/view?usp=sharing" target="_blank" class="explore-card explore-card--purple" @click="[trackEvent('resume:download', { location: 'explore' }), gtmPush('click:resume_download', { location: 'explore' })]">
+			<router-link to="/resume" class="explore-card explore-card--purple" @click="gtmPush('click:resume_download', { location: 'explore' })">
 				<div class="explore-card-head">
 					<h2>Resume</h2>
 					<bx-bx-link-external class="explore-icon" />
 				</div>
 				<p>Check out my work, the teams I've been a part of, and the impact I've delivered.</p>
-			</a>
+			</router-link>
 
 			<a rel="noopener noreferrer" href="https://teamconatus.com/" target="_blank" class="explore-card explore-card--green" @click="gtmPush('click:explore_card', { card: 'events', destination: 'teamconatus' })">
 				<div class="explore-card-head">
@@ -64,11 +64,12 @@ import { Compass } from 'lucide-vue-next'
 import Top from '../components/top.vue'
 import Website from "../components/website.vue"
 import Contact from "../components/ContactForm.vue"
-import { trackEvent, trackOutbound } from '@/analytics/umami'
+import posthog from 'posthog-js'
 
 function gtmPush(event, params) {
   window.dataLayer = window.dataLayer || []
   window.dataLayer.push({ event, ...params })
+  posthog.capture(event, params)
 }
 
 useHead({

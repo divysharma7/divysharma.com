@@ -120,7 +120,7 @@ const seoData = computed(() => {
 	const p = project.value
 	const title = `${p.title} – Case Study – Divy Sharma`
 	const description = p.shortSummary
-	const url = `https://divysharma.com/projects/${p.slug}`
+	const url = `https://divysharma-com.vercel.app/projects/${p.slug}`
 	const imageUrl = p.image
 	const tags = Array.isArray(p.tags) ? p.tags : []
 
@@ -156,7 +156,7 @@ const seoData = computed(() => {
 					author: {
 						'@type': 'Person',
 						name: 'Divy Sharma',
-						url: 'https://divysharma.com'
+						url: 'https://divysharma-com.vercel.app'
 					},
 					mainEntityOfPage: {
 						'@type': 'WebPage',
