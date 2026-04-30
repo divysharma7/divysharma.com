@@ -87,5 +87,10 @@ export const routes = [
 		meta: { title: 'Mentors' },
 		component: () => import('./views/Mentors.vue')
 	},
+	{
+		path: '/bucket-list',
+		meta: { title: 'Bucket List' },
+		component: () => import('./views/BucketList.vue')
+	},
 	{ path: '/:pathMatch(.*)', component: () => import('./views/NotFound.vue'), meta: { title: 'notfound' } }
 ]
