@@ -8,7 +8,6 @@ import 'aos/dist/aos.css'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { createHead } from '@vueuse/head'
-import { loadAnalytics } from './lib/analytics'
 import DOMPurify from 'dompurify'
 import posthog from 'posthog-js'
 
@@ -108,8 +107,7 @@ router.isReady().then(async () => {
 
     app.mount('#app')
 
-    // Load GA4 + Speed Insights after mount, during idle time
-    loadAnalytics()
+    // Load Speed Insights after mount, during idle time
     if (import.meta.env.PROD && __VERCEL__) {
         import('@vercel/speed-insights').then(({ injectSpeedInsights }) => {
             window.requestIdleCallback
