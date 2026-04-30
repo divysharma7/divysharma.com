@@ -14,11 +14,11 @@ export const achievements = [
             outcome: 'Top 30 Semi-finalist in APAC + Google Cloud credits.'
         },
         links: [
-            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780183/AI_For_Impact_APAC_t7gqlu.webp', primary: true }
+            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780183/AI_For_Impact_APAC_t7gqlu.webp', primary: true }
         ],
         asset: {
             type: 'image',
-            url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780183/AI_For_Impact_APAC_t7gqlu.webp',
+            url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780183/AI_For_Impact_APAC_t7gqlu.webp',
             label: 'Certificate of Achievement • Google AI for Impact APAC 2024',
         },
     },
@@ -37,11 +37,11 @@ export const achievements = [
             outcome: 'Won 2nd prize across all AKTU Zonal participants.'
         },
         links: [
-            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780184/AKTU_Zonal_wwkin3.webp', primary: true }
+            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780184/AKTU_Zonal_wwkin3.webp', primary: true }
         ],
         asset: {
             type: 'image',
-            url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780184/AKTU_Zonal_wwkin3.webp',
+            url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780184/AKTU_Zonal_wwkin3.webp',
             label: 'Certificate of Achievement • AKTU Zonals',
         },
     },
@@ -60,12 +60,12 @@ export const achievements = [
             outcome: 'Won 1st place in the national ideathon.'
         },
         links: [
-            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780184/CSI_Ideathon_ARketShop_AR_App_rrxbfk.webp', primary: true },
+            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780184/CSI_Ideathon_ARketShop_AR_App_rrxbfk.webp', primary: true },
             { text: 'View Case Study', url: 'https://www.behance.net/gallery/169989777/ARketShop-UIUX-Case-Study', primary: false }
         ],
         asset: {
             type: 'image',
-            url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780184/CSI_Ideathon_ARketShop_AR_App_rrxbfk.webp',
+            url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780184/CSI_Ideathon_ARketShop_AR_App_rrxbfk.webp',
             label: 'Certificate of Merit • CSI Ideathon',
         },
     },
@@ -84,11 +84,11 @@ export const achievements = [
             outcome: 'Selected as national finalists at BITS Pilani.'
         },
         links: [
-            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780184/Biobloom_BITs_Pilani_eayvuo.webp', primary: true }
+            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780184/Biobloom_BITs_Pilani_eayvuo.webp', primary: true }
         ],
         asset: {
             type: 'image',
-            url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780184/Biobloom_BITs_Pilani_eayvuo.webp',
+            url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780184/Biobloom_BITs_Pilani_eayvuo.webp',
             label: 'Certificate of Participation • BITS Pilani',
         },
     },
@@ -107,11 +107,11 @@ export const achievements = [
             outcome: 'Won ISHOW India ($10K grant) + international bootcamp invite.'
         },
         links: [
-            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780183/ASME_Ishow_j3fb7a.webp', primary: true }
+            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780183/ASME_Ishow_j3fb7a.webp', primary: true }
         ],
         asset: {
             type: 'image',
-            url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780183/ASME_Ishow_j3fb7a.webp',
+            url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780183/ASME_Ishow_j3fb7a.webp',
             label: 'Winner Certificate • ASME ISHOW India 2025',
         },
     },
@@ -130,11 +130,11 @@ export const achievements = [
             outcome: 'Secured incubation, patent filing support, and hardware grants.'
         },
         links: [
-            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780233/AKTU_NexGen_Kalam_Award_hhsvgc.webp', primary: true }
+            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780233/AKTU_NexGen_Kalam_Award_hhsvgc.webp', primary: true }
         ],
         asset: {
             type: 'image',
-            url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780233/AKTU_NexGen_Kalam_Award_hhsvgc.webp',
+            url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780233/AKTU_NexGen_Kalam_Award_hhsvgc.webp',
             label: 'Award Certificate • NextGen Kalam Innovation Sprint',
         },
     },
@@ -153,11 +153,11 @@ export const achievements = [
             outcome: 'Awarded $20K grant + $10K hardware ecosystem.'
         },
         links: [
-            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780634/Samsung_Solve_For_Tomorrow_xltruw.webp', primary: true }
+            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780634/Samsung_Solve_For_Tomorrow_xltruw.webp', primary: true }
         ],
         asset: {
             type: 'image',
-            url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780634/Samsung_Solve_For_Tomorrow_xltruw.webp',
+            url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780634/Samsung_Solve_For_Tomorrow_xltruw.webp',
             label: 'Top 20 Finalist • Samsung Solve for Tomorrow India',
         },
     },
@@ -176,11 +176,11 @@ export const achievements = [
             outcome: 'National Top 5 + BITS Pilani Hyderabad incubation offer.'
         },
         links: [
-            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780638/VR_Rescue_X_BITS_Pilani_vfipoq.webp', primary: true }
+            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780638/VR_Rescue_X_BITS_Pilani_vfipoq.webp', primary: true }
         ],
         asset: {
             type: 'image',
-            url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780638/VR_Rescue_X_BITS_Pilani_vfipoq.webp',
+            url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780638/VR_Rescue_X_BITS_Pilani_vfipoq.webp',
             label: 'Winner Certificate • BITS Pilani',
         },
     },
@@ -199,11 +199,11 @@ export const achievements = [
             outcome: 'Selected as national finalists from across India.'
         },
         links: [
-            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780640/SmartIdeathon_jznawh.webp', primary: true }
+            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780640/SmartIdeathon_jznawh.webp', primary: true }
         ],
         asset: {
             type: 'image',
-            url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780640/SmartIdeathon_jznawh.webp',
+            url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780640/SmartIdeathon_jznawh.webp',
             label: 'Finalist Certificate • Smart Ideathon',
         },
     },
@@ -222,11 +222,11 @@ export const achievements = [
             outcome: 'Reached the grand finale of SIH 2023.'
         },
         links: [
-            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780641/Smart_India_Hackthon_2023_Finalist_lo1v91.webp', primary: true }
+            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780641/Smart_India_Hackthon_2023_Finalist_lo1v91.webp', primary: true }
         ],
         asset: {
             type: 'image',
-            url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780641/Smart_India_Hackthon_2023_Finalist_lo1v91.webp',
+            url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780641/Smart_India_Hackthon_2023_Finalist_lo1v91.webp',
             label: 'Finalist Certificate • SIH 2023',
         },
     },
@@ -245,12 +245,12 @@ export const achievements = [
             outcome: 'Won 2nd prize in the national design challenge.'
         },
         links: [
-            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780936/1a85b50d-1_yytcic.webp', primary: true },
+            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780936/1a85b50d-1_yytcic.webp', primary: true },
             { text: 'View Project', url: 'https://www.behance.net/gallery/184944061/Writing-Tool-(Kalam)-Ideation-and-Designing-Concept', primary: false }
         ],
         asset: {
             type: 'image',
-            url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780936/1a85b50d-1_yytcic.webp',
+            url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780936/1a85b50d-1_yytcic.webp',
             label: '2nd Prize • Product Design Challenge',
         },
     },
@@ -269,12 +269,12 @@ export const achievements = [
             outcome: 'Won 1st place in the UI/UX designathon.'
         },
         links: [
-            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780937/d78064bc-1_scn1rw.webp', primary: true },
+            { text: 'View Certificate', url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780937/d78064bc-1_scn1rw.webp', primary: true },
             { text: 'View Concept', url: 'https://www.behance.net/gallery/214253987/Loop-It-Your-Mindful-Journey-Companion', primary: false }
         ],
         asset: {
             type: 'image',
-            url: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771780937/d78064bc-1_scn1rw.webp',
+            url: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_600/v1771780937/d78064bc-1_scn1rw.webp',
             label: 'Winner Certificate • Tutedude Designathon',
         },
     },

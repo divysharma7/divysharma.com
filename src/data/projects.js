@@ -3,7 +3,7 @@ export const projects = [
         slug: 'techno',
         title: 'Techno Conclave',
         shortDescription: 'Where Design, Tech, and Entrepreneurship collide',
-        heroImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710387635/Slide_16_9_-_22_nknflj.png',
+        heroImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710387635/Slide_16_9_-_22_nknflj.png',
         domain: 'Branding, Experience Design, UI + UX',
         role: 'Experience Design Lead',
         team: 'Led the redesign of the event\'s brand identity and promotional strategy, managed user experience across all touchpoints.',
@@ -119,12 +119,12 @@ export const projects = [
                 level: 2,
                 columns: 2,
                 images: [
-                    { src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710360491/WhatsApp_Image_2024-01-06_at_00.36.33_w9hwsv.jpg', alt: 'Speaker poster' },
-                    { src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710360491/WhatsApp_Image_2024-01-06_at_00.36.31_u6ymld.jpg', alt: 'Registration poster' },
-                    { src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710360642/Group_6958_jrp93j.png', alt: 'Event pass front', caption: 'Event Pass' },
-                    { src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710360642/Group_6960_wju5mg.png', alt: 'Event pass back' },
-                    { src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710360639/21_irsopo.png', alt: 'Speaker ID card', caption: 'ID Cards' },
-                    { src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710360639/main_id_p31i1t.png', alt: 'Organizer ID card' }
+                    { src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710360491/WhatsApp_Image_2024-01-06_at_00.36.33_w9hwsv.jpg', alt: 'Speaker poster' },
+                    { src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710360491/WhatsApp_Image_2024-01-06_at_00.36.31_u6ymld.jpg', alt: 'Registration poster' },
+                    { src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710360642/Group_6958_jrp93j.png', alt: 'Event pass front', caption: 'Event Pass' },
+                    { src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710360642/Group_6960_wju5mg.png', alt: 'Event pass back' },
+                    { src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710360639/21_irsopo.png', alt: 'Speaker ID card', caption: 'ID Cards' },
+                    { src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710360639/main_id_p31i1t.png', alt: 'Organizer ID card' }
                 ]
             },
             {
@@ -135,7 +135,7 @@ export const projects = [
             },
             {
                 type: 'full-image',
-                src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710360574/IMG_5727_a1tmst.jpg',
+                src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710360574/IMG_5727_a1tmst.jpg',
                 alt: 'Venue layout',
                 caption: 'Central information desk and venue layout'
             },
@@ -150,7 +150,7 @@ export const projects = [
             },
             {
                 type: 'full-image',
-                src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710360575/DSC_0287_qqqrru.jpg',
+                src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710360575/DSC_0287_qqqrru.jpg',
                 alt: 'Organizing Team',
                 caption: 'The Organizing Team'
             }
@@ -160,7 +160,7 @@ export const projects = [
         slug: 'virtual',
         title: 'VR Rescue X',
         shortDescription: 'VR Based Gaming Simulator for NDRF.',
-        heroImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710388865/WhatsApp_Image_2023-12-19_at_19.17_foz6od.png',
+        heroImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710388865/WhatsApp_Image_2023-12-19_at_19.17_foz6od.png',
         domain: 'AR/VR Development, B-Plan, Spatial Design, User Experience, XR Design',
         role: 'Team Lead and XR Design',
         tags: ['AR/VR', 'XR Design', 'UX', 'Gaming'],
@@ -184,7 +184,7 @@ export const projects = [
                 type: 'image-text',
                 title: 'The Problem',
                 level: 2,
-                image: { src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710445262/WhatsApp_Image_2023-12-19_at_19.17_mvvtxr.png', alt: 'CBRN Training' },
+                image: { src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710445262/WhatsApp_Image_2023-12-19_at_19.17_mvvtxr.png', alt: 'CBRN Training' },
                 body: [
                     'Today, **emergency responders** put their lives on the line to confront **CBRN incidents**. The risks are real, training exercises too **rare**, **expensive**, and **dangerous** for real time.',
                     'In a world where emergency responders face unprecedented challenges in dealing with Chemical, Biological, Radiological, and Nuclear (CBRN) incidents.'
@@ -242,7 +242,7 @@ export const projects = [
                 type: 'image-text',
                 title: 'Design Process',
                 level: 2,
-                image: { src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710445279/image_35_rvgos6.png', alt: 'Design Process' },
+                image: { src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710445279/image_35_rvgos6.png', alt: 'Design Process' },
                 body: [
                     'Our design process prioritized empathy and iteration. We began with thorough research, interviewing NDRF personnel to understand their challenges.',
                     'We focused on intuitive interactions, clear visual cues, and streamlined interfaces to minimize cognitive load for trainees of all backgrounds.',
@@ -301,7 +301,7 @@ export const projects = [
         slug: 'kalam',
         title: 'Kalam',
         shortDescription: 'Innovation for Writer\'s Comfort.',
-        heroImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710703057/Slide_16_9_-_24_tfylda.png',
+        heroImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710703057/Slide_16_9_-_24_tfylda.png',
         domain: 'Product Design, Industrial Design, Research',
         role: 'Designer & Researcher',
         tags: ['Product Design', 'Research', 'Industrial Design'],
@@ -357,7 +357,7 @@ export const projects = [
             },
             {
                 type: 'full-image',
-                src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710681012/3_qstjzb.png',
+                src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710681012/3_qstjzb.png',
                 alt: 'Double Diamond Process',
                 caption: 'Double diamond design process with project Gantt chart'
             },
@@ -385,7 +385,7 @@ export const projects = [
             },
             {
                 type: 'full-image',
-                src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710681012/5_dckzdy.png',
+                src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710681012/5_dckzdy.png',
                 alt: 'Research findings'
             },
             {
@@ -400,7 +400,7 @@ export const projects = [
             },
             {
                 type: 'full-image',
-                src: 'https://res.cloudinary.com/dgglltv04/image/upload/v1710681013/8_pt8wb8.png',
+                src: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710681013/8_pt8wb8.png',
                 alt: 'Research analysis'
             },
             {

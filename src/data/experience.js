@@ -6,7 +6,7 @@ export const experiences = [
         startDate: "December 2025",
         endDate: "Present",
         location: "Hyderabad, India",
-        logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1771084546/ASBL_rcbvre.png",
+        logo: "https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_100/v1771084546/ASBL_rcbvre.png",
         current: true,
         description: [
             "Leading a stealth product line focused on building an organic top-of-funnel growth engine as a scalable acquisition channel. Managing a cross-functional pod of two engineers and one designer.",
@@ -37,7 +37,7 @@ export const experiences = [
         startDate: "July 2025",
         endDate: "Nov 2025",
         location: "Bangalore, India",
-        logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1751986051/Frame_4_sktekq.png",
+        logo: "https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_100/v1751986051/Frame_4_sktekq.png",
         current: false,
         description: [
             "Selected among top student entrepreneurs across India for NSRCEL's Campus Founders Program.",
@@ -64,7 +64,7 @@ export const experiences = [
         startDate: "December 2023",
         endDate: "February 2025",
         location: "Noida, India",
-        logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1771087227/Aqua-Alert_oikhf4.png",
+        logo: "https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_100/v1771087227/Aqua-Alert_oikhf4.png",
         current: false,
         description: [
             "Founded Aqua-Alert, a \u201cFitbit for Water\u201d venture combining IoT hardware and mobile software to track water usage and detect leakages in real time.",
@@ -98,7 +98,7 @@ export const allWorkExperiences = [
         startDate: "June 2025",
         endDate: "Present",
         location: "Hyderabad, India",
-        logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1771084546/ASBL_rcbvre.png",
+        logo: "https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_100/v1771084546/ASBL_rcbvre.png",
         current: true,
         description: [
             "Drove product-led growth initiatives focused on improving user activation, engagement, and retention.",
@@ -128,7 +128,7 @@ export const allWorkExperiences = [
         startDate: "July 2025",
         endDate: "Nov 2025",
         location: "Bangalore, India",
-        logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1751986051/Frame_4_sktekq.png",
+        logo: "https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_100/v1751986051/Frame_4_sktekq.png",
         current: false,
         description: [
             "Selected among top student entrepreneurs across India for NSRCEL's Campus Founders Program.",
@@ -155,7 +155,7 @@ export const allWorkExperiences = [
         startDate: "Dec 2024",
         endDate: "May 2025",
         location: "Hyderabad, India",
-        logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1751986080/Frame_1_vwcfel.png",
+        logo: "https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_100/v1751986080/Frame_1_vwcfel.png",
         current: false,
         description: [
             "Supported product growth initiatives through analytics-driven research and reporting.",
@@ -208,7 +208,7 @@ export const allWorkExperiences = [
         startDate: "December 2023",
         endDate: "February 2025",
         location: "Noida, India",
-        logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1771087227/Aqua-Alert_oikhf4.png",
+        logo: "https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_100/v1771087227/Aqua-Alert_oikhf4.png",
         current: false,
         description: [
             "Founded Aqua-Alert, a \u201cFitbit for Water\u201d venture combining IoT hardware and mobile software to track water usage and detect leakages in real time.",
@@ -261,7 +261,7 @@ export const allWorkExperiences = [
         startDate: "June 2024",
         endDate: "Aug 2024",
         location: "India",
-        logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1751986051/Frame_3_ypp4b3.png",
+        logo: "https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_100/v1751986051/Frame_3_ypp4b3.png",
         current: false,
         description: [
             "Selected as a Top 20 finalist in Samsung Solve for Tomorrow.",
@@ -286,7 +286,7 @@ export const allWorkExperiences = [
         startDate: "April 2023",
         endDate: "June 2023",
         location: "India",
-        logo: "https://res.cloudinary.com/dgglltv04/image/upload/v1751986051/Frame_5_lyfqyj.png",
+        logo: "https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_100/v1751986051/Frame_5_lyfqyj.png",
         current: false,
         description: [
             "Led UX research for a digital marketplace platform.",

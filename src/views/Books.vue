@@ -102,10 +102,11 @@
         
         <!-- Left: Cover -->
         <div class="card-cover-area">
-          <img 
-            v-if="book.coverImage" 
-            :src="book.coverImage" 
-            :alt="book.title" 
+          <img
+            v-if="book.coverImage"
+            :src="book.coverImage"
+            :alt="book.title"
+            loading="lazy"
             class="book-cover-large"
           />
           <div v-else class="avatar-large">{{ initials(book.title) }}</div>

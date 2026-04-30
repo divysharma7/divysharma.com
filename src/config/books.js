@@ -1,7 +1,7 @@
 export const books = [
     {
         title: 'Decode and Conquer',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233892/Decode_and_Conquer_lx4bq8.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233892/Decode_and_Conquer_lx4bq8.jpg',
         summary: 'Structured product/strategy interview thinking, frameworks, and "sound smart under pressure" tactics.',
         topics: ['Strategy sizing', 'Product sense frameworks', 'Case structuring', 'Metrics talk track', 'Prioritization logic'],
         apmRating: 4,
@@ -13,7 +13,7 @@ export const books = [
     },
     {
         title: 'Continuous Discovery Habits',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233893/Discovery_Habits_yjdc3b.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233893/Discovery_Habits_yjdc3b.jpg',
         summary: 'A system for continuous customer learning without "one workshop and we\'re done" delusion.',
         topics: ['Interview cadence', 'Opportunity solution trees', 'Assumption mapping', 'Rapid discovery loops', 'Stakeholder buy-in'],
         apmRating: 5,
@@ -25,7 +25,7 @@ export const books = [
     },
     {
         title: 'Losing My Virginity',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233897/losing_virginity_jpqckp.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233897/losing_virginity_jpqckp.jpg',
         summary: 'Branson\'s high-drama founder storytelling with lessons on brand, risk, and momentum.',
         topics: ['Brand building', 'Storytelling', 'Risk appetite', 'Opportunistic growth', 'PR instincts'],
         apmRating: 3,
@@ -37,7 +37,7 @@ export const books = [
     },
     {
         title: 'Effectuation',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233893/Effectuation_ueojp1.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233893/Effectuation_ueojp1.jpg',
         summary: 'Entrepreneurs start with means and constraints, then iterate, instead of pretending they can predict the future.',
         topics: ['Means-driven planning', 'Affordable loss', 'Partnerships', 'Leverage contingencies', 'Uncertainty navigation'],
         apmRating: 4,
@@ -49,7 +49,7 @@ export const books = [
     },
     {
         title: '7 Habits of Highly Effective People',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233892/7_Habits_mjk56g.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233892/7_Habits_mjk56g.jpg',
         summary: 'A personal operating system: responsibility, priorities, and long-term thinking (annoyingly correct).',
         topics: ['Proactivity', 'Prioritization', 'Goal alignment', 'Relationships', 'Continuous improvement'],
         apmRating: 3,
@@ -61,7 +61,7 @@ export const books = [
     },
     {
         title: 'Made to Stick',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233898/made_to_stick_o8pghs.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233898/made_to_stick_o8pghs.jpg',
         summary: 'Why some ideas spread: simplicity + concreteness + emotion + story, not "more slides."',
         topics: ['Message clarity', 'Storytelling', 'Memorability frameworks', 'Persuasion', 'Audience psychology'],
         apmRating: 5,
@@ -73,7 +73,7 @@ export const books = [
     },
     {
         title: 'Good to Great',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233892/71LhjimPd8L._AC_UF1000_1000_QL80__oxbihl.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233892/71LhjimPd8L._AC_UF1000_1000_QL80__oxbihl.jpg',
         summary: 'Big-company greatness patterns… with shaky causality and a lot of survivorship bias.',
         topics: ['Leadership archetypes', 'Flywheel thinking', 'Discipline culture', 'Focus', 'Organizational momentum'],
         apmRating: 2,
@@ -85,7 +85,7 @@ export const books = [
     },
     {
         title: 'Marketing for Financial Advisors',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233898/marketing_for_financial_advisors_lgcdvl.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233898/marketing_for_financial_advisors_lgcdvl.jpg',
         summary: 'Trust-heavy marketing: credibility, compliance-aware messaging, authority building.',
         topics: ['Trust signals', 'Positioning', 'Compliance constraints', 'Content strategy', 'Relationship marketing'],
         apmRating: 3,
@@ -97,7 +97,7 @@ export const books = [
     },
     {
         title: 'The Courage to Be Disliked',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233905/the_courage_to_be_disliked_uqhk1w.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233905/the_courage_to_be_disliked_uqhk1w.jpg',
         summary: 'Adlerian psychology: stop outsourcing your self-worth, choose your life stance intentionally.',
         topics: ['Personal responsibility', 'Interpersonal boundaries', 'Purpose', 'Emotional independence', 'Life narratives'],
         apmRating: 2,
@@ -109,7 +109,7 @@ export const books = [
     },
     {
         title: 'Experimentation Works',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233893/Experimentation_rzrozv.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233893/Experimentation_rzrozv.jpg',
         summary: 'A practical argument: stop trusting vibes, run experiments like adults.',
         topics: ['Experiment culture', 'Hypothesis discipline', 'Org adoption', 'Measurement thinking', 'Iteration loops'],
         apmRating: 5,
@@ -121,7 +121,7 @@ export const books = [
     },
     {
         title: 'Trustworthy Online Controlled Experiments',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233910/trustworthyonlinecontrolledexperiments_ewip30.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233910/trustworthyonlinecontrolledexperiments_ewip30.jpg',
         summary: 'The gnarly reality of A/B testing at scale: bias, logging, stats pitfalls, and infra constraints.',
         topics: ['Experiment design', 'Statistical validity', 'Instrumentation', 'Network effects', 'Guardrails'],
         apmRating: 4,
@@ -133,7 +133,7 @@ export const books = [
     },
     {
         title: 'Presentation Secrets of Steve Jobs',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233902/secrets_of_steve_Jobs_dpml9q.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233902/secrets_of_steve_Jobs_dpml9q.jpg',
         summary: 'High-emotion narrative presentation craft (use responsibly, please).',
         topics: ['Story structure', 'Demos', 'Simplicity', 'Rehearsal', 'Audience emotion'],
         apmRating: 3,
@@ -145,7 +145,7 @@ export const books = [
     },
     {
         title: 'Start With Why',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233903/Start_with_why_zgonah.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233903/Start_with_why_zgonah.jpg',
         summary: 'Purpose-driven narrative framing; helpful, but over-quoted by people who can\'t execute.',
         topics: ['Purpose statements', 'Leadership narrative', 'Motivation framing', 'Brand story', 'Alignment'],
         apmRating: 3,
@@ -157,7 +157,7 @@ export const books = [
     },
     {
         title: 'Resonate',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233902/resonate_sgjv1r.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233902/resonate_sgjv1r.jpg',
         summary: 'A blueprint for turning decks into transformation stories (audience as the hero).',
         topics: ['Story arc', 'Contrast ("what is" vs "what could be")', 'Audience journey', 'Narrative beats', 'Persuasion'],
         apmRating: 5,
@@ -169,7 +169,7 @@ export const books = [
     },
     {
         title: 'The Making of a Manager',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233908/the_making_of_a_manger_htgwhy.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233908/the_making_of_a_manger_htgwhy.jpg',
         summary: 'Practical first-time management: 1:1s, feedback, trust, and not being a menace.',
         topics: ['Coaching', 'Feedback', 'Team health', 'Delegation', 'Managing yourself'],
         apmRating: 4,
@@ -181,7 +181,7 @@ export const books = [
     },
     {
         title: 'Thinking in Bets',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233909/Thinking_in_Bets_ukrvfq.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233909/Thinking_in_Bets_ukrvfq.jpg',
         summary: 'Decision quality ≠ outcome quality; learn to think probabilistically.',
         topics: ['Probabilistic thinking', 'Decision hygiene', 'Outcome bias', 'Uncertainty', 'Learning loops'],
         apmRating: 5,
@@ -193,7 +193,7 @@ export const books = [
     },
     {
         title: 'Cracking the PM Interview',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233892/cracking_the_PM_interview_by6xpo.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233892/cracking_the_PM_interview_by6xpo.jpg',
         summary: 'Exam prep for PM interviews; useful, but not real-world PMing.',
         topics: ['Product sense questions', 'Metrics questions', 'Execution questions', 'Behavioral prep', 'Frameworks'],
         apmRating: 4,
@@ -205,7 +205,7 @@ export const books = [
     },
     {
         title: 'The Design of Everyday Things',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233905/The_Design_of_everyday_things_m1vkpv.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233905/The_Design_of_everyday_things_m1vkpv.jpg',
         summary: 'Fundamental usability: affordances, feedback, mental models. Permanently changes how you see products.',
         topics: ['Human error', 'Interface design', 'Discoverability', 'Constraints', 'Mental models'],
         apmRating: 5,
@@ -217,7 +217,7 @@ export const books = [
     },
     {
         title: 'Change by Design',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233893/Change_By_Design_voox02.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233893/Change_By_Design_voox02.jpg',
         summary: 'Design thinking as a mindset; inspiring but often vague in execution details.',
         topics: ['Ideation culture', 'Problem framing', 'Prototyping mindset', 'Empathy', 'Innovation narrative'],
         apmRating: 3,
@@ -229,7 +229,7 @@ export const books = [
     },
     {
         title: 'The Four Steps to Epiphany',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233906/The_Four_Steps_to_the_epiphany_a2iewg.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233906/The_Four_Steps_to_the_epiphany_a2iewg.jpg',
         summary: 'Customer development before scaling. Stop building blindly.',
         topics: ['Customer discovery', 'Validation', 'Pivoting', 'Go-to-market learning', 'Startup discipline'],
         apmRating: 4,
@@ -241,7 +241,7 @@ export const books = [
     },
     {
         title: 'What Customers Want',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233910/what_customers_want_n9pkms.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233910/what_customers_want_n9pkms.jpg',
         summary: 'Early Jobs-to-be-Done framing: customers hire products for progress.',
         topics: ['Outcome thinking', 'Customer motivation', 'Problem framing', 'Switching behavior', 'Progress narratives'],
         apmRating: 4,
@@ -253,7 +253,7 @@ export const books = [
     },
     {
         title: 'Jobs to Be Done',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233896/JTBD_vmq6td.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233896/JTBD_vmq6td.jpg',
         summary: 'More actionable JTBD: structure research and positioning around outcomes and constraints.',
         topics: ['Job statements', 'Forces of progress', 'Segmentation by job', 'Messaging clarity', 'Competitive alternatives'],
         apmRating: 5,
@@ -265,7 +265,7 @@ export const books = [
     },
     {
         title: 'Peak',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233900/Peak_lrc709.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233900/Peak_lrc709.jpg',
         summary: 'Skill is built via deliberate practice, not vibes or "talent."',
         topics: ['Deliberate practice', 'Feedback loops', 'Skill decomposition', 'Coaching', 'Performance improvement'],
         apmRating: 3,
@@ -277,7 +277,7 @@ export const books = [
     },
     {
         title: 'Radical Focus',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233901/Radical_Focus_pp3qsd.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233901/Radical_Focus_pp3qsd.jpg',
         summary: 'OKRs stripped of corporate theater. Focus beats ambition.',
         topics: ['OKR setting', 'Prioritization', 'Focus discipline', 'Alignment', 'Execution cadence'],
         apmRating: 4,
@@ -289,7 +289,7 @@ export const books = [
     },
     {
         title: 'Sprint',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233903/Sprint_eze6tt.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233903/Sprint_eze6tt.jpg',
         summary: 'A one-week process to decide + prototype + test. Works only if leadership actually commits.',
         topics: ['Rapid prototyping', 'Structured decision-making', 'User testing', 'Cross-functional alignment', 'Time-boxing'],
         apmRating: 4,
@@ -301,7 +301,7 @@ export const books = [
     },
     {
         title: 'HBR Guide to Persuasive Presentations',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233894/HBR_l8xmh3.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233894/HBR_l8xmh3.jpg',
         summary: 'Corporate-safe persuasion mechanics: structure, audience logic, credibility.',
         topics: ['Argument structure', 'Stakeholder persuasion', 'Clarity', 'Executive communication', 'Slide discipline'],
         apmRating: 4,
@@ -313,7 +313,7 @@ export const books = [
     },
     {
         title: 'Nudge',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233899/Nudge_a0seav.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233899/Nudge_a0seav.jpg',
         summary: 'Behavioral economics meets choice architecture. Ethically powerful, easily weaponized.',
         topics: ['Defaults', 'Framing effects', 'Incentives', 'Behavioral bias', 'Ethical design'],
         apmRating: 4,
@@ -325,7 +325,7 @@ export const books = [
     },
     {
         title: 'Measure What Matters',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233899/Measure_What_Matters_rxz7ss.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233899/Measure_What_Matters_rxz7ss.jpg',
         summary: 'OKRs as alignment tools, not surveillance. Many orgs misuse it anyway.',
         topics: ['OKR frameworks', 'Alignment', 'Goal setting', 'Outcomes vs output', 'Cadence'],
         apmRating: 4,
@@ -337,7 +337,7 @@ export const books = [
     },
     {
         title: 'The Hard Thing About Hard Things',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233894/Hard_things_ef8t1q.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233894/Hard_things_ef8t1q.jpg',
         summary: 'CEO reality: pain, ambiguity, and brutal tradeoffs. Less "inspiration," more "survival."',
         topics: ['Hiring/firing', 'Crisis decisions', 'Culture under pressure', 'Leadership psychology', 'Execution in chaos'],
         apmRating: 3,
@@ -349,7 +349,7 @@ export const books = [
     },
     {
         title: 'Thinking, Fast and Slow',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233909/Thinking_Fast_Slow_jkosvr.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233909/Thinking_Fast_Slow_jkosvr.jpg',
         summary: 'The canonical book on cognitive biases and dual-system thinking; dense but foundational.',
         topics: ['Biases', 'Heuristics', 'Judgment errors', 'Decision-making', 'Behavioral economics'],
         apmRating: 4,
@@ -373,7 +373,7 @@ export const books = [
     },
     {
         title: 'Swipe to Unlock',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233905/Swipe_to_unlock_wesdnh.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233905/Swipe_to_unlock_wesdnh.jpg',
         summary: 'Friendly overview of how tech products, business models, and platforms work.',
         topics: ['Platform economics', 'Product fundamentals', 'Business models', 'User behavior', 'Tech literacy'],
         apmRating: 4,
@@ -385,7 +385,7 @@ export const books = [
     },
     {
         title: 'Case Interview Secrets',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233892/case_interview_kkkpgt.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233892/case_interview_kkkpgt.jpg',
         summary: 'Case interview playbook: structure, math, hypotheses, and confidence.',
         topics: ['Case structuring', 'Quantitative reasoning', 'Hypothesis-driven analysis', 'Communication', 'Interview performance'],
         apmRating: 3,
@@ -397,7 +397,7 @@ export const books = [
     },
     {
         title: 'The Lean Startup',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233907/The_Lean_Startup_cjilsf.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233907/The_Lean_Startup_cjilsf.jpg',
         summary: 'Build-measure-learn loops, MVP thinking, and validated learning. Widely cited, unevenly practiced.',
         topics: ['MVPs', 'Iteration loops', 'Innovation accounting', 'Pivot/persevere', 'Hypothesis testing'],
         apmRating: 4,
@@ -409,7 +409,7 @@ export const books = [
     },
     {
         title: 'Leading with Questions',
-        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/v1771233897/Leading_with_Questions_c6ppw2.jpg',
+        coverImage: 'https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_300/v1771233897/Leading_with_Questions_c6ppw2.jpg',
         summary: 'Leadership via inquiry: better questions produce better thinking and better teams.',
         topics: ['Coaching questions', 'Problem framing', 'Decision facilitation', 'Listening', 'Team development'],
         apmRating: 3,

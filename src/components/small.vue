@@ -8,7 +8,7 @@
 		<div class="project">
 			<div v-if="mobileLarger && hover" class="pop">
 				<div>
-					<img :src="img" :alt="title" />
+					<img :src="img" :alt="title" loading="lazy" />
 				</div>
 			</div>
 			<div v-if="!mobileLarger" class="popmobile">

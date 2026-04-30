@@ -12,7 +12,7 @@
 				name="Techno Conclave"
 				description="Where Design, Tech, and Entreprenurship collide"
 				link="/p/techno"
-				img="https://res.cloudinary.com/dgglltv04/image/upload/v1710387635/Slide_16_9_-_22_nknflj.png"
+				img="https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710387635/Slide_16_9_-_22_nknflj.png"
 				data-aos-delay="200"
 				intlink
 			/>
@@ -21,7 +21,7 @@
 				name="VR Rescue X"
 				description="VR Based Gaming Simulator for NDRF."
 				link="/p/virtual"
-				img="https://res.cloudinary.com/dgglltv04/image/upload/v1710388865/WhatsApp_Image_2023-12-19_at_19.17_foz6od.png"
+				img="https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710388865/WhatsApp_Image_2023-12-19_at_19.17_foz6od.png"
 				data-aos-delay="100"
 				intlink
 			/>
@@ -29,7 +29,7 @@
 				name="kalam"
 				description="Innovation for Writer's Comfort."
 				link="/p/kalam"
-				img="https://res.cloudinary.com/dgglltv04/image/upload/v1710703057/Slide_16_9_-_24_tfylda.png"
+				img="https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1710703057/Slide_16_9_-_24_tfylda.png"
 				data-aos-delay="100"
 				intlink
 			/>
@@ -37,7 +37,7 @@
 				name="Aqua-Alert"
 				description="Smart Water Monitoring Solution."
 				link="/p/aqua"
-				img="https://res.cloudinary.com/dgglltv04/image/upload/v1749733310/Aqua_l4dwoe.png"
+				img="https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_800/v1749733310/Aqua_l4dwoe.png"
 				data-aos-delay="100"
 				intlink
 			/>

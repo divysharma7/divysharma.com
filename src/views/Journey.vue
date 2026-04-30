@@ -189,25 +189,25 @@
 				<div class="photo-strip">
 					<div class="polaroid" style="transform: rotate(-2deg)">
 						<div class="polaroid-img-wrapper">
-							<img src="https://picsum.photos/seed/minigole/400/400" alt="Mini Gole" />
+							<img src="https://picsum.photos/seed/minigole/400/400" alt="Mini Gole" loading="lazy" />
 						</div>
 						<span class="polaroid-caption">Mini Gole</span>
 					</div>
 					<div class="polaroid" style="transform: rotate(1deg)">
 						<div class="polaroid-img-wrapper">
-							<img src="https://picsum.photos/seed/dharan/400/400" alt="GoGlamping, Dharan" />
+							<img src="https://picsum.photos/seed/dharan/400/400" alt="GoGlamping, Dharan" loading="lazy" />
 						</div>
 						<span class="polaroid-caption">GoGlamping, Dharan</span>
 					</div>
 					<div class="polaroid" style="transform: rotate(-1deg)">
 						<div class="polaroid-img-wrapper">
-							<img src="https://picsum.photos/seed/bhojpur/400/400" alt="Bhojpur" />
+							<img src="https://picsum.photos/seed/bhojpur/400/400" alt="Bhojpur" loading="lazy" />
 						</div>
 						<span class="polaroid-caption">Bhojpur</span>
 					</div>
 					<div class="polaroid" style="transform: rotate(2deg)">
 						<div class="polaroid-img-wrapper">
-							<img src="https://picsum.photos/seed/grade3/400/400" alt="Me in Grade III" />
+							<img src="https://picsum.photos/seed/grade3/400/400" alt="Me in Grade III" loading="lazy" />
 						</div>
 						<span class="polaroid-caption">Me in Grade III</span>
 					</div>
