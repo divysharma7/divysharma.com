@@ -17,7 +17,7 @@
 					<router-link to="/projects" @click="gtmNav('/projects', 'desktop')">Projects</router-link>
 					<router-link to="/workexperience" @click="gtmNav('/workexperience', 'desktop')">Experience</router-link>
 					<router-link to="/books" @click="gtmNav('/books', 'desktop')">Books</router-link>
-					<router-link to="/explore" @click="gtmNav('/explore', 'desktop')">Explore</router-link>
+					<router-link to="/bucket-list" @click="gtmNav('/bucket-list', 'desktop')">Bucket List</router-link>
 					<router-link to="/blog" @click="gtmNav('/blog', 'desktop')">Blog</router-link>
 				</div>
 
@@ -50,8 +50,8 @@
 							<router-link to="/books" @click="[nav = !nav, gtmNav('/books', 'mobile')]"
 								>Books</router-link
 							>
-							<router-link to="/explore" @click="[nav = !nav, gtmNav('/explore', 'mobile')]"
-								>Explore</router-link
+							<router-link to="/bucket-list" @click="[nav = !nav, gtmNav('/bucket-list', 'mobile')]"
+								>Bucket List</router-link
 							>
 							<router-link to="/blog" @click="[nav = !nav, gtmNav('/blog', 'mobile')]"
 								>Blog</router-link

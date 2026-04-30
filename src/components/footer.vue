@@ -34,7 +34,7 @@
 						<router-link to="/blog">Blog</router-link>
 						<router-link to="/projects">Projects</router-link>
 						<router-link to="/workexperience">Experience</router-link>
-						<router-link to="/explore">Explore</router-link>
+						<router-link to="/bucket-list">Bucket List</router-link>
 					</nav>
 				</div>
 
