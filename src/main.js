@@ -50,6 +50,8 @@ if (window.trustedTypes && window.trustedTypes.createPolicy) {
 			throw new Error('[CSP] Blocked: createScript via default policy')
 		},
 		createScriptURL: (s) => {
+			const allowed = ['/_vercel/', 'https://www.googletagmanager.com/']
+			if (allowed.some(prefix => s.startsWith(prefix))) return s
 			throw new Error(`[CSP] Blocked: createScriptURL — ${s}`)
 		}
 	})

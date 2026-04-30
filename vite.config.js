@@ -44,7 +44,10 @@ export default defineConfig({
 					if (id.includes('node_modules')) {
 						if (id.includes('vue')) return 'vue'
 						if (id.includes('lucide')) return 'icons'
-						return 'vendor'
+						if (id.includes('posthog')) return 'posthog'
+						if (id.includes('pdfjs-dist')) return 'pdfjs'
+						if (id.includes('markdown-it')) return 'markdown'
+						if (id.includes('dompurify')) return 'dompurify'
 					}
 				}
 			}
