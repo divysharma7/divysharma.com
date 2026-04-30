@@ -22,7 +22,7 @@
           download
           class="download-fab"
           :class="{ 'download-fab--pulsed': showPulse }"
-          aria-label="Download price sheet"
+          aria-label="Download resume"
           @click="downloadPriceSheet"
         >
           <Download :size="22" />

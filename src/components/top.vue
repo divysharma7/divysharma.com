@@ -74,12 +74,6 @@
 import axios from 'axios'
 var url = ''
 export default {
-	methods: {
-		gtmPush(event, params) {
-			window.dataLayer = window.dataLayer || []
-			window.dataLayer.push({ event, ...params })
-		}
-	},
 	data() {
 		return {
 			songs: false,
@@ -95,6 +89,10 @@ export default {
 		this.getSongs()
 	},
 	methods: {
+		gtmPush(event, params) {
+			window.dataLayer = window.dataLayer || []
+			window.dataLayer.push({ event, ...params })
+		},
 		getSongs() {
 			url = '/api/top-tracks'
 			axios

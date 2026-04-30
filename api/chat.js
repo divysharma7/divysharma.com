@@ -15,19 +15,6 @@ const MAX_REQUESTS_PER_WINDOW = 10
 /** @type {Map<string, number[]>} IP -> array of request timestamps */
 const ipRequestMap = new Map()
 
-// Purge stale entries every 5 minutes to prevent unbounded growth
-setInterval(() => {
-    const now = Date.now()
-    for (const [ip, timestamps] of ipRequestMap) {
-        const recent = timestamps.filter(t => now - t < RATE_LIMIT_WINDOW_MS)
-        if (recent.length === 0) {
-            ipRequestMap.delete(ip)
-        } else {
-            ipRequestMap.set(ip, recent)
-        }
-    }
-}, 5 * 60_000)
-
 function isRateLimited(ip) {
     const now = Date.now()
     const timestamps = (ipRequestMap.get(ip) || []).filter(

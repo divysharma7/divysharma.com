@@ -3,7 +3,7 @@
 		<a
 			target="_blank"
 			class="spot-logo"
-			href="https://open.spotify.com/user/divysharma7"
+			href="https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji"
 			title="Spotify"
 			rel="noopener noreferrer"
 			aria-label="Now playing on Spotify"
@@ -37,7 +37,7 @@
 				</a>
 			</h5>
 			<h5 class="title not" v-else>
-				<a href="https://open.spotify.com/user/divysharma7" target="_blank" @click="gtmPush('click:outbound', { platform: 'spotify', location: 'spotify_widget' })"
+				<a href="https://open.spotify.com/user/31wan4heyahmjpej4evvpzwzjnji" target="_blank" @click="gtmPush('click:outbound', { platform: 'spotify', location: 'spotify_widget' })"
 					>Spotify — Not playing</a
 				>
 			</h5>

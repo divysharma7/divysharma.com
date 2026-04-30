@@ -2,7 +2,6 @@ import dotenv from 'dotenv'
 import { Readable } from 'stream'
 import bodyParser from 'body-parser'
 dotenv.config({ path: '.env.local' })
-dotenv.config({ path: '.env.local' })
 
 const bindHandler = (server, route, modulePath) => {
 	const resolvedModuleUrl = new URL(modulePath, import.meta.url).href
@@ -66,6 +65,7 @@ export default function localApi() {
 			bindHandler(server, '/api/top-tracks', '../api/top-tracks.js')
 			bindHandler(server, '/api/health', '../api/health.js')
 			bindHandler(server, '/api/chat', '../api/chat.js')
+			bindHandler(server, '/api/contact', '../api/contact.js')
 			bindHandler(server, '/api/ingest', '../api/ingest.js')
 		}
 	}

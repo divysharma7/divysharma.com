@@ -51,16 +51,17 @@ const submitForm = async () => {
 	loading.value = true
 
 	try {
-		// Simulate API call or call actual API if configured
-		// const res = await fetch('/api/contact', {
-		// 	method: 'POST',
-		// 	headers: { 'Content-Type': 'application/json' },
-		// 	body: JSON.stringify(form.value)
-		// })
-		
-		// For now, just simulate success since backend might not be fully wired
-		await new Promise(resolve => setTimeout(resolve, 1000))
-		
+		const res = await fetch('/api/contact', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(form.value)
+		})
+
+		if (!res.ok) {
+			const data = await res.json().catch(() => ({}))
+			throw new Error(data.message || 'Failed to send message')
+		}
+
 		success.value = true
     window.dataLayer = window.dataLayer || []
     window.dataLayer.push({ event: 'contact:message_sent', location: 'contact_form' })

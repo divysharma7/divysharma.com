@@ -85,8 +85,7 @@ const router = createRouter({
     }
 })
 
-// @ts-ignore
-app.use(AOS.init())
+AOS.init()
 
 app.use(head)
 

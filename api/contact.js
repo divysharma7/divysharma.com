@@ -1,5 +1,5 @@
-const sgMail = require('@sendgrid/mail')
-const Filter = require('bad-words')
+import sgMail from '@sendgrid/mail'
+import Filter from 'bad-words'
 const filter = new Filter()
 
 // --- Rate limiting (in-memory) ---
@@ -86,7 +86,7 @@ export default async (req, res) => {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
     const msg = {
-        to: process.env.CONTACT_EMAIL || 'divy@example.com',
+        to: process.env.CONTACT_EMAIL || 'divysharma029@gmail.com',
         from: 'portfolio@divysharma.com',
         subject: `New Message from ${safeName} via Portfolio`,
         text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
