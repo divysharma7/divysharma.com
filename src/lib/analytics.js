@@ -1,25 +1,22 @@
 /**
- * Idle-loaded GA4 analytics.
- * Replaces the render-blocking GTM script with a deferred, non-blocking GA4 loader.
- * Custom event tracking is handled via GTM dataLayer pushes.
+ * Idle-loaded Google Tag Manager container.
+ * GA4 is configured as a tag inside GTM — no standalone gtag.js needed.
+ * Custom event tracking is handled via dataLayer pushes throughout the codebase.
  */
 export function loadAnalytics() {
   if (import.meta.env.DEV) return
 
-  const measurementId = import.meta.env.VITE_GA4_MEASUREMENT_ID
-  if (!measurementId) return
+  const gtmId = import.meta.env.VITE_GTM_ID
+  if (!gtmId) return
 
   const load = () => {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+
     const s = document.createElement('script')
     s.async = true
-    s.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`
+    s.src = `https://www.googletagmanager.com/gtm.js?id=${gtmId}`
     document.head.appendChild(s)
-
-    window.dataLayer = window.dataLayer || []
-    function gtag() { window.dataLayer.push(arguments) }
-    window.gtag = gtag
-    gtag('js', new Date())
-    gtag('config', measurementId, { send_page_view: true })
   }
 
   if ('requestIdleCallback' in window) {
