@@ -124,6 +124,20 @@
 							<p>What I'm reading and what shaped my thinking.</p>
 						</div>
 					</router-link>
+					<router-link to="/bucket-list" class="explore-card">
+						<Target :size="18" />
+						<div>
+							<h3>Bucket List</h3>
+							<p>Things I want to do, become, and build.</p>
+						</div>
+					</router-link>
+					<router-link to="/projects" class="explore-card">
+						<Rocket :size="18" />
+						<div>
+							<h3>Projects</h3>
+							<p>Things I've built and shipped.</p>
+						</div>
+					</router-link>
 					<router-link to="/explore" class="explore-card">
 						<Compass :size="18" />
 						<div>
@@ -150,7 +164,7 @@ import { posts } from '../data/posts.js'
 import ExperienceCard from '../components/experience/ExperienceCard.vue'
 import CTA from '../components/CTA.vue'
 import { useHead } from '@vueuse/head'
-import { MapPin, Clock, Send, FileText, Linkedin, Github, Mail, Route, Award, Users, Settings, BookOpen, Compass } from 'lucide-vue-next'
+import { MapPin, Clock, Send, FileText, Linkedin, Github, Mail, Route, Award, Users, Settings, BookOpen, Compass, Target, Rocket } from 'lucide-vue-next'
 import posthog from 'posthog-js'
 
 useHead({

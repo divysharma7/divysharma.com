@@ -47,6 +47,7 @@
 						<router-link to="/books">Books</router-link>
 						<router-link to="/journey/certificates">Certificates</router-link>
 						<router-link to="/journey/mentors">Mentors</router-link>
+						<router-link to="/bucket-list">Bucket List</router-link>
 					</nav>
 				</div>
 
