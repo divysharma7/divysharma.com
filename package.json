@@ -44,7 +44,7 @@
 		"vue": "^3.3.4",
 		"vue-router": "^4.2.4",
 		"vue3-notion": "^0.1.45",
-		"zod": "^4.3.6"
+		"zod": "^4.4.3"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
