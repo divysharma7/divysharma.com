@@ -1,5 +1,94 @@
 export const posts = [
     {
+        slug: 'stakeholder-review-format',
+        title: 'How to run a stakeholder review that actually replaces your status meetings',
+        excerpt: 'If your stakeholders are pulling you into 1:1s asking what your team is working on, your stakeholder review is broken. This is the format I use to fix that.',
+        heroImage: '/blog-heroes/stakeholder-review-format.svg',
+        heroAlt: 'Stakeholder reviews that work — meetings that earn their time',
+        content: `![The three areas of a stakeholder review: health, discovery, delivery](/images/blog/review-three-areas.svg)
+
+If your stakeholders are pulling you into 1:1s asking what your team is working on, your stakeholder review is broken, or you don't have one. This post is the format I use to fix that.
+
+A stakeholder review is a single recurring meeting where you make three things visible to anyone in the org who cares: how the product is performing, what your team is discovering, and what your team is delivering. It replaces a dozen Slack pings and hallway questions per cycle. In Scrum it's called a Sprint Demo or Showcase, but the format works whether or not you run Scrum.
+
+Stakeholders aren't on your team, so they don't know which stories you picked, why you picked them, or where they fit in the bigger picture. The review's job is to connect what you built back to the outcomes they care about.
+
+The first stakeholder review I ran, our CTO asked me to set it up and I came in over-prepared. I spent a chunk of the meeting explaining that we'd missed most of our delivery deadlines and that's why the outcome was delayed. What I learned watching the room: business stakeholders weren't there to grade engineering. They wanted alignment. They wanted to know how we were going to improve activation. The meeting taught me what they actually cared about, which was the opposite of what I'd prepared.
+
+---
+
+## Who to invite
+
+Anyone interested. Public meeting.
+
+Make sure your whole team is in the room. Watching stakeholders react to their work, positively or critically, reminds your team that what they ship matters to people outside the squad.
+
+---
+
+## What this meeting is, and what it isn't
+
+Use the review to show the results of your work. That's what stakeholders care about and where the meeting earns its time.
+
+However, don't let the review become a forum for stakeholders to critique your team's planning, velocity, or working style. That's your team's job to manage internally. If a stakeholder pushes there, redirect: "Happy to talk about how we plan in a separate session. Today is about what we shipped and learned."
+
+---
+
+## Three things to review, in order
+
+The review covers three areas. Spend roughly equal time on each.
+
+### 1. Product health: the 2-3 KPIs you actually watch
+
+If your team owns an existing product or surface, open with the metrics.
+
+State the 2-3 KPIs you're tracking and their current values. Then connect each one to something the business cares about: revenue, retention, cost. Stakeholders don't need your full dashboard. They need to know which numbers you're betting on and why.
+
+For each metric, be ready to answer four questions:
+
+- What's the current value?
+- How does it compare to last cycle, last month, last year?
+- How does it compare to what you expected?
+- What should we celebrate, and what should we be watching?
+
+### 2. Discovery: what you learned about the problem
+
+Discovery work is research and data. It's how you build conviction that the thing you're about to ship will actually move the metric you care about. Skipping this step costs your engineers months of effort on features that don't change anything.
+
+For each opportunity you've explored, walk through three things:
+
+- Who it's for, why we're building it, and what success looks like. Connect it back to your value proposition.
+- How your hypothesis changed. What were you wrong about? What surprised you? What got stronger? What tests led you to believe you were right?
+- The artefacts of the work. Proto-personas, story maps, UI sketches, prototypes, experiments. If you ran a limited rollout, share the data.
+
+This section is where your team owns the quality of its planning and thinking. Show your reasoning.
+
+### 3. Delivery: what you shipped, at the solution level
+
+Now review the work you completed at the solution level, meaning the user-facing capability you're releasing, not the individual stories underneath. (If you use story jargon, this is roughly the epic.)
+
+For each solution, cover:
+
+- Who it's for and what outcome it targets. Remind everyone why you're building this.
+- What the result actually looks like. Walk through the stories holistically. If something looks incomplete, explain why. Stakeholders often expect a finished portrait when you're showing them a sketch of the full canvas.
+- What's left. How close is this to releasable? What did you learn during build that affects delivery?
+
+If stakeholders gave feedback during discovery, this is the moment they say "yep, still looks good." If they didn't see it during discovery, expect more friction now, which is exactly why discovery reviews matter.
+
+Be ready to write new stories on the spot for genuine gaps. Also be ready to push back. People unfamiliar with the work sometimes suggest things that sound good but don't serve the outcome you're targeting. Push back: "Good idea, but it doesn't serve the outcome we're targeting this cycle. Let's park it."
+
+One thing to deliberately leave out: your team's velocity and whether you hit your sprint commitments. That belongs in your team's internal review, not here. Stakeholders don't need to grade your delivery process.
+
+---
+
+![Two figures aligned toward the same focal point — stakeholder alignment](/images/blog/review-alignment.svg)
+
+## The principle behind all of this
+
+Stakeholders form opinions about your roadmap whether you give them information or not. The only question is whether those opinions are shaped by your review or by the loudest voice in the last all-hands. If your stakeholders can't tell what changed since last cycle, the review failed, regardless of how the meeting felt in the room.`,
+        tags: ['Product Management', 'Leadership'],
+        publishedAt: '2026-05-05T12:00:00Z',
+    },
+    {
         slug: 'growth-vs-marketing-vs-product',
         title: 'Growth vs Marketing vs Product',
         excerpt: 'Marketing, growth, and product are three different jobs. They run on different time horizons, with different skill mixes, and with different definitions of what winning means.',
@@ -657,94 +746,5 @@ Hire people you would someday be happy working for.
 Favorite interview question: "One book you read which you think can bring change in your life."`,
         tags: ['Career', 'Leadership', 'Product Management'],
         publishedAt: '2026-04-21T12:00:00Z',
-    },
-    {
-        slug: 'stakeholder-review-format',
-        title: 'How to run a stakeholder review that actually replaces your status meetings',
-        excerpt: 'If your stakeholders are pulling you into 1:1s asking what your team is working on, your stakeholder review is broken. This is the format I use to fix that.',
-        heroImage: '/blog-heroes/stakeholder-review-format.svg',
-        heroAlt: 'Stakeholder reviews that work — meetings that earn their time',
-        content: `![The three areas of a stakeholder review: health, discovery, delivery](/images/blog/review-three-areas.svg)
-
-If your stakeholders are pulling you into 1:1s asking what your team is working on, your stakeholder review is broken, or you don't have one. This post is the format I use to fix that.
-
-A stakeholder review is a single recurring meeting where you make three things visible to anyone in the org who cares: how the product is performing, what your team is discovering, and what your team is delivering. It replaces a dozen Slack pings and hallway questions per cycle. In Scrum it's called a Sprint Demo or Showcase, but the format works whether or not you run Scrum.
-
-Stakeholders aren't on your team, so they don't know which stories you picked, why you picked them, or where they fit in the bigger picture. The review's job is to connect what you built back to the outcomes they care about.
-
-The first stakeholder review I ran, our CTO asked me to set it up and I came in over-prepared. I spent a chunk of the meeting explaining that we'd missed most of our delivery deadlines and that's why the outcome was delayed. What I learned watching the room: business stakeholders weren't there to grade engineering. They wanted alignment. They wanted to know how we were going to improve activation. The meeting taught me what they actually cared about, which was the opposite of what I'd prepared.
-
----
-
-## Who to invite
-
-Anyone interested. Public meeting.
-
-Make sure your whole team is in the room. Watching stakeholders react to their work, positively or critically, reminds your team that what they ship matters to people outside the squad.
-
----
-
-## What this meeting is, and what it isn't
-
-Use the review to show the results of your work. That's what stakeholders care about and where the meeting earns its time.
-
-However, don't let the review become a forum for stakeholders to critique your team's planning, velocity, or working style. That's your team's job to manage internally. If a stakeholder pushes there, redirect: "Happy to talk about how we plan in a separate session. Today is about what we shipped and learned."
-
----
-
-## Three things to review, in order
-
-The review covers three areas. Spend roughly equal time on each.
-
-### 1. Product health: the 2-3 KPIs you actually watch
-
-If your team owns an existing product or surface, open with the metrics.
-
-State the 2-3 KPIs you're tracking and their current values. Then connect each one to something the business cares about: revenue, retention, cost. Stakeholders don't need your full dashboard. They need to know which numbers you're betting on and why.
-
-For each metric, be ready to answer four questions:
-
-- What's the current value?
-- How does it compare to last cycle, last month, last year?
-- How does it compare to what you expected?
-- What should we celebrate, and what should we be watching?
-
-### 2. Discovery: what you learned about the problem
-
-Discovery work is research and data. It's how you build conviction that the thing you're about to ship will actually move the metric you care about. Skipping this step costs your engineers months of effort on features that don't change anything.
-
-For each opportunity you've explored, walk through three things:
-
-- Who it's for, why we're building it, and what success looks like. Connect it back to your value proposition.
-- How your hypothesis changed. What were you wrong about? What surprised you? What got stronger? What tests led you to believe you were right?
-- The artefacts of the work. Proto-personas, story maps, UI sketches, prototypes, experiments. If you ran a limited rollout, share the data.
-
-This section is where your team owns the quality of its planning and thinking. Show your reasoning.
-
-### 3. Delivery: what you shipped, at the solution level
-
-Now review the work you completed at the solution level, meaning the user-facing capability you're releasing, not the individual stories underneath. (If you use story jargon, this is roughly the epic.)
-
-For each solution, cover:
-
-- Who it's for and what outcome it targets. Remind everyone why you're building this.
-- What the result actually looks like. Walk through the stories holistically. If something looks incomplete, explain why. Stakeholders often expect a finished portrait when you're showing them a sketch of the full canvas.
-- What's left. How close is this to releasable? What did you learn during build that affects delivery?
-
-If stakeholders gave feedback during discovery, this is the moment they say "yep, still looks good." If they didn't see it during discovery, expect more friction now, which is exactly why discovery reviews matter.
-
-Be ready to write new stories on the spot for genuine gaps. Also be ready to push back. People unfamiliar with the work sometimes suggest things that sound good but don't serve the outcome you're targeting. Push back: "Good idea, but it doesn't serve the outcome we're targeting this cycle. Let's park it."
-
-One thing to deliberately leave out: your team's velocity and whether you hit your sprint commitments. That belongs in your team's internal review, not here. Stakeholders don't need to grade your delivery process.
-
----
-
-![Two figures aligned toward the same focal point — stakeholder alignment](/images/blog/review-alignment.svg)
-
-## The principle behind all of this
-
-Stakeholders form opinions about your roadmap whether you give them information or not. The only question is whether those opinions are shaped by your review or by the loudest voice in the last all-hands. If your stakeholders can't tell what changed since last cycle, the review failed, regardless of how the meeting felt in the room.`,
-        tags: ['Product Management', 'Leadership'],
-        publishedAt: '2026-05-05T12:00:00Z',
     }
 ]
