@@ -78,7 +78,7 @@
 			<Footer class="footer" />
 		</div>
 		<ChatWidget />
-		<Oneko />
+		<Oneko :forceSleep="$route.path.startsWith('/blog')" />
 	</div>
 </template>
 

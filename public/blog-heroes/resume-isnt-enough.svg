@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Inter, 'Helvetica Neue', sans-serif">
+  <rect width="1280" height="720" fill="#F4EFE6"/>
+
+  <!-- Subtitle (mono) -->
+  <text x="96" y="280" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="18" font-weight="500" fill="#1A1A1A" letter-spacing="0.04em">THE AI ERA DEMANDS MORE</text>
+
+  <!-- Accent rule -->
+  <rect x="96" y="300" width="64" height="12" rx="1" fill="#E8765A"/>
+
+  <!-- Title -->
+  <text x="96" y="380" font-size="78" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">Your Resume Isn't</text>
+  <text x="96" y="470" font-size="78" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">Enough Anymore</text>
+
+  <!-- Right side illustration: fading resume vs glowing portfolio -->
+
+  <!-- Faded resume document -->
+  <g opacity="0.3">
+    <rect x="860" y="160" width="150" height="200" rx="4" fill="white" stroke="#1A1A1A" stroke-width="1.5"/>
+    <!-- Resume lines -->
+    <rect x="880" y="185" width="80" height="6" rx="2" fill="#1A1A1A" opacity="0.4"/>
+    <rect x="880" y="200" width="110" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+    <rect x="880" y="212" width="100" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+    <rect x="880" y="230" width="60" height="6" rx="2" fill="#1A1A1A" opacity="0.3"/>
+    <rect x="880" y="244" width="110" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+    <rect x="880" y="256" width="90" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+    <rect x="880" y="268" width="105" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+    <rect x="880" y="286" width="60" height="6" rx="2" fill="#1A1A1A" opacity="0.3"/>
+    <rect x="880" y="300" width="110" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+    <rect x="880" y="312" width="95" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+    <rect x="880" y="324" width="100" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+  </g>
+
+  <!-- Arrow from resume to portfolio -->
+  <line x1="1020" y1="340" x2="1050" y2="400" stroke="#a1a1aa" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polygon points="1047,400 1053,400 1050,408" fill="#a1a1aa"/>
+
+  <!-- Glowing portfolio screen -->
+  <rect x="1000" y="410" width="180" height="220" rx="8" fill="white" stroke="#E8765A" stroke-width="2.5"/>
+  <!-- Glow effect -->
+  <rect x="1000" y="410" width="180" height="220" rx="8" fill="#E8765A" opacity="0.06"/>
+
+  <!-- Portfolio content: project thumbnails + writing -->
+  <!-- Project block 1 -->
+  <rect x="1020" y="435" width="60" height="40" rx="4" fill="#E8765A" opacity="0.25"/>
+  <rect x="1090" y="435" width="70" height="8" rx="2" fill="#1A1A1A" opacity="0.5"/>
+  <rect x="1090" y="449" width="55" height="6" rx="2" fill="#1A1A1A" opacity="0.2"/>
+  <rect x="1090" y="461" width="60" height="6" rx="2" fill="#1A1A1A" opacity="0.2"/>
+
+  <!-- Project block 2 -->
+  <rect x="1020" y="490" width="60" height="40" rx="4" fill="#1A1A1A" opacity="0.12"/>
+  <rect x="1090" y="490" width="70" height="8" rx="2" fill="#1A1A1A" opacity="0.5"/>
+  <rect x="1090" y="504" width="55" height="6" rx="2" fill="#1A1A1A" opacity="0.2"/>
+  <rect x="1090" y="516" width="60" height="6" rx="2" fill="#1A1A1A" opacity="0.2"/>
+
+  <!-- Essay block -->
+  <rect x="1020" y="545" width="140" height="6" rx="2" fill="#1A1A1A" opacity="0.4"/>
+  <rect x="1020" y="558" width="140" height="4" rx="2" fill="#1A1A1A" opacity="0.15"/>
+  <rect x="1020" y="568" width="120" height="4" rx="2" fill="#1A1A1A" opacity="0.15"/>
+  <rect x="1020" y="578" width="130" height="4" rx="2" fill="#1A1A1A" opacity="0.15"/>
+
+  <!-- Thinking indicator (brain/lightbulb abstract) -->
+  <circle cx="1090" cy="610" r="8" fill="#E8765A" opacity="0.5"/>
+  <line x1="1090" y1="600" x2="1090" y2="594" stroke="#E8765A" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+  <line x1="1096" y1="602" x2="1100" y2="597" stroke="#E8765A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+  <line x1="1084" y1="602" x2="1080" y2="597" stroke="#E8765A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+</svg>

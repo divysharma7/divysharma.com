@@ -13,6 +13,10 @@ const props = defineProps({
   containerId: {
     type: String,
     default: null
+  },
+  forceSleep: {
+    type: Boolean,
+    default: false
   }
 });
 
@@ -116,7 +120,12 @@ function idle() {
 
 function frame() {
   frameCount += 1;
-  
+
+  if (props.forceSleep) {
+    setSprite('sleeping', Math.floor(frameCount / 4));
+    return;
+  }
+
   let targetX = mousePosX;
   let targetY = mousePosY;
 

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 340" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="800" height="340" fill="#fafafa" rx="12"/>
+
+  <!-- Left: Execution becoming cheaper (arrow down) -->
+  <g transform="translate(60, 40)">
+    <rect width="300" height="260" rx="8" fill="none" stroke="#e4e4e7" stroke-width="1.5"/>
+
+    <text x="150" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="#71717a" letter-spacing="0.04em">EXECUTION</text>
+    <text x="150" y="50" text-anchor="middle" font-size="11" fill="#a1a1aa">becoming cheaper</text>
+
+    <!-- Down arrow -->
+    <line x1="150" y1="62" x2="150" y2="82" stroke="#a1a1aa" stroke-width="1.5"/>
+    <polygon points="146,82 154,82 150,90" fill="#a1a1aa"/>
+
+    <!-- Items being commoditized -->
+    <rect x="40" y="100" width="220" height="30" rx="6" fill="#1A1A1A" opacity="0.06"/>
+    <text x="150" y="120" text-anchor="middle" font-size="12" fill="#71717a">Writing code</text>
+
+    <rect x="40" y="140" width="220" height="30" rx="6" fill="#1A1A1A" opacity="0.06"/>
+    <text x="150" y="160" text-anchor="middle" font-size="12" fill="#71717a">Generating designs</text>
+
+    <rect x="40" y="180" width="220" height="30" rx="6" fill="#1A1A1A" opacity="0.06"/>
+    <text x="150" y="200" text-anchor="middle" font-size="12" fill="#71717a">Analyzing data</text>
+
+    <rect x="40" y="220" width="220" height="30" rx="6" fill="#1A1A1A" opacity="0.06"/>
+    <text x="150" y="240" text-anchor="middle" font-size="12" fill="#71717a">Drafting documents</text>
+  </g>
+
+  <!-- Right: What becomes valuable (arrow up) -->
+  <g transform="translate(440, 40)">
+    <rect width="300" height="260" rx="8" fill="none" stroke="#E8765A" stroke-width="2"/>
+    <rect width="300" height="260" rx="8" fill="#E8765A" opacity="0.04"/>
+
+    <text x="150" y="32" text-anchor="middle" font-size="13" font-weight="700" fill="#E8765A" letter-spacing="0.04em">JUDGMENT</text>
+    <text x="150" y="50" text-anchor="middle" font-size="11" fill="#E8765A" opacity="0.7">becoming valuable</text>
+
+    <!-- Up arrow -->
+    <line x1="150" y1="82" x2="150" y2="62" stroke="#E8765A" stroke-width="1.5"/>
+    <polygon points="146,62 154,62 150,54" fill="#E8765A"/>
+
+    <!-- Valuable skills -->
+    <rect x="40" y="100" width="220" height="30" rx="6" fill="#E8765A" opacity="0.1"/>
+    <text x="150" y="120" text-anchor="middle" font-size="12" font-weight="500" fill="#3f3f46">Taste</text>
+
+    <rect x="40" y="140" width="220" height="30" rx="6" fill="#E8765A" opacity="0.1"/>
+    <text x="150" y="160" text-anchor="middle" font-size="12" font-weight="500" fill="#3f3f46">Decision-making</text>
+
+    <rect x="40" y="180" width="220" height="30" rx="6" fill="#E8765A" opacity="0.1"/>
+    <text x="150" y="200" text-anchor="middle" font-size="12" font-weight="500" fill="#3f3f46">Clarity of thought</text>
+
+    <rect x="40" y="220" width="220" height="30" rx="6" fill="#E8765A" opacity="0.1"/>
+    <text x="150" y="240" text-anchor="middle" font-size="12" font-weight="500" fill="#3f3f46">Original ideas</text>
+  </g>
+</svg>

@@ -1,5 +1,132 @@
 export const posts = [
     {
+        slug: 'resume-isnt-enough',
+        title: 'Your Resume Isn\'t Enough Anymore',
+        excerpt: 'Portfolios aren\'t just for designers anymore. In the AI era, what matters is how you think — and a resume can\'t show that.',
+        heroImage: '/blog-heroes/resume-isnt-enough.svg',
+        heroAlt: 'Your Resume Isn\'t Enough Anymore — the AI era demands more',
+        content: `![My portfolio homepage — divysharma.com](/images/blog/portfolio-homepage.webp)
+
+I recently explained why portfolios are becoming increasingly important in the AI era — not just for PMs, but for many other roles as well.
+
+But there's an even deeper shift happening.
+
+It's not just that portfolios are useful.
+
+**It's that the resume alone is no longer enough.**
+
+For decades, the resume has been the standard way to represent ourselves professionally.
+
+Education.
+
+Job titles.
+
+A list of responsibilities.
+
+But the way people work and the way companies evaluate talent is changing quickly. And in the AI era, what actually matters is becoming something very different.
+
+---
+
+## The Resume Shows What You Did
+
+A resume is essentially a historical document.
+
+It answers questions like:
+
+- Where did you work?
+- What was your title?
+- What were your responsibilities?
+
+But it rarely shows something much more important:
+
+**How you think.**
+
+---
+
+## A Portfolio Shows How You Think
+
+A portfolio works differently.
+
+Instead of listing your experience, it reveals your thinking process.
+
+It answers questions like:
+
+- How do you approach a problem?
+- What trade-offs did you consider?
+- Why did you make certain decisions?
+- What did you learn?
+
+In other words:
+
+A resume says "I worked on this."
+
+**A portfolio shows "This is how I think."**
+
+And that difference matters more than ever.
+
+---
+
+## AI Is Changing What Companies Look For
+
+![What AI makes cheaper vs what becomes valuable](/images/blog/ai-changes-value.svg)
+
+As AI becomes more capable, many tasks are becoming easier to execute.
+
+- Writing code
+- Generating designs
+- Analyzing data
+
+Execution is becoming cheaper.
+
+So what actually becomes valuable?
+
+- Judgment
+- Taste
+- Decision-making
+- Clarity of thought
+- Original ideas
+
+**These are much harder to capture in a resume. But they become very visible in a portfolio.**
+
+---
+
+## This Is No Longer Just for PMs
+
+Traditionally, portfolios were associated with designers.
+
+But today, they make sense for many roles.
+
+- Product managers
+- Founders
+- Indie hackers
+- Developers
+- Content creators
+- Marketers
+- Researchers
+
+**Anyone whose work involves thinking, decisions, and ideas can benefit from one.**
+
+Because portfolios are not just about visuals.
+
+They are about showing your mind at work.
+
+Here are two projects from my own portfolio — one showing product thinking for an IoT startup, the other showing the design process behind a hackathon project. Neither of these would fit on a resume. Both show how I approach problems.
+
+![Aqua-Alert product surface and kalam design process — from my portfolio](/images/blog/portfolio-case-studies.webp)
+
+---
+
+## What To Do About It
+
+If someone asks tomorrow how you think about your work, what do you point them to?
+
+If the answer is a LinkedIn profile and a Google Doc, you're going to lose ground to the people who built one page that answers it.
+
+![My essays page — how I think and keep myself updated](/images/blog/portfolio-essays.webp)`,
+        tags: ['Career', 'Product Management', 'AI'],
+        publishedAt: '2026-05-06T12:00:00Z',
+    },
+    {
         slug: 'stakeholder-review-format',
         title: 'How to run a stakeholder review that actually replaces your status meetings',
         excerpt: 'If your stakeholders are pulling you into 1:1s asking what your team is working on, your stakeholder review is broken. This is the format I use to fix that.',
