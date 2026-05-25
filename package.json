@@ -40,7 +40,7 @@
 		"posthog-js": "^1.372.3",
 		"rollup": "^4.60.2",
 		"tailwind-merge": "^3.5.0",
-		"vue": "^3.3.4",
+		"vue": "^3.5.34",
 		"vue-router": "^4.2.4",
 		"vue3-notion": "^0.1.45",
 		"zod": "^4.3.6"
@@ -51,7 +51,7 @@
 		"@tailwindcss/postcss": "^4.1.18",
 		"@vitejs/plugin-vue": "^5.2.4",
 		"@vue/compiler-sfc": "^3.3.4",
-		"@vue/server-renderer": "^3.3.4",
+		"@vue/server-renderer": "^3.5.34",
 		"autoprefixer": "^10.4.24",
 		"cross-env": "^7.0.3",
 		"eslint": "^10.2.1",
