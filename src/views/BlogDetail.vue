@@ -791,10 +791,7 @@ button {
 
 .progress-ring { flex-shrink: 0; margin-left: auto; }
 
-.bar-slide-enter-active { transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s; }
-.bar-slide-leave-active { transition: transform 0.2s ease, opacity 0.15s; }
-.bar-slide-enter-from { transform: translateX(-50%) translateY(60px); opacity: 0; }
-.bar-slide-leave-to { transform: translateX(-50%) translateY(40px); opacity: 0; }
+/* bar-slide transitions moved to src/assets/css/transitions.css */
 
 /* ── TOC overlay ── */
 .toc-overlay {
@@ -898,15 +895,7 @@ button {
 	border-radius: 0 0 20px 20px;
 }
 
-/* TOC transitions */
-.toc-fade-enter-active { transition: opacity 0.25s; }
-.toc-fade-leave-active { transition: opacity 0.2s; }
-.toc-fade-enter-from, .toc-fade-leave-to { opacity: 0; }
-
-.toc-slide-enter-active { transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s; }
-.toc-slide-leave-active { transition: transform 0.2s ease, opacity 0.15s; }
-.toc-slide-enter-from { transform: translateY(60px); opacity: 0; }
-.toc-slide-leave-to { transform: translateY(40px); opacity: 0; }
+/* TOC transitions moved to src/assets/css/transitions.css */
 
 /* ── Share modal ── */
 .share-overlay {
