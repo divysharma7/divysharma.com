@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
 import Components from 'unplugin-vue-components/vite'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
@@ -24,17 +23,18 @@ export default defineConfig({
 			resolvers: IconsResolver({
 				componentPrefix: ''
 			}),
-			dts: true,
+			dts: false,
 			include: [/\.vue$/, /\.vue\?vue/, /\.md$/]
 		}),
 		Icons()
 	],
 	resolve: {
 		alias: {
-			'@': path.resolve(__dirname, './src')
+			'@': new URL('./src', import.meta.url).pathname
 		}
 	},
 	build: {
+		sourcemap: false,
 		target: 'es2022',
 		cssCodeSplit: true,
 		modulePreload: { polyfill: false },
@@ -56,6 +56,9 @@ export default defineConfig({
 	esbuild: { legalComments: 'none' },
 	server: {
 		open: true,
+		warmup: {
+			clientFiles: ['./src/main.js', './src/views/Home.vue']
+		},
 		fs: {
 			allow: ['..']
 		}

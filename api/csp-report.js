@@ -17,9 +17,20 @@ export default function handler(req, res) {
 		return res.status(405).json({ error: 'Method not allowed' })
 	}
 
-	const report = req.body?.['csp-report'] || req.body
-	if (report) {
-		console.log('[CSP Violation]', JSON.stringify(report, null, 2))
+	const body = req.body
+	const bodyStr = JSON.stringify(body)
+	if (!body || bodyStr.length > 8192) {
+		return res.status(400).end()
+	}
+
+	const report = body['csp-report'] || body
+	if (report?.['document-uri'] && report?.['violated-directive']) {
+		console.log('[CSP Violation]', JSON.stringify({
+			'document-uri': report['document-uri'],
+			'violated-directive': report['violated-directive'],
+			'blocked-uri': report['blocked-uri'] || '',
+			'source-file': report['source-file'] || '',
+		}))
 	}
 
 	res.status(204).end()

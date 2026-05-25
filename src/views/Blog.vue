@@ -370,7 +370,7 @@ button {
 	color: var(--color-body);
 	background: transparent;
 	cursor: pointer;
-	transition: all var(--duration-fast);
+	transition: border-color var(--duration-fast), color var(--duration-fast);
 
 	&:hover {
 		border-color: var(--color-faint);

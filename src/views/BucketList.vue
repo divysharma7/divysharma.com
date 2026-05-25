@@ -83,9 +83,19 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useHead } from '@vueuse/head'
 import { Target } from 'lucide-vue-next'
 import { bucketList } from '@/data/bucketlist.js'
 import posthog from 'posthog-js'
+
+useHead({
+	title: 'Bucket List',
+	meta: [
+		{ name: 'description', content: 'Things I want to do, become, and build — and a few I already have.' },
+		{ property: 'og:title', content: 'Bucket List | Divy Sharma' },
+		{ property: 'og:description', content: 'Things I want to do, become, and build — and a few I already have.' },
+	]
+})
 
 const activeYear = ref('all')
 
@@ -187,7 +197,7 @@ function categoryLabel(cat) {
 	font-family: var(--font-sans);
 	font-weight: 500;
 	cursor: pointer;
-	transition: all var(--duration-fast);
+	transition: border-color var(--duration-fast), color var(--duration-fast);
 
 	&:hover {
 		border-color: var(--color-heading);

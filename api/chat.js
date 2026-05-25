@@ -43,10 +43,15 @@ function validateMessages(messages) {
 
     let totalContentLength = 0
 
+    const ALLOWED_ROLES = new Set(['user', 'assistant'])
+
     for (let i = 0; i < messages.length; i++) {
         const msg = messages[i]
         if (typeof msg?.role !== 'string' || typeof msg?.content !== 'string') {
             return `Each message must have a "role" (string) and "content" (string). Problem at index ${i}.`
+        }
+        if (!ALLOWED_ROLES.has(msg.role)) {
+            return `Invalid role "${msg.role}" at index ${i}. Only "user" and "assistant" are allowed.`
         }
         totalContentLength += msg.content.length
     }
@@ -71,7 +76,7 @@ export default async function handler(req) {
     if (req.method !== 'POST') return new Response('Method not allowed', { status: 405 })
 
     // Rate limiting
-    const ip = req.headers.get('x-forwarded-for') || 'unknown'
+    const ip = (req.headers.get('x-forwarded-for') || 'unknown').split(',')[0].trim()
     if (isRateLimited(ip)) {
         return new Response(
             JSON.stringify({ error: 'Too many requests. Please try again later.' }),

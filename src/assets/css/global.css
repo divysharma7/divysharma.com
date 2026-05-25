@@ -33,6 +33,7 @@ strong {
 	margin: 0;
 	margin-bottom: 0.25rem;
 	font-size: var(--h1);
+	text-wrap: balance;
 }
 
 .img {
@@ -43,6 +44,9 @@ strong {
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
+	outline: 1px solid rgba(0, 0, 0, 0.06);
+	outline-offset: -1px;
+	border-radius: var(--radius-sm);
 }
 
 .flex-center {
@@ -70,7 +74,7 @@ strong {
 }
 
 .back {
-	transition: 0.3s;
+	transition: opacity 0.2s ease-out;
 }
 
 .back:hover {

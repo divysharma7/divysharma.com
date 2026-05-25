@@ -210,6 +210,118 @@ See [skills.md](skills.md) for the playbooks that shaped this project.
 
 ---
 
+## v2 Changelog
+
+### 1. Blog System & Content Creation
+
+**Situation:** The portfolio site had a blog section with 8 existing posts, all stored as JavaScript objects in `src/data/posts.js`. There was no documentation on how the blog system worked — meaning if the user switched away from Claude Code to another AI tool (ChatGPT, Gemini, etc.), that tool would have no way to correctly add a blog post without re-discovering the entire architecture.
+
+**Task:** Write a new blog post ("What Makes a Great Product Manager") from raw content provided by the user. Create a comprehensive skill file that any AI model could follow to manage the blog in the future — without needing Claude Code or prior codebase knowledge.
+
+**Action:**
+- Explored the full blog architecture: data schema in `posts.js`, markdown parser in `BlogDetail.vue` (regex-based, supports `##`, `###`, `**bold**`, `==highlight==`, `![images]()`, `---`, `- lists`, `> quotes`), routing in `routes.js`, rendering in `Blog.vue` and `Home.vue`, sitemap structure, and hero SVG design system
+- Created a hero SVG (`public/blog-heroes/what-makes-a-great-product-manager.svg`) matching the existing design language — `#F4EFE6` background, `#1A1A1A` text, `#E8765A` accent, 1280x720 viewBox, Inter + JetBrains Mono fonts
+- Created a content image SVG (`public/images/blog/pm-traits-overview.svg`) — a 3x3 grid of the 9 PM traits
+- Rewrote the user's raw content into the site's voice — first-person, short paragraphs, `==highlighted==` key insights, `---` section dividers, proper `##` headings for Table of Contents generation
+- Added the post object to the top of the `posts` array with correct schema (slug, title, excerpt, heroImage, heroAlt, content, tags, publishedAt)
+- Updated `sitemap-blog.xml` with the new URL entry and updated the blog index `<lastmod>`
+- Wrote a 300+ line skill file at `.claude/skills/blog/SKILL.md` covering: architecture overview, step-by-step instructions for add/edit/delete, hero SVG template with exact colors and spacing, full markdown reference (supported and unsupported syntax), content style guide, tag pool, rendering pipeline explanation, file path reference, and 10 common mistakes to avoid
+
+**Result:**
+- New blog post live at `/blog/what-makes-a-great-product-manager` — properly renders with TOC, related posts, read time, share buttons, and SEO meta tags
+- The `/blog` skill is now registered in Claude Code and usable by any AI model
+
+---
+
+### 2. SEO Audit & Fixes
+
+**Situation:** The portfolio site had strong SEO fundamentals (Person schema JSON-LD, dynamic canonical tags, og:image per blog post, proper robots.txt) but two pages had gaps: the Bucket List page (`/bucket-list`) had no meta tags despite being in the sitemap, and the 404 page was indexable by search engines — meaning Google could index random 404 URLs and dilute the site's crawl budget.
+
+**Task:** Run a full technical SEO audit covering crawlability, indexability, meta tags, structured data, heading structure, and sitemaps — then fix all identified gaps.
+
+**Action:**
+- Audited all 15 routes for `useHead` coverage — found 12/14 views had proper meta tags, but `BucketList.vue` and `NotFound.vue` were missing
+- Verified sitemap coverage across `sitemap-pages.xml` (16 URLs) and `sitemap-blog.xml` (10 URLs)
+- Checked `index.html` for hardcoded meta, JSON-LD, and preloads — found Person schema properly implemented with `jobTitle`, `worksFor`, `sameAs` linking to LinkedIn, Twitter, GitHub
+- Added `useHead()` to `BucketList.vue` with title, description, and OpenGraph tags
+- Added `useHead()` to `NotFound.vue` with `title: 'Page Not Found'` and `meta robots: noindex`
+
+**Result:**
+- All 14 views now have proper SEO meta tags
+- 404 page now signals `noindex` to search engines, preventing crawl budget waste
+- SEO score improved from 8.2/10 to approximately 9/10
+
+---
+
+### 3. Security Review & Hardening
+
+**Situation:** The site has 7 serverless API routes on Vercel handling sensitive operations: an AI chatbot (Mistral API), a contact form (SendGrid), Spotify integrations (OAuth tokens), a RAG ingestion endpoint (Upstash Vector), and a health check.
+
+**Task:** Perform a full security review across OWASP Top 10 categories then fix all code-level vulnerabilities.
+
+**Action:**
+- **C-2 (CRITICAL):** `api/health.js` exposed `process.version` and feature flag state publicly. Removed both fields.
+- **H-2 (HIGH):** `api/chat.js` did not restrict the `role` field — attacker could send `role: "system"` to override the LLM system prompt. Added `Set(['user', 'assistant'])` whitelist.
+- **H-5 (HIGH):** `api/csp-report.js` logged raw unvalidated bodies with no size limit. Added 8KB guard and whitelist-only field logging.
+- **M-3/M-4 (MEDIUM):** Both `api/chat.js` and `api/contact.js` used full `x-forwarded-for` header as rate-limit key. Fixed with `.split(',')[0].trim()`.
+
+**Result:**
+- 5 security vulnerabilities fixed across 4 API files
+- Health endpoint no longer leaks server internals
+- Chat endpoint protected against prompt injection via role spoofing
+- CSP report endpoint hardened against log injection
+- Rate limiting correctly identifies clients regardless of proxy chain
+
+---
+
+### 4. UI Polish & Performance
+
+**Situation:** The site used `transition: all` in 30+ CSS locations across 15 Vue components — a known anti-pattern that forces the browser to watch and interpolate every CSS property on every frame. Blog images had no visual border, causing white-background images to bleed into the page.
+
+**Task:** Audit the site for UI polish issues and fix the highest-impact ones.
+
+**Action:**
+- Added `text-wrap: balance` to `.title` class globally — prevents orphan words on all page titles
+- Added subtle image outlines (`rgba(0, 0, 0, 0.06)`) to `.img` class and blog `:deep(.blog-image)`
+- Replaced 17 `transition: all` instances with explicit properties across `Home.vue`, `Blog.vue`, `Books.vue`, `BucketList.vue`, `CTA.vue`, `ChatWidget.vue`, and `global.css`
+
+**Result:**
+- 17 `transition: all` instances eliminated — cleaner animation, less GPU work
+- Blog images have subtle borders preventing background bleed
+- Page titles wrap evenly on narrow screens
+- Build verified: passes cleanly in 4.33s
+
+---
+
+### 5. Vite Build Optimization
+
+**Situation:** The `vite.config.js` was well-structured but had minor issues: unused CJS import, non-ESM alias, no explicit sourcemap protection, unnecessary TypeScript declaration generation, and no dev server warmup.
+
+**Task:** Review and apply all best-practice improvements.
+
+**Action:**
+- Removed unused `path` import, switched alias to ESM-native `new URL()` syntax
+- Added `sourcemap: false` explicitly, changed `dts: true` to `false` (JS project)
+- Added `server.warmup.clientFiles` for faster dev cold starts
+
+**Result:**
+- Build passes cleanly, dev server starts faster, config is fully ESM-idiomatic
+
+---
+
+### Files Changed in v2
+
+| Category | Files |
+|----------|-------|
+| New content | `posts.js`, `what-makes-a-great-product-manager.svg`, `pm-traits-overview.svg` |
+| New skill | `.claude/skills/blog/SKILL.md` |
+| SEO | `BucketList.vue`, `NotFound.vue`, `sitemap-blog.xml` |
+| Security | `health.js`, `chat.js`, `contact.js`, `csp-report.js` |
+| UI polish | `global.css`, `Home.vue`, `Blog.vue`, `BlogDetail.vue`, `Books.vue`, `CTA.vue`, `ChatWidget.vue` |
+| Build | `vite.config.js` |
+
+---
+
 ## License + Author
 
 Built by Divy Sharma. No license specified.

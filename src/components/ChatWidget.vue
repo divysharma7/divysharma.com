@@ -409,7 +409,7 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 	font-size: var(--text-sm);
 	font-weight: 500;
 	cursor: pointer;
-	transition: all var(--duration-fast);
+	transition: background-color var(--duration-fast), border-color var(--duration-fast), transform var(--duration-fast);
 	text-align: left;
 	font-family: inherit;
 	line-height: var(--leading-snug);
@@ -491,7 +491,7 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 	color: var(--color-heading);
 	border-radius: var(--radius-md);
 	font-size: var(--text-sm);
-	transition: all var(--duration-fast);
+	transition: background-color var(--duration-fast), border-color var(--duration-fast), box-shadow var(--duration-fast);
 	font-family: inherit;
 
 	&::placeholder {
@@ -560,7 +560,7 @@ $shadow-soft: 0 12px 32px rgba(180, 160, 130, 0.15);
 
 .fade-slide-enter-active,
 .fade-slide-leave-active {
-	transition: all 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+	transition: opacity 0.4s cubic-bezier(0.33, 1, 0.68, 1), transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
 }
 
 .fade-slide-enter-from,

@@ -343,7 +343,7 @@ onUnmounted(() => { if (rafId) cancelAnimationFrame(rafId) })
 	font-size: var(--text-sm);
 	font-weight: 500;
 	text-decoration: none;
-	transition: all var(--duration-fast);
+	transition: background-color var(--duration-fast), box-shadow var(--duration-fast), color var(--duration-fast);
 
 	&--primary {
 		background: var(--color-heading);
@@ -444,7 +444,7 @@ onUnmounted(() => { if (rafId) cancelAnimationFrame(rafId) })
 	font-size: var(--text-base);
 	flex-shrink: 0;
 	opacity: 0;
-	transition: all 0.15s ease;
+	transition: opacity 0.15s ease, transform 0.15s ease;
 	padding-top: 2px;
 }
 
@@ -604,7 +604,7 @@ onUnmounted(() => { if (rafId) cancelAnimationFrame(rafId) })
 	border: 1px solid var(--color-border);
 	border-radius: var(--radius-md);
 	text-decoration: none;
-	transition: all 0.15s;
+	transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
 
 	&:hover {
 		border-color: #e5e7eb;

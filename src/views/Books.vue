@@ -582,7 +582,7 @@ select:focus-visible {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .search-clear:hover {
@@ -613,7 +613,7 @@ select:focus-visible {
   font-size: var(--text-sm);
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
   min-width: 52px;
 }
 
@@ -691,7 +691,7 @@ select:focus-visible {
   color: var(--color-body);
   cursor: pointer;
   white-space: nowrap;
-  transition: all 0.15s ease;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
 }
 
 .quick-chip:hover {
@@ -744,7 +744,7 @@ select:focus-visible {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  transition: all 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .pill-x:hover {
@@ -1045,7 +1045,7 @@ select:focus-visible {
   font-size: var(--text-sm);
   color: var(--color-body);
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: filter 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .summary-item:hover {
@@ -1089,7 +1089,7 @@ select:focus-visible {
   /* letter-spacing: 0.03em; */
   cursor: pointer;
   border: 1px solid transparent;
-  transition: all 0.15s ease;
+  transition: filter 0.15s ease, transform 0.15s ease;
   white-space: nowrap;
 }
 

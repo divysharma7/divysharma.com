@@ -46,7 +46,7 @@ export default async (req, res) => {
     }
 
     // Rate limiting by IP
-    const ip = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown'
+    const ip = (req.headers['x-forwarded-for'] || req.socket?.remoteAddress || 'unknown').split(',')[0].trim()
     if (isRateLimited(ip)) {
         return res.status(429).json({ message: 'Too many requests. Please try again later.' })
     }

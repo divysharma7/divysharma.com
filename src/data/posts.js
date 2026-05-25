@@ -1,5 +1,113 @@
 export const posts = [
     {
+        slug: 'what-makes-a-great-product-manager',
+        title: 'What Makes a Great Product Manager',
+        excerpt: 'Great product managers are a rare breed. Nine traits that separate the best PMs from the rest — from curiosity and technical fluency to humility and mentoring.',
+        heroImage: '/blog-heroes/what-makes-a-great-product-manager.svg',
+        heroAlt: 'What Makes a Great Product Manager — nine key traits',
+        content: `![Nine traits that separate great PMs from the rest](/images/blog/pm-traits-overview.svg)
+
+Great product managers are a rare breed. They possess a unique combination of skills, traits, and experience that enable them to lead their team to success. Having worked alongside strong PMs and weaker ones, I've started to notice a pattern in what separates the two. Here are the nine traits I keep coming back to.
+
+---
+
+## Curiosity
+
+Great product managers are curious about everything. They want to understand the company's products and their users. ==They ask questions that may seem mundane but are crucial to understanding the product and its use case.==
+
+The best PMs I've worked with are always looking to learn, to stay up to date with the industry trends, and to explore new opportunities. They don't wait for information to come to them — they go find it.
+
+Curiosity is also what keeps a PM honest. If you're not curious about why a metric moved, why a user churned, or why engineering pushed back on a feature, you'll miss the signal that matters most.
+
+---
+
+## Technical Knowledge
+
+While a product manager may not be an engineer, ==they should have baseline knowledge of how products are built and their technical requirements.==
+
+This knowledge enables them to communicate better with the engineering team, to understand the feasibility of the product, and to make informed decisions. You don't need to write code. But you need to understand why one architecture choice takes two weeks and another takes two months — and which trade-offs each one carries.
+
+The PMs who earn the most respect from engineering are the ones who can speak the language without pretending to be engineers themselves.
+
+---
+
+## Customer-Focused
+
+A great product manager is customer-focused. ==They prioritize the user experience and the customer's needs over other stakeholders' desires.==
+
+They ensure that the product is user-friendly, solves the customers' problems, and meets their needs. This doesn't mean ignoring business goals — it means understanding that the fastest path to business outcomes usually runs through solving real user problems.
+
+When a PM loses touch with the customer, everything downstream suffers: the roadmap drifts, features miss the mark, and the team starts building for internal politics instead of external impact.
+
+---
+
+## Visionary
+
+Great product managers are not just tactical thinkers. ==They look beyond the present and have a clear vision of where the product is going.==
+
+They anticipate future needs, understand market trends, and are always looking for opportunities to leapfrog the competition. A good PM can tell you what the product does today. A great PM can tell you what it needs to do in two years and why.
+
+Vision without execution is just a dream. But execution without vision is just motion. The best PMs hold both.
+
+---
+
+## Leadership
+
+Product managers are leaders, and great product managers have the ability to manage superiors, especially at the P&L control level. ==They know how to communicate the product vision, align stakeholders' expectations, and build consensus around the product roadmap.==
+
+Leadership in product management isn't about authority — it's about influence. You rarely have direct reports. You lead by making the best argument, building trust, and consistently shipping things that matter.
+
+The strongest PMs I've seen lead without needing a title to do it.
+
+---
+
+## Humility
+
+==Humility is an essential trait of a great product manager.== They are willing to admit their mistakes and seek feedback from others. They are open-minded and always willing to learn from their team, customers, and other stakeholders.
+
+The worst product decisions I've seen came from PMs who were too proud to admit they were wrong. The best ones came from PMs who said "I was wrong about this — here's what the data is telling us instead" and changed course.
+
+Humility doesn't mean being passive. It means being honest about what you don't know and being willing to update your beliefs when the evidence changes.
+
+---
+
+## Analytical
+
+Great product managers are analytical. ==They use data to make informed decisions, measure product success, and identify areas for improvement.==
+
+They know how to use metrics to track progress and make data-driven decisions. But being analytical isn't just about reading dashboards. It's about knowing which questions to ask, which metrics actually matter, and when a number is telling you something you don't want to hear.
+
+The best PMs I've worked with don't just report numbers — they interrogate them.
+
+---
+
+## Process-Oriented
+
+A great product manager is a "shade tree mechanic" — ==able to fix things and improve processes.== They know how to optimize workflows, reduce waste, and streamline the product development process.
+
+They understand the importance of process and ensure that their team adheres to it. But they also know when process is getting in the way and needs to be simplified. The goal is never process for its own sake — it's process that removes friction and lets the team move faster.
+
+---
+
+## Mentoring
+
+Great product managers are mentors. ==They help their team members level up by providing guidance, feedback, and opportunities for growth.==
+
+They share their knowledge, skills, and experiences and inspire others to be their best. The best PMs don't just build great products — they build great teams. And the way they do that is by investing time in the people around them.
+
+A PM who ships a great feature but leaves their team no better than before has only done half the job.
+
+---
+
+## The Takeaway
+
+Great product managers are a rare breed. They possess a unique combination of curiosity, technical fluency, customer obsession, vision, leadership, humility, analytical rigor, process discipline, and mentoring instinct.
+
+==If you possess some of these traits, continue to develop them. If you're looking to hire a great product manager, keep these qualities in mind.== The list isn't exhaustive, but it's a strong starting point for anyone aspiring to be a great PM or looking to find one.`,
+        tags: ['Product Management', 'Leadership', 'Career'],
+        publishedAt: '2026-05-25T12:00:00Z',
+    },
+    {
         slug: 'resume-isnt-enough',
         title: 'Your Resume Isn\'t Enough Anymore',
         excerpt: 'Portfolios aren\'t just for designers anymore. In the AI era, what matters is how you think — and a resume can\'t show that.',

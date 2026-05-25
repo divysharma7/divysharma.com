@@ -644,6 +644,8 @@ button {
 		margin: 2em 0;
 		display: block;
 		object-fit: contain;
+		outline: 1px solid rgba(0, 0, 0, 0.06);
+		outline-offset: -1px;
 	}
 
 	:deep(hr) {

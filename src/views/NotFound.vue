@@ -80,9 +80,20 @@
 </template>
 
 <script>
+import { useHead } from '@vueuse/head'
+
 export default {
 	props: {
 		nosocials: Boolean
+	},
+	setup() {
+		useHead({
+			title: 'Page Not Found',
+			meta: [
+				{ name: 'description', content: 'This page does not exist.' },
+				{ name: 'robots', content: 'noindex' },
+			]
+		})
 	},
 	methods: {
 		gtmPush(event, params) {
