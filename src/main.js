@@ -3,8 +3,7 @@ import { routes } from './routes.js'
 import './assets/css/normal.css'
 import './assets/css/tokens.css'
 import './assets/css/global.css'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import reveal from './plugins/reveal.js'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { createHead } from '@vueuse/head'
@@ -85,7 +84,7 @@ const router = createRouter({
     }
 })
 
-AOS.init()
+app.use(reveal)
 
 app.use(head)
 

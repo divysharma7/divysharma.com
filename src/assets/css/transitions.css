@@ -38,3 +38,27 @@
 		animation: none;
 	}
 }
+
+/* ── AOS replacement animations ── */
+[data-aos] {
+	opacity: 0;
+	transition-property: opacity, transform;
+	transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-aos="fade-up"] { transform: translateY(20px); }
+[data-aos="fade-right"] { transform: translateX(-20px); }
+[data-aos="fade-left"] { transform: translateX(20px); }
+
+[data-aos].aos-animate {
+	opacity: 1;
+	transform: translateY(0) translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	[data-aos] {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}

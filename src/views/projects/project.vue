@@ -168,7 +168,6 @@ import { projects } from '@/data/projects'
 import { useHead } from '@vueuse/head'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import AOS from 'aos'
 import { slugify } from '@/components/sections/utils'
 import posthog from 'posthog-js'
 import { useScrollDepth } from '@/composables/useScrollDepth'
@@ -337,13 +336,11 @@ export default {
 			window.scrollTo(0, 0)
 			this.$nextTick(() => {
 				this.updateActiveSection()
-				AOS.refresh()
 			})
 		},
 		project() {
 			this.$nextTick(() => {
 				this.updateActiveSection()
-				AOS.refresh()
 			})
 		},
 		showToc(open) {
