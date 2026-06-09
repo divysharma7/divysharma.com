@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 600" font-family="Inter, 'Helvetica Neue', sans-serif">
+  <rect width="1080" height="600" fill="#F4EFE6" rx="16"/>
+
+  <text x="540" y="50" text-anchor="middle" font-size="16" font-weight="600" fill="#1A1A1A">Where months of thinking quietly disappear.</text>
+
+  <text x="40" y="100" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" font-weight="600" letter-spacing="0.08em" fill="#1A1A1A">RESEARCH PHASE</text>
+  <text x="40" y="118" font-size="13" fill="#6B6B6B">Months of work, lots of artifacts</text>
+
+  <rect x="40" y="138" width="340" height="38" rx="6" fill="white" stroke="#1A1A1A" stroke-width="1.2"/>
+  <text x="60" y="162" font-size="13" font-weight="600" fill="#1A1A1A">User Interviews</text>
+  <text x="360" y="162" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" fill="#6B6B6B">28 sessions</text>
+
+  <rect x="40" y="184" width="340" height="38" rx="6" fill="white" stroke="#1A1A1A" stroke-width="1.2"/>
+  <text x="60" y="208" font-size="13" font-weight="600" fill="#1A1A1A">Journey Maps</text>
+  <text x="360" y="208" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" fill="#6B6B6B">5 personas</text>
+
+  <rect x="40" y="230" width="340" height="38" rx="6" fill="white" stroke="#1A1A1A" stroke-width="1.2"/>
+  <text x="60" y="254" font-size="13" font-weight="600" fill="#1A1A1A">Insight Clusters</text>
+  <text x="360" y="254" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" fill="#6B6B6B">12 themes</text>
+
+  <rect x="40" y="276" width="340" height="38" rx="6" fill="white" stroke="#1A1A1A" stroke-width="1.2"/>
+  <text x="60" y="300" font-size="13" font-weight="600" fill="#1A1A1A">HMW Statements</text>
+  <text x="360" y="300" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" fill="#6B6B6B">23 framings</text>
+
+  <rect x="40" y="322" width="340" height="38" rx="6" fill="white" stroke="#1A1A1A" stroke-width="1.2"/>
+  <text x="60" y="346" font-size="13" font-weight="600" fill="#1A1A1A">Concept Tests</text>
+  <text x="360" y="346" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" fill="#6B6B6B">8 prototypes</text>
+
+  <rect x="40" y="368" width="340" height="38" rx="6" fill="white" stroke="#1A1A1A" stroke-width="1.2"/>
+  <text x="60" y="392" font-size="13" font-weight="600" fill="#1A1A1A">Workshop Synthesis</text>
+  <text x="360" y="392" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" fill="#6B6B6B">14 hours</text>
+
+  <rect x="40" y="414" width="340" height="38" rx="6" fill="white" stroke="#1A1A1A" stroke-width="1.2"/>
+  <text x="60" y="438" font-size="13" font-weight="600" fill="#1A1A1A">Trade-off Decisions</text>
+  <text x="360" y="438" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" fill="#6B6B6B">dozens</text>
+
+  <rect x="40" y="460" width="340" height="38" rx="6" fill="white" stroke="#1A1A1A" stroke-width="1.2"/>
+  <text x="60" y="484" font-size="13" font-weight="600" fill="#1A1A1A">Concept Convergence</text>
+  <text x="360" y="484" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" fill="#6B6B6B">3 directions</text>
+
+  <text x="40" y="535" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" letter-spacing="0.06em" fill="#6B6B6B">~ 4 MONTHS OF REASONING</text>
+
+  <path d="M 410 310 L 690 310" stroke="#E8765A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 670 298 L 690 310 L 670 322" stroke="#E8765A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="550" y="294" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" font-weight="600" letter-spacing="0.06em" fill="#E8765A">COLLAPSED INTO</text>
+  <text x="550" y="334" text-anchor="middle" font-size="12" font-style="italic" fill="#6B6B6B">~ 40 hours of writing</text>
+
+  <text x="710" y="100" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" font-weight="600" letter-spacing="0.08em" fill="#1A1A1A">PORTFOLIO OUTPUT</text>
+  <text x="710" y="118" font-size="13" fill="#6B6B6B">A few sparse bullet points</text>
+
+  <rect x="710" y="138" width="330" height="360" rx="10" fill="white" stroke="#1A1A1A" stroke-width="1.5"/>
+
+  <text x="730" y="175" font-size="15" font-weight="700" fill="#1A1A1A">Case Study Title</text>
+  <rect x="730" y="188" width="80" height="2" fill="#E8765A"/>
+
+  <text x="730" y="222" font-size="12" font-weight="600" fill="#1A1A1A">The Problem</text>
+  <text x="730" y="244" font-size="12" fill="#6B6B6B">• Users couldn't find the feature</text>
+
+  <text x="730" y="278" font-size="12" font-weight="600" fill="#1A1A1A">The Process</text>
+  <text x="730" y="300" font-size="12" fill="#6B6B6B">• Interviews + journey mapping</text>
+  <text x="730" y="320" font-size="12" fill="#6B6B6B">• Synthesized into an HMW</text>
+
+  <text x="730" y="354" font-size="12" font-weight="600" fill="#1A1A1A">The Solution</text>
+  <text x="730" y="376" font-size="12" fill="#6B6B6B">• A redesigned flow</text>
+
+  <text x="730" y="410" font-size="12" font-weight="600" fill="#1A1A1A">The Outcome</text>
+  <text x="730" y="432" font-size="12" fill="#6B6B6B">• +18% conversion</text>
+
+  <rect x="730" y="455" width="290" height="1" fill="#1A1A1A" opacity="0.15"/>
+  <text x="875" y="478" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" letter-spacing="0.08em" fill="#E8765A">— THE THINKING IS GONE —</text>
+
+  <text x="710" y="535" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" letter-spacing="0.06em" fill="#6B6B6B">~ 4 BULLETS OF NARRATIVE</text>
+</svg>

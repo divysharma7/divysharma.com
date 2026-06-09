@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 600" font-family="Inter, 'Helvetica Neue', sans-serif">
+  <rect width="1080" height="600" fill="#F4EFE6" rx="16"/>
+
+  <text x="540" y="50" text-anchor="middle" font-size="16" font-weight="600" fill="#1A1A1A">Expertise hides in constraints, not outputs.</text>
+
+  <text x="200" y="100" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" font-weight="600" letter-spacing="0.08em" fill="#6B6B6B">BEFORE / IMPLICIT</text>
+
+  <ellipse cx="200" cy="320" rx="160" ry="170" fill="#1A1A1A" opacity="0.06"/>
+  <ellipse cx="200" cy="320" rx="160" ry="170" fill="none" stroke="#1A1A1A" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.45"/>
+
+  <text x="200" y="225" text-anchor="middle" font-size="14" font-style="italic" fill="#1A1A1A" opacity="0.65">"feels right"</text>
+  <text x="135" y="270" font-size="13" font-style="italic" fill="#1A1A1A" opacity="0.55">taste</text>
+  <text x="240" y="270" font-size="14" font-style="italic" fill="#1A1A1A" opacity="0.55">intuition</text>
+  <text x="120" y="325" font-size="14" font-style="italic" fill="#1A1A1A" opacity="0.55">"good"</text>
+  <text x="240" y="330" font-size="13" font-style="italic" fill="#1A1A1A" opacity="0.55">flair</text>
+  <text x="150" y="385" font-size="13" font-style="italic" fill="#1A1A1A" opacity="0.55">judgment</text>
+  <text x="240" y="400" font-size="12" font-style="italic" fill="#1A1A1A" opacity="0.55">"strong"</text>
+
+  <text x="200" y="525" text-anchor="middle" font-size="13" fill="#6B6B6B">Felt. Rarely written down.</text>
+
+  <path d="M 400 310 L 540 310" stroke="#E8765A" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 520 298 L 540 310 L 520 322" stroke="#E8765A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="470" y="294" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" font-weight="600" letter-spacing="0.06em" fill="#E8765A">MADE EXPLICIT</text>
+
+  <text x="800" y="100" text-anchor="middle" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" font-weight="600" letter-spacing="0.08em" fill="#1A1A1A">AFTER / EXPLICIT</text>
+
+  <rect x="580" y="130" width="200" height="160" rx="10" fill="white" stroke="#1A1A1A" stroke-width="1.5"/>
+  <text x="600" y="160" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" font-weight="600" letter-spacing="0.08em" fill="#E8765A">EVIDENCE</text>
+  <text x="600" y="190" font-size="12" fill="#1A1A1A">Which stat pairs.</text>
+  <text x="600" y="212" font-size="12" fill="#1A1A1A">Which quote belongs.</text>
+  <text x="600" y="234" font-size="12" fill="#1A1A1A">When numbers lie.</text>
+  <text x="600" y="273" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" fill="#6B6B6B">42 rules</text>
+
+  <rect x="800" y="130" width="220" height="160" rx="10" fill="white" stroke="#1A1A1A" stroke-width="1.5"/>
+  <text x="820" y="160" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" font-weight="600" letter-spacing="0.08em" fill="#E8765A">SEQUENCING</text>
+  <text x="820" y="190" font-size="12" fill="#1A1A1A">What appears before HMW.</text>
+  <text x="820" y="212" font-size="12" fill="#1A1A1A">When personas land.</text>
+  <text x="820" y="234" font-size="12" fill="#1A1A1A">Why solutions wait.</text>
+  <text x="820" y="273" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" fill="#6B6B6B">38 rules</text>
+
+  <rect x="580" y="310" width="200" height="160" rx="10" fill="white" stroke="#1A1A1A" stroke-width="1.5"/>
+  <text x="600" y="340" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" font-weight="600" letter-spacing="0.08em" fill="#E8765A">NARRATIVE</text>
+  <text x="600" y="370" font-size="12" fill="#1A1A1A">Where emotion enters.</text>
+  <text x="600" y="392" font-size="12" fill="#1A1A1A">When tension breaks.</text>
+  <text x="600" y="414" font-size="12" fill="#1A1A1A">How a payoff lands.</text>
+  <text x="600" y="453" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" fill="#6B6B6B">51 rules</text>
+
+  <rect x="800" y="310" width="220" height="160" rx="10" fill="white" stroke="#E8765A" stroke-width="2"/>
+  <rect x="800" y="310" width="220" height="160" rx="10" fill="#E8765A" opacity="0.05"/>
+  <text x="820" y="340" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" font-weight="600" letter-spacing="0.08em" fill="#E8765A">WHAT NOT TO SAY</text>
+  <text x="820" y="370" font-size="12" fill="#1A1A1A">Buzzwords that flatten.</text>
+  <text x="820" y="392" font-size="12" fill="#1A1A1A">Claims with no proof.</text>
+  <text x="820" y="414" font-size="12" fill="#1A1A1A">Filler that hides thinking.</text>
+  <text x="820" y="453" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" fill="#6B6B6B">29 rules</text>
+
+  <text x="800" y="525" text-anchor="middle" font-size="13" fill="#6B6B6B">Written down. Teachable. Automatable.</text>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Inter, 'Helvetica Neue', sans-serif">
+  <rect width="1280" height="720" fill="#F4EFE6"/>
+
+  <!-- Subtitle (mono) -->
+  <text x="96" y="200" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="18" font-weight="500" letter-spacing="0.04em">
+    <tspan fill="#1A1A1A">PORTFOLIOS </tspan><tspan fill="#E8765A">/</tspan><tspan fill="#1A1A1A"> TRANSLATION</tspan>
+  </text>
+
+  <!-- Accent rule -->
+  <rect x="96" y="220" width="56" height="10" rx="1" fill="#E8765A"/>
+
+  <!-- Title - 2 lines at 72px -->
+  <text x="96" y="370" font-size="58" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">Why Designers Abandon</text>
+  <text x="96" y="452" font-size="58" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">Their Own Case Studies</text>
+
+  <!-- Total counter -->
+  <text x="96" y="572" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="13" letter-spacing="0.06em">
+    <tspan fill="#6B6B6B">TOTAL </tspan><tspan fill="#E8765A">~ 2,300 LINES</tspan><tspan fill="#6B6B6B"> OF INSTRUCTIONS</tspan>
+  </text>
+
+  <!-- Right side: stack of playbook cards summing to ~2,300 lines -->
+
+  <!-- Card 1: Discovery -->
+  <rect x="900" y="140" width="284" height="100" rx="8" fill="white" stroke="#1A1A1A" stroke-width="1.5"/>
+  <text x="920" y="170" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="12" font-weight="600" fill="#1A1A1A">DISCOVERY</text>
+  <text x="920" y="188" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" fill="#6B6B6B">playbook_01.md</text>
+  <rect x="920" y="204" width="180" height="3" rx="1" fill="#1A1A1A" opacity="0.25"/>
+  <rect x="920" y="214" width="140" height="3" rx="1" fill="#1A1A1A" opacity="0.2"/>
+  <rect x="920" y="224" width="200" height="3" rx="1" fill="#1A1A1A" opacity="0.25"/>
+  <text x="1164" y="170" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" font-weight="500" fill="#E8765A">+472</text>
+
+  <!-- Card 2: Empathy -->
+  <rect x="900" y="255" width="284" height="100" rx="8" fill="white" stroke="#1A1A1A" stroke-width="1.5"/>
+  <text x="920" y="285" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="12" font-weight="600" fill="#1A1A1A">EMPATHY</text>
+  <text x="920" y="303" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" fill="#6B6B6B">playbook_02.md</text>
+  <rect x="920" y="319" width="160" height="3" rx="1" fill="#1A1A1A" opacity="0.25"/>
+  <rect x="920" y="329" width="180" height="3" rx="1" fill="#1A1A1A" opacity="0.2"/>
+  <rect x="920" y="339" width="120" height="3" rx="1" fill="#1A1A1A" opacity="0.25"/>
+  <text x="1164" y="285" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" font-weight="500" fill="#E8765A">+546</text>
+
+  <!-- Card 3: Convergence -->
+  <rect x="900" y="370" width="284" height="100" rx="8" fill="white" stroke="#1A1A1A" stroke-width="1.5"/>
+  <text x="920" y="400" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="12" font-weight="600" fill="#1A1A1A">CONVERGENCE</text>
+  <text x="920" y="418" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" fill="#6B6B6B">playbook_03.md</text>
+  <rect x="920" y="434" width="200" height="3" rx="1" fill="#1A1A1A" opacity="0.25"/>
+  <rect x="920" y="444" width="150" height="3" rx="1" fill="#1A1A1A" opacity="0.2"/>
+  <rect x="920" y="454" width="170" height="3" rx="1" fill="#1A1A1A" opacity="0.25"/>
+  <text x="1164" y="400" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" font-weight="500" fill="#E8765A">+617</text>
+
+  <!-- Card 4: Solution (highlighted) -->
+  <rect x="900" y="485" width="284" height="100" rx="8" fill="white" stroke="#E8765A" stroke-width="2"/>
+  <rect x="900" y="485" width="284" height="100" rx="8" fill="#E8765A" opacity="0.05"/>
+  <text x="920" y="515" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="12" font-weight="600" fill="#1A1A1A">SOLUTION</text>
+  <text x="920" y="533" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="10" fill="#6B6B6B">playbook_04.md</text>
+  <rect x="920" y="549" width="190" height="3" rx="1" fill="#1A1A1A" opacity="0.3"/>
+  <rect x="920" y="559" width="160" height="3" rx="1" fill="#1A1A1A" opacity="0.25"/>
+  <rect x="920" y="569" width="180" height="3" rx="1" fill="#1A1A1A" opacity="0.3"/>
+  <text x="1164" y="515" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" font-weight="500" fill="#E8765A">+706</text>
+</svg>

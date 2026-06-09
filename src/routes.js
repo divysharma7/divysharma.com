@@ -23,6 +23,12 @@ export const routes = [
 		component: () => import('./views/Blog.vue')
 	},
 	{
+		path: '/blog/why-designers-abandon-case-studies/example',
+		name: 'CaseStudyExample',
+		component: () => import('./views/CaseStudyExample.vue'),
+		meta: { title: 'What the skill actually produces' }
+	},
+	{
 		path: '/blog/:slug',
 		name: 'BlogDetail',
 		component: () => import('./views/BlogDetail.vue'),
@@ -61,7 +67,11 @@ export const routes = [
 			return { path: `/projects` }
 		}
 	},
-	{ path: '/p/:id', name: 'Page', component: () => import('./views/projects/project.vue') },
+	{
+		path: '/p/:id',
+		name: 'Page',
+		component: () => import('./views/projects/project.vue')
+	},
 	{
 		path: '/resume',
 		meta: { title: 'Resume' },
@@ -92,5 +102,9 @@ export const routes = [
 		meta: { title: 'Bucket List' },
 		component: () => import('./views/BucketList.vue')
 	},
-	{ path: '/:pathMatch(.*)', component: () => import('./views/NotFound.vue'), meta: { title: 'notfound' } }
+	{
+		path: '/:pathMatch(.*)',
+		component: () => import('./views/NotFound.vue'),
+		meta: { title: 'notfound' }
+	}
 ]

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 600" font-family="Inter, 'Helvetica Neue', sans-serif">
+  <rect width="1080" height="600" fill="#F4EFE6" rx="16"/>
+
+  <text x="540" y="50" text-anchor="middle" font-size="16" font-weight="600" fill="#1A1A1A">Four playbooks. One operating procedure.</text>
+  <text x="540" y="72" text-anchor="middle" font-size="13" fill="#6B6B6B">Not instructions about writing — instructions about reasoning.</text>
+
+  <rect x="40" y="100" width="480" height="220" rx="12" fill="white" stroke="#1A1A1A" stroke-width="1.5"/>
+  <rect x="40" y="100" width="480" height="44" rx="12" fill="#1A1A1A"/>
+  <rect x="40" y="130" width="480" height="14" fill="#1A1A1A"/>
+  <text x="64" y="128" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="0.08em" fill="white">01 / DISCOVERY</text>
+  <text x="496" y="128" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" fill="#E8765A">+587 lines</text>
+
+  <text x="64" y="178" font-size="13" font-weight="600" fill="#1A1A1A">Knows the funnel, not the sections.</text>
+  <line x1="64" y1="190" x2="100" y2="190" stroke="#E8765A" stroke-width="2"/>
+
+  <text x="64" y="218" font-size="13" fill="#6B6B6B">• When statistics appear vs. when they intrude</text>
+  <text x="64" y="240" font-size="13" fill="#6B6B6B">• How information sequences before the HMW</text>
+  <text x="64" y="262" font-size="13" fill="#6B6B6B">• Which paired stats build a case together</text>
+  <text x="64" y="284" font-size="13" fill="#6B6B6B">• When discovery starts repeating itself</text>
+
+  <rect x="560" y="100" width="480" height="220" rx="12" fill="white" stroke="#1A1A1A" stroke-width="1.5"/>
+  <rect x="560" y="100" width="480" height="44" rx="12" fill="#1A1A1A"/>
+  <rect x="560" y="130" width="480" height="14" fill="#1A1A1A"/>
+  <text x="584" y="128" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="0.08em" fill="white">02 / EMPATHY</text>
+  <text x="1016" y="128" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" fill="#E8765A">+612 lines</text>
+
+  <text x="584" y="178" font-size="13" font-weight="600" fill="#1A1A1A">Controlled expansion before convergence.</text>
+  <line x1="584" y1="190" x2="620" y2="190" stroke="#E8765A" stroke-width="2"/>
+
+  <text x="584" y="218" font-size="13" fill="#6B6B6B">• How interview insights get structured</text>
+  <text x="584" y="240" font-size="13" fill="#6B6B6B">• How emotional narratives should evolve</text>
+  <text x="584" y="262" font-size="13" fill="#6B6B6B">• When personas blur into stereotypes</text>
+  <text x="584" y="284" font-size="13" fill="#6B6B6B">• What evidence each persona requires</text>
+
+  <rect x="40" y="340" width="480" height="220" rx="12" fill="white" stroke="#1A1A1A" stroke-width="1.5"/>
+  <rect x="40" y="340" width="480" height="44" rx="12" fill="#1A1A1A"/>
+  <rect x="40" y="370" width="480" height="14" fill="#1A1A1A"/>
+  <text x="64" y="368" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="0.08em" fill="white">03 / CONVERGENCE</text>
+  <text x="496" y="368" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" fill="#E8765A">+498 lines</text>
+
+  <text x="64" y="418" font-size="13" font-weight="600" fill="#1A1A1A">Narrowing without losing the why.</text>
+  <line x1="64" y1="430" x2="100" y2="430" stroke="#E8765A" stroke-width="2"/>
+
+  <text x="64" y="458" font-size="13" fill="#6B6B6B">• When opportunities turn too solution-oriented</text>
+  <text x="64" y="480" font-size="13" fill="#6B6B6B">• How trade-offs preserve the case for choice</text>
+  <text x="64" y="502" font-size="13" fill="#6B6B6B">• When a portfolio stops narrowing and repeats</text>
+  <text x="64" y="524" font-size="13" fill="#6B6B6B">• Where the HMW must anchor the cut</text>
+
+  <rect x="560" y="340" width="480" height="220" rx="12" fill="white" stroke="#E8765A" stroke-width="2"/>
+  <rect x="560" y="340" width="480" height="220" rx="12" fill="#E8765A" opacity="0.04"/>
+  <rect x="560" y="340" width="480" height="44" rx="12" fill="#E8765A"/>
+  <rect x="560" y="370" width="480" height="14" fill="#E8765A"/>
+  <text x="584" y="368" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="13" font-weight="600" letter-spacing="0.08em" fill="white">04 / SOLUTION</text>
+  <text x="1016" y="368" text-anchor="end" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="11" font-weight="600" fill="white">+603 lines</text>
+
+  <text x="584" y="418" font-size="13" font-weight="600" fill="#1A1A1A">The payoff of earlier decisions.</text>
+  <line x1="584" y1="430" x2="620" y2="430" stroke="#E8765A" stroke-width="2"/>
+
+  <text x="584" y="458" font-size="13" fill="#6B6B6B">• Why this concept and not the other two</text>
+  <text x="584" y="480" font-size="13" fill="#6B6B6B">• How to avoid feature-list collapse</text>
+  <text x="584" y="502" font-size="13" fill="#6B6B6B">• When the narrative loops back to discovery</text>
+  <text x="584" y="524" font-size="13" fill="#6B6B6B">• What proof actually closes the argument</text>
+</svg>

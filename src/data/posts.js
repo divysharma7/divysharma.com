@@ -1,11 +1,240 @@
 export const posts = [
-    {
-        slug: 'what-makes-a-great-product-manager',
-        title: 'What Makes a Great Product Manager',
-        excerpt: 'Great product managers are a rare breed. Nine traits that separate the best PMs from the rest — from curiosity and technical fluency to humility and mentoring.',
-        heroImage: '/blog-heroes/what-makes-a-great-product-manager.svg',
-        heroAlt: 'What Makes a Great Product Manager — nine key traits',
-        content: `![Nine traits that separate great PMs from the rest](/images/blog/pm-traits-overview.svg)
+	{
+		slug: 'why-designers-abandon-case-studies',
+		title: 'Why Designers Abandon Their Own Case Studies',
+		excerpt:
+			"Most designers don't struggle with research. They struggle with explaining what they already figured out. A skill that turns months of work into a portfolio-ready narrative in a few hours.",
+		heroImage: '/blog-heroes/why-designers-abandon-case-studies.svg',
+		heroAlt: 'Why Designers Abandon Their Own Case Studies',
+		content: `## A friend's project, two years ago
+
+2 years ago, I looked at a friend's service design project.
+
+The team had done substantial work.
+
+Interviews.
+
+Frameworks.
+
+Problem convergence.
+
+Solution exploration.
+
+The usual double-diamond process.
+
+![Where months of research collapse into a few bullet points](/images/blog/case-study-translation-gap.svg)
+
+What stood out wasn't the quality of the research.
+
+It was how much of the thinking disappeared when it was converted into a portfolio case study.
+
+Important decisions became bullet points.
+
+Complex trade-offs became one-line summaries.
+
+Months of work collapsed into generic portfolio language.
+
+---
+
+## The experiment
+
+So I started an experiment.
+
+Instead of asking Claude to "write a UX case study," I tried to understand what actually makes a good case study work.
+
+I deconstructed the project phase by phase.
+
+What does a strong discovery brief do?
+
+What information appears before the HMW statement?
+
+How are statistics introduced?
+
+Why do some insight sections feel convincing while others feel generic?
+
+---
+
+## Not a prompting problem, a systems problem
+
+The deeper I went, the less this looked like a prompting problem.
+
+It looked like a system problem.
+
+Most AI-generated case studies fail because the model has no operating procedure.
+
+It knows how to write.
+
+It doesn't know how a portfolio argument is constructed.
+
+A discovery phase isn't just a collection of sections.
+
+It's a funnel.
+
+A good empathy phase isn't just personas.
+
+It's controlled expansion before convergence.
+
+A strong solution phase isn't feature listing.
+
+It's the payoff of decisions made earlier.
+
+==Those patterns had to be encoded.==
+
+---
+
+## From prompts to playbooks
+
+So I stopped writing prompts.
+
+I started writing playbooks.
+
+![The four playbooks — discovery, empathy, convergence, solution](/images/blog/four-playbooks.svg)
+
+One playbook for discovery.
+
+One for empathy.
+
+One for convergence.
+
+One for solution design.
+
+Together they became more than 2,300 lines of instructions.
+
+Not instructions about writing.
+
+==Instructions about reasoning.==
+
+The system knows:
+
+- When statistics should appear.
+- What type of statistics should be paired together.
+- How interview insights should be structured.
+- How emotional narratives should evolve.
+- When opportunities become too solution-oriented.
+- When a portfolio stops narrowing and starts repeating itself.
+
+![Repo structure of the ux-case-study-writer skill — SKILL.md orchestrates four phase playbooks, input checklists, a wizard protocol, and worked examples](/images/blog/ux-case-study-repo-structure.png)
+
+The SKILL.md is the orchestrator. Only 190 lines.
+
+It points to everything else.
+
+==Claude loads one phase spec at a time. Never all 2,300 lines at once.==
+
+---
+
+## What surprised me
+
+The result surprised me.
+
+People could paste messy research notes, transcripts, spreadsheets, or interview summaries.
+
+![How it works — the wizard: TRIAGE → EXTRACT → FILL GAPS → CONFIRM & DRAFT, a 4-stage flow that handles messy input](/images/blog/ux-case-study-wizard.png)
+
+Four stages.
+
+TRIAGE figures out which phase you're in.
+
+EXTRACT parses whatever you pasted — quotes, stats, transcripts, spreadsheets.
+
+FILL GAPS asks targeted questions for anything missing.
+
+CONFIRM & DRAFT writes the brief.
+
+No perfectly organized input doc required. You paste a mess. The wizard figures it out.
+
+![What actually comes out — 4 standalone briefs across the Double Diamond phases, with page counts and key deliverables](/images/blog/ux-case-study-output.png)
+
+Each phase becomes its own standalone brief.
+
+Same diamond shape, four pages each, different deliverable.
+
+Discovery ends in a sharp HMW question.
+
+Empathy maps the ecosystem.
+
+Convergence picks the problem.
+
+Solution delivers the answer.
+
+Not screens.
+
+Not Figma files.
+
+==The thinking behind them.==
+
+[→ See what the skill actually produces](/blog/why-designers-abandon-case-studies/example)
+
+---
+
+## The real lesson is about expertise, not AI
+
+The most interesting lesson wasn't about AI.
+
+It was about expertise.
+
+![From implicit taste to explicit rules](/images/blog/expertise-as-rules.svg)
+
+Most people assume expertise is hidden inside outputs.
+
+In reality, ==expertise is often hidden inside constraints.==
+
+The difference between a generic case study and a strong one wasn't better writing.
+
+It was hundreds of small rules.
+
+Rules about evidence.
+
+Rules about sequencing.
+
+Rules about narrative structure.
+
+Rules about what not to say.
+
+Once those rules became explicit, they became teachable.
+
+==And once they became teachable, they became automatable.==
+
+---
+
+## The takeaway
+
+People think AI replaces research.
+
+My experience has been the opposite.
+
+The more research someone has done, the better the system performs.
+
+AI isn't replacing the months of work.
+
+==It's helping people recover the value that was already there.==
+
+The irony is that many designers don't need help conducting research.
+
+They need help explaining what they already discovered.
+
+That's the problem I ended up building for.
+
+---
+
+The skill is on [GitHub](https://github.com/divysharma7/ux-case-study-writer) if you want to try it.
+
+---
+
+I didn't ask permission. The project was public, so I built on top of it.
+
+But I want to thank [Urvi Suhane](https://urvisuhane.vercel.app/) and her team. The work was already there. I just wrote down what made it good.`,
+		tags: ['Documentation', 'Product Thinking', 'Strategy'],
+		publishedAt: '2026-06-10T12:00:00Z'
+	},
+	{
+		slug: 'what-makes-a-great-product-manager',
+		title: 'What Makes a Great Product Manager',
+		excerpt:
+			'Great product managers are a rare breed. Nine traits that separate the best PMs from the rest — from curiosity and technical fluency to humility and mentoring.',
+		heroImage: '/blog-heroes/what-makes-a-great-product-manager.svg',
+		heroAlt: 'What Makes a Great Product Manager — nine key traits',
+		content: `![Nine traits that separate great PMs from the rest](/images/blog/pm-traits-overview.svg)
 
 Great product managers are a rare breed. They possess a unique combination of skills, traits, and experience that enable them to lead their team to success. Having worked alongside strong PMs and weaker ones, I've started to notice a pattern in what separates the two. Here are the nine traits I keep coming back to.
 
@@ -104,16 +333,17 @@ A PM who ships a great feature but leaves their team no better than before has o
 Great product managers are a rare breed. They possess a unique combination of curiosity, technical fluency, customer obsession, vision, leadership, humility, analytical rigor, process discipline, and mentoring instinct.
 
 ==If you possess some of these traits, continue to develop them. If you're looking to hire a great product manager, keep these qualities in mind.== The list isn't exhaustive, but it's a strong starting point for anyone aspiring to be a great PM or looking to find one.`,
-        tags: ['Product Management', 'Leadership', 'Career'],
-        publishedAt: '2026-05-25T12:00:00Z',
-    },
-    {
-        slug: 'resume-isnt-enough',
-        title: 'Your Resume Isn\'t Enough Anymore',
-        excerpt: 'Portfolios aren\'t just for designers anymore. In the AI era, what matters is how you think — and a resume can\'t show that.',
-        heroImage: '/blog-heroes/resume-isnt-enough.svg',
-        heroAlt: 'Your Resume Isn\'t Enough Anymore — the AI era demands more',
-        content: `![My portfolio homepage — divysharma.com](/images/blog/portfolio-homepage.webp)
+		tags: ['Product Management', 'Leadership', 'Career'],
+		publishedAt: '2026-05-25T12:00:00Z'
+	},
+	{
+		slug: 'resume-isnt-enough',
+		title: "Your Resume Isn't Enough Anymore",
+		excerpt:
+			"Portfolios aren't just for designers anymore. In the AI era, what matters is how you think — and a resume can't show that.",
+		heroImage: '/blog-heroes/resume-isnt-enough.svg',
+		heroAlt: "Your Resume Isn't Enough Anymore — the AI era demands more",
+		content: `![My portfolio homepage — divysharma.com](/images/blog/portfolio-homepage.webp)
 
 I recently explained why portfolios are becoming increasingly important in the AI era — not just for PMs, but for many other roles as well.
 
@@ -231,16 +461,18 @@ If someone asks tomorrow how you think about your work, what do you point them t
 If the answer is a LinkedIn profile and a Google Doc, you're going to lose ground to the people who built one page that answers it.
 
 ![My essays page — how I think and keep myself updated](/images/blog/portfolio-essays.webp)`,
-        tags: ['Career', 'Product Management', 'AI'],
-        publishedAt: '2026-05-06T12:00:00Z',
-    },
-    {
-        slug: 'stakeholder-review-format',
-        title: 'How to run a stakeholder review that actually replaces your status meetings',
-        excerpt: 'If your stakeholders are pulling you into 1:1s asking what your team is working on, your stakeholder review is broken. This is the format I use to fix that.',
-        heroImage: '/blog-heroes/stakeholder-review-format.svg',
-        heroAlt: 'Stakeholder reviews that work — meetings that earn their time',
-        content: `![The three areas of a stakeholder review: health, discovery, delivery](/images/blog/review-three-areas.svg)
+		tags: ['Career', 'Product Management', 'AI'],
+		publishedAt: '2026-05-06T12:00:00Z'
+	},
+	{
+		slug: 'stakeholder-review-format',
+		title:
+			'How to run a stakeholder review that actually replaces your status meetings',
+		excerpt:
+			'If your stakeholders are pulling you into 1:1s asking what your team is working on, your stakeholder review is broken. This is the format I use to fix that.',
+		heroImage: '/blog-heroes/stakeholder-review-format.svg',
+		heroAlt: 'Stakeholder reviews that work — meetings that earn their time',
+		content: `![The three areas of a stakeholder review: health, discovery, delivery](/images/blog/review-three-areas.svg)
 
 If your stakeholders are pulling you into 1:1s asking what your team is working on, your stakeholder review is broken, or you don't have one. This post is the format I use to fix that.
 
@@ -320,16 +552,17 @@ One thing to deliberately leave out: your team's velocity and whether you hit yo
 ## The principle behind all of this
 
 Stakeholders form opinions about your roadmap whether you give them information or not. The only question is whether those opinions are shaped by your review or by the loudest voice in the last all-hands. If your stakeholders can't tell what changed since last cycle, the review failed, regardless of how the meeting felt in the room.`,
-        tags: ['Product Management', 'Leadership'],
-        publishedAt: '2026-05-05T12:00:00Z',
-    },
-    {
-        slug: 'growth-vs-marketing-vs-product',
-        title: 'Growth vs Marketing vs Product',
-        excerpt: 'Marketing, growth, and product are three different jobs. They run on different time horizons, with different skill mixes, and with different definitions of what winning means.',
-        heroImage: '/blog-heroes/growth-vs-marketing-vs-product.svg',
-        heroAlt: 'Growth vs Marketing vs Product — Three jobs, one funnel',
-        content: `![Marketing, Growth, and Product — where most companies get confused](/images/blog/hero-venn.svg)
+		tags: ['Product Management', 'Leadership'],
+		publishedAt: '2026-05-05T12:00:00Z'
+	},
+	{
+		slug: 'growth-vs-marketing-vs-product',
+		title: 'Growth vs Marketing vs Product',
+		excerpt:
+			'Marketing, growth, and product are three different jobs. They run on different time horizons, with different skill mixes, and with different definitions of what winning means.',
+		heroImage: '/blog-heroes/growth-vs-marketing-vs-product.svg',
+		heroAlt: 'Growth vs Marketing vs Product — Three jobs, one funnel',
+		content: `![Marketing, Growth, and Product — where most companies get confused](/images/blog/hero-venn.svg)
 
 There's a recurring confusion in tech companies about who owns what. Marketing thinks it owns growth. Product thinks marketing only does ads. Growth gets handed an acquisition target and is told to "drive signups." Everyone is busy, the numbers are moving, and somehow the company still isn't growing the way it should.
 
@@ -518,16 +751,17 @@ It's also the single biggest reason companies that look like they're growing on 
 ---
 
 *The test of whether your org has these functions sorted is simple. Ask three people on three different teams to define your North Star metric. If you get three different answers, you don't have a growth team. You have a marketing team, a product team, and a target.*`,
-        tags: ['Growth', 'Marketing', 'Product Management'],
-        publishedAt: '2026-04-26T12:00:00Z',
-    },
-    {
-        slug: 'good-product-managers-bad-product-managers',
-        title: 'Good product managers and bad product managers',
-        excerpt: 'Habits I\'ve come to look for, based on conversations with senior PMs and VPs at ASBL and what I\'ve picked up from PM friends who read a lot.',
-        heroImage: '/blog-heroes/good-and-bad-product-managers.svg',
-        heroAlt: 'Good product managers and bad product managers — Good / Bad',
-        content: `I haven't formed these views in a vacuum. Most of what follows comes from conversations with senior PMs and VPs at ASBL, from questions I've kept asking them over time, and from PM friends of mine who read more product books than I do. I'm writing it down here because I find myself coming back to the same distinctions when I think about what separates strong product managers from weaker ones.
+		tags: ['Growth', 'Marketing', 'Product Management'],
+		publishedAt: '2026-04-26T12:00:00Z'
+	},
+	{
+		slug: 'good-product-managers-bad-product-managers',
+		title: 'Good product managers and bad product managers',
+		excerpt:
+			"Habits I've come to look for, based on conversations with senior PMs and VPs at ASBL and what I've picked up from PM friends who read a lot.",
+		heroImage: '/blog-heroes/good-and-bad-product-managers.svg',
+		heroAlt: 'Good product managers and bad product managers — Good / Bad',
+		content: `I haven't formed these views in a vacuum. Most of what follows comes from conversations with senior PMs and VPs at ASBL, from questions I've kept asking them over time, and from PM friends of mine who read more product books than I do. I'm writing it down here because I find myself coming back to the same distinctions when I think about what separates strong product managers from weaker ones.
 
 ---
 
@@ -592,16 +826,18 @@ Strong PMs err on the side of over-explaining things that might seem obvious, be
 Strong PMs send their status reports in on time every week, because they value discipline. Weaker ones forget, because they don't.
 
 It's a small habit in isolation, but in my experience ==it tends to correlate with every other habit above.==`,
-        tags: ['Product Management', 'Career', 'Leadership'],
-        publishedAt: '2026-04-25T12:00:00Z',
-    },
-    {
-        slug: 'how-to-build-great-products',
-        title: 'How to build great products',
-        excerpt: 'A three-bucket model for categorizing features, and the role of a product mission.',
-        heroImage: '/blog-heroes/how-to-build-great-products.svg',
-        heroAlt: 'How to build great products — Gamechanger, Showstopper, Distraction',
-        content: `![The job is discrimination — which features are gamechangers?](/images/blog/products-hero.svg)
+		tags: ['Product Management', 'Career', 'Leadership'],
+		publishedAt: '2026-04-25T12:00:00Z'
+	},
+	{
+		slug: 'how-to-build-great-products',
+		title: 'How to build great products',
+		excerpt:
+			'A three-bucket model for categorizing features, and the role of a product mission.',
+		heroImage: '/blog-heroes/how-to-build-great-products.svg',
+		heroAlt:
+			'How to build great products — Gamechanger, Showstopper, Distraction',
+		content: `![The job is discrimination — which features are gamechangers?](/images/blog/products-hero.svg)
 
 Most startups fail because they don't ship a great product in a growing market before they run out of money. Assuming you've picked a good market, how do you go about building a great product?
 
@@ -703,16 +939,17 @@ Here is a product mission that worked surprisingly well for RethinkDB:
 On the surface these two sentences don't say very much. But this mission has surprisingly high information density. It tells people they're building a database. It tells them the product is a developer tool first, which resolves the tension between developer and operations features. It explains what users should do with RethinkDB. It gives a sense of how far they'll go on certain features. ==It took three years to understand the product well enough to write this mission. If they'd had it on day one, it would probably have cut development time in half.==
 
 When you're building a product, ==the mission should be one of the first things you work on.== If your mental model is good enough to write a product mission that resonates with everyone in your company, a lot of other decisions get easier.`,
-        tags: ['Product Management', 'Strategy', 'Product Thinking'],
-        publishedAt: '2026-04-24T12:00:00Z',
-    },
-    {
-        slug: 'prd-structure-i-actually-use',
-        title: '10 PRD tips I keep coming back to',
-        excerpt: 'PRDs only work if your team actually reads them. Ten things I\'ve learned about writing ones that land.',
-        heroImage: '/blog-heroes/prd-tips-i-keep-coming-back-to.svg',
-        heroAlt: '10 PRD tips I keep coming back to',
-        content: `![PRD sits at the intersection of Product, Engineering, and Design](/images/blog/prd-hero.svg)
+		tags: ['Product Management', 'Strategy', 'Product Thinking'],
+		publishedAt: '2026-04-24T12:00:00Z'
+	},
+	{
+		slug: 'prd-structure-i-actually-use',
+		title: '10 PRD tips I keep coming back to',
+		excerpt:
+			"PRDs only work if your team actually reads them. Ten things I've learned about writing ones that land.",
+		heroImage: '/blog-heroes/prd-tips-i-keep-coming-back-to.svg',
+		heroAlt: '10 PRD tips I keep coming back to',
+		content: `![PRD sits at the intersection of Product, Engineering, and Design](/images/blog/prd-hero.svg)
 
 A PRD is a requirements document that specifies scope, reason and desired output. Nothing more, nothing less.
 
@@ -780,16 +1017,17 @@ As important as lining out what's included is describing what's out of scope. Ar
 ## 10. Don't set deadlines
 
 I realize that this might be controversial. But a PRD should be focused on the product and not the delivery timeline. That doesn't mean that development team utilization or customer expectations don't influence the PRD. It's just that the PRD shouldn't dictate the "when".`,
-        tags: ['Product Management', 'PRD', 'Documentation'],
-        publishedAt: '2026-04-23T12:00:00Z',
-    },
-    {
-        slug: 'prioritization-system-i-actually-use',
-        title: 'How to prioritize a product backlog',
-        excerpt: 'Methods I use for mature products, methods I use for new ones, and how to handle HiPPOs.',
-        heroImage: '/blog-heroes/how-to-prioritize-a-product-backlog.svg',
-        heroAlt: 'How to prioritize a product backlog — and what to cut',
-        content: `![Prioritizing a product backlog — pulling the high-value items up](/images/blog/backlog-hero.svg)
+		tags: ['Product Management', 'PRD', 'Documentation'],
+		publishedAt: '2026-04-23T12:00:00Z'
+	},
+	{
+		slug: 'prioritization-system-i-actually-use',
+		title: 'How to prioritize a product backlog',
+		excerpt:
+			'Methods I use for mature products, methods I use for new ones, and how to handle HiPPOs.',
+		heroImage: '/blog-heroes/how-to-prioritize-a-product-backlog.svg',
+		heroAlt: 'How to prioritize a product backlog — and what to cut',
+		content: `![Prioritizing a product backlog — pulling the high-value items up](/images/blog/backlog-hero.svg)
 
 Prioritizing product backlogs is a key responsibility of product managers. ==It's essential that the most important backlog items are done first, so customers, users and the business have the highest benefit.== There are a number of methods for how to prioritize a product backlog, which fit different situations.
 
@@ -901,16 +1139,17 @@ Not suitable if there is already an existing backlog, or if key stakeholders don
 When deciding what kind of prioritization approach to use, the maturity of the product, the project stage, and the discussion context all need to be factored in. After that's clear, ==the method to choose needs to be a healthy mix of using hard metrics and being able to communicate the result in an intuitive, easy-to-understand way.==
 
 ==No prioritization, regardless of method, should be assumed to be 100% correct and immutable.== Rather, the method should structure discussion and decision-making, and encourage constructive, directed criticism.`,
-        tags: ['Product Management', 'Prioritization', 'Growth'],
-        publishedAt: '2026-04-22T12:00:00Z',
-    },
-    {
-        slug: 'things-i-believe',
-        title: 'Things I Believe',
-        excerpt: 'A running list of beliefs I keep coming back to — on work, leadership, curiosity, and treating people right.',
-        heroImage: '/blog-heroes/things-i-believe.svg',
-        heroAlt: 'Things I Believe — a personal credo',
-        content: `## Learn
+		tags: ['Product Management', 'Prioritization', 'Growth'],
+		publishedAt: '2026-04-22T12:00:00Z'
+	},
+	{
+		slug: 'things-i-believe',
+		title: 'Things I Believe',
+		excerpt:
+			'A running list of beliefs I keep coming back to — on work, leadership, curiosity, and treating people right.',
+		heroImage: '/blog-heroes/things-i-believe.svg',
+		heroAlt: 'Things I Believe — a personal credo',
+		content: `## Learn
 
 Learn from others.
 Be humble.
@@ -979,7 +1218,7 @@ Treat everyone respectfully — everyone comes with their issues.
 Hire people you can learn from.
 Hire people you would someday be happy working for.
 Favorite interview question: "One book you read which you think can bring change in your life."`,
-        tags: ['Career', 'Leadership', 'Product Management'],
-        publishedAt: '2026-04-21T12:00:00Z',
-    }
+		tags: ['Career', 'Leadership', 'Product Management'],
+		publishedAt: '2026-04-21T12:00:00Z'
+	}
 ]
