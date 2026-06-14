@@ -58,7 +58,7 @@
 				<h2 class="section-heading">Latest from Blog</h2>
 				<div class="blog-stack">
 					<router-link
-						v-for="(post, index) in posts.slice(0, 3)"
+						v-for="(post, index) in posts.filter(p => !p.draft).slice(0, 3)"
 						:key="post.slug"
 						:to="'/blog/' + post.slug"
 						class="blog-card"
