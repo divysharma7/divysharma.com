@@ -2,6 +2,7 @@ export const posts = [
 	{
 		slug: 'why-designers-abandon-case-studies',
 		title: 'Why Designers Abandon Their Own Case Studies',
+		draft: true,
 		excerpt:
 			"Most designers don't struggle with research. They struggle with explaining what they already figured out. A skill that turns months of work into a portfolio-ready narrative in a few hours.",
 		heroImage: '/blog-heroes/why-designers-abandon-case-studies.svg',

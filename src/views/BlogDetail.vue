@@ -208,7 +208,7 @@ export default {
 	components: { SocialShareSidebar },
 	setup() {
 		const route = useRoute()
-		const post = computed(() => posts.find(p => p.slug === route.params.slug) || null)
+		const post = computed(() => posts.find(p => p.slug === route.params.slug && !p.draft) || null)
 
 		const getPostProps = () => post.value
 			? { slug: post.value.slug, title: post.value.title }
@@ -296,11 +296,11 @@ export default {
 		},
 		relatedPosts() {
 			if (!this.post) return []
-			const related = posts.filter(p =>
+			const related = posts.filter(p => !p.draft &&
 				p.slug !== this.post.slug &&
 				p.tags.some(t => this.post.tags.includes(t))
 			)
-			return (related.length ? related : posts.filter(p => p.slug !== this.post.slug)).slice(0, 3)
+			return (related.length ? related : posts.filter(p => !p.draft && p.slug !== this.post.slug)).slice(0, 3)
 		}
 	},
 	methods: {
@@ -310,7 +310,7 @@ export default {
 			})
 		},
 		loadPost() {
-			this.post = posts.find(p => p.slug === this.$route.params.slug) || null
+			this.post = posts.find(p => p.slug === this.$route.params.slug && !p.draft) || null
 			this.progress = 0
 			this.activeSection = ''
 			this.showShareModal = false

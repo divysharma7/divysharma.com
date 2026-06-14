@@ -157,7 +157,7 @@ export default {
 		}
 	},
 	mounted() {
-		this.allPosts = posts
+		this.allPosts = posts.filter(p => !p.draft)
 		if (this.$route.query.tag) this.selectedTag = this.$route.query.tag
 	},
 	watch: {
