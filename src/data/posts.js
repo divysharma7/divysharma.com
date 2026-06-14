@@ -6,21 +6,11 @@ export const posts = [
 			"Most designers don't struggle with research. They struggle with explaining what they already figured out. A skill that turns months of work into a portfolio-ready narrative in a few hours.",
 		heroImage: '/blog-heroes/why-designers-abandon-case-studies.svg',
 		heroAlt: 'Why Designers Abandon Their Own Case Studies',
-		content: `## A friend's project, two years ago
+		content: `## The problem I kept seeing
 
-2 years ago, I looked at a friend's service design project.
+I kept noticing the same thing across UX portfolios.
 
-The team had done substantial work.
-
-Interviews.
-
-Frameworks.
-
-Problem convergence.
-
-Solution exploration.
-
-The usual double-diamond process.
+Designers would do months of research — interviews, frameworks, problem convergence, solution exploration. The usual double-diamond process.
 
 ![Where months of research collapse into a few bullet points](/images/blog/case-study-translation-gap.svg)
 
@@ -217,13 +207,7 @@ That's the problem I ended up building for.
 
 ---
 
-The skill is on [GitHub](https://github.com/divysharma7/ux-case-study-writer) if you want to try it.
-
----
-
-I didn't ask permission. The project was public, so I built on top of it.
-
-But I want to thank [Urvi Suhane](https://urvisuhane.vercel.app/) and her team. The work was already there. I just wrote down what made it good.`,
+The skill is on [GitHub](https://github.com/divysharma7/ux-case-study-writer) if you want to try it.`,
 		tags: ['Documentation', 'Product Thinking', 'Strategy'],
 		publishedAt: '2026-06-10T12:00:00Z'
 	},
