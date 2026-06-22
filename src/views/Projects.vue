@@ -42,8 +42,15 @@
 				intlink
 			/>
 
-			
-		</div>
+			<Project
+				name="CoinFlo"
+				description="Your money. Your rules. Zero clutter."
+				link="https://coinflo-landing.vercel.app/case-study"
+				img="https://raw.githubusercontent.com/divysharma7/Coinflo-App/main/assets/icon/coinflo_icon.png"
+				data-aos-delay="200"
+			/>
+
+			</div>
 
 		<hr />
 
