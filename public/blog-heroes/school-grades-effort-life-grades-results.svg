@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" font-family="Inter, 'Helvetica Neue', sans-serif">
+  <rect width="1280" height="720" fill="#F4EFE6"/>
+
+  <!-- Subtitle (mono) -->
+  <text x="96" y="280" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-size="18" font-weight="500" fill="#1A1A1A" letter-spacing="0.04em">EFFORT IS NOT THE GAME</text>
+
+  <!-- Accent rule -->
+  <rect x="96" y="300" width="64" height="12" rx="1" fill="#E8765A"/>
+
+  <!-- Title -->
+  <text x="96" y="380" font-size="78" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">School Grades Effort.</text>
+  <text x="96" y="470" font-size="78" font-weight="700" fill="#1A1A1A" letter-spacing="-0.02em">Life Grades Results.</text>
+
+  <!-- Right side: report card vs target/dartboard -->
+
+  <!-- Faded report card (left) -->
+  <g opacity="0.3">
+    <rect x="880" y="160" width="150" height="200" rx="4" fill="white" stroke="#1A1A1A" stroke-width="1.5"/>
+    <!-- Header -->
+    <rect x="900" y="180" width="80" height="8" rx="2" fill="#1A1A1A" opacity="0.4"/>
+    <!-- Grade rows -->
+    <text x="900" y="220" font-family="'JetBrains Mono', monospace" font-size="16" fill="#1A1A1A" opacity="0.5">A+</text>
+    <rect x="935" y="210" width="80" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+    <text x="900" y="246" font-family="'JetBrains Mono', monospace" font-size="16" fill="#1A1A1A" opacity="0.5">A</text>
+    <rect x="935" y="236" width="70" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+    <text x="900" y="272" font-family="'JetBrains Mono', monospace" font-size="16" fill="#1A1A1A" opacity="0.5">A+</text>
+    <rect x="935" y="262" width="85" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+    <text x="900" y="298" font-family="'JetBrains Mono', monospace" font-size="16" fill="#1A1A1A" opacity="0.5">A</text>
+    <rect x="935" y="288" width="65" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+    <text x="900" y="324" font-family="'JetBrains Mono', monospace" font-size="16" fill="#1A1A1A" opacity="0.5">A+</text>
+    <rect x="935" y="314" width="75" height="4" rx="2" fill="#1A1A1A" opacity="0.2"/>
+  </g>
+
+  <!-- Arrow from card to target -->
+  <line x1="1040" y1="340" x2="1075" y2="400" stroke="#a1a1aa" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polygon points="1072,400 1078,400 1075,408" fill="#a1a1aa"/>
+
+  <!-- Target / dartboard (right) -->
+  <circle cx="1090" cy="480" r="90" fill="white" stroke="#E8765A" stroke-width="2.5"/>
+  <circle cx="1090" cy="480" r="62" fill="none" stroke="#1A1A1A" stroke-width="1" opacity="0.2"/>
+  <circle cx="1090" cy="480" r="34" fill="none" stroke="#1A1A1A" stroke-width="1" opacity="0.15"/>
+  <circle cx="1090" cy="480" r="8" fill="#E8765A" opacity="0.7"/>
+  <!-- Bullseye hit marker -->
+  <circle cx="1090" cy="480" r="3" fill="#1A1A1A"/>
+</svg>

@@ -1,5 +1,180 @@
 export const posts = [
 	{
+		slug: 'school-grades-effort-life-grades-results',
+		title: 'School Grades Effort. Life Grades Results.',
+		excerpt:
+			'School rewarded us for remembering things. Life rewards us for changing things. The shift nobody teaches you — from optimizing for input to optimizing for output.',
+		heroImage: '/blog-heroes/school-grades-effort-life-grades-results.svg',
+		heroAlt: 'School Grades Effort. Life Grades Results. — a faded report card next to a target with a bullseye',
+		content: `School was the easiest game I ever played.
+
+Not because I was smart.
+Because the rules were simple.
+
+Remember the answer.
+Write the answer.
+Get the marks.
+Repeat.
+
+That is it.
+That is the entire game.
+
+I was good at it.
+Most of us were.
+Because school doesn't reward understanding.
+It rewards memory.
+It rewards obedience.
+It rewards showing up and doing what you're told.
+
+And for years, I thought that was the game.
+
+---
+
+## The script we all followed
+
+Study hard → get marks → get a good college → get a good job → life sorted.
+
+Then I built a startup.
+
+Aqua-Alert.
+Water quality monitoring system.
+Six months of my life.
+Sleepless nights. Cold calls. Building, testing, failing, rebuilding.
+
+I worked harder than I ever had in school.
+Nobody cared.
+
+Not because the work was bad.
+Not because the effort was fake.
+==But because effort without direction is just motion.==
+And motion without progress is just tiredness.
+
+I shut it down in February 2025.
+Not because I was lazy.
+Because I finally asked a question school never taught me to ask.
+
+"Is this the right thing to work on?"
+
+School never asked that.
+School said: "Did you complete the assignment?"
+School said: "Did you attend the lecture?"
+School said: "How many hours did you study?"
+
+Life says: "What did you actually change?"
+
+---
+
+## The shift at ASBL
+
+I joined ASBL as a Growth PM.
+And that is where the first shift happened.
+
+Nobody asked how many hours I worked.
+Nobody asked how hard I tried.
+They asked: Did the metric move?
+Did the funnel improve?
+Did the user do the thing we wanted them to do?
+
+Results.
+Not effort.
+Not hours.
+Not "I tried my best."
+Results.
+
+And here is the uncomfortable part.
+The effort that got me marks in school?
+The same effort that got me praise from teachers?
+It was almost useless at work.
+
+Not because effort doesn't matter.
+It does.
+==Effort is the entry ticket.==
+You cannot show up to the game without it.
+
+But effort is not the game.
+The game is impact.
+The game is leverage.
+==The game is choosing the right problem before grinding 12 hours on the wrong one.==
+
+---
+
+## What school optimized for vs what life optimizes for
+
+At ASBL, I watched engineers ship features that mattered.
+Not because they worked more hours.
+Because they understood what to build.
+
+I watched the marketing team run campaigns that converted.
+Not because they tried harder.
+Because they targeted better.
+
+I watched leadership make decisions that moved the needle.
+Not because they worked longer.
+Because they saw the board differently.
+
+==School trained us to optimize for input.==
+==Life grades output.==
+
+School said: "How many hours did you study?"
+Life says: "What did those hours produce?"
+
+School said: "Did you complete the syllabus?"
+Life says: "Did you solve the problem?"
+
+School said: "Full marks for effort."
+Life says: "No marks for effort. Only for what changed."
+
+And this hurts.
+Because most of us were good students.
+We believed the system.
+We trusted the script.
+We played by the rules.
+
+Then one day we step outside and realize nobody is grading our effort anymore.
+
+---
+
+## The entry ticket, not the whole show
+
+Nobody cares that we tried.
+Nobody cares that we stayed late.
+Nobody cares that we gave it our all.
+
+They care about results.
+That is it.
+
+I am not saying effort is worthless.
+That would be stupid.
+Effort matters. It will always matter.
+==But effort without thinking is just noise.==
+And noise doesn't move anything.
+
+The shift was not from "work hard" to "don't work hard."
+==The shift was from "work hard on anything" to "work hard on the right thing."==
+
+That is the difference school never taught.
+Because school didn't need to.
+School already knew the answer.
+Life doesn't.
+
+---
+
+## The question school never taught you to ask
+
+You are no longer graded on how hard you tried.
+You are graded on what you actually built, changed, solved or shipped.
+
+So before you grind 12 hours tomorrow, ask yourself one question.
+
+"Am I working hard, or am I working on the right thing?"
+
+==Because school grades effort.==
+==Life grades results.==
+And life doesn't give marks for participation.`,
+		tags: ['Career', 'Personal', 'Product Management'],
+		publishedAt: '2026-06-25T12:00:00Z'
+	},
+	{
 		slug: 'why-designers-abandon-case-studies',
 		title: 'Why Designers Abandon Their Own Case Studies',
 		draft: true,
