@@ -1,13 +1,28 @@
 export const experiences = [
     {
+        company: "Stealth Company",
+        companyUrl: "#",
+        role: "Product Associate",
+        startDate: "July 2026",
+        endDate: "Present",
+        location: "Hyderabad, India",
+        logo: null,
+        current: true,
+        description: [
+            "Building and shipping product initiatives at a stealth-stage company."
+        ],
+        technologies: [],
+        links: { website: "#" }
+    },
+    {
         company: "ASBL",
         companyUrl: "https://asbl.in",
         role: "Associate Product Manager",
-        startDate: "December 2025",
-        endDate: "Present",
+        startDate: "November 2024",
+        endDate: "June 2026",
         location: "Hyderabad, India",
         logo: "https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_100/v1771084546/ASBL_rcbvre.png",
-        current: true,
+        current: false,
         description: [
             "Leading a stealth product line focused on building an organic top-of-funnel growth engine as a scalable acquisition channel. Managing a cross-functional pod of two engineers and one designer.",
             "Defining growth hypotheses, setting OKRs, and prioritizing high-impact experiments tied to measurable pipeline and revenue outcomes.",
@@ -93,13 +108,27 @@ export const experiences = [
 
 export const allWorkExperiences = [
     {
+        company: "Stealth Company",
+        role: "Product Associate",
+        startDate: "July 2026",
+        endDate: "Present",
+        location: "Hyderabad, India",
+        logo: null,
+        current: true,
+        description: [
+            "Building and shipping product initiatives at a stealth-stage company."
+        ],
+        technologies: [],
+        links: { website: "#" }
+    },
+    {
         company: "ASBL",
         role: "Associate Product Manager (Growth)",
         startDate: "June 2025",
-        endDate: "Present",
+        endDate: "June 2026",
         location: "Hyderabad, India",
         logo: "https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_100/v1771084546/ASBL_rcbvre.png",
-        current: true,
+        current: false,
         description: [
             "Drove product-led growth initiatives focused on improving user activation, engagement, and retention.",
             "Collaborated with cross-functional teams across engineering, design, and marketing to execute growth strategies.",
