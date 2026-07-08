@@ -1,18 +1,25 @@
 export const experiences = [
     {
-        company: "Stealth Company",
-        companyUrl: "#",
-        role: "Product Associate",
-        startDate: "July 2026",
+        company: "Cohere Health",
+        companyUrl: "https://www.coherehealth.com",
+        role: "Product",
+        startDate: "June 2026",
         endDate: "Present",
         location: "Hyderabad, India",
-        logo: null,
+        logo: "/logos/cohere-health.svg",
         current: true,
         description: [
-            "Building and shipping product initiatives at a stealth-stage company."
+            "Solving problems directly from US-based clients in a B2B SaaS environment.",
+            "Working at the intersection of clinical intelligence and health plan operations to improve prior authorization and payment integrity workflows.",
+            "Collaborating with cross-functional teams to ship product initiatives that drive measurable outcomes."
         ],
-        technologies: [],
-        links: { website: "#" }
+        technologies: [
+            { name: "Claude Code", icon: null },
+            { name: "Jira", icon: "jira" },
+            { name: "Figma", icon: "figma" },
+            { name: "PM Frameworks", icon: null }
+        ],
+        links: { website: "https://www.coherehealth.com" }
     },
     {
         company: "ASBL",
@@ -108,18 +115,25 @@ export const experiences = [
 
 export const allWorkExperiences = [
     {
-        company: "Stealth Company",
-        role: "Product Associate",
-        startDate: "July 2026",
+        company: "Cohere Health",
+        role: "Product",
+        startDate: "June 2026",
         endDate: "Present",
         location: "Hyderabad, India",
-        logo: null,
+        logo: "/logos/cohere-health.svg",
         current: true,
         description: [
-            "Building and shipping product initiatives at a stealth-stage company."
+            "Solving problems directly from US-based clients in a B2B SaaS environment.",
+            "Working at the intersection of clinical intelligence and health plan operations to improve prior authorization and payment integrity workflows.",
+            "Collaborating with cross-functional teams to ship product initiatives that drive measurable outcomes."
         ],
-        technologies: [],
-        links: { website: "#" }
+        technologies: [
+            { name: "Claude Code", icon: null },
+            { name: "Jira", icon: "jira" },
+            { name: "Figma", icon: "figma" },
+            { name: "PM Frameworks", icon: null }
+        ],
+        links: { website: "https://www.coherehealth.com" }
     },
     {
         company: "ASBL",
