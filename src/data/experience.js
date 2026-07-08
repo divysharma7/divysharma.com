@@ -31,11 +31,21 @@ export const experiences = [
         logo: "https://res.cloudinary.com/dgglltv04/image/upload/f_auto,q_auto,w_100/v1771084546/ASBL_rcbvre.png",
         current: false,
         description: [
-            "Leading a stealth product line focused on building an organic top-of-funnel growth engine as a scalable acquisition channel. Managing a cross-functional pod of two engineers and one designer.",
-            "Defining growth hypotheses, setting OKRs, and prioritizing high-impact experiments tied to measurable pipeline and revenue outcomes.",
-            "Designed structured experimentation workflows including instrumentation, event tracking, and funnel analysis using PostHog and Metabase.",
-            "Built content-targeting and segmentation systems to improve acquisition efficiency and optimize CPL across channels.",
-            "Established a feedback loop between product, marketing, and sales to align growth initiatives with revenue attribution."
+            "At ASBL, I worked across nearly the entire customer lifecycle—from acquisition to payments.",
+            "Some of the problems I owned:",
+            "• Led a stealth product from strategy to launch with a two-engineer team.",
+            "• Fixed Meta and Google attribution using Conversion APIs.",
+            "• Converted fragmented real estate funnel data into actionable business intelligence.",
+            "• Built inventory ranking models using P&L instead of manual prioritization.",
+            "• Developed prospect scoring to estimate purchase probability.",
+            "• Unified WhatsApp sales communication into a single intelligence layer (Periscope).",
+            "• Built campaign monitoring to detect broken ads before budget was wasted.",
+            "• Owned operational updates across CRM, pricing, offers, and the website.",
+            "• Built dashboards for pre-sales and sales performance.",
+            "• Created internal AI knowledge bases using Claude from marketing playbooks, campaign learnings, and operational documentation.",
+            "Beyond shipping features, I worked closely with the CTO and VP of Growth, partnering with sales, marketing, design, and content teams to solve cross-functional business problems. I also documented revenue leakage opportunities and prototyped an influencer platform that gamified creators while making acquisition costs measurable.",
+            "The metrics I optimized weren't feature adoption—they were business outcomes: lead generation, lead activation, site visits, conversions, cancellations, and risk.",
+            "I've learned that product management is rarely just about shipping software. More often, it's about redesigning how a business acquires customers, operates efficiently, and generates revenue."
         ],
         technologies: [
             { name: "Metabase", icon: "metabase" },
