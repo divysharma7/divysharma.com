@@ -6,7 +6,7 @@
 				<!-- Brand column -->
 				<div class="footer-brand">
 					<h3 class="footer-name">Divy Sharma</h3>
-					<p class="footer-tagline">Associate Product Manager building growth systems and honest products.</p>
+					<p class="footer-tagline">Product at Cohere Health, building clinical intelligence systems and honest products.</p>
 					<div class="footer-socials">
 						<a href="mailto:divysharma029@gmail.com" aria-label="Email" rel="noopener noreferrer" @click="gtmPush('click:outbound', { platform: 'email', location: 'footer_icons' })">
 							<Mail :size="18" />

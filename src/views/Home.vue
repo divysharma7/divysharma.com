@@ -10,7 +10,7 @@
 			<section class="hero">
 				<h1 class="hero-name">divy sharma</h1>
 				<p class="hero-bio">
-					Associate Product Manager at <span class="tag">ASBL</span> in Hyderabad, reporting to the VP Growth. I work on real estate tech with the Marketing team, mostly on funnel and acquisition. Before ASBL, I founded <span class="tag">Aqua-Alert</span>, an IoT water management startup incubated at <strong>NSRCEL, IIM Bangalore</strong>. It was something like a Fitbit for water meters, and shut down in February 2025.
+					Product at <span class="tag">Cohere Health</span> in Hyderabad, solving problems directly from US-based clients in a B2B SaaS environment at the intersection of clinical intelligence and health plan operations. Previously, <span class="tag">Associate Product Manager at ASBL</span>, reporting to the VP Growth, working on real estate tech with the Marketing team on funnel and acquisition. Before ASBL, I founded <span class="tag">Aqua-Alert</span>, an IoT water management startup incubated at <strong>NSRCEL, IIM Bangalore</strong>. It was something like a Fitbit for water meters, and shut down in February 2025.
 				</p>
 				<div class="hero-meta">
 					<span><MapPin :size="14" /> Hyderabad, India</span>
