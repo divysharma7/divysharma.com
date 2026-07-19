@@ -369,6 +369,18 @@ export const books = [
         effort: 2,
         business: 3,
         usability: 4,
+        readingStatus: 'done',
+    },
+    {
+        title: 'How to Sell Anything to Anybody',
+        coverImage: 'https://covers.openlibrary.org/b/id/788307-L.jpg',
+        summary: "The legendary car salesman's playbook for selling — not just products, but yourself, your ideas, and your vision.",
+        topics: ['Building trust', 'Finding needs', 'Closing techniques', 'Referral systems', 'Rejection handling'],
+        apmRating: 4,
+        tags: ['Marketing', 'Communication', 'Sales'],
+        effort: 2,
+        business: 4,
+        usability: 4,
         readingStatus: 'in_progress',
     },
     {
@@ -430,6 +442,6 @@ export const allTags = [
     'Marketing', 'OKRs', 'PM Craft', 'Personal Development', 'Positioning',
     'Presentations', 'Product Basics', 'Product Process', 'Product Strategy',
     'Product Thinking', 'Productivity', 'Psychology', 'Research',
-    'Stakeholders', 'Startups', 'Storytelling', 'Strategy', 'Teamwork',
+    'Sales', 'Stakeholders', 'Startups', 'Storytelling', 'Strategy', 'Teamwork',
     'Tech Literacy', 'Trust', 'UX',
 ];
