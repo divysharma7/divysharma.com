@@ -431,12 +431,36 @@ export const books = [
         usability: 3,
         readingStatus: 'done',
     },
+    {
+        title: 'The Phoenix Project',
+        coverImage: 'https://covers.openlibrary.org/b/isbn/9781942788321-L.jpg',
+        summary: 'A novel about IT, DevOps, and organizational alignment — the "Manufacturing novel" for tech teams.',
+        topics: ['DevOps', 'Value stream mapping', 'Bottleneck theory', 'Organizational alignment', 'Continuous delivery'],
+        apmRating: 4,
+        tags: ['DevOps', 'Leadership', 'Strategy'],
+        effort: 3,
+        business: 4,
+        usability: 3,
+        readingStatus: 'backlog',
+    },
+    {
+        title: 'The Art of Explanation',
+        coverImage: 'https://covers.openlibrary.org/b/isbn/9781118374560-L.jpg',
+        summary: 'How to make any idea easy to understand — a practical framework for turning complex topics into clear, engaging explanations.',
+        topics: ['Explanation design', 'Audience empathy', 'Simplification', 'Visual thinking', 'Communication craft'],
+        apmRating: 4,
+        tags: ['Communication', 'Storytelling', 'Product Thinking'],
+        effort: 2,
+        business: 3,
+        usability: 5,
+        readingStatus: 'backlog',
+    },
 ];
 
 // All unique tags for the filter UI
 export const allTags = [
     'Analytics', 'Behavioral Econ', 'Branding', 'Business', 'Communication',
-    'Data', 'Decision-making', 'Design', 'Discovery', 'Entrepreneurship',
+    'Data', 'Decision-making', 'Design', 'DevOps', 'Discovery', 'Entrepreneurship',
     'Execution', 'Experimentation', 'Go-to-Market', 'Growth', 'Innovation',
     'Interviews', 'JTBD', 'Leadership', 'Learning', 'Management',
     'Marketing', 'OKRs', 'PM Craft', 'Personal Development', 'Positioning',
