@@ -125,6 +125,8 @@
 
           <p class="card-summary-large">{{ book.summary }}</p>
 
+          <p v-if="book.note" class="card-note">📝 {{ book.note }}</p>
+
           <div class="topics">
             <span v-for="topic in book.topics" :key="topic" class="topic">{{ topic }}</span>
           </div>
@@ -354,6 +356,7 @@ const filteredBooks = computed(() => {
     list = list.filter((b) =>
       b.title.toLowerCase().includes(q) ||
       b.summary.toLowerCase().includes(q) ||
+      (b.note && b.note.toLowerCase().includes(q)) ||
       b.topics.some((t) => t.toLowerCase().includes(q)) ||
       b.tags.some((t) => t.toLowerCase().includes(q))
     );
@@ -865,6 +868,17 @@ select:focus-visible {
   color: var(--color-body);
   line-height: var(--leading-normal);
   margin: 0 0 1rem;
+}
+
+.card-note {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  font-style: italic;
+  margin: 0 0 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-bg-subtle);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--color-border);
 }
 
 .topics {

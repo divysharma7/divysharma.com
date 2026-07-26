@@ -455,13 +455,26 @@ export const books = [
         usability: 5,
         readingStatus: 'backlog',
     },
+    {
+        title: 'Sapiens: A Brief History of Humankind',
+        coverImage: 'https://covers.openlibrary.org/b/isbn/9780062316097-L.jpg',
+        summary: 'A sweeping history of how Homo sapiens became the dominant species through cognitive, agricultural, and scientific revolutions.',
+        topics: ['Cognitive revolution', 'Agricultural revolution', 'Myths and cooperation', 'Scientific revolution', 'Human history'],
+        apmRating: 4,
+        tags: ['History', 'Psychology', 'Strategy'],
+        effort: 3,
+        business: 3,
+        usability: 3,
+        readingStatus: 'backlog',
+        note: 'Recommended by Anant sir',
+    },
 ];
 
 // All unique tags for the filter UI
 export const allTags = [
     'Analytics', 'Behavioral Econ', 'Branding', 'Business', 'Communication',
     'Data', 'Decision-making', 'Design', 'DevOps', 'Discovery', 'Entrepreneurship',
-    'Execution', 'Experimentation', 'Go-to-Market', 'Growth', 'Innovation',
+    'Execution', 'Experimentation', 'Go-to-Market', 'Growth', 'History', 'Innovation',
     'Interviews', 'JTBD', 'Leadership', 'Learning', 'Management',
     'Marketing', 'OKRs', 'PM Craft', 'Personal Development', 'Positioning',
     'Presentations', 'Product Basics', 'Product Process', 'Product Strategy',
