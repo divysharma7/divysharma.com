@@ -468,6 +468,19 @@ export const books = [
         readingStatus: 'backlog',
         note: 'Recommended by Anant sir',
     },
+    {
+        title: 'Speed Reading for Dummies',
+        coverImage: 'https://covers.openlibrary.org/b/isbn/9780470754407-L.jpg',
+        summary: 'Techniques to read faster with better comprehension — skimming, scanning, reducing subvocalization, and expanding peripheral vision.',
+        topics: ['Speed techniques', 'Comprehension retention', 'Skimming and scanning', 'Subvocalization reduction', 'Peripheral vision expansion'],
+        apmRating: 3,
+        tags: ['Productivity', 'Personal Development', 'Learning'],
+        effort: 2,
+        business: 2,
+        usability: 4,
+        readingStatus: 'backlog',
+        note: 'Suggested by Ram',
+    },
 ];
 
 // All unique tags for the filter UI
