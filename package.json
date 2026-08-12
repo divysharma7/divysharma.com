@@ -17,7 +17,7 @@
 		"trailingComma": "none"
 	},
 	"dependencies": {
-		"@ai-sdk/mistral": "^3.0.21",
+		"@ai-sdk/mistral": "^3.0.34",
 		"@ai-sdk/openai": "^3.0.30",
 		"@iconify/json": "^1.1.402",
 		"@sendgrid/mail": "^8.1.5",
